@@ -74,6 +74,9 @@
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 % ---
 
+% Pacotes instalados por nós alunos
+\usepackage{xurl}
+
 % ---
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
@@ -94,7 +97,7 @@
 
 % --- Informações de dados para CAPA e FOLHA DE ROSTO ---
 
-\newcommand\nomeprojeto{FarmaCare}
+\newcommand\nomeprojeto{MyMed}
 
 \title{Documento de Arquitetura de Software de \nomeprojeto}
 
@@ -192,7 +195,7 @@
 % titulo em outro idioma (opcional)
 
 \begin{abstract}
-  The paper describes the present architecture of software being refered as
+  The paper describes the current architecture of the software being refered as
   ``\nomeprojeto``, its main focus is to help pacients with a wide variety of
   medicine to remember their intake date and to monitor their use/stock.
   The content speaks of its concept and application, furthermore its
@@ -227,332 +230,322 @@
 % Introdução
 % ----------------------------------------------------------
 \section{Introdução}
-O objetivo deste documento é expor as regras e formatos para o desenvolvimento dos documentos das disciplinas de TDS e PDS. Este utiliza como base tanto o modelo da SBC\footnote{\url{https://www.overleaf.com/latex/templates/sbc-conferences-template/blbxwjwzdngr}} quanto o fornecido pela abnTeX\footnote{\url{http://www.latex-project.org/lppl.txt}}.
 
-O documento final deve ter \textbf{entre 12 e 20 páginas}, descontados na contagem apenas os anexos e apêndices. Cada professor é livre para definir junto aos alunos o que deve estar em cada uma das duas seções supracitadas.
+A saúde dos dias de hoje é em sua maioria amparada, e muitas vezes serve de motivação para a tecnologia mais atual. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos grupos de médicos e de pacientes.
 
-As seções aqui colocadas são apenas EXEMPLOS do que deve estar contido, podendo ser alteradas em conjunto entre orientadores e alunos, assim como as devidas explicações dentro delas.
+Médicos possuem sistemas de bulário eletrônico que são organizados por filtros por tratamento ou sintomas, de forma que eles tenham mais facilidade ao receitar um medicamento para o paciente; já o paciente recebe sua receita em seu celular por SMS, por e-mail ou até \textit{Whatsapp}.
 
-Atenção especial para a quantidade de texto colocada em cada uma das seções. De forma geral, não faz muito sentido colocar uma seção para escrever apenas um parágrafo ou 6, 7 linhas.
+Um grupo muito beneficiado por essas tecnologias é o de idosos com mais de 60 anos. Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras prejudicadas, idosos necessitam de aplicativos com interfaces simples e funcionalidades diretas para realizar tarefas do dia-a-dia ou até dentro do seu celular.
 
-Para dicas e como fazer tabelas, listas, figuras, citações e etc, bem como evitar erros em projetos e no próprio documento, consultar (entre outros) os capítulos 6, 7, 8 e 9 do documento: \url{https://www.overleaf.com/project/58a3a66af9bb74023ba1bd56}.
+Aplicativos de assistência ao idoso são exemplos de um mercado promissor e de uma gama de usuários que buscam este serviço, como comunicação com um médico especializado,  serviços de ligação de emergência ou para melhor interagir com o celular.
 
+Segundo a pesquisa de \citeonline{mariacristina2008}, idosos relatam dificuldades ao lembrar dos horários de consumo de medicamentos, e muitas vezes não conseguem seguir a prescrição médica. Um assunto sério que deve ser tratado com prioridade, pois o não cumprimento da dosagem correta pode levar a complicações de saúde.
 
-Ao preparar a Introdução é importante estar atento a:
-    \begin{citacao}
-    "A introdução é a parte responsável pela apresentação do trabalho, desde a delimitação do tema até a forma como está organizado. Sugere-se que seja feita a introdução do assunto, de modo a: discorrer sobre o tema do trabalho; apresentação do problema e objetivos da pesquisa; exposição da justificativa; finalmente, informar em quantos capítulos o texto foi dividido e apresentar os principais elementos que os compõem . Por apresentar estes elementos, a introdução requer uma revisão detalhada ao final do trabalho para manter a coesão textual."  \cite{NormalizacaoIFSP}.
-    \end{citacao}
+\begin{citacao}
+“A revisão bibliográfica de Silva, Schimidt e Silva (18) relata ainda que 40\% a 75\% dos idosos não tomam seus medicamentos em horários e quantidades prescritas.” \cite{clarisse2016}
+\end{citacao}
+
+O uso de aplicações para o auxílio geral de seus tratamentos é algo vital para estes grupos. É, também, uma ferramenta útil para pacientes não idosos portadores de doenças crônicas como doenças do coração, diabetes, hipertensão, entre outros. Segundo \citeonline{clarisse2016}, a longo prazo, poucos métodos de memorização própria se mantém efetivos, e muitas vezes são esquecidos.
+
+Em outro caso, a maior parte da população brasileira não acompanha a carteirinha de vacinação própria ou a de seus filhos. Estudos do IBOPE Inteligência, a pedido da Pfizer, mostram que menos de 50\% da população verificam os programas de vacina em sua região e mantém sua vacinação em dia \footnote{\url{https://www.pfizer.com.br/noticias/releases/metade-dos-brasileiros-nao-observa-se-carteirinha-de-vacinacao-esta-em-diametade-dos-brasileiros-nao-observa-se-carteirinha-de-vacinacao-esta-em-dia}}.
+
+O estudo relata também que cerca de 92\% da população pretende se vacinar no ano posterior ao da data da pesquisa, com a finalidade de se prevenir de doenças. Demonstra-se que há sim um interesse da população em prevenção, mas não possuem os métodos e informações necessárias para que a carteira vacinal esteja em dia.
+
+Segundo \citeonline{lucas-cnn2023}, é uma questão de dificuldade de acesso a informações que dizem respeito à carteirinha. As mães de filhos pequenos relatam não conhecer os horários de funcionamento de locais de vacinação, ou até mesmo não saberem onde estão localizados. Além do desconhecimento, há medo e desconfiança de vacinas, muitas vezes motivados por \textit{fake news} ou familiares e amigos.
+
+O problema que se visa solucionar é, então, a organização do consumo de remédios e outros tratamentos que necessitam de um horário, dosagem, ou planejamento prévio, além de datas de vacinação; ambas fornecidas por meio de lembretes criados pelo usuário. Irá auxiliar na checagem de estoque e o total de unidades disponíveis, que irá alertar a falta do remédio quando este estiver acabando.
+
 
 \subsection{Objetivos}
 
-Os objetivos precisam seguir uma linha de raciocínio ao serem traçados.
-    \begin{citacao}
-    "O objetivo normalmente comporta uma hipótese de trabalho. Um bom objetivo de pesquisa normalmente terá
-    a forma “demonstrar que a hipótese x é verdadeira”.
-    Nem todo objetivo pode ser considerado um bom objetivo de pesquisa. Por exemplo, algo do tipo “o objetivo
-    deste trabalho é aumentar os meus conhecimentos na área de estudo” pode até ser muito sincero, mas não
-    convence ninguém de que algum conhecimento novo para a humanidade será produzido. Portanto, isso deve ser evitado.
-    Outro objetivo algumas vezes encontrado é a forma “propor…”. Alguma coisa é proposta, normalmente um
-    método, uma abordagem, uma técnica, um algoritmo, uma comparação, ou qualquer outra coisa. A questão é:
-    se o autor fizer a proposta, então o objetivo estará atingido? Se o aluno se propõe a propor e propôs, então está
-    proposto! O que for proposto não é necessariamente melhor ou diferente daquilo que já existia antes. Então, o
-    estágio da pesquisa neste caso ainda é dos mais ingênuos.
-    É necessário que o objetivo diga que aquilo que está sendo proposto é melhor do que alguma outra coisa ou
-    que resolve algum problema que antes não podia ser resolvido."  \cite{PESQUISA:RAUL}.
-    \end{citacao}
+O objetivo do projeto é criar uma plataforma que auxilie o usuário a manter seu tratamento em dia, seja ele de medicamentos, vacinas ou consultas. O sistema irá permitir que o usuário registre os medicamentos que consome, as vacinas que tomou e as consultas que fez, além de permitir o registro de novos medicamentos e vacinas.
 
-Os objetivos PODEM ser divididos em: Principal e Específicos (ou Secundários).
+Dessa forma, pretende-se registrar e alertar sobre os recursos de saúde recorrentes do paciente, a fim de motivá-lo a manter seu tratamento, consumo de medicações ou vacinas de acordo às recomendações médicas de acordo com as necessidades do usuário, contribuindo para sua saúde.
 
-Em relação ao objetivo principal:
 
-    \begin{citacao}
-    "Atenção especial é dada ao verbo que apresenta o objetivo.
-    Analisa-se também se o objetivo apresentado define claramente uma pesquisa científica ou um objetivo
-    tecnológico, como, por exemplo, a implementação de um sistema."
-    \lipsum[5] \cite{PESQUISA:RAUL}.
-    \end{citacao}
+\subsubsection{Organização de Tratamentos}
 
-Em relação aos objetivos específicos (ou Secundários):
+Auxiliar no controle e organização dos tratamentos que são realizados de forma recorrente, ajudando nas ações que necessitam de um auxílio externo.
 
-    \begin{citacao}
-    "Os objetivos específicos devem refletir subprodutos ou um detalhamento do objetivo principal. N ão se deve, a
-    princípio, mencionar como objetivo específico passos que são meramente intermediários para atingir o objetivo
-    geral."
-    \lipsum[5] \cite{PESQUISA:RAUL}.
-    \end{citacao}
+
+\subsubsection{Relatórios otimizados}
+
+Descrever a aderência do paciente ao tratamento. A partir do relatório fornecido pelo paciente, relatar a adesão ao tratamento, e fornecer informações sobre o que pode ser melhorado.
+
+
+\subsubsection{Conciliação na rotina}
+
+Integrar o sistema com a rotina do usuário, permitindo que ele receba notificações em seu dispositivo ou aplicativo de calendário pessoal.
 
 
 \subsection{Justificativa}    
 
-    O trabalho precisa possuir uma justificativa:
-    \begin{citacao}
-    "A justificativa deve se referir principalmente à hipótese de trabalho, ou seja, deve-se justificar a escolha de uma
-    hipótese em vez de tentar justificar apenas a importância do tema da pesquisa. Usualmente a importância do
-    tema da pesquisa já foi abordada na contextualização do problema. Então não há necessidade de repetir essa
-    justificativa."
-    \lipsum[5] \cite{PESQUISA:RAUL}.
-    \end{citacao}
+O consumo de um medicamento ou consultas de rotina podem se tornar algo supérfluo na rotina de um paciente que os realiza com frequência, podendo acarretar em um esquecimento de tais compromissos.
+
+Com isso em mente, foi realizada uma pesquisa que apontou que 70\% dos participantes da pesquisa usam muito pouco sistemas de saúde, e quando usam esses sistemas falham em corresponder às expectativas do usuário. Os resultados da pesquisa também apontaram que 62\% dos usuários têm grandes dificuldades em lembrar de datas, tanto de consultas quanto das vacinas periódicas, e 81\% relataram terem grandes problemas em lembrar dos horários de tomar seus medicamentos.
+
+Este documento, portanto, demonstra a necessidade de tal sistema, do qual apelidamos de ``\nomeprojeto``. Busca-se auxiliar os usuários que necessitam de um melhor gerenciamento de seus tratamentos, sejam eles medicamentos, consultas ou até programas de vacinação; para manter sua saúde bem condicionada e supervisionada.
 
 
-\section{Revisão da Literatura (ou Revisão Bibliográfica)}
+% \section{Revisão da Literatura (ou Revisão Bibliográfica)}
 
-Especial atenção ao que este capítulo deve conter:
-    \begin{citacao}
-    "Revisão bibliográfica, conforme já comentado, não produz conhecimento novo, mas apenas supre as
-    deficiências de conhecimento que o pesquisador tem em uma determinada área. Portanto, ela deve ser muito
-    bem planejada e conduzida.
-    (...)
-    Quando se faz uma pesquisa em que alguma técnica de computação é aplicada a alguma outra área do
-    conhecimento, é necessário que se faça a revisão bibliográfica sobre a técnica em si, sobre a área de aplicação e,
-    mais do que tudo, sobre as aplicações que já foram tentadas com essa técnica ou com técnicas semelhantes na
-    mesma área ou em áreas equivalentes. Exemplificando, um aluno pretende desenvolver um sistema
-    multiagentes para auxiliar controladores de voo. Esse aluno deve conhecer profundamente os sistemas
-    multiagentes e deverá conhecer também os problemas que os controladores de voo enfrentam para exercer sua
-    profissão. Porém, ele não deve pensar, como algumas vezes acontece, que essa é a primeira vez que alguém vai
-    tentar desenvolver um sistema multiagentes para esse tipo de aplicação."
-    \cite{PESQUISA:RAUL}.
-    \end{citacao}
+% Especial atenção ao que este capítulo deve conter:
+%     \begin{citacao}
+%     "Revisão bibliográfica, conforme já comentado, não produz conhecimento novo, mas apenas supre as
+%     deficiências de conhecimento que o pesquisador tem em uma determinada área. Portanto, ela deve ser muito
+%     bem planejada e conduzida.
+%     (...)
+%     Quando se faz uma pesquisa em que alguma técnica de computação é aplicada a alguma outra área do
+%     conhecimento, é necessário que se faça a revisão bibliográfica sobre a técnica em si, sobre a área de aplicação e,
+%     mais do que tudo, sobre as aplicações que já foram tentadas com essa técnica ou com técnicas semelhantes na
+%     mesma área ou em áreas equivalentes. Exemplificando, um aluno pretende desenvolver um sistema
+%     multiagentes para auxiliar controladores de voo. Esse aluno deve conhecer profundamente os sistemas
+%     multiagentes e deverá conhecer também os problemas que os controladores de voo enfrentam para exercer sua
+%     profissão. Porém, ele não deve pensar, como algumas vezes acontece, que essa é a primeira vez que alguém vai
+%     tentar desenvolver um sistema multiagentes para esse tipo de aplicação."
+%     \cite{PESQUISA:RAUL}.
+%     \end{citacao}
 
-Toda a revisão da literatura deve ser basear primordialmente em livros e artigos científicos ranqueados Qualis CAPES. De forma geral, todo parágrafo deve conter AO MENOS uma citação bibliográfica.
+% Toda a revisão da literatura deve ser basear primordialmente em livros e artigos científicos ranqueados Qualis CAPES. De forma geral, todo parágrafo deve conter AO MENOS uma citação bibliográfica.
 
-% ---
-\subsection{Assunto 1}
+% % ---
+% \subsection{Assunto 1}
 
-Atenção!!! Para quem está usando o modelo desde antes de 09/08/2024, é preciso alterar o arquivo sbc-template.sty e comentar as linhas com os seguintes comandos ou muda4r o arquivo para o contido nesse modelo caso não tenha realizado nenhuma alteração:
+% Atenção!!! Para quem está usando o modelo desde antes de 09/08/2024, é preciso alterar o arquivo sbc-template.sty e comentar as linhas com os seguintes comandos ou muda4r o arquivo para o contido nesse modelo caso não tenha realizado nenhuma alteração:
 
-\verb|\RequirePackage[bf,sf,footnotesize,indent]{caption2}|
-\verb|\setlength{\captionmargin}{0.8cm}|
-\verb|\renewcommand{\captionfont}{\sffamily\footnotesize\bfseries}|
-\verb|\renewcommand{\captionlabeldelim}{.}|
+% \verb|\RequirePackage[bf,sf,footnotesize,indent]{caption2}|
+% \verb|\setlength{\captionmargin}{0.8cm}|
+% \verb|\renewcommand{\captionfont}{\sffamily\footnotesize\bfseries}|
+% \verb|\renewcommand{\captionlabeldelim}{.}|
 
-\index{figuras}Figuras podem ser criadas diretamente em \LaTeX, como o exemplo da  \autoref{fig_circulo}, ou inseridas a partir de arquivos externos como a \autoref{fig_logo}, que é o Logotipo do IFSP.
+% \index{figuras}Figuras podem ser criadas diretamente em \LaTeX, como o exemplo da  \autoref{fig_circulo}, ou inseridas a partir de arquivos externos como a \autoref{fig_logo}, que é o Logotipo do IFSP.
 
-%Aqui uma figura criada em código.
-\begin{figure}[htb]
-	\caption{\label{fig_circulo}A delimitação do espaço}
-	\begin{center}
-	    \setlength{\unitlength}{5cm}
-		\begin{picture}(1,1)
-		\put(0,0){\line(0,1){1}}
-		\put(0,0){\line(1,0){1}}
-		\put(0,0){\line(1,1){1}}
-		\put(0,0){\line(1,2){.5}}
-		\put(0,0){\line(1,3){.3333}}
-		\put(0,0){\line(1,4){.25}}
-		\put(0,0){\line(1,5){.2}}
-		\put(0,0){\line(1,6){.1667}}
-		\put(0,0){\line(2,1){1}}
-		\put(0,0){\line(2,3){.6667}}
-		\put(0,0){\line(2,5){.4}}
-		\put(0,0){\line(3,1){1}}
-		\put(0,0){\line(3,2){1}}
-		\put(0,0){\line(3,4){.75}}
-		\put(0,0){\line(3,5){.6}}
-		\put(0,0){\line(4,1){1}}
-		\put(0,0){\line(4,3){1}}
-		\put(0,0){\line(4,5){.8}}
-		\put(0,0){\line(5,1){1}}
-		\put(0,0){\line(5,2){1}}
-		\put(0,0){\line(5,3){1}}
-		\put(0,0){\line(5,4){1}}
-		\put(0,0){\line(5,6){.8333}}
-		\put(0,0){\line(6,1){1}}
-		\put(0,0){\line(6,5){1}}
-		\end{picture}
-	\end{center}
-	\fonte{Modelo Canônico ABNTeX2.}
-\end{figure}
+% %Aqui uma figura criada em código.
+% \begin{figure}[htb]
+% 	\caption{\label{fig_circulo}A delimitação do espaço}
+% 	\begin{center}
+% 	    \setlength{\unitlength}{5cm}
+% 		\begin{picture}(1,1)
+% 		\put(0,0){\line(0,1){1}}
+% 		\put(0,0){\line(1,0){1}}
+% 		\put(0,0){\line(1,1){1}}
+% 		\put(0,0){\line(1,2){.5}}
+% 		\put(0,0){\line(1,3){.3333}}
+% 		\put(0,0){\line(1,4){.25}}
+% 		\put(0,0){\line(1,5){.2}}
+% 		\put(0,0){\line(1,6){.1667}}
+% 		\put(0,0){\line(2,1){1}}
+% 		\put(0,0){\line(2,3){.6667}}
+% 		\put(0,0){\line(2,5){.4}}
+% 		\put(0,0){\line(3,1){1}}
+% 		\put(0,0){\line(3,2){1}}
+% 		\put(0,0){\line(3,4){.75}}
+% 		\put(0,0){\line(3,5){.6}}
+% 		\put(0,0){\line(4,1){1}}
+% 		\put(0,0){\line(4,3){1}}
+% 		\put(0,0){\line(4,5){.8}}
+% 		\put(0,0){\line(5,1){1}}
+% 		\put(0,0){\line(5,2){1}}
+% 		\put(0,0){\line(5,3){1}}
+% 		\put(0,0){\line(5,4){1}}
+% 		\put(0,0){\line(5,6){.8333}}
+% 		\put(0,0){\line(6,1){1}}
+% 		\put(0,0){\line(6,5){1}}
+% 		\end{picture}
+% 	\end{center}
+% 	\fonte{Modelo Canônico ABNTeX2.}
+% \end{figure}
 
-Procure criar suas imagens e diagramas pensando na possibilidade de utilizar impressão em preto-e-branco ou escala de cinza. Isto é importante, principalmente quando se pretende publicar o trabalho, uma vez que a maioria das publicações são somente em preto-e-branco. Outro benefício é o custo de impressão, normalmente menor para páginas preto-e-branco em relação a páginas coloridas.
+% Procure criar suas imagens e diagramas pensando na possibilidade de utilizar impressão em preto-e-branco ou escala de cinza. Isto é importante, principalmente quando se pretende publicar o trabalho, uma vez que a maioria das publicações são somente em preto-e-branco. Outro benefício é o custo de impressão, normalmente menor para páginas preto-e-branco em relação a páginas coloridas.
 
-\begin{figure}[htb]
-    \centering
-	\caption{\label{fig_logo}Logotipo IFSP}
-	\includegraphics{Figuras/logoIFSP.jpg}
-	\fonte{IFSP}
-\end{figure}
+% \begin{figure}[htb]
+%     \centering
+% 	\caption{\label{fig_logo}Logotipo IFSP}
+% 	\includegraphics{Figuras/logoIFSP.jpg}
+% 	\fonte{IFSP}
+% \end{figure}
 
-Lembrem-se que o \LaTeX vai posicionar a figura o mais perto o possível do local onde ela está sendo citada tentando não deixar espaços em branco. Eivtem forçar a posição da figura.
-
-
-\subsection{Assunto 2}
-
-Atenção!!! Para quem está usando o modelo desde antes de 20/08/2024, é preciso
-alterar o arquivo sbc-template.sty e acrescentar as linhas contidas entre as tags marcadas com: "============= COPIAR PARA SEU STY - 19/08/2024 =============".
-
-Quadros e Tabelas são informações tabulares, mas Tabelas tem como objetivo apresentar números. A ‘norma’ 14724 \cite{NBR14724:2011} define a Tabela como sendo uma "forma não discursiva de apresentar informações das quais o dado numérico se destaca como informação central" e que devem seguir padronização do IBGE \cite{NBR14724:2011}. O IBGE padronizou a apresentações de dados tabulares em 1993 \cite{tabular-ibge}.
-
-Informações adicionais sobre o de tabelas no {\LaTeX} podem ser obtidas em  \url{https://en.wikibooks.org/wiki/LaTeX/Tables}.
-
-Antes de utilizar \index{longtable}\textbf{longtable} procure reorganizar o seu layout ou quebrar manualmente em múltiplos quadros / tabelas, pois isso ainda facilita a compreensão pelo leitor.
-
-% https://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf
-
-O \autoref{quadro_exemplo} é um exemplo de dados tabulares gerados em \LaTeX.
-
-\begin{quadro}[htb]
-\caption{\label{quadro_exemplo}Exemplo de quadro}
-\begin{tabular}{|c|c|c|c|}
-	\hline
-	\textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} & \textbf{Altura} \\ \hline
-	Marcos & 26    & 68   & 178    \\ \hline
-	Ivone  & 22    & 57   & 162    \\ \hline
-	...    & ...   & ...  & ...    \\ \hline
-	Sueli  & 40    & 65   & 153    \\ \hline
-\end{tabular}
-\fonte{Autor.}
-\end{quadro}
-
-Já a \autoref{tab-exemplo} foi criada conforme o padrão \citeonline{tabular-ibge} requerido pelas normas da ABNT para documentos técnicos e acadêmicos. Observe que não existem bordas laterais e nem linhas separadoras em uma Tabela e as colunas numéricas tem alinhamento à direita. 
-
-\begin{table}[htb]
-\centering
-\caption{Métricas de desenvolvimento}
-\label{tab-exemplo}
-\begin{tabular}{p{2.6cm}rrr}
-    \hline
-    \textbf{Item} & \textbf{Janeiro} & \textbf{Fevereiro} & \textbf{Março} \\
-    \hline
-    \hline
-    Classes & 2  & 10 & 20  \\
-    Linhas & 100  & 250 & 543 \\
-    \hline
-\end{tabular}
-\fonte{Os autores.}
-\end{table}
-
-Para facilitar a criação de tabelas e quadros existem algumas ferramentas como o Tables Generator \url{http://www.tablesgenerator.com/latex_tables} que permite a criação de forma visual gerando o código \LaTeX\ correspondente. E o site \url{https://www.latex-tables.com/} permite converter planilhas em código \LaTeX.
-
-\subsection{Assunto 3}
-\lipsum[1]
-\subsection{Assunto X}
-\lipsum[1]
+% Lembrem-se que o \LaTeX vai posicionar a figura o mais perto o possível do local onde ela está sendo citada tentando não deixar espaços em branco. Eivtem forçar a posição da figura.
 
 
-\section{Métodos de Pesquisa OU Materiais e métodos}
+% \subsection{Assunto 2}
 
-Segundo \citeonline{PESQUISA:DEMO}, metodologia significa, “na origem do termo, estudo dos caminhos, dos instrumentos usados para se fazer ciência”.
+% Atenção!!! Para quem está usando o modelo desde antes de 20/08/2024, é preciso
+% alterar o arquivo sbc-template.sty e acrescentar as linhas contidas entre as tags marcadas com: "============= COPIAR PARA SEU STY - 19/08/2024 =============".
 
-Completando a linha de raciocínio, o autor acrescenta:
+% Quadros e Tabelas são informações tabulares, mas Tabelas tem como objetivo apresentar números. A ‘norma’ 14724 \cite{NBR14724:2011} define a Tabela como sendo uma "forma não discursiva de apresentar informações das quais o dado numérico se destaca como informação central" e que devem seguir padronização do IBGE \cite{NBR14724:2011}. O IBGE padronizou a apresentações de dados tabulares em 1993 \cite{tabular-ibge}.
 
-    \begin{citacao}
-    “Alguns entendem por pesquisa o trabalho de coletar dados, sistematizá-los e, a partir daí fazer uma descrição da real-dade. Outros, fixam-se no patamar teórico e entendem por pesquisa o estudo e a produção de quadros teóricos de referência que estaria na origem da explicação da realidade. Descrever restringe-se a constatar o que já existe. Explicar corresponde a desvendar por que existe. Outros mais acreditam que pesquisar inclui teoria e prática. Porque compreender a realidade e nela intervir formam um todo só, tornando-se vício oportunista ficar apenas na constatação descritiva ou apenas na especulação teórica.”
-    \lipsum[5] \cite{PESQUISA:DEMO}.
-    \end{citacao}
+% Informações adicionais sobre o de tabelas no {\LaTeX} podem ser obtidas em  \url{https://en.wikibooks.org/wiki/LaTeX/Tables}.
+
+% Antes de utilizar \index{longtable}\textbf{longtable} procure reorganizar o seu layout ou quebrar manualmente em múltiplos quadros / tabelas, pois isso ainda facilita a compreensão pelo leitor.
+
+% % https://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf
+
+% O \autoref{quadro_exemplo} é um exemplo de dados tabulares gerados em \LaTeX.
+
+% \begin{quadro}[htb]
+% \caption{\label{quadro_exemplo}Exemplo de quadro}
+% \begin{tabular}{|c|c|c|c|}
+% 	\hline
+% 	\textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} & \textbf{Altura} \\ \hline
+% 	Marcos & 26    & 68   & 178    \\ \hline
+% 	Ivone  & 22    & 57   & 162    \\ \hline
+% 	...    & ...   & ...  & ...    \\ \hline
+% 	Sueli  & 40    & 65   & 153    \\ \hline
+% \end{tabular}
+% \fonte{Autor.}
+% \end{quadro}
+
+% Já a \autoref{tab-exemplo} foi criada conforme o padrão \citeonline{tabular-ibge} requerido pelas normas da ABNT para documentos técnicos e acadêmicos. Observe que não existem bordas laterais e nem linhas separadoras em uma Tabela e as colunas numéricas tem alinhamento à direita. 
+
+% \begin{table}[htb]
+% \centering
+% \caption{Métricas de desenvolvimento}
+% \label{tab-exemplo}
+% \begin{tabular}{p{2.6cm}rrr}
+%     \hline
+%     \textbf{Item} & \textbf{Janeiro} & \textbf{Fevereiro} & \textbf{Março} \\
+%     \hline
+%     \hline
+%     Classes & 2  & 10 & 20  \\
+%     Linhas & 100  & 250 & 543 \\
+%     \hline
+% \end{tabular}
+% \fonte{Os autores.}
+% \end{table}
+
+% Para facilitar a criação de tabelas e quadros existem algumas ferramentas como o Tables Generator \url{http://www.tablesgenerator.com/latex_tables} que permite a criação de forma visual gerando o código \LaTeX\ correspondente. E o site \url{https://www.latex-tables.com/} permite converter planilhas em código \LaTeX.
+
+% \subsection{Assunto 3}
+% \lipsum[1]
+% \subsection{Assunto X}
+% \lipsum[1]
+
+
+% \section{Métodos de Pesquisa OU Materiais e métodos}
+
+% Segundo \citeonline{PESQUISA:DEMO}, metodologia significa, “na origem do termo, estudo dos caminhos, dos instrumentos usados para se fazer ciência”.
+
+% Completando a linha de raciocínio, o autor acrescenta:
+
+%     \begin{citacao}
+%     “Alguns entendem por pesquisa o trabalho de coletar dados, sistematizá-los e, a partir daí fazer uma descrição da real-dade. Outros, fixam-se no patamar teórico e entendem por pesquisa o estudo e a produção de quadros teóricos de referência que estaria na origem da explicação da realidade. Descrever restringe-se a constatar o que já existe. Explicar corresponde a desvendar por que existe. Outros mais acreditam que pesquisar inclui teoria e prática. Porque compreender a realidade e nela intervir formam um todo só, tornando-se vício oportunista ficar apenas na constatação descritiva ou apenas na especulação teórica.”
+%     \lipsum[5] \cite{PESQUISA:DEMO}.
+%     \end{citacao}
 
 
 
-As seções a seguir são sugestões do que pode estar na metodologia. Conversem com o(s) professor(es) em busca de ajuda para definir quais as seções mais adequadas para cada trabalho.
+% As seções a seguir são sugestões do que pode estar na metodologia. Conversem com o(s) professor(es) em busca de ajuda para definir quais as seções mais adequadas para cada trabalho.
 
-\subsection{Tipo de Pesquisa}
-\lipsum[1]
+% \subsection{Tipo de Pesquisa}
+% \lipsum[1]
 
-\subsection{Plano Amostral (se Pesquisa Quantitativa)}
-\lipsum[1]
+% \subsection{Plano Amostral (se Pesquisa Quantitativa)}
+% \lipsum[1]
 
-\subsection{Instrumento de Pesquisa e Escalas Utilizadas (Escalas se Pesquisa Quantitativa)}
-\lipsum[1]
+% \subsection{Instrumento de Pesquisa e Escalas Utilizadas (Escalas se Pesquisa Quantitativa)}
+% \lipsum[1]
 
-\subsection{Coleta de Dados}
-\lipsum[1]
+% \subsection{Coleta de Dados}
+% \lipsum[1]
 
-\subsection{Análise de Dados}
-\lipsum[1]
+% \subsection{Análise de Dados}
+% \lipsum[1]
 
-\subsection{Materiais}
-Para desenvolver uma aplicação web, faz-se necessário o uso de diversos materiais, os quais vão desde uma linguagem de programação específica até um navegador qualquer, dessa forma, serão listadas a seguir todas as ferramentas que serão utilizadas na elaboração do projeto.
+% \subsection{Materiais}
+% Para desenvolver uma aplicação web, faz-se necessário o uso de diversos materiais, os quais vão desde uma linguagem de programação específica até um navegador qualquer, dessa forma, serão listadas a seguir todas as ferramentas que serão utilizadas na elaboração do projeto.
 	
- \subsection{Métodos}
-Os métodos, modo como aplicamos as ferramentas no desenvolvimento, deixa claro como será feito todo o processo de criação do sistema.
+%  \subsection{Métodos}
+% Os métodos, modo como aplicamos as ferramentas no desenvolvimento, deixa claro como será feito todo o processo de criação do sistema.
 
-\subsection{Embasamento Inicial}
-\lipsum[1]
+% \subsection{Embasamento Inicial}
+% \lipsum[1]
 
-\subsection{Desenvolvimento do Software}
-\lipsum[1]
+% \subsection{Desenvolvimento do Software}
+% \lipsum[1]
 
-\subsection{Metodologias de Desenvolvimento}
-\lipsum[1]
+% \subsection{Metodologias de Desenvolvimento}
+% \lipsum[1]
 
-\section{Desenvolvimento}
+% \section{Desenvolvimento}
 
-\subsection{Equipe}
-\lipsum[1]
+% \subsection{Equipe}
+% \lipsum[1]
 
-\subsection{Requisitos}
-\lipsum[1]
+% \subsection{Requisitos}
+% \lipsum[1]
 
-\subsection{Modelagem}
-\lipsum[1]
+% \subsection{Modelagem}
+% \lipsum[1]
 
-\subsection{Prototipagem}
-\lipsum[1]
+% \subsection{Prototipagem}
+% \lipsum[1]
 
-\section{POC}
+% \section{POC}
 
-A Prova de Conceito (\textit{Proof of Concept} (PoC)) que deve demonstrar a aderência das tecnologias escolhidas com a aplicação que deve ser desenvolvida. Essa prova de conceito deve demonstrar a comunicação desde o usuário até a base de dados e utilizar de forma simples as tecnologias escolhidas para demonstrar que
-elas funcionam para o objetivo desejado.
+% A Prova de Conceito (\textit{Proof of Concept} (PoC)) que deve demonstrar a aderência das tecnologias escolhidas com a aplicação que deve ser desenvolvida. Essa prova de conceito deve demonstrar a comunicação desde o usuário até a base de dados e utilizar de forma simples as tecnologias escolhidas para demonstrar que
+% elas funcionam para o objetivo desejado.
 
-\section{MVP}
+% \section{MVP}
 
-O termo MVP foi popularizado por  \citeonline{ries2011lean}, onde ele descreve o conceito como segue:
+% O termo MVP foi popularizado por  \citeonline{ries2011lean}, onde ele descreve o conceito como segue:
 
-"O MVP é o menor conjunto de recursos que permite que o empreendedor comece o processo de aprendizado com o mínimo de esforço e o máximo de aprendizado validado sobre os clientes."
+% "O MVP é o menor conjunto de recursos que permite que o empreendedor comece o processo de aprendizado com o mínimo de esforço e o máximo de aprendizado validado sobre os clientes."
 
-Outro autor importante na área, \citeonline{blank2013startup}, define o MVP como:
+% Outro autor importante na área, \citeonline{blank2013startup}, define o MVP como:
 
-"Uma ferramenta para testar hipóteses de negócios e iniciar o aprendizado, coletando o máximo de informações validadas sobre os clientes com o menor esforço possível."
-
-
-% ---
-% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
-% ---
-\bookmarksetup{startatroot}% 
-% ---
-
-% ---
-% Conclusão
-% ---
-\section{Considerações finais}
+% "Uma ferramenta para testar hipóteses de negócios e iniciar o aprendizado, coletando o máximo de informações validadas sobre os clientes com o menor esforço possível."
 
 
-De acordo com \citeonline{severino2016metodologia}, na seção de considerações finais o autor tem a oportunidade de fazer uma síntese dos principais pontos abordados e apresentar suas considerações finais sobre o assunto. Embora não haja uma estrutura fixa, existem algumas diretrizes comuns para escrever essa seção.
+% % ---
+% % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% % ---
+% \bookmarksetup{startatroot}% 
+% % ---
 
-A seguir, algumas orientações gerais, para complementar a explicação:
+% % ---
+% % Conclusão
+% % ---
+% \section{Considerações finais}
 
-1. Recapitule os principais pontos: Na seção de considerações finais, você pode revisitar os principais pontos discutidos ao longo do trabalho e resumir os resultados obtidos. É uma oportunidade para destacar a relevância do estudo e como ele contribui para o conhecimento existente.
 
-2. Discuta as implicações dos resultados: Nessa seção, você pode discutir as implicações práticas e teóricas dos resultados do seu trabalho. 
+% De acordo com \citeonline{severino2016metodologia}, na seção de considerações finais o autor tem a oportunidade de fazer uma síntese dos principais pontos abordados e apresentar suas considerações finais sobre o assunto. Embora não haja uma estrutura fixa, existem algumas diretrizes comuns para escrever essa seção.
 
-3. Faça uma reflexão crítica: Use a seção de considerações finais para fazer uma reflexão crítica sobre as limitações do estudo e possíveis viéses. Discuta as dificuldades encontradas, bem como eventuais lacunas de conhecimento que podem ser exploradas por estudos futuros.
+% A seguir, algumas orientações gerais, para complementar a explicação:
 
-4. Encerre de forma concisa e impactante: Finalize a seção de considerações finais com uma frase ou parágrafo que resuma as principais conclusões e destaque a importância do estudo. É uma oportunidade para deixar uma impressão duradoura nos leitores.
+% 1. Recapitule os principais pontos: Na seção de considerações finais, você pode revisitar os principais pontos discutidos ao longo do trabalho e resumir os resultados obtidos. É uma oportunidade para destacar a relevância do estudo e como ele contribui para o conhecimento existente.
 
-Além do exposto acima, colocamos aqui uma outra possibilidade de estrutura para o documento:
+% 2. Discuta as implicações dos resultados: Nessa seção, você pode discutir as implicações práticas e teóricas dos resultados do seu trabalho. 
 
-\begin{enumerate}
-\item Introdução
-1.1. Objetivo
-\item Concepção Inicial
-\item Trabalhos Correlatos
-    \begin{enumerate}
-        \item Trabalho 1
-        \item Trabalho 2
-        \item Trabalho 3
-        \item Trabalho X
-    \end{enumerate}
-\item Referencial Teórico
-\item Materiais e métodos
-\item Modelagem do Sistema
-    \begin{enumerate}
-        \item Diagrama de Casos de Uso
-        \item Diagrama de Tabelas Relacionais
-        \item Diagrama Entidade-Relacionamento
-    \end{enumerate}
-\item Funcionalidades
-\item Considerações Finais
-\end{enumerate}
-Referências
+% 3. Faça uma reflexão crítica: Use a seção de considerações finais para fazer uma reflexão crítica sobre as limitações do estudo e possíveis viéses. Discuta as dificuldades encontradas, bem como eventuais lacunas de conhecimento que podem ser exploradas por estudos futuros.
+
+% 4. Encerre de forma concisa e impactante: Finalize a seção de considerações finais com uma frase ou parágrafo que resuma as principais conclusões e destaque a importância do estudo. É uma oportunidade para deixar uma impressão duradoura nos leitores.
+
+% Além do exposto acima, colocamos aqui uma outra possibilidade de estrutura para o documento:
+
+% \begin{enumerate}
+% \item Introdução
+% 1.1. Objetivo
+% \item Concepção Inicial
+% \item Trabalhos Correlatos
+%     \begin{enumerate}
+%         \item Trabalho 1
+%         \item Trabalho 2
+%         \item Trabalho 3
+%         \item Trabalho X
+%     \end{enumerate}
+% \item Referencial Teórico
+% \item Materiais e métodos
+% \item Modelagem do Sistema
+%     \begin{enumerate}
+%         \item Diagrama de Casos de Uso
+%         \item Diagrama de Tabelas Relacionais
+%         \item Diagrama Entidade-Relacionamento
+%     \end{enumerate}
+% \item Funcionalidades
+% \item Considerações Finais
+% \end{enumerate}
+% Referências
 
 
 
