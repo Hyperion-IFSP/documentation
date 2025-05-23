@@ -17,7 +17,7 @@ jobs:
           path: main.pdf
       - name: Fazer commit do arquivo ao repositório
         env:
-            ACCESS_TOKEN: '${{ secrets.ACCESS_TOKEN }}'
+            ACCESS_TOKEN: '${{ secrets.REPO_DESCRIPTION_TOKEN }}'
         run: |
               git config --global user.email "freitax.li@gmail.com"
               git config --global user.name "Fernando Freitas"
