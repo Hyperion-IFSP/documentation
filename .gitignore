@@ -308,4 +308,4 @@ TSWLatexianTemp*
 #*Notes.bib
 
 # PDF gerado automaticamente
-*.pdf
+# *.pdf
