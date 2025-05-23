@@ -101,7 +101,13 @@
 
 \title{Documento de Arquitetura de Software de \nomeprojeto}
 
-\author{Arthur Augusto Lessa Ferreira\inst{1}, Fernando Freitas de Lira\inst{1}, Isabella Pantolfo Melo\inst{1},\\ Henriquy Dias Terto Alves\inst{1}, Lucas da Conceição Silva Moura\inst{1},\\ Mateus Armando Carrara de Mendonça\inst{1} }
+\author{
+Arthur Augusto Lessa Ferreira\inst{1}\thanks{\url{arthur.lessa@aluno.ifsp.edu.br}}, 
+Fernando Freitas de Lira\inst{1}\thanks{\url{freitas.lira@aluno.ifsp.edu.br}},
+\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{pantolfo.melo@aluno.ifsp.edu.br}}, 
+Henriquy Dias Terto Alves\inst{1}\thanks{\url{henriquy.dias@aluno.ifsp.edu.br}},
+\\ Lucas da Conceição Silva Moura\inst{1}\thanks{\url{conceicao.moura@aluno.ifsp.edu.br}},
+\\ Mateus Armando Carrara de Mendonça\inst{1}\thanks{\url{mateus.carrara@aluno.ifsp.edu.br} }}
 
 
 \address{
@@ -195,19 +201,11 @@
 % titulo em outro idioma (opcional)
 
 \begin{abstract}
-  The paper describes the current architecture of the software being refered as
-  ``\nomeprojeto``, its main focus is to help pacients with a wide variety of
-  medicine to remember their intake date and to monitor their use/stock.
-  The content speaks of its concept and application, furthermore its
-  data modelling and tools used.
+    This document describes the current architecture of the software designated as ``\nomeprojeto``, which aims to help people maintain their medication supply; and for caregivers maintain medication supplies for all their dependents. In addition, it will offer a scheduling service so that the user can track appointments and blood glucose and blood pressure levels. The content of this document discusses its concept and application, in addition to the data modeling and tools used.
 \end{abstract}
      
 \begin{resumo1} 
-  Este documento descreve a arquitetura vigente do software designado como
-  ``\nomeprojeto``, ele visa auxiliar pacientes com uma ampla gama de medicamentos
-  a lembrar de seus horários de consumo e a monitorar o uso/estoque deles.
-  O conteúdo presente discorre sobre seu conceito e aplicação, além da
-  modelagem de dados e ferramentas utilizadas.
+  Este documento descreve a arquitetura vigente do software designado como ``\nomeprojeto``, ele visa auxiliar pessoas a manter seu estoque de medicamentos, e para cuidadores manter estoque de medicamentos de todos seus dependentes. Além disso, oferecerá um serviço de agenda para que o usuário acompanhe consultas e taxas de glicemia e pressão. O conteúdo deste documento discorre sobre seu conceito e aplicação, além da modelagem de dados e ferramentas utilizadas.
 \end{resumo1}
 
 
@@ -231,9 +229,9 @@
 % ----------------------------------------------------------
 \section{Introdução}
 
-A saúde dos dias de hoje é em sua maioria amparada, e muitas vezes serve de motivação para a tecnologia mais atual. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos os grupos de médicos e de pacientes.
+A saúde dos dias de hoje é em sua maioria amparada, e muitas vezes serve de motivação para serviços tecnológicos como aplicações \textit{mobile}, \textit{sites} de compra de remédio, entre outros. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos os grupos de médicos e de pacientes.
 
-Médicos possuem sistemas de bulário eletrônico que são organizados por filtros por tratamento ou sintomas, de forma que eles tenham mais facilidade ao receitar um medicamento para o paciente; já o paciente recebe sua receita em seu celular por SMS, por e-mail ou até \textit{Whatsapp}.
+Médicos possuem sistemas de bulário eletrônico que são organizados por filtros por tratamento ou sintomas, de forma que eles tenham mais facilidade ao receitar um medicamento para o paciente; já o paciente recebe sua receita em seu celular por SMS, por e-mail ou até no Whatsapp.
 
 Um grupo muito beneficiado por essas tecnologias é o de idosos com mais de 60 anos. Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras prejudicadas, idosos necessitam de aplicativos com interfaces simples e funcionalidades diretas para realizar tarefas do dia a dia ou até dentro do seu celular.
 
@@ -245,33 +243,47 @@ Segundo a pesquisa de \citeonline{mariacristina2008}, idosos relatam dificuldade
 “A revisão bibliográfica de Silva, Schimidt e Silva (18) relata ainda que 40\% a 75\% dos idosos não tomam seus medicamentos em horários e quantidades prescritas.” \cite{clarisse2016}
 \end{citacao}
 
-O uso de aplicações para o auxílio geral de seus tratamentos é algo vital para estes grupos. É, também, uma ferramenta útil para pacientes não idosos portadores de doenças crônicas como doenças do coração, diabetes, hipertensão, entre outros. Segundo \citeonline{clarisse2016}, a longo prazo, poucos métodos de memorização própria se mantêm efetivos, e muitas vezes são esquecidos.
+O uso de aplicações para o auxílio geral de seus tratamentos é algo vital para o grupo da terceira idade. É, também, uma ferramenta útil para pacientes não idosos portadores de doenças crônicas. Segundo \citeonline{clarisse2016}, a longo prazo, poucos métodos de memorização própria se mantêm efetivos, e muitas vezes são esquecidos.
 
-Em outro caso, a maior parte da população brasileira não acompanha a carteirinha de vacinação própria ou a de seus filhos. Estudos do IBOPE Inteligência, a pedido da Pfizer, mostram que menos de 50\% da população verificam os programas de vacina em sua região e mantém sua vacinação em dia \footnote{\url{https://www.pfizer.com.br/noticias/releases/metade-dos-brasileiros-nao-observa-se-carteirinha-de-vacinacao-esta-em-diametade-dos-brasileiros-nao-observa-se-carteirinha-de-vacinacao-esta-em-dia}}.
+Outro caso relevante é o de idosos que não possuem autonomia própria e são zelados por cuidadores contratados pela família. Para \citeonline{aline2012sobrecarga}, os profissionais - que são em grande parte mulheres adultas - sofrem de doenças como hipertensão e estresse devido a sua profissão, e ainda dizem que suas tarefas são desgastantes e consomem muito de seu dia:
 
-O estudo relata também que cerca de 92\% da população pretende se vacinar no ano posterior ao da data da pesquisa, com a finalidade de se prevenir de doenças. Demonstra-se que há sim um interesse da população em prevenção, mas não possuem os métodos e informações necessárias para que a carteira vacinal esteja em dia.
+\begin{citacao}
+"Pode-se verificar relação entre características dos cuidadores com a sobrecarga, em que os cuidadores, na maioria, familiares do sexo feminino, encontram-se na faixa etária adulta, fase em que a mulher tem vários papéis sociais: mãe, esposa, dona de casa, dentre outros. Muitas vezes, tem outras atribuições sociais, como o trabalho fora do lar, além de assumir o cuidado de seus pais, já idosos." \cite{aline2012sobrecarga} 
+\end{citacao}
 
-Segundo \citeonline{lucas-cnn2023}, é uma questão de dificuldade de acesso a informações que dizem respeito à carteirinha. As mães de filhos pequenos relatam não conhecer os horários de funcionamento de locais de vacinação, ou até mesmo não saberem onde estão localizados. Além do desconhecimento, há medo e desconfiança de vacinas, muitas vezes motivados por \textit{fake news} ou familiares e amigos.
+Em vista de todas as oportunidades de mercado para estas soluções, ainda não há uma plataforma que seja clara e sucinta em sua execução, segundo \citeonline{janaina2023}. Um aplicativo que serve de auxílio para o cuidador de idosos com demência, o Sistema Móvel de Assistência ao Idoso (SMAI), é descrito como "repetitivo" e necessita de uma ficha técnica extensa para ser utilizado \cite{andre2020}.
 
-O problema que se visa solucionar é, então, a organização do consumo de remédios e outros tratamentos que necessitam de um horário, dosagem, ou planejamento prévio, além de datas de vacinação; ambas fornecidas por meio de lembretes criados pelo usuário. Irá auxiliar na checagem de estoque e o total de unidades disponíveis, que irá alertar a falta do remédio quando este estiver acabando.
-
+O problema central que este projeto visa resolver é, então, a gestão de tratamentos de uma ou mais pessoas. Irá focar na centralização do monitoramento de recursos como estoque de remédios, locais de compra, pesquisa de preços, lembretes para consumo e criação de relatórios de consulta, por meio de uma plataforma simples e direta. Afinal, o trabalho de cuidado é uma das poucas áreas da saúde da qual não se possui uma aplicação assistiva ao profissional.
 
 \subsection{Objetivos}
 
-O objetivo do projeto é criar uma plataforma que auxilie o usuário a manter seu tratamento em dia, seja ele de medicamentos, vacinas ou consultas. O sistema irá permitir que o usuário registre os medicamentos que consome, as vacinas que tomou e as consultas que fez, além de permitir o registro de novos medicamentos e vacinas.
+Para o desenvolvimento do sistema, será adotado como referência os seguintes objetivos:
 
-Dessa forma, pretende-se registrar e alertar sobre os recursos de saúde recorrentes do paciente, a fim de motivá-lo a manter seu tratamento, consumo de medicações ou vacinas de acordo às recomendações médicas de acordo com as necessidades do usuário, contribuindo para sua saúde.
+\subsubsection{Objetivo Geral}
 
-Para isso, procura-se realizar uma pesquisa de mercado de outras aplicações parecidas, afim de criar uma experiência única de usuário; com isso se torna viável o desenvolvimento de um sistema que, com uma interface simples e intuitiva, além de um sistema de lembretes que o auxilie a manter seu tratamento, torne automático uma tarefa crucial para o dia-a-dia.
+Desenvolver uma plataforma que auxilie o usuário a manter um tratamento, seja próprio ou de dependentes. O sistema irá permitir que o usuário registre os medicamentos que consome, as consultas que participou, e a realizar um relatório delas.
+
+O sistema irá alertar sobre o estoque de medicamentos de todos os usuários vinculados a uma conta, fornecendo uma estimativa de tempo de consumo restante e realizando pesquisa de preços de tais medicamentos. Irá fornecer um sistema de preenchimento de dados médicos para que o usuário forneça informações básicas como índices de glicemia e pressão, data de retorno, novas medicações, etc.
+
+\subsubsection{Objetivos Específicos}
+
+\begin{enumerate}
+    \item Conduzir entrevistas com cuidadores registrados e funcionários de casas de repouso. Analisar resultados para direcionar a um desenvolvimento próximo ao usuário final da aplicação.
+    \item Realizar uma pesquisa de mercado de aplicações similares, a fim de criar uma solução única ao usuário voltada ao melhoramento de recursos já existentes e implantação de recomendações destes usuários. 
+    \item Desenvolver um sistema que, com uma interface simples e intuitiva, além de lembretes que auxilie o usuário a manter seu tratamento, automatize uma tarefa banal.
+    \item Aplicar as funcionalidades do sistema de forma empírica em um público-alvo a fim de aprimorar o sistema e torná-lo útil ao usuário final.
+\end{enumerate}
 
 
 \subsection{Justificativa}    
 
-O consumo de um medicamento ou consultas de rotina podem se tornar algo supérfluo na rotina de um paciente que os realiza com frequência, podendo acarretar em um esquecimento de tais compromissos.
+Segundo \citeonline{mariacristina2008}, o consumo de um medicamento ou consultas de rotina podem se tornar algo supérfluo na rotina de um paciente que os realiza com frequência, podendo acarretar em um esquecimento de tais compromissos. 
 
-Com isso em mente, foi realizada uma pesquisa que apontou que 70\% dos participantes da pesquisa utilizam muito pouco de serviços tecnológicos de saúde, e dos que utilizam, relatam não corresponder às suas expectativas. Os resultados da pesquisa também apontaram que 62\% dos usuários têm grandes dificuldades em lembrar de datas, tanto de consultas come de vacinas periódicas, e 81\% relataram terem grandes problemas em lembrar dos horários de tomar seus medicamentos.
+A partir disso, foi realizado uma pesquisa com o público geral, no formato de um formulário online. Foi apontado que 70\% dos participantes utilizam pouco ou muito pouco de serviços tecnológicos de saúde; dos que utilizam, 63\% relatam não corresponder às suas expectativas. Cerca de 62\% dos participantes têm grandes dificuldades em lembrar de datas de consultas, e 81\% relatam problemas no horário de consumo de remédios.
 
-Este documento, portanto, demonstra a necessidade de tal sistema, do qual apelidamos de ``\nomeprojeto``. Busca-se auxiliar os usuários que necessitam de um melhor gerenciamento de seus tratamentos, sejam eles medicamentos, consultas ou até programas de vacinação; para manter sua saúde bem condicionada e supervisionada.
+O \textit{feedback} constante de usuários de sistemas existentes será a base do desenvolvimento, e trará uma solução prática ao público-alvo que aperfeiçoe as aplicações já utilizadas.
+
+Este documento, portanto, demonstra a necessidade de tal sistema. Destinado a usuários que necessitam de um melhor gerenciamento de seus tratamentos, sejam eles medicamentos ou consultas; a fim de manter sua saúde bem condicionada e supervisionada.
 
 \section{Revisão da Literatura (ou Revisão Bibliográfica)}
 
