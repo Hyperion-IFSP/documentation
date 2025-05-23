@@ -17,6 +17,6 @@ jobs:
           path: main.pdf
       - uses: actions/download-artifact@v4
         with:
-          name: my-artifact
+          artifact-ids: ${{ env.id }}
       - name: Display structure of downloaded files
         run: ls -R
