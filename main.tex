@@ -99,15 +99,15 @@
 
 \newcommand\nomeprojeto{MyMed}
 
-\title{Documento de Arquitetura de Software de \nomeprojeto}
+\title{\nomeprojeto}
 
 \author{
-Arthur Augusto Lessa Ferreira\inst{1}\thanks{\url{arthur.lessa@aluno.ifsp.edu.br}}, 
-Fernando Freitas de Lira\inst{1}\thanks{\url{freitas.lira@aluno.ifsp.edu.br}},
-\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{pantolfo.melo@aluno.ifsp.edu.br}}, 
-Henriquy Dias Terto Alves\inst{1}\thanks{\url{henriquy.dias@aluno.ifsp.edu.br}},
-\\ Lucas da Conceição Silva Moura\inst{1}\thanks{\url{conceicao.moura@aluno.ifsp.edu.br}},
-\\ Mateus Armando Carrara de Mendonça\inst{1}\thanks{\url{mateus.carrara@aluno.ifsp.edu.br} }}
+Arthur Augusto Lessa Ferreira\inst{1}\thanks{\url{thurlessaf@gmail.com}}, 
+Fernando Freitas de Lira\inst{1}\thanks{\url{freitaslira18@gmail.com}},
+\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{isabellapantolfo1101@gmail.com}}, 
+Henriquy Dias Terto Alves\inst{1}\thanks{\url{henriquydta@gmail.com}},
+\\ Lucas da Conceição Silva Moura\inst{1}\thanks{\url{pf.lucasmoura@gmail.com}},
+\\ Mateus Armando Carrara de Mendonça\inst{1}\thanks{\url{mateusacdem@gmail.com} }}
 
 
 \address{
@@ -205,7 +205,7 @@ Henriquy Dias Terto Alves\inst{1}\thanks{\url{henriquy.dias@aluno.ifsp.edu.br}},
 \end{abstract}
      
 \begin{resumo1} 
-  Este documento descreve a arquitetura vigente do software designado como ``\nomeprojeto``, ele visa auxiliar pessoas a manter seu estoque de medicamentos, e para cuidadores manter estoque de medicamentos de todos seus dependentes. Além disso, oferecerá um serviço de agenda para que o usuário acompanhe consultas e taxas de glicemia e pressão. O conteúdo deste documento discorre sobre seu conceito e aplicação, além da modelagem de dados e ferramentas utilizadas.
+  Este documento descreve a arquitetura presente do software designado como ``\nomeprojeto``, ele visa auxiliar pessoas a manter seu estoque de medicamentos, e para cuidadores manter estoque de medicamentos de todos seus dependentes. Além disso, oferecerá um serviço de agenda para que o usuário acompanhe consultas e taxas de glicemia e pressão. O conteúdo deste documento discorre sobre seu conceito e aplicação, além da modelagem de dados e ferramentas utilizadas.
 \end{resumo1}
 
 
@@ -229,23 +229,13 @@ Henriquy Dias Terto Alves\inst{1}\thanks{\url{henriquy.dias@aluno.ifsp.edu.br}},
 % ----------------------------------------------------------
 \section{Introdução}
 
-A saúde dos dias de hoje é em sua maioria amparada, e muitas vezes serve de motivação para serviços tecnológicos como aplicações \textit{mobile}, \textit{sites} de compra de remédio, entre outros. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos os grupos de médicos e de pacientes.
+A saúde dos dias de hoje é em sua maioria amparada, e muitas vezes serve de motivação para serviços tecnológicos como aplicações \textit{mobile}, \textit{sites} de compra de medicamento, informativos \textit{online} de programas do governo, entre outros. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos os grupos de médicos e de pacientes \cite{clarisse2016}.
 
-Médicos possuem sistemas de bulário eletrônico que são organizados por filtros por tratamento ou sintomas, de forma que eles tenham mais facilidade ao receitar um medicamento para o paciente; já o paciente recebe sua receita em seu celular por SMS, por e-mail ou até no Whatsapp.
+Um grupo muito beneficiado por essas tecnologias é o da terceira idade (idosos com mais de 60 anos). Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras prejudicadas, idosos necessitam de aplicativos com interfaces simples e funcionalidades diretas para realizar tarefas do dia a dia ou até dentro do seu celular.
 
-Um grupo muito beneficiado por essas tecnologias é o de idosos com mais de 60 anos. Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras prejudicadas, idosos necessitam de aplicativos com interfaces simples e funcionalidades diretas para realizar tarefas do dia a dia ou até dentro do seu celular.
+Aplicativos de assistência ao idoso são exemplos de um mercado promissor e possuem uma gama de usuários que buscam estes serviços. Porém, muitas vezes não possuem autonomia própria e não conseguem usar tais sistemas.
 
-Aplicativos de assistência ao idoso são exemplos de um mercado promissor e de uma gama de usuários que buscam este serviço, como comunicação com um médico especializado,  serviços de ligação de emergência ou para melhor interagir com o celular.
-
-Segundo a pesquisa de \citeonline{mariacristina2008}, idosos relatam dificuldades ao lembrar dos horários de consumo de medicamentos, e muitas vezes não conseguem seguir a prescrição médica. Um assunto sério que deve ser tratado com prioridade, pois o não cumprimento da dosagem correta pode levar a complicações de saúde.
-
-\begin{citacao}
-“A revisão bibliográfica de Silva, Schimidt e Silva (18) relata ainda que 40\% a 75\% dos idosos não tomam seus medicamentos em horários e quantidades prescritas.” \cite{clarisse2016}
-\end{citacao}
-
-O uso de aplicações para o auxílio geral de seus tratamentos é algo vital para o grupo da terceira idade. É, também, uma ferramenta útil para pacientes não idosos portadores de doenças crônicas. Segundo \citeonline{clarisse2016}, a longo prazo, poucos métodos de memorização própria se mantêm efetivos, e muitas vezes são esquecidos.
-
-Outro caso relevante é o de idosos que não possuem autonomia própria e são zelados por cuidadores contratados pela família. Para \citeonline{aline2012sobrecarga}, os profissionais - que são em grande parte mulheres adultas - sofrem de doenças como hipertensão e estresse devido a sua profissão, e ainda dizem que suas tarefas são desgastantes e consomem muito de seu dia:
+Um caso relevante é o de idosos que não possuem autonomia própria e são zelados por cuidadores contratados pela família. Para \citeonline{aline2012sobrecarga}, os profissionais - que são em grande parte mulheres adultas - sofrem de doenças como hipertensão e estresse devido a sua profissão, e ainda dizem que suas tarefas são desgastantes e consomem muito de seu dia:
 
 \begin{citacao}
 "Pode-se verificar relação entre características dos cuidadores com a sobrecarga, em que os cuidadores, na maioria, familiares do sexo feminino, encontram-se na faixa etária adulta, fase em que a mulher tem vários papéis sociais: mãe, esposa, dona de casa, dentre outros. Muitas vezes, tem outras atribuições sociais, como o trabalho fora do lar, além de assumir o cuidado de seus pais, já idosos." \cite{aline2012sobrecarga} 
@@ -257,7 +247,7 @@ O problema central que este projeto visa resolver é, então, a gestão de trata
 
 \subsection{Objetivos}
 
-Para o desenvolvimento do sistema, será adotado como referência os seguintes objetivos:
+Para o desenvolvimento do sistema, será adotado como referência uma diretriz de desenvolvimento que se baseará na comunicação constante com o usuário e controle das informações.
 
 \subsubsection{Objetivo Geral}
 
@@ -266,6 +256,8 @@ Desenvolver uma plataforma que auxilie o usuário a manter um tratamento, seja p
 O sistema irá alertar sobre o estoque de medicamentos de todos os usuários vinculados a uma conta, fornecendo uma estimativa de tempo de consumo restante e realizando pesquisa de preços de tais medicamentos. Irá fornecer um sistema de preenchimento de dados médicos para que o usuário forneça informações básicas como índices de glicemia e pressão, data de retorno, novas medicações, etc.
 
 \subsubsection{Objetivos Específicos}
+
+A fim de alcançar o objetivo geral da proposta apresentada, foram delineados os seguintes objetivos específicos:
 
 \begin{enumerate}
     \item Conduzir entrevistas com cuidadores registrados e funcionários de casas de repouso. Analisar resultados para direcionar a um desenvolvimento próximo ao usuário final da aplicação.
@@ -279,15 +271,30 @@ O sistema irá alertar sobre o estoque de medicamentos de todos os usuários vin
 
 Segundo \citeonline{mariacristina2008}, o consumo de um medicamento ou consultas de rotina podem se tornar algo supérfluo na rotina de um paciente que os realiza com frequência, podendo acarretar em um esquecimento de tais compromissos. 
 
-A partir disso, foi realizado uma pesquisa com o público geral, no formato de um formulário online. Foi apontado que 70\% dos participantes utilizam pouco ou muito pouco de serviços tecnológicos de saúde; dos que utilizam, 63\% relatam não corresponder às suas expectativas. Cerca de 62\% dos participantes têm grandes dificuldades em lembrar de datas de consultas, e 81\% relatam problemas no horário de consumo de remédios.
+A partir disso, foi realizada uma pesquisa com o público geral, no formato de um formulário online. Foi apontado que 70\% dos participantes utilizam pouco ou muito pouco de serviços tecnológicos de saúde; dos que utilizam, 63\% relatam não corresponder às suas expectativas. Cerca de 62\% dos participantes têm grandes dificuldades em lembrar de datas de consultas, e 81\% relatam problemas no horário de consumo de remédios.
 
 O \textit{feedback} constante de usuários de sistemas existentes será a base do desenvolvimento, e trará uma solução prática ao público-alvo que aperfeiçoe as aplicações já utilizadas.
 
 Este documento, portanto, demonstra a necessidade de tal sistema. Destinado a usuários que necessitam de um melhor gerenciamento de seus tratamentos, sejam eles medicamentos ou consultas; a fim de manter sua saúde bem condicionada e supervisionada.
 
-\section{Revisão da Literatura (ou Revisão Bibliográfica)}
+\section{Revisão Bibliográfica}
 
-Especial atenção ao que este capítulo deve conter:
+A revisão bibliográfica será dividida em análise do mercado digital de telemedicina, plataformas de telemedicina para idosos, e por fim a lacuna no mercado de ferramentas para cuidadores de idosos.
+
+\subsection{Mercado Digital de Telemedicina}
+
+\lipsum{5}
+
+\subsection{Plataformas de Telemedicina para Idosos}
+
+\lipsum{5}
+
+\subsection{Lacuna no Mercado de Ferramentas para Cuidadores de Idosos}
+
+\lipsum{5}
+
+\begin{comment}
+	Especial atenção ao que este capítulo deve conter:
     \begin{citacao}
     "Revisão bibliográfica, conforme já comentado, não produz conhecimento novo, mas apenas supre as
     deficiências de conhecimento que o pesquisador tem em uma determinada área. Portanto, ela deve ser muito
@@ -302,7 +309,7 @@ Especial atenção ao que este capítulo deve conter:
     profissão. Porém, ele não deve pensar, como algumas vezes acontece, que essa é a primeira vez que alguém vai
     tentar desenvolver um sistema multiagentes para esse tipo de aplicação."
     \cite{PESQUISA:RAUL}.
-    \end{citacao}
+\end{citacao}
 
 Toda a revisão da literatura deve ser basear primordialmente em livros e artigos científicos ranqueados Qualis CAPES. De forma geral, todo parágrafo deve conter AO MENOS uma citação bibliográfica.
 
@@ -349,18 +356,18 @@ Atenção!!! Para quem está usando o modelo desde antes de 09/08/2024, é preci
 		\put(0,0){\line(5,6){.8333}}
 		\put(0,0){\line(6,1){1}}
 		\put(0,0){\line(6,5){1}}
-		\end{picture}
-	\end{center}
-	\fonte{Modelo Canônico ABNTeX2.}
+	\end{picture}
+\end{center}
+\fonte{Modelo Canônico ABNTeX2.}
 \end{figure}
 
 Procure criar suas imagens e diagramas pensando na possibilidade de utilizar impressão em preto-e-branco ou escala de cinza. Isto é importante, principalmente quando se pretende publicar o trabalho, uma vez que a maioria das publicações são somente em preto-e-branco. Outro benefício é o custo de impressão, normalmente menor para páginas preto-e-branco em relação a páginas coloridas.
 
 \begin{figure}[htb]
-    \centering
-	\caption{\label{fig_logo}Logotipo IFSP}
-	\includegraphics{Figuras/logoIFSP.jpg}
-	\fonte{IFSP}
+\centering
+\caption{\label{fig_logo}Logotipo IFSP}
+\includegraphics{Figuras/logoIFSP.jpg}
+\fonte{IFSP}
 \end{figure}
 
 Lembrem-se que o \LaTeX vai posicionar a figura o mais perto o possível do local onde ela está sendo citada tentando não deixar espaços em branco. Eivtem forçar a posição da figura.
@@ -384,12 +391,12 @@ O \autoref{quadro_exemplo} é um exemplo de dados tabulares gerados em \LaTeX.
 \begin{quadro}[htb]
 \caption{\label{quadro_exemplo}Exemplo de quadro}
 \begin{tabular}{|c|c|c|c|}
-	\hline
-	\textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} & \textbf{Altura} \\ \hline
-	Marcos & 26    & 68   & 178    \\ \hline
-	Ivone  & 22    & 57   & 162    \\ \hline
-	...    & ...   & ...  & ...    \\ \hline
-	Sueli  & 40    & 65   & 153    \\ \hline
+\hline
+\textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} & \textbf{Altura} \\ \hline
+Marcos & 26    & 68   & 178    \\ \hline
+Ivone  & 22    & 57   & 162    \\ \hline
+...    & ...   & ...  & ...    \\ \hline
+Sueli  & 40    & 65   & 153    \\ \hline
 \end{tabular}
 \fonte{Autor.}
 \end{quadro}
@@ -401,13 +408,13 @@ Já a \autoref{tab-exemplo} foi criada conforme o padrão \citeonline{tabular-ib
 \caption{Métricas de desenvolvimento}
 \label{tab-exemplo}
 \begin{tabular}{p{2.6cm}rrr}
-    \hline
-    \textbf{Item} & \textbf{Janeiro} & \textbf{Fevereiro} & \textbf{Março} \\
-    \hline
-    \hline
-    Classes & 2  & 10 & 20  \\
-    Linhas & 100  & 250 & 543 \\
-    \hline
+\hline
+\textbf{Item} & \textbf{Janeiro} & \textbf{Fevereiro} & \textbf{Março} \\
+\hline
+\hline
+Classes & 2  & 10 & 20  \\
+Linhas & 100  & 250 & 543 \\
+\hline
 \end{tabular}
 \fonte{Os autores.}
 \end{table}
@@ -419,6 +426,7 @@ Para facilitar a criação de tabelas e quadros existem algumas ferramentas como
 \subsection{Assunto X}
 \lipsum[1]
 
+\end{comment}
 
 \section{Métodos de Pesquisa OU Materiais e métodos}
 
@@ -572,42 +580,42 @@ Referências
 % ---
 % Inicia os apêndices
 % ---
-\newpage
-\begin{apendicesenv}
+% \newpage
+% \begin{apendicesenv}
 
-% ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% ----------------------------------------------------------
-Apêndices e anexos são materiais complementares ao texto que só devem ser incluídos quando forem imprescindíveis à compreensão deste.
+% % ----------------------------------------------------------
+% \chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+% ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+% % ----------------------------------------------------------
+% Apêndices e anexos são materiais complementares ao texto que só devem ser incluídos quando forem imprescindíveis à compreensão deste.
 
-Apêndices são textos elaborados pelo autor a fim de complementar sua argumentação.
+% Apêndices são textos elaborados pelo autor a fim de complementar sua argumentação.
 
-Os apêndices devem aparecer após as referências, e os anexos, após os apêndices.
+% Os apêndices devem aparecer após as referências, e os anexos, após os apêndices.
 
-\end{apendicesenv}
-% ---
+% \end{apendicesenv}
+% % ---
 
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-\cftinserthook{toc}{AAA}
-% ---
-% Inicia os anexos
-% ---
-%\anexos
-\newpage
-\begin{anexosenv}
+% % ----------------------------------------------------------
+% % Anexos
+% % ----------------------------------------------------------
+% \cftinserthook{toc}{AAA}
+% % ---
+% % Inicia os anexos
+% % ---
+% %\anexos
+% \newpage
+% \begin{anexosenv}
 
-% ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
-parturient montes nascetur ridiculus mus}
-% ---
+% % ---
+% \chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+% parturient montes nascetur ridiculus mus}
+% % ---
 
-Anexos são os documentos não elaborados pelo autor, que servem de fundamentação, comprovação ou ilustração, como mapas, leis, estatutos etc.
+% Anexos são os documentos não elaborados pelo autor, que servem de fundamentação, comprovação ou ilustração, como mapas, leis, estatutos etc.
 
-Os apêndices devem aparecer após as referências, e os anexos, após os apêndices.
+% Os apêndices devem aparecer após as referências, e os anexos, após os apêndices.
 
-\end{anexosenv}
+% \end{anexosenv}
 
 \end{document}
