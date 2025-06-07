@@ -58,6 +58,7 @@
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
+\usepackage{tikz}               % para ticks
 
 % ---
 		
@@ -99,15 +100,17 @@
 
 \newcommand\nomeprojeto{MyMed}
 
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
 \title{\nomeprojeto}
 
 \author{
-Arthur Augusto Lessa Ferreira\inst{1}\thanks{\url{thurlessaf@gmail.com}}, 
-Fernando Freitas de Lira\inst{1}\thanks{\url{freitaslira18@gmail.com}},
-\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{isabellapantolfo1101@gmail.com}}, 
-Henriquy Dias Terto Alves\inst{1}\thanks{\url{henriquydta@gmail.com}},
-\\ Lucas da Conceição Silva Moura\inst{1}\thanks{\url{pf.lucasmoura@gmail.com}},
-\\ Mateus Armando Carrara de Mendonça\inst{1}\thanks{\url{mateusacdem@gmail.com} }}
+Arthur Augusto Lessa Ferreira\inst{1}\thanks{\url{mailto:thurlessaf@gmail.com}}, 
+Fernando Freitas de Lira\inst{1}\thanks{\url{mailto:freitaslira18@gmail.com}},
+\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{mailto:isabellapantolfo1101@gmail.com}}, 
+Henriquy Dias Terto Alves\inst{1}\thanks{\url{mailto:henriquydta@gmail.com}},
+\\ Lucas da Conceição Silva Moura\inst{1}\thanks{\url{mailto:pf.lucasmoura@gmail.com}},
+\\ Mateus Armando Carrara de Mendonça\inst{1}\thanks{\url{mailto:mateusacdem@gmail.com} }}
 
 
 \address{
@@ -277,169 +280,53 @@ O \textit{feedback} constante de usuários de sistemas existentes será a base d
 
 Este documento, portanto, demonstra a necessidade de tal sistema. Destinado a usuários que necessitam de um melhor gerenciamento de seus tratamentos, sejam eles medicamentos ou consultas; a fim de manter sua saúde bem condicionada e supervisionada.
 
-\section{Revisão Bibliográfica}
+\section{Referencial Teórico}
 
-A revisão bibliográfica será dividida em análise do mercado digital de telemedicina, plataformas de telemedicina para idosos, e por fim a lacuna no mercado de ferramentas para cuidadores de idosos.
+A revisão bibliográfica será dividida em análise do mercado de telemedicina e sua recepção, plataformas de telemonitoramento, e por fim a lacuna no mercado de ferramentas para cuidadores de idosos.
 
-\subsection{Mercado Digital de Telemedicina}
+\subsection{Mercado de Telemedicina}
 
-\lipsum{5}
+Para \citeonline{janaina2023}, há um crescente número de profissionais da saúde utilizando tecnologias novas para o gerenciamento de seus tratamentos. Estas tecnologias são categorizadas como de `telessaúde`. Dentre as áreas mais comuns tem-se a teleducação (vídeos de manuais a respeito de ferramentas/recursos do serviço de saúde pública) e a tele-consulta (consultas online que tiveram mais popularidade com a população idosa). O autor ressalta que essas tecnologias ainda não são amplamente utilizadas pelo público geral por fatores como dificuldade de acesso e falta de infraestrutura; mas demonstra que o número de pessoas desse grupo diminui a cada ano.
 
-\subsection{Plataformas de Telemedicina para Idosos}
+A telemedicina não é destinada à substituição do médico, mas sim como uma ferramenta assistiva que suavizará processos para ambos os grupos de pacientes e profissionais. É, ainda, 
+uma forma de democratização de serviços de saúde, pois muitas regiões não dispõem de tais serviços de forma prática \cite{Schaefer2023telemedicina}.
 
-\lipsum{5}
+Para idosos, o mercado da tele-consulta é uma alternativa acessível a consultas presenciais, mas não dispensam a ida aos consultórios, segundo \cite{quirino2023percepcao}. A pesquisa ainda diz que pequenas ligações entre pacientes e profissionais facilitaram a resolução de dúvidas a respeito do tratamento, possíveis diagnósticos ou queixas de pacientes.
 
-\subsection{Lacuna no Mercado de Ferramentas para Cuidadores de Idosos}
+\subsection{Plataformas de Telemonitoramento}
 
-\lipsum{5}
+Telemonitoramento, segundo \citeonline{petraroli2018biotelemetria}, é uma subárea da medicina, que permite o monitoramento e gerenciamento de dispositivos e sensores médicos via software para aumentar a eficiência dos processos. Em seu artigo, foi analisado a plataforma de monitoramento geriátrico de doenças crônicas `Virtual Monitor` e seu potencial de investimento no mercado atual da telemedicina. A autora defende que sistemas como o de pesquisa possuem um atrativo comercial elevado no cenário atual somente se têm como foco a inovação de recursos de sustentabilidade e na competitividade. Diz, ainda, que para simplificar e escalar o acompanhamento de idosos, é de extrema necessidade uma solução que envolva cuidado centrado nas pessoas, viabilizando o mercado de cuidado suplementar.
 
-\begin{comment}
-	Especial atenção ao que este capítulo deve conter:
-    \begin{citacao}
-    "Revisão bibliográfica, conforme já comentado, não produz conhecimento novo, mas apenas supre as
-    deficiências de conhecimento que o pesquisador tem em uma determinada área. Portanto, ela deve ser muito
-    bem planejada e conduzida.
-    (...)
-    Quando se faz uma pesquisa em que alguma técnica de computação é aplicada a alguma outra área do
-    conhecimento, é necessário que se faça a revisão bibliográfica sobre a técnica em si, sobre a área de aplicação e,
-    mais do que tudo, sobre as aplicações que já foram tentadas com essa técnica ou com técnicas semelhantes na
-    mesma área ou em áreas equivalentes. Exemplificando, um aluno pretende desenvolver um sistema
-    multiagentes para auxiliar controladores de voo. Esse aluno deve conhecer profundamente os sistemas
-    multiagentes e deverá conhecer também os problemas que os controladores de voo enfrentam para exercer sua
-    profissão. Porém, ele não deve pensar, como algumas vezes acontece, que essa é a primeira vez que alguém vai
-    tentar desenvolver um sistema multiagentes para esse tipo de aplicação."
-    \cite{PESQUISA:RAUL}.
-\end{citacao}
+Com a pesquisa de \citeonline{clarisse2016}, é possível notar que aplicativos \textit{mobile} de gerenciamento de medicamentos facilitam à adesão ao tratamento, além da possibilidade de um cuidador programar os horários de forma correta. Para \citeonline{Santos2024Idosos}, plataformas como estas disponibilizam aos profissionais ferramentas de orientação e resolução de problemas. Permitem também que tomem um conhecimento maior das condições do paciente.
 
-Toda a revisão da literatura deve ser basear primordialmente em livros e artigos científicos ranqueados Qualis CAPES. De forma geral, todo parágrafo deve conter AO MENOS uma citação bibliográfica.
+\subsection{Más Condições de Trabalho de Cuidadores de Idosos}
 
-% ---
-\subsection{Assunto 1}
+São definidas normas que categorizam idosos não-autônomos em três termos de dependência: grau I, totalmente independentes; grau II, que necessitam de auxílio em até três atividades básicas diárias; grau III, que necessitam auxílio em todas as tarefas de autocuidado. É também posto um limite para cuidadores de idosos: em uma jornada de trabalho de oito horas diárias e cinco dias por semana, o profissional de uma instituição de cuidado pode auxiliar até 20 idosos com grau de dependência I, ou 6 idosos com grau de dependência III \cite{ministeriosaude2021ilpi}.
 
-Atenção!!! Para quem está usando o modelo desde antes de 09/08/2024, é preciso alterar o arquivo sbc-template.sty e comentar as linhas com os seguintes comandos ou muda4r o arquivo para o contido nesse modelo caso não tenha realizado nenhuma alteração:
+Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais. Segundo a pesquisa de \cite{nunes2018sabe}, que inclui um grupo de 359 cuidadores do município de São Paulo - SP, a maioria dos cuidadores era familiar, do sexo feminino, com média de idade de 53,9 anos. Em seguida, foram analisados fatores como a disfunção familiar (incapacidade de uma família cobrir as necessidades básicas de um indivíduo como apoio emocional e financeiro) e o excesso de trabalho durante longas horas contribuem para o estresse do profissional de cuidado, que somam mais de um terço do grupo de pesquisa. São utilizados de exemplos os cuidadores familiares, que mesmo tendo uma grande intimidade com o dependente, ainda sofrem com situações que exigem uma parcela próxima ao total de seu tempo. A autora finaliza com um apelo a instituições públicas, que não fornecem recursos suficientes para a manutenção pessoal de profissionais de cuidado, a fim de um exercício melhor de suas atividades.
 
-\verb|\RequirePackage[bf,sf,footnotesize,indent]{caption2}|
-\verb|\setlength{\captionmargin}{0.8cm}|
-\verb|\renewcommand{\captionfont}{\sffamily\footnotesize\bfseries}|
-\verb|\renewcommand{\captionlabeldelim}{.}|
-
-\index{figuras}Figuras podem ser criadas diretamente em \LaTeX, como o exemplo da  \autoref{fig_circulo}, ou inseridas a partir de arquivos externos como a \autoref{fig_logo}, que é o Logotipo do IFSP.
-
-%Aqui uma figura criada em código.
-\begin{figure}[htb]
-	\caption{\label{fig_circulo}A delimitação do espaço}
-	\begin{center}
-	    \setlength{\unitlength}{5cm}
-		\begin{picture}(1,1)
-		\put(0,0){\line(0,1){1}}
-		\put(0,0){\line(1,0){1}}
-		\put(0,0){\line(1,1){1}}
-		\put(0,0){\line(1,2){.5}}
-		\put(0,0){\line(1,3){.3333}}
-		\put(0,0){\line(1,4){.25}}
-		\put(0,0){\line(1,5){.2}}
-		\put(0,0){\line(1,6){.1667}}
-		\put(0,0){\line(2,1){1}}
-		\put(0,0){\line(2,3){.6667}}
-		\put(0,0){\line(2,5){.4}}
-		\put(0,0){\line(3,1){1}}
-		\put(0,0){\line(3,2){1}}
-		\put(0,0){\line(3,4){.75}}
-		\put(0,0){\line(3,5){.6}}
-		\put(0,0){\line(4,1){1}}
-		\put(0,0){\line(4,3){1}}
-		\put(0,0){\line(4,5){.8}}
-		\put(0,0){\line(5,1){1}}
-		\put(0,0){\line(5,2){1}}
-		\put(0,0){\line(5,3){1}}
-		\put(0,0){\line(5,4){1}}
-		\put(0,0){\line(5,6){.8333}}
-		\put(0,0){\line(6,1){1}}
-		\put(0,0){\line(6,5){1}}
-	\end{picture}
-\end{center}
-\fonte{Modelo Canônico ABNTeX2.}
-\end{figure}
-
-Procure criar suas imagens e diagramas pensando na possibilidade de utilizar impressão em preto-e-branco ou escala de cinza. Isto é importante, principalmente quando se pretende publicar o trabalho, uma vez que a maioria das publicações são somente em preto-e-branco. Outro benefício é o custo de impressão, normalmente menor para páginas preto-e-branco em relação a páginas coloridas.
-
-\begin{figure}[htb]
-\centering
-\caption{\label{fig_logo}Logotipo IFSP}
-\includegraphics{Figuras/logoIFSP.jpg}
-\fonte{IFSP}
-\end{figure}
-
-Lembrem-se que o \LaTeX vai posicionar a figura o mais perto o possível do local onde ela está sendo citada tentando não deixar espaços em branco. Eivtem forçar a posição da figura.
-
-
-\subsection{Assunto 2}
-
-Atenção!!! Para quem está usando o modelo desde antes de 20/08/2024, é preciso
-alterar o arquivo sbc-template.sty e acrescentar as linhas contidas entre as tags marcadas com: "============= COPIAR PARA SEU STY - 19/08/2024 =============".
-
-Quadros e Tabelas são informações tabulares, mas Tabelas tem como objetivo apresentar números. A ‘norma’ 14724 \cite{NBR14724:2011} define a Tabela como sendo uma "forma não discursiva de apresentar informações das quais o dado numérico se destaca como informação central" e que devem seguir padronização do IBGE \cite{NBR14724:2011}. O IBGE padronizou a apresentações de dados tabulares em 1993 \cite{tabular-ibge}.
-
-Informações adicionais sobre o de tabelas no {\LaTeX} podem ser obtidas em  \url{https://en.wikibooks.org/wiki/LaTeX/Tables}.
-
-Antes de utilizar \index{longtable}\textbf{longtable} procure reorganizar o seu layout ou quebrar manualmente em múltiplos quadros / tabelas, pois isso ainda facilita a compreensão pelo leitor.
-
-% https://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf
-
-O \autoref{quadro_exemplo} é um exemplo de dados tabulares gerados em \LaTeX.
-
-\begin{quadro}[htb]
-\caption{\label{quadro_exemplo}Exemplo de quadro}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} & \textbf{Altura} \\ \hline
-Marcos & 26    & 68   & 178    \\ \hline
-Ivone  & 22    & 57   & 162    \\ \hline
-...    & ...   & ...  & ...    \\ \hline
-Sueli  & 40    & 65   & 153    \\ \hline
-\end{tabular}
-\fonte{Autor.}
-\end{quadro}
-
-Já a \autoref{tab-exemplo} foi criada conforme o padrão \citeonline{tabular-ibge} requerido pelas normas da ABNT para documentos técnicos e acadêmicos. Observe que não existem bordas laterais e nem linhas separadoras em uma Tabela e as colunas numéricas tem alinhamento à direita. 
-
-\begin{table}[htb]
-\centering
-\caption{Métricas de desenvolvimento}
-\label{tab-exemplo}
-\begin{tabular}{p{2.6cm}rrr}
-\hline
-\textbf{Item} & \textbf{Janeiro} & \textbf{Fevereiro} & \textbf{Março} \\
-\hline
-\hline
-Classes & 2  & 10 & 20  \\
-Linhas & 100  & 250 & 543 \\
-\hline
-\end{tabular}
-\fonte{Os autores.}
-\end{table}
-
-Para facilitar a criação de tabelas e quadros existem algumas ferramentas como o Tables Generator \url{http://www.tablesgenerator.com/latex_tables} que permite a criação de forma visual gerando o código \LaTeX\ correspondente. E o site \url{https://www.latex-tables.com/} permite converter planilhas em código \LaTeX.
-
-\subsection{Assunto 3}
-\lipsum[1]
-\subsection{Assunto X}
-\lipsum[1]
-
-\end{comment}
+Tarefas repetitivas, que são necessárias para a manutenção da vida e espaço do paciente, como a limpeza, organização, cuidados corporais, alimentação, eliminações, entre outras, contribuem para o aumento da carga horária de trabalho, que em média ultrapassa 12 horas diárias. Cuidadores relatam, também, a falta de ferramentas como uma das causas da sobrecarga proveniente do seu trabalho, e se beneficiariam desses serviços para a diminuição dela \cite{aline2012sobrecarga}.
 
 \section{Métodos de Pesquisa OU Materiais e métodos}
 
 Segundo \citeonline{PESQUISA:DEMO}, metodologia significa, “na origem do termo, estudo dos caminhos, dos instrumentos usados para se fazer ciência”.
 
-Completando a linha de raciocínio, o autor acrescenta:
+O \autoref{quadro_integrantes} discorre a respeito da composição da equipe.
 
-    \begin{citacao}
-    “Alguns entendem por pesquisa o trabalho de coletar dados, sistematizá-los e, a partir daí fazer uma descrição da real-dade. Outros, fixam-se no patamar teórico e entendem por pesquisa o estudo e a produção de quadros teóricos de referência que estaria na origem da explicação da realidade. Descrever restringe-se a constatar o que já existe. Explicar corresponde a desvendar por que existe. Outros mais acreditam que pesquisar inclui teoria e prática. Porque compreender a realidade e nela intervir formam um todo só, tornando-se vício oportunista ficar apenas na constatação descritiva ou apenas na especulação teórica.”
-    \lipsum[5] \cite{PESQUISA:DEMO}.
-    \end{citacao}
-
-
+\begin{quadro}
+    \caption{\label{quadro_integrantes}Integrantes da equipe}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+            Papéis         & Arthur                    & Fernando                  & Henriquy                  & Isabella                  & Lucas                     & Mateus                    \\ \hline
+            Back-end       &                           &                           & \checkmark                &                           & \checkmark                & \checkmark                \\ \hline
+            Front-end      & \checkmark                & \checkmark                &                           & \checkmark                &                           &                           \\ \hline
+            Banco de Dados &                           &                           &                           &                           & \checkmark                &                           \\ \hline
+            Documentação   & \checkmark                & \checkmark                & \checkmark                & \checkmark                & \checkmark                & \checkmark                \\ \hline
+            Design         &                           &                           & \checkmark                & \checkmark                &                           &                           \\ \hline
+            Gestão         &                           &                           & \checkmark                &                           & \checkmark                &                           \\ \hline
+        \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
 
 As seções a seguir são sugestões do que pode estar na metodologia. Conversem com o(s) professor(es) em busca de ajuda para definir quais as seções mais adequadas para cada trabalho.
 
@@ -551,8 +438,8 @@ Além do exposto acima, colocamos aqui uma outra possibilidade de estrutura para
 \item Funcionalidades
 \item Considerações Finais
 \end{enumerate}
-Referências
 
+% \end{comment}
 
 
 % ----------------------------------------------------------
@@ -571,7 +458,7 @@ Referências
 % Há diversas soluções prontas para glossário em LaTeX. 
 % Consulte o manual do abnTeX2 para obter sugestões.
 %
-%\glossary
+% \glossary
 % ----------------------------------------------------------
 % Apêndices
 % ----------------------------------------------------------
