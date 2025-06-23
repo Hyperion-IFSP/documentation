@@ -59,6 +59,8 @@
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{tikz}               % para ticks
+\usepackage{longtable}          % para quebra de tabela por página
+\usepackage{tabularray}         % formatação da coluna e linha da tabela
 
 % ---
 		
@@ -358,6 +360,13 @@ O \autoref{quadro_integrantes} discorre a respeito da composição da equipe.
 
 \subsection{Requisitos}
 
+A \autoref{requisitos_f} detalha os requisitos funcionais do projeto, ou seja suas funcionalidades que interajem diretamente com a informação dada pelo usuário
+
+A \autoref{requisitos_nf} detalha os requisitos não funcionais, funções que existem para que o sistema funcione mas elas jamais chegam a entrar em contato com informações de in/out, apenas com informações de sistema, como tempo de demora para execução de tarefas
+
+A \autoref{regras_negocio} detalha sobre as regras de negócio definidas para controlar o funcionamento geral do sistema, com o que o sistema deve aceitar o deve deixar de aceitar
+
+
 \subsection{Modelagem}
 
 \subsection{Prototipagem}
@@ -427,20 +436,110 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 % ---
 % Inicia os apêndices
 % ---
-% \newpage
-% \begin{apendicesenv}
+\newpage
+\begin{apendicesenv}
 
 % % ----------------------------------------------------------
-% \chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-% ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% % ----------------------------------------------------------
-% Apêndices e anexos são materiais complementares ao texto que só devem ser incluídos quando forem imprescindíveis à compreensão deste.
+\chapter{Requisitos Funcionais}
 
-% Apêndices são textos elaborados pelo autor a fim de complementar sua argumentação.
+\begin{longtblr}[
+  label = requisitos_f,
+  entry = none,
+]{
+  vline{1-4} = {-}{},
+  hline{-} = {1-3}{},
+}
+Código & Categoria    & Descrição                                                                                       &  \\
+RF01   & Cadastro     & {Cadastrar paciente: dados pessoais \\(nome, CPF, data de nascimento, endereço, contato, etc.)} &  \\
+RF02   & Paciente     & {Visualizar perfil do paciente: \\histórico de atendimentos e tratamentos}                      &  \\
+RF03   & Paciente     & Editar e atualizar dados do paciente                                                            &  \\
+RF04   & Cadastro     & {Excluir cadastro de paciente: \\mas mantendo o histórico arquivado}                            &  \\
+RF05   & Consulta     & {Agendar nova consulta: \\paciente, profissional, data, hora e local}                           &  \\
+RF06   & Consulta     & {Listar consultas agendadas:\\~com filtros por data, profissional ou paciente}                  &  \\
+RF07   & Consulta     & {Editar ou cancelar consulta: \\antes da data marcada}                                          &  \\
+RF08   & Atendimento  & {Registrar atendimento: \\diagnóstico, conduta, recomendações, etc}                             &  \\
+RF09   & Notificação  & {Emitir alertas ou notificações:\\~consultas futuras}                                           &  \\
+RF10   & Tratamento   & {Criar plano de tratamento: \\associado a um paciente e diagnóstico}                            &  \\
+RF11   & Tratamento   & {Listar tratamentos em andamento,\\concluídos ou cancelados (tipo kanban)}                      &  \\
+RF12   & Tratamento   & {Registrar evolução do tratamento: \\observações por etapa ou sessão}                           &  \\
+RF13   & Tratamento   & {Anexar prescrições médicas: \\laudos, imagens ou documentos ao tratamento}                     &  \\
+RF14   & Relatório    & {Gerar relatórios de acompanhamento:\\paciente, profissional ou período}                        &  \\
+RF15   & Histórico    & {Visualizar histórico de consultas: \\evolução clínica}                                         &  \\
+RF16   & Exportação   & {Exportar dados: \\PDF, Excel ou outro formato}                                                 &  \\
+RF17   & Autenticação & {Autenticar usuários: \\login e senha}                                                          &  \\
+RF18   & Permissão    & {Gerenciar permissões: \\admin, profissional de saúde, recepcionista, etc}                      &  \\
+RF19   & Log          & {Registrar logs de acesso:\\operações críticas (como edições e exclusões)}                      &  \\
+RF20   & Pesquisa     & {Pesquisar pacientes, consultas e tratamentos:\\múltiplos critérios}                            &  \\
+RF21   & Filtro       & Aplicar filtros e ordenações nas pesquisas                                                      &  
+\end{longtblr}
 
-% Os apêndices devem aparecer após as referências, e os anexos, após os apêndices.
 
-% \end{apendicesenv}
+\chapter{Requisitos Não Funcionais}
+
+\begin{longtblr}[
+  label = requisitos_nf,
+  entry = none,
+]{
+  vline{1-4} = {-}{},
+  hline{-} = {1-3}{},
+}
+Código & Categoria       & Descrição                                                                                                               &  \\
+RNF01  & Segurança       & {Criptografia de dados sensíveis: \\como senhas e informações médicas}                                                  &  \\
+RNF02  & Acesso          & {Controle de acesso baseado em \\perfis de usuário: admin ou cuidador.}                                                 &  \\
+RNF03  & Sessão          & {Validação de sessão com expiração \\automática por inatividade}                                                        &  \\
+RNF04  & Backup          & {Backups regulares e automáticos: \\para recuperação de dados}                                                          &  \\
+RNF05  & Desempenho      & {O sistema deve responder às \\requisições em até 5 segundos \\nas operações}                                           &  \\
+RNF06  & Concorrência    & {Suportar múltiplos acessos simultâneos \\sem perda de desempenho}                                                      &  \\
+RNF07  & Interface       & {Interface intuitiva e acessível para \\usuários não técnicos}                                                          &  \\
+RNF08  & Design          & {Uso de padrões de design \\consistentes e amigáveis}                                                                   &  \\
+RNF09  & Manutenção      & {O código-fonte deve ser modular \\e documentado, facilitando a manutenção}                                             &  \\
+RNF10  & Arquitetura     & Uso de arquitetura escalável                                                                                            &  \\
+RNF11  & Disponibilidade & {O sistema deve estar disponível \\pelo menos 99,5\% do tempo}                                                          &  \\
+RNF12  & Integridade     & {Deve garantir integridade dos dados \\em operações simultâneas}                                                        &  \\
+RNF13  & Recuperação     & {Deve ser capaz de recuperar-se \\de falhas sem perda de dados}                                                         &  \\
+RNF15  & Ambientes       & {Ambientes separados para produção, \\testes e homologação}                                                             &  \\
+RNF16  & Segurança       & {O sistema deve exigir autenticação de usuário\\~para qualquer operação de inserção, \\alteração ou exclusão de dados.} &  
+\end{longtblr}
+
+
+\chapter{Regras de Negócio}
+
+\begin{longtblr}[
+  label = regras_negocio,
+  entry = none,
+]{
+  vline{1-4} = {-}{},
+  hline{-} = {1-3}{},
+}
+Código & Categoria                      & Descrição                                                                                                                               &  \\
+RN01   & Cadastro                       & {Apenas usuários com permissão de cuidador ou \\administrador podem cadastrar dependentes.}                                             &  \\
+RN02   & Cadastro                       & {Cada dependente deve ter um \\CPF único e válido no sistema.}                                                                          &  \\
+RN03   & Cadastro                       & {O sistema deve impedir o cadastro de dependentes \\com dados incompletos obrigatórios \\(ex: nome, CPF, data de nascimento, contato).} &  \\
+RN04   & Cadastro                       & {A exclusão de um dependente não deve arquivar \\todo o histórico, porém não há \\remoção definitiva do banco de dados.}                &  \\
+RN05   & Cadastro                       & {A edição de dados sensíveis (como CPF) \\deve ser registrada em log de auditoria.}                                                     &  \\
+RN06   & Consultas                      & {Consultas só podem ser agendadas \\para dependentes cadastrados no sistema.}                                                           &  \\
+RN07   & Consultas                      & {O sistema deve impedir agendamento\\de duas consultas no mesmo \\horário para o mesmo dependente.}                                     &  \\
+RN08   & Consultas                      & {Consultas só podem ser editadas ou \\canceladas antes da data e hora marcadas.}                                                        &  \\
+RN09   & Logs                           & {A edição ou exclusão de uma consulta\\criada deve ser registrada em log}                                                               &  \\
+RN10   & Tratamentos                    & {Cada tratamento deve estar vinculado a um \\dependente específico e seu diagnóstico.}                                                  &  \\
+RN11   & Tratamentos                    & {A evolução de um tratamento deve ser registrada \\com data, cuidador responsável e observações.}                                       &  \\
+RN12   & Tratamentos                    & {Prescrições médicas devem ser anexadas com\\extensão válida (PDF, JPG, PNG, etc) \\e tamanho máximo pré-definido.}                     &  \\
+RN13   & Tratamentos                    & {Um tratamento só pode ser concluído \\ou cancelado por cuidadores\\com permissão e deve ser registrado em log.}                        &  \\
+RN14   & Autenticação                   & {Todos os usuários devem possuir credenciais\\únicas (login e senha criptografados).}                                                   &  \\
+RN15   & Autenticação                   & {O acesso ao sistema deve ser restrito por perfis: \\administrador/cuidador.}                                                           &  \\
+RN16   & Autenticação                   & {Registros sensíveis só podem\\ser manuseados por perfis autorizados.}                                                                  &  \\
+RN17   & Manuseio e exportação de dados & {Toda ação crítica (edição, exclusão, exportação)\\deve ser registrada com data, \\hora, usuário e tipo de operação.}                   &  \\
+RN18   & Manuseio e exportação de dados & {O sistema deve permitir pesquisas por \\múltiplos critérios combinados nas filtragens.}                                                &  \\
+RN19   & Manuseio e exportação de dados & {Os relatórios devem permitir filtros por \\dependente, período e/ou tratamento.}                                                       &  \\
+RN20   & Interface                      & {Toda ação do sistema deve retornar \\mensagem clara de sucesso ou erro.}                                                               &  \\
+RN21   & Interface                      & {Listagens com mais de 20 itens devem \\utilizar paginação ou lazy loading.}                                                            &  \\
+RN22   & Interface                      & {O sistema deve ser acessível e \\compatível com dispositivos móveis.}                                                                  &  \\
+RN23   & Desenvolvimento e Manutenção   & {O código deve ser modular e seguir \\boas práticas de engenharia de software.}                                                         &  \\
+RN24   & Desenvolvimento e Manutenção   & {Toda funcionalidade deve prever \\testes automatizados (testes unitários).}                                                            &  
+\end{longtblr}
+
+
+\end{apendicesenv}
 % % ---
 
 % % ----------------------------------------------------------
