@@ -5,9 +5,11 @@ on:
   # Roda todo dia às 00h02
   schedule:
     - cron: '2 0 * * *'
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+  # Roda toda vez que o workflow "latex.yml" completa, ou seja, faz deploy do site toda vez que alguém muda o código latex
+  workflow_run:
+    workflows: [Build LaTeX document]
+    types:
+      - completed
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
