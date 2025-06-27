@@ -109,8 +109,8 @@
 \author{
 Arthur Augusto Lessa Ferreira\inst{1}\thanks{\url{mailto:thurlessaf@gmail.com}}, 
 Fernando Freitas de Lira\inst{1}\thanks{\url{mailto:freitaslira18@gmail.com}},
-\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{mailto:isabellapantolfo1101@gmail.com}}, 
 Henriquy Dias Terto Alves\inst{1}\thanks{\url{mailto:henriquydta@gmail.com}},
+\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{mailto:isabellapantolfo1101@gmail.com}}, 
 \\ Lucas da Conceição Silva Moura\inst{1}\thanks{\url{mailto:pf.lucasmoura@gmail.com}},
 \\ Mateus Armando Carrara de Mendonça\inst{1}\thanks{\url{mailto:mateusacdem@gmail.com} }}
 
@@ -315,8 +315,6 @@ Segundo \citeonline{PESQUISA:DEMO}, metodologia significa, “na origem do termo
 
 As seções a seguir são sugestões do que pode estar na metodologia. Conversem com o(s) professor(es) em busca de ajuda para definir quais as seções mais adequadas para cada trabalho.
 
-\subsection{Tipo de Pesquisa}
-
 \subsection{Plano Amostral (se Pesquisa Quantitativa)}
 
 \subsection{Instrumento de Pesquisa e Escalas Utilizadas (Escalas se Pesquisa Quantitativa)}
@@ -326,22 +324,81 @@ As seções a seguir são sugestões do que pode estar na metodologia. Conversem
 \subsection{Análise de Dados}
 
 \subsection{Materiais}
-Para desenvolver uma aplicação web, faz-se necessário o uso de diversos materiais, os quais vão desde uma linguagem de programação específica até um navegador qualquer, dessa forma, serão listadas a seguir todas as ferramentas que serão utilizadas na elaboração do projeto.
+
+Para o desenvolvimento da aplicação web, foram utilizadas diversas ferramentas para que ele seja eficiente e mostre resultados. São eles:
+
+\begin{itemize}
+    \item \textbf{Back-end (Lado Servidor):}
+        \begin{itemize}
+            \item MySQL como Sistema Gerenciador do Banco de Dados;
+            \item Java com SpringBoot, para servir a API;
+        \end{itemize}
+        
+    \item \textbf{Front-end (Lado cliente):}
+        \begin{itemize}
+            \item Angular 19 framework para criação da aplicação web;
+            \item PrimeNG, uma biblioteca de componentes de estilo;
+            \item Auth0 como ferramenta de Single Sign On;
+        \end{itemize}
+
+    \item \textbf{Desenvolvimento}:
+        \begin{itemize}
+            \item VSCode como editor de código;
+        \end{itemize}
+
+    \item \textbf{Versionamento de código: }
+        \begin{itemize}
+            \item Git como linguagem de versionamento;
+            \item Github para hospedagem dos repositórios de front-end e back-end;
+            \item GitKraken para controle de \textit{branchs}
+        \end{itemize}
+        
+    \item \textbf{Controle de entregas e gestão do projeto: }
+        \begin{itemize}
+            \item Jira para acompanhamento de tarefas e gestão de reuniões do projeto;
+        \end{itemize}
+        
+    \item \textbf{Armazenamento de arquivos de entrega:}
+        \begin{itemize}
+            \item Google Drive para armazenamento de arquivos compartilhados de documentos, além da realização dos formulários de pesquisa;
+        \end{itemize}
+
+\end{itemize}
 	
- \subsection{Métodos}
-Os métodos, modo como aplicamos as ferramentas no desenvolvimento, deixa claro como será feito todo o processo de criação do sistema.
+\subsection{Métodos}
 
-\subsection{Embasamento Inicial}
+Em primeira instância, foi desenvolvido o back-end a partir da modelagem proposta, criando o banco de dados em SQL, e hospedando-o na Google Cloud Platform. A interface do front-end com o banco de dados foi desenvolvida com Java e SpringBoot, e hospedada na plataforma Railway.
 
-\subsection{Desenvolvimento do Software}
+Para o desenvolvimento do front-end, utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Vercel.
 
-\subsection{Metodologias de Desenvolvimento}
+Recursos externos foram utilizados para coleta de dados, a API "api-medicamentos-anvisa", hospedada publicamente oferece nomes e informações úteis de todos os medicamentos registrados no Brasil até 2020. Além dela, a API de busca do Google foi utilizada por meio da ferramenta "SerperDev", da qual oferece uma interface simples à pesquisa de locais e produtos farmacêuticos.
 
-\section{Desenvolvimento}
+% \subsection{Embasamento Inicial}
+
+% \subsection{Desenvolvimento do Software}
+
+% \subsection{Metodologias de Desenvolvimento}
 
 \subsection{Equipe}
 
-O \autoref{quadro_integrantes} discorre a respeito da composição da equipe.
+O desenvolvimento do \nomeprojeto\ se deu pela estruturação do projeto em equipe, após isso houve a designação de responsabilidades para cada colaborador. Esta seção diz sobre a organização de forma ampla e a alocação de tarefas.
+
+\subsubsection{Descrição geral}
+
+Todos os integrantes possuem no mínimo duas tarefas principais, mas todos atuam na documentação e idealização do projeto.
+
+\begin{enumerate}
+    \item \textbf{Arthur Augusto Lessa Ferreira}: Responsável pelo desenvolvimento do front-end e sua integração com o banco de dados;
+    \item \textbf{Fernando Freitas de Lira}: atua no desenvolvimento do front-end e sua integração com as API's externas, além da documentação do projeto;
+    \item \textbf{Henriquy Dias Terto Alves}: Responsável pelo design gráfico e conceitual da aplicação, \textit{Product Owner} e gestor da equipe, realiza operações de teste e análise de qualidade para cada segmento da aplicação;
+    \item \textbf{Isabella Pantolfo Melo}: atua no front-end e design gráfico do projeto, conduz as entrevistas com cuidadores e casas de repouso;
+    \item \textbf{Lucas da Conceição Silva Moura}: Responsável pelo desenvolvimento do banco de dados e back-end e gestor da equipe;
+    \item \textbf{Mateus Armando Carrara de Mendonça}: atua no desenvolvimento do back-end e documentação do projeto;
+\end{enumerate}
+
+\subsubsection{Alocação de Tarefas}
+
+O \autoref{quadro_integrantes} discorre a respeito da distribuição de tarefas da equipe. Para cada segmento do projeto foram designados ao mínimo duas pessoas, a fim de obter uma visão mais ampla de desenvolvimento; com exceção da execução de testes, que por sua natureza exige menos atenção. 
 
 \begin{quadro}
     \caption{\label{quadro_integrantes}Integrantes da equipe}
@@ -359,16 +416,36 @@ O \autoref{quadro_integrantes} discorre a respeito da composição da equipe.
     \fonte{Autores.}
 \end{quadro}
 
+\section{Desenvolvimento}
+
+Esta seção percorre todas as etapas do desenvolvimento do projeto, desde sua projeção de requisitos de funcionamento e regras de negócio, modelagem e prototipagem e testes.
+
 \subsection{Requisitos}
 
-A \autoref{requisitos_f} detalha os requisitos funcionais do projeto, ou seja suas funcionalidades que interajem diretamente com a informação dada pelo usuário
+A \autoref{requisitos_f} detalha os requisitos funcionais do projeto, ou seja, os principais recursos que são necessários para a interação direta com dados do usuário.
 
-A \autoref{requisitos_nf} detalha os requisitos não funcionais, funções que existem para que o sistema funcione mas elas jamais chegam a entrar em contato com informações de in/out, apenas com informações de sistema, como tempo de demora para execução de tarefas
+A \autoref{requisitos_nf} detalha os requisitos não funcionais, recursos necessários para que o sistema atinja seu objetivo principal, mas não interagem diretamente com informações dadas pelo usuário.
 
-A \autoref{regras_negocio} detalha sobre as regras de negócio definidas para controlar o funcionamento geral do sistema, com o que o sistema deve aceitar o deve deixar de aceitar
-
+A \autoref{regras_negocio} detalha sobre as regras de negócio definidas para direcionar o funcionamento geral do sistema.
 
 \subsection{Modelagem}
+
+A modelagem de um sistema se dá pela criação de histórias de usuário e a diagramação delas por meio de casos de uso.
+
+\subsubsection{Casos de Uso}
+
+A \autoref{casos_de_uso} demonstra os atores do sistema, sendo eles o usuário final com as funcionalidades de cuidador e o administrador, que é responsável por auxiliar o usuário com operações de criação e edição de dependentes e a utilização geral do aplicativo.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Figuras/frog.jpg}
+    \caption{Diagrama de Casos de Uso}
+    \label{casos_de_uso}
+\end{figure}
+
+\subsubsection{Dicionário de Casos de Uso}
+
+O \autoref{dicionario_casos_uso} apresenta os dicionários de casos de uso, dos quais apresentam com detalhes cada caso de uso, atores que participam e dão uma descrição deles.
 
 \subsection{Prototipagem}
 
@@ -440,7 +517,7 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 \newpage
 \begin{apendicesenv}
 
-% % ----------------------------------------------------------
+% % % % ----------------------------------------------------------
 \chapter{Requisitos Funcionais}
 
 \begin{longtblr}[
@@ -539,9 +616,177 @@ RN23   & Desenvolvimento e Manutenção   & {O código deve ser modular e seguir
 RN24   & Desenvolvimento e Manutenção   & {Toda funcionalidade deve prever \\testes automatizados (testes unitários).}                                                            &  
 \end{longtblr}
 
+\chapter{Dicionário de Casos de Uso\label{dicionario_casos_uso}}
+
+\begin{longtblr}[
+  label = {Manter_Perfil},
+  entry = none,
+  caption = {Manter Perfil},
+]{
+  vline{1} = {-}{},
+  vline{2} = {-}{},
+  vline{3} = {-}{},
+  hline{-} = {1-3}{},
+  width = \textwidth,
+  colspec = {X[2,l] X[8,l]},
+}
+\textbf{Caso de Uso} & \textbf{Manter Perfil} \\
+\textbf{Descrição} & Permite ao cuidador(a) visualizar e editar suas informações pessoais. \\
+\textbf{Ator} & Cuidador(a) \\
+\textbf{Pré-condições} & Estar autenticado (logado) \\
+\textbf{Fluxo Principal} & 1. Cuidador acessa a seção de configuração do perfil \newline 2. Visualiza os dados cadastrados \newline 3. Edita os registros de cuidador \\
+\textbf{Extensões} & N/A \\
+\textbf{Pós-condição} & Dados do perfil atualizado com sucesso \\
+\end{longtblr}
+
+\begin{longtblr}[
+  label = {Manter_Dependentes},
+  entry = none,
+  caption = {Manter Dependentes},
+]{
+  vline{1} = {-}{},
+  vline{2} = {-}{},
+  vline{3} = {-}{},
+  hline{-} = {1-3}{},
+  width = \textwidth,
+  colspec = {X[2,l] X[8,l]},
+}
+\textbf{Caso de Uso} & \textbf{Manter Dependentes} \\
+\textbf{Descrição} & Permite ao cuidador(a) adicionar, visualizar, editar e excluir dados de dependentes. \\
+\textbf{Ator} & Cuidador(a) \\
+\textbf{Pré-condições} & Estar autenticado (logado) \\
+\textbf{Fluxo Principal} & 1. Cuidador acessa a seção de configuração do perfil \newline 2. Visualiza os dados dos dependentes \newline 3. Edita ou remove os dados dos dependentes \\
+\textbf{Extensões} & N/A \\
+\textbf{Pós-condição} & Dados do perfil atualizado com sucesso \\
+\end{longtblr}
+
+\begin{longtblr}[
+  label = {Agendar_Consulta},
+  entry = none,
+  caption = {Agendar Consulta},
+]{
+  vline{1} = {-}{},
+  vline{2} = {-}{},
+  vline{3} = {-}{},
+  hline{-} = {1-3}{},
+  width = \textwidth,
+  colspec = {X[2,l] X[8,l]},
+}
+\textbf{Caso de Uso} & \textbf{Agendar Consulta} \\
+\textbf{Descrição} & Cuidador(a) agendar consultas para os dependentes. \\
+\textbf{Ator} & Cuidador(a) \\
+\textbf{Pré-condições} & Estar autenticado (logado) \\
+\textbf{Fluxo Principal} & 1. Cuidador acessa a funcionalidade de agendamento \newline 2. Selecionar data e horário \newline 3. Adicionar apelido \newline 4. Confirma o agendamento \\
+\textbf{Extensões} & Adicionar ao Google Calendar ou integrar ao calendário do dispositivo utilizado via arquivo .ics\textless\textless extend\textgreater\textgreater \newline Gerar relatório \textless\textless extend\textgreater\textgreater \\
+\textbf{Pós-condição} & Consulta agendada e registrada no sistema \\
+\end{longtblr}
+
+\begin{longtblr}[
+  label = {Gerenciar_Medicacoes},
+  entry = none,
+  caption = {Gerenciar Medicações do Dependente},
+]{
+  vline{1} = {-}{},
+  vline{2} = {-}{},
+  vline{3} = {-}{},
+  hline{-} = {1-3}{},
+  width = \textwidth,
+  colspec = {X[2,l] X[8,l]},
+}
+\textbf{Caso de Uso} & \textbf{Gerenciar medicações do dependente} \\
+\textbf{Descrição} & Permite ao cuidador visualizar, atualizar e acompanhar o uso dos medicamentos de um dependente, incluindo o estoque e registros de consumo. \\
+\textbf{Ator} & Cuidador(a) \\
+\textbf{Pré-condições} & Estar autenticado (logado) \\
+\textbf{Fluxo Principal} & 1. Acessar módulo de medicações \newline 2. Visualizar dados de cada medicamento \newline 3. Registrar consumo \newline 4. Atualizar estoque disponível \\
+\textbf{Extensões} & Calcular índice de adesão ao tratamento \textless\textless extend\textgreater\textgreater \newline Exibir alertas de baixo estoque \textless\textless extend\textgreater\textgreater \newline Redirecionar para busca de preços e disponibilidade \textless\textless extend\textgreater\textgreater \\
+\textbf{Pós-condição} & Dados dos medicamentos atualizados; adesão e estoque recalculados. \\
+\end{longtblr}
+
+\begin{longtblr}[
+  label = {Visualizar_Analises_Medicamentos},
+  entry = none,
+  caption = {Visualizar Análises de Uso de Medicamentos},
+]{
+  vline{1} = {-}{},
+  vline{2} = {-}{},
+  vline{3} = {-}{},
+  hline{-} = {1-3}{},
+  width = \textwidth,
+  colspec = {X[2,l] X[8,l]},
+}
+\textbf{Caso de Uso} & \textbf{Visualizar análises de uso de medicamentos} \\
+\textbf{Descrição} & Exibe gráficos e indicadores sobre o uso dos medicamentos, como frequência, horários, aderência e possíveis anomalias. \\
+\textbf{Ator} & Cuidador(a) \\
+\textbf{Pré-condições} & Estar autenticado (logado) \\
+\textbf{Fluxo Principal} & 1. Acessar seção de análises de medicação \newline 2. Visualizar gráficos com dados de uso \\
+\textbf{Extensões} & N/A \\
+\textbf{Pós-condição} & Gráficos e relatórios exibidos com base nos dados registrados. \\
+\end{longtblr}
+
+\begin{longtblr}[
+  label = {Observar_Analise_Medicacao},
+  entry = none,
+  caption = {Observar Análise de Medicação},
+]{
+  vline{1} = {-}{},
+  vline{2} = {-}{},
+  vline{3} = {-}{},
+  hline{-} = {1-3}{},
+  width = \textwidth,
+  colspec = {X[2,l] X[8,l]},
+}
+\textbf{Caso de Uso} & \textbf{Observar análise de medicação} \\
+\textbf{Descrição} & Permite ao cuidador(a) visualizar e gerenciar as informações associadas aos tratamentos dos dependentes, como informações gerais, categorização e análise por uso e disponibilidade através de gráficos. \\
+\textbf{Ator} & Cuidador(a) \\
+\textbf{Pré-condições} & Estar autenticado (logado) \\
+\textbf{Fluxo Principal} & 1. Cuidador acessa a seção de medicações \newline 2. Visualiza as análises e informações sobre os medicamentos. \\
+\textbf{Extensões} & Permite a geração de relatórios \textless\textless extends\textgreater\textgreater \newline Alterar as informações de gráficos através de filtros \textless\textless extends\textgreater\textgreater \\
+\textbf{Pós-condição} & Dados de um tratamento do dependente visualizados com sucesso \\
+\end{longtblr}
+
+\begin{longtblr}[
+  label = {Controlar_Registros},
+  entry = none,
+  caption = {Controlar Registros},
+]{
+  vline{1} = {-}{},
+  vline{2} = {-}{},
+  vline{3} = {-}{},
+  hline{-} = {1-3}{},
+  width = \textwidth,
+  colspec = {X[2,l] X[8,l]},
+}
+\textbf{Caso de Uso} & \textbf{Controlar Registros} \\
+\textbf{Descrição} & Permite que o administrador realize o controle de usuários e atualizações ao sistema (excluir cuidadores caso haja mau uso, corrigir erros…) \\
+\textbf{Ator} & Administrador \\
+\textbf{Pré-condições} & Acessar com credenciais de administrador \\
+\textbf{Fluxo Principal} & 1. O sistema monitora ações do cuidador. \newline 2. Registra alterações ou eventos automaticamente. \newline 3. Atualiza banco de dados conforme necessário. \\
+\textbf{Extensões} & Editar dados do cuidador \textless\textless extend\textgreater\textgreater \newline Editar dados dos dependente \textless\textless extend\textgreater\textgreater \newline Excluir registros \textless\textless extend\textgreater\textgreater \\
+\textbf{Pós-condição} & Registros atualizados e armazenados corretamente pelo sistema. \\
+\end{longtblr}
+
+\begin{longtblr}[
+  label = {Visualizar_Relatorios},
+  entry = none,
+  caption = {Visualizar Relatórios},
+]{
+  vline{1} = {-}{},
+  vline{2} = {-}{},
+  vline{3} = {-}{},
+  hline{-} = {1-3}{},
+  width = \textwidth,
+  colspec = {X[2,l] X[8,l]},
+}
+\textbf{Caso de Uso} & \textbf{Visualizar Relatórios} \\
+\textbf{Descrição} & Permite ao cuidador(a) gerar relatórios de adesão ao tratamento e resultados de consultas. \\
+\textbf{Ator} & Cuidador(a) \\
+\textbf{Pré-condições} & Estar autenticado (logado) \\
+\textbf{Fluxo Principal} & 1. Acessar a seção de relatórios \newline 2. Selecionar o tipo de relatório \newline 3. Gerar e exportar relatório \\
+\textbf{Extensões} & Aplicar filtros por período \textless\textless extend\textgreater\textgreater \\
+\textbf{Pós-condição} & Relatório gerado e disponível para download \\
+\end{longtblr}
 
 \end{apendicesenv}
-% % ---
 
 % % ----------------------------------------------------------
 % % Anexos
