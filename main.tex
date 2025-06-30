@@ -311,9 +311,9 @@ Tarefas repetitivas, que são necessárias para a manutenção da vida e espaço
 
 \section{Métodos de Pesquisa}
 
-Segundo \citeonline{PESQUISA:DEMO}, metodologia significa, “na origem do termo, estudo dos caminhos, dos instrumentos usados para se fazer ciência”.
+A metodologia do projeto é dividida em duas partes: a pesquisa qualitativa, que visa entender o público no geral e suas necessidades em uma aplicação do tipo; e a pesquisa quantitativa, que visa coletar informações de profissionais da área. 
 
-As seções a seguir são sugestões do que pode estar na metodologia. Conversem com o(s) professor(es) em busca de ajuda para definir quais as seções mais adequadas para cada trabalho.
+As pesquisas foram realizadas inicialmente com o público em geral, e posteriormente houve a execução de entrevistas com cuidadores de casas de repouso.
 
 \subsection{Plano Amostral (se Pesquisa Quantitativa)}
 
@@ -350,7 +350,7 @@ Para o desenvolvimento da aplicação web, foram utilizadas diversas ferramentas
         \begin{itemize}
             \item Git como linguagem de versionamento;
             \item Github para hospedagem dos repositórios de front-end e back-end;
-            \item GitKraken para controle de \textit{branchs}
+            \item GitKraken para controle de \textit{branchs};
         \end{itemize}
         
     \item \textbf{Controle de entregas e gestão do projeto: }
@@ -372,6 +372,8 @@ Em primeira instância, foi desenvolvido o back-end a partir da modelagem propos
 Para o desenvolvimento do front-end, utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Vercel.
 
 Recursos externos foram utilizados para coleta de dados, a API "api-medicamentos-anvisa", hospedada publicamente oferece nomes e informações úteis de todos os medicamentos registrados no Brasil até 2020. Além dela, a API de busca do Google foi utilizada por meio da ferramenta "SerperDev", da qual oferece uma interface simples à pesquisa de locais e produtos farmacêuticos.
+
+\autoref{pesquisas}
 
 % \subsection{Embasamento Inicial}
 
@@ -398,7 +400,7 @@ Todos os integrantes possuem no mínimo duas tarefas principais, mas todos atuam
 
 \subsubsection{Alocação de Tarefas}
 
-O \autoref{quadro_integrantes} discorre a respeito da distribuição de tarefas da equipe. Para cada segmento do projeto foram designados ao mínimo duas pessoas, a fim de obter uma visão mais ampla de desenvolvimento; com exceção da execução de testes, que por sua natureza exige menos atenção. 
+O \autoref{quadro_integrantes}, que discorre a respeito da distribuição de tarefas da equipe. Para cada segmento do projeto foram designados ao mínimo duas pessoas, a fim de obter uma visão mais ampla de desenvolvimento; com exceção da execução de testes, que por sua natureza exige menos atenção. 
 
 \begin{quadro}
     \caption{\label{quadro_integrantes}Integrantes da equipe}
@@ -422,11 +424,13 @@ Esta seção percorre todas as etapas do desenvolvimento do projeto, desde sua p
 
 \subsection{Requisitos}
 
-A \autoref{requisitos_f} detalha os requisitos funcionais do projeto, ou seja, os principais recursos que são necessários para a interação direta com dados do usuário.
+Em anexo, há três documentos que detalham os requisitos do sistema, sendo eles: requisitos funcionais, requisitos não funcionais e regras de negócio. Estes documentos foram criados a partir das entrevistas com clientes e orientadores da matéria. 
 
-A \autoref{requisitos_nf} detalha os requisitos não funcionais, recursos necessários para que o sistema atinja seu objetivo principal, mas não interagem diretamente com informações dadas pelo usuário.
+A \autoref{requisitos_f} detalha os requisitos funcionais do projeto, ou seja, os principais recursos que são necessários para a interação direta com dados do usuário, como a de possuir a função de preencher informações do tratamento do usuário. 
 
-A \autoref{regras_negocio} detalha sobre as regras de negócio definidas para direcionar o funcionamento geral do sistema.
+A \autoref{requisitos_nf} detalha os requisitos não funcionais, recursos necessários para que o sistema atinja seu objetivo principal, mas não interagem diretamente com informações dadas pelo usuário, como a necessidade de que o sistema possua tempo de disponibilidade de pelo menos 99,5\% o tempo todo. 
+
+A \autoref{regras_negocio} detalha sobre as regras de negócio definidas para direcionar o funcionamento geral do sistema, como o registro de ações sensíveis de criação e exclusão de dependentes em log.
 
 \subsection{Modelagem}
 
@@ -434,7 +438,7 @@ A modelagem de um sistema se dá pela criação de histórias de usuário e a di
 
 \subsubsection{Casos de Uso}
 
-A \autoref{casos_de_uso} demonstra os atores do sistema, sendo eles o usuário final com as funcionalidades de cuidador e o administrador, que é responsável por auxiliar o usuário com operações de criação e edição de dependentes e a utilização geral do aplicativo.
+A \autoref{casos_de_uso} apresenta os atores do sistema, sendo eles o usuário final com as funcionalidades de cuidador e o administrador, que é responsável por auxiliar o usuário com operações de criação e edição de dependentes e a utilização geral do aplicativo.
 
 \begin{figure}
     \centering
@@ -539,6 +543,12 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 \chapter{Prototipagem\label{prototipagem}}
 
 \input{prototipagem}
+
+\chapter{Pesquisa com Cuidadores\label{pesquisa_cuidadores}}
+
+\newpage
+
+\input{pesquisas}
 
 \end{apendicesenv}
 
