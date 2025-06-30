@@ -107,12 +107,12 @@
 \title{\nomeprojeto}
 
 \author{
-Arthur Augusto Lessa Ferreira\inst{1}\thanks{\url{mailto:thurlessaf@gmail.com}}, 
-Fernando Freitas de Lira\inst{1}\thanks{\url{mailto:freitaslira18@gmail.com}},
-Henriquy Dias Terto Alves\inst{1}\thanks{\url{mailto:henriquydta@gmail.com}},
-\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{mailto:isabellapantolfo1101@gmail.com}}, 
-\\ Lucas da Conceição Silva Moura\inst{1}\thanks{\url{mailto:pf.lucasmoura@gmail.com}},
-\\ Mateus Armando Carrara de Mendonça\inst{1}\thanks{\url{mailto:mateusacdem@gmail.com} }}
+Arthur Augusto Lessa Ferreira\inst{1}\thanks{thurlessaf@gmail.com}, 
+Fernando Freitas de Lira\inst{1}\thanks{freitaslira18@gmail.com},
+\\ Henriquy Dias Terto Alves\inst{1}\thanks{henriquydta@gmail.com},
+Isabella Pantolfo Melo\inst{1}\thanks{isabellapantolfo1101@gmail.com}, 
+\\ Lucas da Conceição Silva Moura\inst{1}\thanks{pf.lucasmoura@gmail.com},
+Mateus Armando Carrara de Mendonça\inst{1}\thanks{mateusacdem@gmail.com }}
 
 
 \address{
@@ -293,7 +293,7 @@ Para \citeonline{janaina2023}, há um crescente número de profissionais da saú
 A telemedicina não é destinada à substituição do médico, mas sim como uma ferramenta assistiva que suavizará processos para ambos os grupos de pacientes e profissionais. É, ainda, 
 uma forma de democratização de serviços de saúde, pois muitas regiões não dispõem de tais serviços de forma prática \cite{Schaefer2023telemedicina}.
 
-Para idosos, o mercado da tele-consulta é uma alternativa acessível a consultas presenciais, mas não dispensam a ida aos consultórios, segundo \cite{quirino2023percepcao}. A pesquisa ainda diz que pequenas ligações entre pacientes e profissionais facilitaram a resolução de dúvidas a respeito do tratamento, possíveis diagnósticos ou queixas de pacientes.
+Para idosos, o mercado da tele-consulta é uma alternativa acessível a consultas presenciais, mas não dispensam a ida aos consultórios, segundo \citeonline{quirino2023percepcao}. A pesquisa ainda diz que pequenas ligações entre pacientes e profissionais facilitaram a resolução de dúvidas a respeito do tratamento, possíveis diagnósticos ou queixas de pacientes.
 
 \subsection{Plataformas de Telemonitoramento}
 
@@ -305,7 +305,7 @@ Com a pesquisa de \citeonline{clarisse2016}, é possível notar que aplicativos 
 
 São definidas normas que categorizam idosos não-autônomos em três termos de dependência: grau I, totalmente independentes; grau II, que necessitam de auxílio em até três atividades básicas diárias; grau III, que necessitam auxílio em todas as tarefas de autocuidado. É também posto um limite para cuidadores de idosos: em uma jornada de trabalho de oito horas diárias e cinco dias por semana, o profissional de uma instituição de cuidado pode auxiliar até 20 idosos com grau de dependência I, ou 6 idosos com grau de dependência III \cite{ministeriosaude2021ilpi}.
 
-Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais. Segundo a pesquisa de \cite{nunes2018sabe}, que inclui um grupo de 359 cuidadores do município de São Paulo - SP, a maioria dos cuidadores era familiar, do sexo feminino, com média de idade de 53,9 anos. Em seguida, foram analisados fatores como a disfunção familiar (incapacidade de uma família cobrir as necessidades básicas de um indivíduo como apoio emocional e financeiro) e o excesso de trabalho durante longas horas contribuem para o estresse do profissional de cuidado, que somam mais de um terço do grupo de pesquisa. São utilizados de exemplos os cuidadores familiares, que mesmo tendo uma grande intimidade com o dependente, ainda sofrem com situações que exigem uma parcela próxima ao total de seu tempo. A autora finaliza com um apelo a instituições públicas, que não fornecem recursos suficientes para a manutenção pessoal de profissionais de cuidado, a fim de um exercício melhor de suas atividades.
+Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais. Segundo a pesquisa de \citeonline{nunes2018sabe}, que inclui um grupo de 359 cuidadores do município de São Paulo - SP, a maioria dos cuidadores era familiar, do sexo feminino, com média de idade de 53,9 anos. Em seguida, foram analisados fatores como a disfunção familiar (incapacidade de uma família cobrir as necessidades básicas de um indivíduo como apoio emocional e financeiro) e o excesso de trabalho durante longas horas contribuem para o estresse do profissional de cuidado, que somam mais de um terço do grupo de pesquisa. São utilizados de exemplos os cuidadores familiares, que mesmo tendo uma grande intimidade com o dependente, ainda sofrem com situações que exigem uma parcela próxima ao total de seu tempo. A autora finaliza com um apelo a instituições públicas, que não fornecem recursos suficientes para a manutenção pessoal de profissionais de cuidado, a fim de um exercício melhor de suas atividades.
 
 Tarefas repetitivas, que são necessárias para a manutenção da vida e espaço do paciente, como a limpeza, organização, cuidados corporais, alimentação, eliminações, entre outras, contribuem para o aumento da carga horária de trabalho, que em média ultrapassa 12 horas diárias. Cuidadores relatam, também, a falta de ferramentas como uma das causas da sobrecarga proveniente do seu trabalho, e se beneficiariam desses serviços para a diminuição dela \cite{aline2012sobrecarga}.
 
@@ -444,6 +444,7 @@ A \autoref{casos_de_uso} apresenta os atores do sistema, sendo eles o usuário f
     \centering
     \includegraphics[width=0.5\linewidth]{Figuras/frog.jpg}
     \caption{Diagrama de Casos de Uso}
+    \fonte{Autores.}
     \label{casos_de_uso}
 \end{figure}
 
@@ -453,7 +454,15 @@ O \autoref{dicionario_casos_uso} apresenta os dicionários de casos de uso, dos 
 
 \subsection{Prototipagem}
 
-A prototipagem do sistema se deu pela criação inicial do conceito do sistema e fluxos de dados, depois foi feito o design das telas de usuário na plataforma \textit{Figma}. O \autoref{prototipagem} traz as telas do sistema, que são compostas pelas seções "Calendário", Gráfico", "Consulta", "Perfil" e "Tela inicial".
+A prototipagem do sistema se deu pela criação inicial do conceito do sistema e fluxos de dados, depois foi feito o design das telas de usuário na plataforma \textit{Figma}. Em anexo, há as telas feitas na plataforma, o \autoref{prototipagem} traz as telas do sistema, que são compostas pelas seguintes seções:
+\begin{enumerate}
+    \item \textbf{Tela inicial:} o usuário pode visualizar as informações gerais do sistema, como o estoque de medicamentos e os níveis de glicemia e pressão arterial;
+    \item \textbf{Calendário:} o usuário pode visualizar as consultas agendadas e os medicamentos que devem ser consumidos naquele dia;
+    \item \textbf{Gráfico:} o usuário pode visualizar os gráficos de níveis de glicemia e pressão arterial;
+    \item \textbf{Consulta:} o usuário pode visualizar as consultas agendadas, além de poder criar novas consultas e editar as já existentes;
+    \item \textbf{Perfil:} o usuário pode visualizar e editar seu perfil, além de poder adicionar dependentes e editar os já existentes;
+\end{enumerate}
+
 
 \section{POC}
 
