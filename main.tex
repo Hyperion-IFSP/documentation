@@ -311,17 +311,20 @@ Tarefas repetitivas, que são necessárias para a manutenção da vida e espaço
 
 \section{Métodos de Pesquisa}
 
-A metodologia do projeto é dividida em duas partes: a pesquisa qualitativa, que visa entender o público no geral e suas necessidades em uma aplicação do tipo; e a pesquisa quantitativa, que visa coletar informações de profissionais da área. 
+A metodologia do projeto é dividida em duas partes: a pesquisa qualitativa, que visa entender o público no geral e suas necessidades em uma aplicação do tipo; e a pesquisa quantitativa, planejada já com o foco do sistema em cuidadores de idosos em casas de repouso, visa coletar informações de profissionais da área. 
 
-As pesquisas foram realizadas inicialmente com o público em geral, e posteriormente houve a execução de entrevistas com cuidadores de casas de repouso.
 
-\subsection{Plano Amostral (se Pesquisa Quantitativa)}
+\subsection{Instrumento de Pesquisa e Escalas Utilizadas}
 
-\subsection{Instrumento de Pesquisa e Escalas Utilizadas (Escalas se Pesquisa Quantitativa)}
+O principal meio de pesquisa foi a realização de um formulário online para envio às casas de repouso.
 
 \subsection{Coleta de Dados}
 
+As pesquisas foram realizadas inicialmente com o público em geral, e posteriormente houve a execução de entrevistas com cuidadores de casas de repouso.
+
 \subsection{Análise de Dados}
+
+A partir dos dados de ambas as pesquisas, foi constatado a lacuna de uma aplicação que sirva para o público de cuidadores de idosos.
 
 \subsection{Materiais}
 
@@ -373,34 +376,11 @@ Para o desenvolvimento do front-end, utilizou-se Angular 19 para a criação de 
 
 Recursos externos foram utilizados para coleta de dados, a API "api-medicamentos-anvisa", hospedada publicamente oferece nomes e informações úteis de todos os medicamentos registrados no Brasil até 2020. Além dela, a API de busca do Google foi utilizada por meio da ferramenta "SerperDev", da qual oferece uma interface simples à pesquisa de locais e produtos farmacêuticos.
 
-\autoref{pesquisas}
-
-% \subsection{Embasamento Inicial}
-
-% \subsection{Desenvolvimento do Software}
-
-% \subsection{Metodologias de Desenvolvimento}
-
 \subsection{Equipe}
 
 O desenvolvimento do \nomeprojeto\ se deu pela estruturação do projeto em equipe, após isso houve a designação de responsabilidades para cada colaborador. Esta seção diz sobre a organização de forma ampla e a alocação de tarefas.
 
-\subsubsection{Descrição geral}
-
-Todos os integrantes possuem no mínimo duas tarefas principais, mas todos atuam na documentação e idealização do projeto.
-
-\begin{enumerate}
-    \item \textbf{Arthur Augusto Lessa Ferreira}: Responsável pelo desenvolvimento do front-end e sua integração com o banco de dados;
-    \item \textbf{Fernando Freitas de Lira}: atua no desenvolvimento do front-end e sua integração com as API's externas, além da documentação do projeto;
-    \item \textbf{Henriquy Dias Terto Alves}: Responsável pelo design gráfico e conceitual da aplicação, \textit{Product Owner} e gestor da equipe, realiza operações de teste e análise de qualidade para cada segmento da aplicação;
-    \item \textbf{Isabella Pantolfo Melo}: atua no front-end e design gráfico do projeto, conduz as entrevistas com cuidadores e casas de repouso;
-    \item \textbf{Lucas da Conceição Silva Moura}: Responsável pelo desenvolvimento do banco de dados e back-end e gestor da equipe;
-    \item \textbf{Mateus Armando Carrara de Mendonça}: atua no desenvolvimento do back-end e documentação do projeto;
-\end{enumerate}
-
-\subsubsection{Alocação de Tarefas}
-
-O \autoref{quadro_integrantes}, que discorre a respeito da distribuição de tarefas da equipe. Para cada segmento do projeto foram designados ao mínimo duas pessoas, a fim de obter uma visão mais ampla de desenvolvimento; com exceção da execução de testes, que por sua natureza exige menos atenção. 
+O \autoref{quadro_integrantes} discorre a respeito da distribuição de tarefas da equipe. Para cada segmento do projeto foram designados ao mínimo duas pessoas, a fim de obter uma visão mais ampla de desenvolvimento; com exceção da execução de testes, que por sua natureza exige menos atenção. 
 
 \begin{quadro}
     \caption{\label{quadro_integrantes}Integrantes da equipe}
@@ -410,7 +390,7 @@ O \autoref{quadro_integrantes}, que discorre a respeito da distribuição de tar
             Back-end       &                           &                           &                 &                           & \checkmark                & \checkmark                \\ \hline
             Front-end      & \checkmark                & \checkmark                &                           & \checkmark                &                           &                           \\ \hline
             Banco de Dados &                           &                           & \checkmark                &                           & \checkmark                &                           \\ \hline
-	    Testes 	   &			       & 			   & \checkmark		       & 			   & 			       &			   \\ \hline
+	        Testes 	   &			       & 			   & \checkmark		       & 			   & 			       &			   \\ \hline
             Documentação   & \checkmark                & \checkmark                & \checkmark                & \checkmark                & \checkmark                & \checkmark                \\ \hline
             Design         &                           &                           & \checkmark                & \checkmark                &                           &                           \\ \hline
             Gestão         &                           &                           & \checkmark                &                           & \checkmark                &                           \\ \hline
@@ -438,11 +418,11 @@ A modelagem de um sistema se dá pela criação de histórias de usuário e a di
 
 \subsubsection{Casos de Uso}
 
-A \autoref{casos_de_uso} apresenta os atores do sistema, sendo eles o usuário final com as funcionalidades de cuidador e o administrador, que é responsável por auxiliar o usuário com operações de criação e edição de dependentes e a utilização geral do aplicativo.
+A \autoref{casos_de_uso} apresenta os atores do sistema, o usuário final com as funcionalidades de cuidador e o administrador, que é responsável por auxiliar o usuário com operações de criação e edição de dependentes e a utilização geral do aplicativo.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.5\linewidth]{Figuras/frog.jpg}
+    \includegraphics[width=1.0\linewidth]{Figuras/diagrama-casos-uso.jpg}
     \caption{Diagrama de Casos de Uso}
     \fonte{Autores.}
     \label{casos_de_uso}
@@ -452,9 +432,22 @@ A \autoref{casos_de_uso} apresenta os atores do sistema, sendo eles o usuário f
 
 O \autoref{dicionario_casos_uso} apresenta os dicionários de casos de uso, dos quais apresentam com detalhes cada caso de uso, atores que participam e dão uma descrição deles.
 
+\subsubsection{Modelo Entidade Relacionamento}
+
+A \autoref{model_entidade_relacionamento} apresenta o modelo entidade relacionamento do sistema, que é a representação gráfica dos modelos de cada entidade do sistema, como usuário, tratamento, dependente e consulta.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Figuras/bancoDados.jpg}
+    \caption{Imagem do Modelo Entidade Relacionamento}
+    \fonte{Autores.}
+    \label{model_entidade_relacionamento}
+\end{figure}
+
 \subsection{Prototipagem}
 
 A prototipagem do sistema se deu pela criação inicial do conceito do sistema e fluxos de dados, depois foi feito o design das telas de usuário na plataforma \textit{Figma}. Em anexo, há as telas feitas na plataforma, o \autoref{prototipagem} traz as telas do sistema, que são compostas pelas seguintes seções:
+
 \begin{enumerate}
     \item \textbf{Tela inicial:} o usuário pode visualizar as informações gerais do sistema, como o estoque de medicamentos e os níveis de glicemia e pressão arterial;
     \item \textbf{Calendário:} o usuário pode visualizar as consultas agendadas e os medicamentos que devem ser consumidos naquele dia;
@@ -463,11 +456,30 @@ A prototipagem do sistema se deu pela criação inicial do conceito do sistema e
     \item \textbf{Perfil:} o usuário pode visualizar e editar seu perfil, além de poder adicionar dependentes e editar os já existentes;
 \end{enumerate}
 
-
 \section{POC}
 
-A Prova de Conceito (\textit{Proof of Concept} (PoC)) que deve demonstrar a aderência das tecnologias escolhidas com a aplicação que deve ser desenvolvida. Essa prova de conceito deve demonstrar a comunicação desde o usuário até a base de dados e utilizar de forma simples as tecnologias escolhidas para demonstrar que
-elas funcionam para o objetivo desejado.
+A Prova de Conceito (Proof Of Concept) traz as principais funcionalidades do sistema e a verificação da hospedagem dele.
+
+\subsection{Plano de Testes}
+
+O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
+
+\begin{longtblr}[
+  label = plano_testes,
+  entry = {Plano de Testes},
+  caption = {Plano de Testes do Sistema \nomeprojeto},
+  note = {Fonte: Autores.},
+]{
+  vline{1-4} = {-}{},
+  hline{-} = {1-3}{},
+  colspec = {X[2,l]X[3,l]X[3,l]},
+}
+    \textbf{Objeto de Teste} & \textbf{Resultado Esperado}                    & \textbf{Possíveis Divergências} \\
+    Enviar usuário ao banco & Criação de usuário no banco de dados & A conexão com o banco de dados pode falhar \\
+    Enviar dependente ao banco & Criação de dependente no banco de dados & A conexão com o banco de dados pode falhar \\
+    Enviar consulta ao banco & Criação de consulta no banco de dados & A conexão com o banco de dados pode falhar \\
+\end{longtblr}
+\fonte{Autores.}
 
 \section{MVP}
 
