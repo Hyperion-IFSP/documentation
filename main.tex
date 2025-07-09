@@ -59,6 +59,8 @@
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{tikz}               % para ticks
+\usepackage{longtable}          % para quebra de tabela por página
+\usepackage{tabularray}         % formatação da coluna e linha da tabela
 
 % ---
 		
@@ -105,12 +107,12 @@
 \title{\nomeprojeto}
 
 \author{
-Arthur Augusto Lessa Ferreira\inst{1}\thanks{\url{mailto:thurlessaf@gmail.com}}, 
-Fernando Freitas de Lira\inst{1}\thanks{\url{mailto:freitaslira18@gmail.com}},
-\\ Isabella Pantolfo Melo\inst{1}\thanks{\url{mailto:isabellapantolfo1101@gmail.com}}, 
-Henriquy Dias Terto Alves\inst{1}\thanks{\url{mailto:henriquydta@gmail.com}},
-\\ Lucas da Conceição Silva Moura\inst{1}\thanks{\url{mailto:pf.lucasmoura@gmail.com}},
-\\ Mateus Armando Carrara de Mendonça\inst{1}\thanks{\url{mailto:mateusacdem@gmail.com} }}
+Arthur Augusto Lessa Ferreira\inst{1}\thanks{thurlessaf@gmail.com}, 
+Fernando Freitas de Lira\inst{1}\thanks{freitaslira18@gmail.com},
+\\ Henriquy Dias Terto Alves\inst{1}\thanks{henriquydta@gmail.com},
+Isabella Pantolfo Melo\inst{1}\thanks{isabellapantolfo1101@gmail.com}, 
+\\ Lucas da Conceição Silva Moura\inst{1}\thanks{pf.lucasmoura@gmail.com},
+Mateus Armando Carrara de Mendonça\inst{1}\thanks{mateusacdem@gmail.com }}
 
 
 \address{
@@ -291,7 +293,7 @@ Para \citeonline{janaina2023}, há um crescente número de profissionais da saú
 A telemedicina não é destinada à substituição do médico, mas sim como uma ferramenta assistiva que suavizará processos para ambos os grupos de pacientes e profissionais. É, ainda, 
 uma forma de democratização de serviços de saúde, pois muitas regiões não dispõem de tais serviços de forma prática \cite{Schaefer2023telemedicina}.
 
-Para idosos, o mercado da tele-consulta é uma alternativa acessível a consultas presenciais, mas não dispensam a ida aos consultórios, segundo \cite{quirino2023percepcao}. A pesquisa ainda diz que pequenas ligações entre pacientes e profissionais facilitaram a resolução de dúvidas a respeito do tratamento, possíveis diagnósticos ou queixas de pacientes.
+Para idosos, o mercado da tele-consulta é uma alternativa acessível a consultas presenciais, mas não dispensam a ida aos consultórios, segundo \citeonline{quirino2023percepcao}. A pesquisa ainda diz que pequenas ligações entre pacientes e profissionais facilitaram a resolução de dúvidas a respeito do tratamento, possíveis diagnósticos ou queixas de pacientes.
 
 \subsection{Plataformas de Telemonitoramento}
 
@@ -303,52 +305,92 @@ Com a pesquisa de \citeonline{clarisse2016}, é possível notar que aplicativos 
 
 São definidas normas que categorizam idosos não-autônomos em três termos de dependência: grau I, totalmente independentes; grau II, que necessitam de auxílio em até três atividades básicas diárias; grau III, que necessitam auxílio em todas as tarefas de autocuidado. É também posto um limite para cuidadores de idosos: em uma jornada de trabalho de oito horas diárias e cinco dias por semana, o profissional de uma instituição de cuidado pode auxiliar até 20 idosos com grau de dependência I, ou 6 idosos com grau de dependência III \cite{ministeriosaude2021ilpi}.
 
-Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais. Segundo a pesquisa de \cite{nunes2018sabe}, que inclui um grupo de 359 cuidadores do município de São Paulo - SP, a maioria dos cuidadores era familiar, do sexo feminino, com média de idade de 53,9 anos. Em seguida, foram analisados fatores como a disfunção familiar (incapacidade de uma família cobrir as necessidades básicas de um indivíduo como apoio emocional e financeiro) e o excesso de trabalho durante longas horas contribuem para o estresse do profissional de cuidado, que somam mais de um terço do grupo de pesquisa. São utilizados de exemplos os cuidadores familiares, que mesmo tendo uma grande intimidade com o dependente, ainda sofrem com situações que exigem uma parcela próxima ao total de seu tempo. A autora finaliza com um apelo a instituições públicas, que não fornecem recursos suficientes para a manutenção pessoal de profissionais de cuidado, a fim de um exercício melhor de suas atividades.
+Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais. Segundo a pesquisa de \citeonline{nunes2018sabe}, que inclui um grupo de 359 cuidadores do município de São Paulo - SP, a maioria dos cuidadores era familiar, do sexo feminino, com média de idade de 53,9 anos. Em seguida, foram analisados fatores como a disfunção familiar (incapacidade de uma família cobrir as necessidades básicas de um indivíduo como apoio emocional e financeiro) e o excesso de trabalho durante longas horas contribuem para o estresse do profissional de cuidado, que somam mais de um terço do grupo de pesquisa. São utilizados de exemplos os cuidadores familiares, que mesmo tendo uma grande intimidade com o dependente, ainda sofrem com situações que exigem uma parcela próxima ao total de seu tempo. A autora finaliza com um apelo a instituições públicas, que não fornecem recursos suficientes para a manutenção pessoal de profissionais de cuidado, a fim de um exercício melhor de suas atividades.
 
 Tarefas repetitivas, que são necessárias para a manutenção da vida e espaço do paciente, como a limpeza, organização, cuidados corporais, alimentação, eliminações, entre outras, contribuem para o aumento da carga horária de trabalho, que em média ultrapassa 12 horas diárias. Cuidadores relatam, também, a falta de ferramentas como uma das causas da sobrecarga proveniente do seu trabalho, e se beneficiariam desses serviços para a diminuição dela \cite{aline2012sobrecarga}.
 
 \section{Métodos de Pesquisa}
 
-Segundo \citeonline{PESQUISA:DEMO}, metodologia significa, “na origem do termo, estudo dos caminhos, dos instrumentos usados para se fazer ciência”.
+A metodologia do projeto é dividida em duas partes: a pesquisa qualitativa, que visa entender o público no geral e suas necessidades em uma aplicação do tipo; e a pesquisa quantitativa, planejada já com o foco do sistema em cuidadores de idosos em casas de repouso, visa coletar informações de profissionais da área. 
 
-As seções a seguir são sugestões do que pode estar na metodologia. Conversem com o(s) professor(es) em busca de ajuda para definir quais as seções mais adequadas para cada trabalho.
 
-\subsection{Tipo de Pesquisa}
+\subsection{Instrumento de Pesquisa e Escalas Utilizadas}
 
-\subsection{Plano Amostral (se Pesquisa Quantitativa)}
-
-\subsection{Instrumento de Pesquisa e Escalas Utilizadas (Escalas se Pesquisa Quantitativa)}
+O principal meio de pesquisa foi a realização de um formulário online para envio às casas de repouso.
 
 \subsection{Coleta de Dados}
 
+As pesquisas foram realizadas inicialmente com o público em geral, e posteriormente houve a execução de entrevistas com cuidadores de casas de repouso.
+
 \subsection{Análise de Dados}
 
+A partir dos dados de ambas as pesquisas, foi constatado a lacuna de uma aplicação que sirva para o público de cuidadores de idosos.
+
 \subsection{Materiais}
-Para desenvolver uma aplicação web, faz-se necessário o uso de diversos materiais, os quais vão desde uma linguagem de programação específica até um navegador qualquer, dessa forma, serão listadas a seguir todas as ferramentas que serão utilizadas na elaboração do projeto.
+
+Para o desenvolvimento da aplicação web, foram utilizadas diversas ferramentas para que ele seja eficiente e mostre resultados. São eles:
+
+\begin{itemize}
+    \item \textbf{Back-end (Lado Servidor):}
+        \begin{itemize}
+            \item MySQL como Sistema Gerenciador do Banco de Dados;
+            \item Java com SpringBoot, para servir a API;
+        \end{itemize}
+        
+    \item \textbf{Front-end (Lado cliente):}
+        \begin{itemize}
+            \item Angular 19 framework para criação da aplicação web;
+            \item PrimeNG, uma biblioteca de componentes de estilo;
+            \item Auth0 como ferramenta de Single Sign On;
+        \end{itemize}
+
+    \item \textbf{Desenvolvimento}:
+        \begin{itemize}
+            \item VSCode como editor de código;
+        \end{itemize}
+
+    \item \textbf{Versionamento de código: }
+        \begin{itemize}
+            \item Git como linguagem de versionamento;
+            \item Github para hospedagem dos repositórios de front-end e back-end;
+            \item GitKraken para controle de \textit{branchs};
+        \end{itemize}
+        
+    \item \textbf{Controle de entregas e gestão do projeto: }
+        \begin{itemize}
+            \item Jira para acompanhamento de tarefas e gestão de reuniões do projeto;
+        \end{itemize}
+        
+    \item \textbf{Armazenamento de arquivos de entrega:}
+        \begin{itemize}
+            \item Google Drive para armazenamento de arquivos compartilhados de documentos, além da realização dos formulários de pesquisa;
+        \end{itemize}
+
+\end{itemize}
 	
- \subsection{Métodos}
-Os métodos, modo como aplicamos as ferramentas no desenvolvimento, deixa claro como será feito todo o processo de criação do sistema.
+\subsection{Métodos}
 
-\subsection{Embasamento Inicial}
+Em primeira instância, foi desenvolvido o back-end a partir da modelagem proposta, criando o banco de dados em SQL, e hospedando-o na Google Cloud Platform. A interface do front-end com o banco de dados foi desenvolvida com Java e SpringBoot, e hospedada na plataforma Railway.
 
-\subsection{Desenvolvimento do Software}
+Para o desenvolvimento do front-end, utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Vercel.
 
-\subsection{Metodologias de Desenvolvimento}
-
-\section{Desenvolvimento}
+Recursos externos foram utilizados para coleta de dados, a API "api-medicamentos-anvisa", hospedada publicamente oferece nomes e informações úteis de todos os medicamentos registrados no Brasil até 2020. Além dela, a API de busca do Google foi utilizada por meio da ferramenta "SerperDev", da qual oferece uma interface simples à pesquisa de locais e produtos farmacêuticos.
 
 \subsection{Equipe}
 
-O \autoref{quadro_integrantes} discorre a respeito da composição da equipe.
+O desenvolvimento do \nomeprojeto\ se deu pela estruturação do projeto em equipe, após isso houve a designação de responsabilidades para cada colaborador. Esta seção diz sobre a organização de forma ampla e a alocação de tarefas.
+
+O \autoref{quadro_integrantes} discorre a respeito da distribuição de tarefas da equipe. Para cada segmento do projeto foram designados ao mínimo duas pessoas, a fim de obter uma visão mais ampla de desenvolvimento; com exceção da execução de testes, que por sua natureza exige menos atenção. 
 
 \begin{quadro}
     \caption{\label{quadro_integrantes}Integrantes da equipe}
         \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
             Papéis         & Arthur                    & Fernando                  & Henriquy                  & Isabella                  & Lucas                     & Mateus                    \\ \hline
-            Back-end       &                           &                           & \checkmark                &                           & \checkmark                & \checkmark                \\ \hline
+            Back-end       &                           &                           &                 &                           & \checkmark                & \checkmark                \\ \hline
             Front-end      & \checkmark                & \checkmark                &                           & \checkmark                &                           &                           \\ \hline
-            Banco de Dados &                           &                           &                           &                           & \checkmark                &                           \\ \hline
+            Banco de Dados &                           &                           & \checkmark                &                           & \checkmark                &                           \\ \hline
+	        Testes 	   &			       & 			   & \checkmark		       & 			   & 			       &			   \\ \hline
             Documentação   & \checkmark                & \checkmark                & \checkmark                & \checkmark                & \checkmark                & \checkmark                \\ \hline
             Design         &                           &                           & \checkmark                & \checkmark                &                           &                           \\ \hline
             Gestão         &                           &                           & \checkmark                &                           & \checkmark                &                           \\ \hline
@@ -356,16 +398,88 @@ O \autoref{quadro_integrantes} discorre a respeito da composição da equipe.
     \fonte{Autores.}
 \end{quadro}
 
+\section{Desenvolvimento}
+
+Esta seção percorre todas as etapas do desenvolvimento do projeto, desde sua projeção de requisitos de funcionamento e regras de negócio, modelagem e prototipagem e testes.
+
 \subsection{Requisitos}
+
+Em anexo, há três documentos que detalham os requisitos do sistema, sendo eles: requisitos funcionais, requisitos não funcionais e regras de negócio. Estes documentos foram criados a partir das entrevistas com clientes e orientadores da matéria. 
+
+A \autoref{requisitos_f} detalha os requisitos funcionais do projeto, ou seja, os principais recursos que são necessários para a interação direta com dados do usuário, como a de possuir a função de preencher informações do tratamento do usuário. 
+
+A \autoref{requisitos_nf} detalha os requisitos não funcionais, recursos necessários para que o sistema atinja seu objetivo principal, mas não interagem diretamente com informações dadas pelo usuário, como a necessidade de que o sistema possua tempo de disponibilidade de pelo menos 99,5\% o tempo todo. 
+
+A \autoref{regras_negocio} detalha sobre as regras de negócio definidas para direcionar o funcionamento geral do sistema, como o registro de ações sensíveis de criação e exclusão de dependentes em log.
 
 \subsection{Modelagem}
 
+A modelagem de um sistema se dá pela criação de histórias de usuário e a diagramação delas por meio de casos de uso.
+
+\subsubsection{Casos de Uso}
+
+A \autoref{casos_de_uso} apresenta os atores do sistema, o usuário final com as funcionalidades de cuidador e o administrador, que é responsável por auxiliar o usuário com operações de criação e edição de dependentes e a utilização geral do aplicativo.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Figuras/diagrama-casos-uso.jpg}
+    \caption{Diagrama de Casos de Uso}
+    \fonte{Autores.}
+    \label{casos_de_uso}
+\end{figure}
+
+\subsubsection{Dicionário de Casos de Uso}
+
+O \autoref{dicionario_casos_uso} apresenta os dicionários de casos de uso, dos quais apresentam com detalhes cada caso de uso, atores que participam e dão uma descrição deles.
+
+\subsubsection{Modelo Entidade Relacionamento}
+
+A \autoref{model_entidade_relacionamento} apresenta o modelo entidade relacionamento do sistema, que é a representação gráfica dos modelos de cada entidade do sistema, como usuário, tratamento, dependente e consulta.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Figuras/bancoDados.jpg}
+    \caption{Imagem do Modelo Entidade Relacionamento}
+    \fonte{Autores.}
+    \label{model_entidade_relacionamento}
+\end{figure}
+
 \subsection{Prototipagem}
+
+A prototipagem do sistema se deu pela criação inicial do conceito do sistema e fluxos de dados, depois foi feito o design das telas de usuário na plataforma \textit{Figma}. Em anexo, há as telas feitas na plataforma, o \autoref{prototipagem} traz as telas do sistema, que são compostas pelas seguintes seções:
+
+\begin{enumerate}
+    \item \textbf{Tela inicial:} o usuário pode visualizar as informações gerais do sistema, como o estoque de medicamentos e os níveis de glicemia e pressão arterial;
+    \item \textbf{Calendário:} o usuário pode visualizar as consultas agendadas e os medicamentos que devem ser consumidos naquele dia;
+    \item \textbf{Gráfico:} o usuário pode visualizar os gráficos de níveis de glicemia e pressão arterial;
+    \item \textbf{Consulta:} o usuário pode visualizar as consultas agendadas, além de poder criar novas consultas e editar as já existentes;
+    \item \textbf{Perfil:} o usuário pode visualizar e editar seu perfil, além de poder adicionar dependentes e editar os já existentes;
+\end{enumerate}
 
 \section{POC}
 
-A Prova de Conceito (\textit{Proof of Concept} (PoC)) que deve demonstrar a aderência das tecnologias escolhidas com a aplicação que deve ser desenvolvida. Essa prova de conceito deve demonstrar a comunicação desde o usuário até a base de dados e utilizar de forma simples as tecnologias escolhidas para demonstrar que
-elas funcionam para o objetivo desejado.
+A Prova de Conceito (Proof Of Concept) traz as principais funcionalidades do sistema e a verificação da hospedagem dele.
+
+\subsection{Plano de Testes}
+
+O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
+
+\begin{longtblr}[
+  label = plano_testes,
+  entry = {Plano de Testes},
+  caption = {Plano de Testes do Sistema \nomeprojeto},
+  note = {Fonte: Autores.},
+]{
+  vline{1-4} = {-}{},
+  hline{-} = {1-3}{},
+  colspec = {X[2,l]X[3,l]X[3,l]},
+}
+    \textbf{Objeto de Teste} & \textbf{Resultado Esperado}                    & \textbf{Possíveis Divergências} \\
+    Enviar usuário ao banco & Criação de usuário no banco de dados & A conexão com o banco de dados pode falhar \\
+    Enviar dependente ao banco & Criação de dependente no banco de dados & A conexão com o banco de dados pode falhar \\
+    Enviar consulta ao banco & Criação de consulta no banco de dados & A conexão com o banco de dados pode falhar \\
+\end{longtblr}
+\fonte{Autores.}
 
 \section{MVP}
 
@@ -427,21 +541,37 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 % ---
 % Inicia os apêndices
 % ---
-% \newpage
-% \begin{apendicesenv}
+\newpage
+\begin{apendicesenv}
 
-% % ----------------------------------------------------------
-% \chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-% ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% % ----------------------------------------------------------
-% Apêndices e anexos são materiais complementares ao texto que só devem ser incluídos quando forem imprescindíveis à compreensão deste.
+% % % % ----------------------------------------------------------
+\chapter{Requisitos Funcionais}
 
-% Apêndices são textos elaborados pelo autor a fim de complementar sua argumentação.
+\input{requisitos_f}
 
-% Os apêndices devem aparecer após as referências, e os anexos, após os apêndices.
+\chapter{Requisitos Não Funcionais}
 
-% \end{apendicesenv}
-% % ---
+\input{requisitos_nf}
+
+\chapter{Regras de Negócio}
+
+\input{regras_negocio}
+
+\chapter{Dicionário de Casos de Uso\label{dicionario_casos_uso}}
+
+\input{diagrama_casos_uso}
+
+\chapter{Prototipagem\label{prototipagem}}
+
+\input{prototipagem}
+
+\chapter{Pesquisas\label{pesquisas}}
+
+\newpage
+
+\input{pesquisas}
+
+\end{apendicesenv}
 
 % % ----------------------------------------------------------
 % % Anexos
