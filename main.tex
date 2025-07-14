@@ -61,7 +61,8 @@
 \usepackage{tikz}               % para ticks
 \usepackage{longtable}          % para quebra de tabela por página
 \usepackage{tabularray}         % formatação da coluna e linha da tabela
-
+\usepackage{graphicx}           % utilizado para formatação de tabelas
+\usepackage{subcaption}         % para subfiguras
 % ---
 		
 % ---
@@ -172,7 +173,7 @@ Mateus Armando Carrara de Mendonça\inst{1}\thanks{mateusacdem@gmail.com }}
 %\setlength{\parskip}{0.2cm}  % tente também \onelineskip
 
 % Espaçamento simples
-\SingleSpacing
+% \SingleSpacing
 
 
 % ----
@@ -309,84 +310,51 @@ Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais.
 
 Tarefas repetitivas, que são necessárias para a manutenção da vida e espaço do paciente, como a limpeza, organização, cuidados corporais, alimentação, eliminações, entre outras, contribuem para o aumento da carga horária de trabalho, que em média ultrapassa 12 horas diárias. Cuidadores relatam, também, a falta de ferramentas como uma das causas da sobrecarga proveniente do seu trabalho, e se beneficiariam desses serviços para a diminuição dela \cite{aline2012sobrecarga}.
 
-\section{Métodos de Pesquisa}
+\section{Metodologia}
 
-A metodologia do projeto é dividida em duas partes: a pesquisa qualitativa, que visa entender o público no geral e suas necessidades em uma aplicação do tipo; e a pesquisa quantitativa, planejada já com o foco do sistema em cuidadores de idosos em casas de repouso, visa coletar informações de profissionais da área. 
+Esta seção descreve a metodologia adotada para o desenvolvimento do \nomeprojeto, com objetivo de detalhar cada etapa e decisão tomada para garantir que a solução final atenda às necessidades identificadas. A abordagem abrange as pesquisas para levantamento de requisitos com o público-alvo, a seleção das ferramentas e tecnologias para o projeto, a organização da equipe e o processo de desenvolvimento do software.
 
-\subsection{Instrumento de Pesquisa e Escalas Utilizadas}
+\subsection{Métodos de Pesquisa}
 
-O principal meio de pesquisa foi a realização de um formulário online estruturado, desenvolvido com perguntas objetivas e subjetivas, visando identificar as principais demandas, dificuldades e práticas no cuidado com idosos. O formulário foi, inicialmente, ao público geral para mapeamento e percepções das necessidades amplas e, posteriormente distribuído a cuidadores profissionais, instituições de longa permanência para idosos (casas de repouso) e enfermeiros. Foram 10 perguntas, as escalas utilizadas incluíram perguntas de múltipla escolha, caixa de seleção e campos abertos para coleta de opiniões qualitativas. 
+Os métodos de pesquisa do projeto são divididas em duas partes: a pesquisa qualitativa, que visa entender o público no geral e suas necessidades na aplicação; e a pesquisa quantitativa, planejada com o foco do sistema em cuidadores de idosos em casas de repouso, visando coletar informações de profissionais da área. 
 
-\subsection{Coleta de Dados}
+\subsubsection{Instrumento de Pesquisa e Escalas Utilizadas}
 
-A coleta ocorreu em duas etapas. Na primeira, para um público não direcionado por meio das redes sociais e grupos comunitários, com o intuito de obter uma visão ampliada sobre o tema. Na segunda etapa, os dados foram aprofundados por meio de pesquisas direcionadas à profissionais da área abordada. O \autoref{pesquisas} traz uma descrição das perguntas feitas.
+O principal meio de pesquisa foi a realização de formulários online estruturados, desenvolvido com perguntas objetivas e subjetivas, visando identificar as principais demandas, dificuldades e práticas no cuidado com idosos.
 
-\subsection{Análise de Dados}
+\subsubsection{Coleta de Dados}
 
-A partir dos dados de ambas as pesquisas, foi constatado a lacuna de uma aplicação que sirva para o público de cuidadores de idosos, como visto na \autoref{pergunta6}. Dos profissionais ouvidos, 50\% trabalham como cuidadores sendo 40\% em domicílio particular e 30\% em casas de repouso. As atividades mais comuns realizadas na rotina com os idosos incluem: administração de medicamentos, monitoramento de sinais vitais e acompanhamento em consultas. Nenhum dos entrevistados utilizam algum aplicativo ou sistema para tal controle, registrando dados sensíveis como esses em papéis e lousas, e a figura \autoref{pergunta9} traz que 90\% dizem ter disposição para usar um aplicativo. 
+A coleta ocorreu em duas etapas. As escalas utilizadas incluíram perguntas de múltipla escolha, caixas de seleção para opiniões quantitativas e campos abertos para coleta de opiniões qualitativas. 
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.5\linewidth]{Figuras/utiliza-app.png}
-    \caption{\label{pergunta6}Pergunta 6/10}
-    \fonte{Autores.}
-\end{figure}
+Na primeira etapa, o formulário foi direcionado ao público geral com intuito de mapear as necessidades e desejos mais amplos. O questionário foi montado com 11 perguntas relacionadas ao gerenciamento de medicações e consultas pessoais e foram obtidas 45 respostas. Posteriormente na segunda etapa, após um aprofundamento de escopo do projeto, um questionário com 10 perguntas relacionadas ao cuidado com idosos foi compartilhado com cuidadores profissionais, instituições de longa permanência para idosos (casas de repouso), a fim de avaliarmos as necessidades do público alvo do \nomeprojeto. 
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.5\linewidth]{Figuras/utilizaria-app.png}
-    \caption{\label{pergunta9}Pergunta 9/10}
-    \fonte{Autores.}
-\end{figure}
-\clearpage
+Todas as perguntas que foram feitas na primeira e segunda etapa se encontram no \autoref{pesquisas}.
 
-\subsection{Materiais}
+\subsubsection{Análise dos Dados}
 
-Para o desenvolvimento da aplicação web, foram utilizadas diversas ferramentas para que ele seja eficiente e mostre resultados. São eles:
+Na primeira pesquisa, denotou-se que aproximadamente 73.3\% das pessoas nunca utilizaram um aplicativo para gerenciamento de consultas e medicações, enquanto os outros 26.7 utilizaram um ou mais aplicativos, geralmente relacionados a diferentes tratamentos e teleconsultas. Muitas pessoas comentaram dificuldade em memorizar posologias
+\footnote[1]{Seção da terapêutica que se dedica ao estudo da dosagem certa dos medicamentos. Indicação da dosagem certa (adequada) de um medicamento tendo em conta os vários casos em que o mesmo pode ser prescrito.}, 
+organização pessoal de consultas agendadas, datas e disponibilidade de vacinas e agendamento de consultas. Dos desejos compartilhados entre os entrevistados, se destacaram pesquisas de medicações, uma agenda direcionada a estes compromissos e tarefas, uma integração para que haja apenas uma aplicação onde seja possível acessar todas as informações necessárias, lembretes do horário de medicações e organização pessoal.
 
-\begin{itemize}
-    \item \textbf{Back-end (Lado Servidor):}
-        \begin{itemize}
-            \item MySQL como Sistema Gerenciador do Banco de Dados;
-            \item Java com SpringBoot, para servir a API;
-        \end{itemize}
-        
-    \item \textbf{Front-end (Lado cliente):}
-        \begin{itemize}
-            \item Angular 19 framework para criação da aplicação web;
-            \item PrimeNG, uma biblioteca de componentes de estilo;
-            \item Auth0 como ferramenta de Single Sign On;
-        \end{itemize}
+A partir dos dados de ambas as pesquisas, constatou-se a existência de uma lacuna no mercado para uma aplicação voltada ao público de cuidadores de idosos. Dos profissionais entrevistados, 50\% atuam como cuidadores formais, enquanto os outros 50\% dividem-se entre cuidadores informais, fisioterapeutas e profissionais de enfermagem. Cerca de 70\% desses profissionais trabalham em domicílios particulares e 30\% em casas de repouso. As atividades mais comuns em sua rotina incluem a administração de medicamentos, o monitoramento de sinais vitais e o acompanhamento em consultas. No entanto, nenhum dos entrevistados utiliza aplicativos ou sistemas para esse controle, recorrendo a registros em papel, planilhas ou lousas. Aproximadamente 90\% demonstraram interesse em utilizar um aplicativo, sugerindo que funcionalidades para registro de dados e organização da rotina seriam pertinentes para a aplicação.
 
-    \item \textbf{Desenvolvimento}:
-        \begin{itemize}
-            \item VSCode como editor de código;
-        \end{itemize}
+\subsection{Ferramentas e Tecnologias}
 
-    \item \textbf{Versionamento de código: }
-        \begin{itemize}
-            \item Git como linguagem de versionamento;
-            \item Github para hospedagem dos repositórios de front-end e back-end;
-            \item GitKraken para controle de \textit{branchs};
-        \end{itemize}
-        
-    \item \textbf{Controle de entregas e gestão do projeto: }
-        \begin{itemize}
-            \item Jira para acompanhamento de tarefas e gestão de reuniões do projeto;
-        \end{itemize}
-        
-    \item \textbf{Armazenamento de arquivos de entrega:}
-        \begin{itemize}
-            \item Google Drive para armazenamento de arquivos compartilhados de documentos, além da realização dos formulários de pesquisa;
-        \end{itemize}
+Para a organização e acompanhamento do desenvolvimento, foi adotada uma abordagem baseada no framework Scrum, adaptada à realidade e às necessidades da equipe. O processo foi estruturado em sprints com duração de quatro semanas, com reuniões semanais para alinhamento das tarefas e revisão do progresso. As tarefas foram gerenciadas no Jira, permitindo o acompanhamento visual do fluxo de trabalho e facilitando a priorização das entregas. Essa adaptação do Scrum proporcionou maior autonomia à equipe, mantendo a organização e o foco nos objetivos do projeto.
 
-\end{itemize}
+Durante o desenvolvimento do \nomeprojeto, foram selecionadas tecnologias e ferramentas que garantem escalabilidade e facilidade de manutenção. No back-end, utilizou-se o MySQL como Sistema Gerenciador de Banco de Dados (SGBD) devido à sua confiabilidade, aliado ao framework Spring Boot em Java, que facilita a criação de APIs RESTful e a integração com outros serviços.
+
+No front-end, optou-se pelo Angular 19, que permite o desenvolvimento de interfaces dinâmicas e reativas através de componentes. A biblioteca de componentes PrimeNG e a linguagem de design Material Design 3 foram incorporados para padronizar o design da aplicação. Para autenticação e autorização, foi utilizado o Auth0, que oferece uma solução segura e prática de Single Sign On (SSO).
+
+Durante o desenvolvimento, o Visual Studio Code (VSCode) foi escolhido como editor de código por sua leveza, extensibilidade e integração com diversas ferramentas. O controle de versão foi realizado com o Git, utilizando o GitHub para hospedagem dos repositórios e o GitKraken para facilitar a gestão de branches e colaboração entre os membros da equipe.
+
+A gestão de tarefas e acompanhamento do progresso do projeto foi feita com o Jira, permitindo organização eficiente das entregas e reuniões. Por fim, o Google Workspace foi utilizado para armazenamento e compartilhamento de documentos, além de servir como plataforma para aplicação dos formulários de pesquisa, através das aplicações Google Drive, Google Docs, Google Forms e Google Sheets.
 	
-\subsection{Métodos}
+\subsection{Processo de Desenvolvimento}
 
-Em primeira instância, foi desenvolvido o back-end a partir da modelagem proposta, criando o banco de dados em SQL, e hospedando-o na Google Cloud Platform. A interface do front-end com o banco de dados foi desenvolvida com Java e SpringBoot, e hospedada na plataforma Railway.
+Em primeira instância, foi desenvolvido o back-end a partir da modelagem proposta, criando o banco de dados em SQL, e hospedando-o na Google Cloud Platform. O desenvolvimento do back-end e integração com banco de dados foi desenvolvida com Java e Spring Boot, e hospedada na plataforma Render.
 
-Para o desenvolvimento do front-end, utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Vercel.
+Para o desenvolvimento do front-end, utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Firebase.
 
 Recursos externos foram utilizados para coleta de dados, a API "api-medicamentos-anvisa", hospedada publicamente oferece nomes e informações úteis de todos os medicamentos registrados no Brasil até 2020. Além dela, a API de busca do Google foi utilizada por meio da ferramenta "SerperDev", da qual oferece uma interface simples à pesquisa de locais e produtos farmacêuticos.
 
@@ -418,21 +386,39 @@ Esta seção percorre todas as etapas do desenvolvimento do projeto, desde sua p
 
 \subsection{Requisitos}
 
-Em anexo, há três documentos que detalham os requisitos do sistema, sendo eles: requisitos funcionais, requisitos não funcionais e regras de negócio. Estes documentos foram criados a partir das entrevistas com clientes e orientadores da matéria. 
+Os requisitos do sistema, divididos em funcionais e não funcionais, detalham os recursos e as características planejadas para o projeto. A definição de cada requisito foi baseada na análise das pesquisas realizadas com o público-alvo e na avaliação da viabilidade de desenvolvimento.
 
-A \autoref{requisitos_f} detalha os requisitos funcionais do projeto, ou seja, os principais recursos que são necessários para a interação direta com dados do usuário, como a de possuir a função de preencher informações do tratamento do usuário. 
+\subsubsection{Requisitos Funcionais}
 
-A \autoref{requisitos_nf} detalha os requisitos não funcionais, recursos necessários para que o sistema atinja seu objetivo principal, mas não interagem diretamente com informações dadas pelo usuário, como a necessidade de que o sistema possua tempo de disponibilidade de pelo menos 99,5\% o tempo todo. 
+Requisitos funcionais são especificações que descrevem as funcionalidades e comportamentos que um sistema deve possuir para atender às necessidades dos usuários, definindo o que o sistema deve fazer e detalhando as interações entre o usuário e o software.
 
-A \autoref{regras_negocio} detalha sobre as regras de negócio definidas para direcionar o funcionamento geral do sistema, como o registro de ações sensíveis de criação e exclusão de dependentes em log.
+O requisito funcional RF04 (Notificações), criado para garantir que os usuários sejam alertados sobre eventos importantes, como horários de medicação ou consultas agendadas, o requisito funcional RF07 (Relatórios), criado para garantir que os usuários possam acompanhar a evolução clínica de pacientes por meio de relatórios detalhados e o requisito funcional RF10 (Log), incluído para registrar logs de acesso e operações críticas, como edições ou exclusões, são requisitos essenciais para garantir que o sistema atenda aos objetivos propostos e forneça valor ao público-alvo. 
+
+Esses três itens surgiram a partir da síntese das pesquisas tanto com o público geral quanto com o público alvo da aplicação, identificando dores dos usuários e como o sistema pode ajudá-los a solucionar esses problemas. O \autoref{requisitos_f} mostra todos os requisitos funcionais criados para o \nomeprojeto.
+
+\subsubsection{Requisitos Não-Funcionais}
+
+Requisitos não-funcionais são especificações que descrevem as características e restrições de qualidade que o sistema deve atender para garantir sua eficiência, segurança e usabilidade. Esses requisitos não estão diretamente relacionados às funcionalidades do sistema, mas são essenciais para que ele opere de forma confiável e atenda às expectativas dos usuários.
+
+O requisito não-funcional RNF01 (Segurança), criado para assegurar a criptografia de dados sensíveis, como senhas e informações médicas, é essencial para proteger a privacidade dos usuários e garantir conformidade com regulamentações como a LGPD. O requisito RNF06 (Desempenho), que define que o sistema deve responder às requisições em até, no máximo, 1,5 segundos, foi incluído para garantir uma experiência fluida e eficiente, especialmente em operações críticas. Já o requisito RNF10 (Disponibilidade), que exige que o sistema permaneça disponível pelo menos 99,5\% do tempo durante o horário de operação, é fundamental para assegurar que os usuários possam acessar o sistema sempre que necessário, minimizando interrupções.
+
+Esses três requisitos foram definidos com base nas melhores práticas de desenvolvimento de software, como padrões para APIs RESTful, e nas necessidades identificadas durante a análise do público-alvo junto a reflexão sobre os requisitos funcionais. O \autoref{requisitos_nf} apresenta todos os requisitos não-funcionais criados para o sistema.
+
+\subsection{Regras de Negócio}
+
+Regras de negócio são diretrizes que definem como o sistema deve operar em situações específicas, garantindo que os processos sigam padrões estabelecidos. Elas são fundamentais para assegurar que o sistema funcione de maneira consistente e em conformidade com as regulamentações aplicáveis.
+
+A regra de negócio RN02 (Segurança), que determina o arquivamento de registros excluídos por 15 dias antes da remoção definitiva, foi incluída para atender às exigências da LGPD, inclusive para permitir que os usuários tenham tempo para reverter os pedidos de exclusão ou recuperar alguma informação. A regra RN04 (Tratamentos), que exige que a conclusão ou o cancelamento de tratamentos seja realizado apenas por cuidadores autorizados e registrado em log, foi definida para garantir rastreabilidade e controle sobre ações sensíveis no sistema. Já a regra RN07 (Segurança) foi adicionada para garantir que todas informações pertencentes a um usuário devem ser armazenadas de forma segura e criptografada, a fim de respeitar normas de segurança.
+
+Essas regras foram elaboradas com base nas necessidades do público alvo e nas regulamentações aplicáveis, como a LGPD, para garantir que o sistema seja seguro e confiável. O \autoref{regras_negocio} apresenta todas as regras de negócio definidas para a aplicação.
 
 \subsection{Modelagem}
 
-A modelagem de um sistema se dá pela criação de histórias de usuário e a diagramação delas por meio de casos de uso.
+A modelagem do sistema é uma etapa fundamental que visa traduzir os requisitos e regras de negócio em uma representação estruturada do software. Este processo envolve os casos de uso, a definição da arquitetura, e a estrutura de dados da aplicação. Para o \nomeprojeto, a modelagem foi detalhada por meio de diagramas s de uso, que descrevem as interações entre os usuários e o sistema, o diagrama de arquitetura de sistema, que descreve como o sistema está estuturado tecnicamente e pelo modelo de entidade e relacionamento, que detalha a estrutura do banco de dados.
 
 \subsubsection{Casos de Uso}
 
-A \autoref{casos_de_uso} apresenta os atores do sistema, o usuário final com as funcionalidades de cuidador e o administrador, que é responsável por auxiliar o usuário com operações de criação e edição de dependentes e a utilização geral do aplicativo.
+Como apresentado na \autoref{casos_de_uso}, os casos de uso representam as principais interações entre os usuários e o sistema, descrevendo como as funcionalidades foram projetadas para atender às necessidades identificadas durante a análise de requisitos. Eles são fundamentais para garantir que o sistema seja desenvolvido de forma alinhada às expectativas do público-alvo e às regras de negócio definidas.
 
 \begin{figure}[!htbp]
     \centering
@@ -442,13 +428,17 @@ A \autoref{casos_de_uso} apresenta os atores do sistema, o usuário final com as
     \label{casos_de_uso}
 \end{figure}
 
-\subsubsection{Dicionário de Casos de Uso}
 
-O \autoref{dicionario_casos_uso} apresenta os dicionários de casos de uso, dos quais apresentam com detalhes cada caso de uso, atores que participam e dão uma descrição deles.
+No \nomeprojeto, os casos de uso foram elaborados para cobrir as principais operações realizadas pelos cuidadores e administradores. Entre os casos de uso mais relevantes, destacam-se o caso de uso "Manter Dependentes" permite que o cuidador adicione, visualize, edite e exclua informações dos pacientes, garantindo que os dados estejam sempre atualizados. Já o caso de uso "Agendar Consulta" possibilita que o cuidador registre compromissos médicos em uma agenda para os pacientes, com integração opcional ao calendário do dispositivo. Além disso, o caso de uso "Gerenciar Medicações" permite o acompanhamento do estoque de medicamentos e o registro de consumo, emitindo alertas em caso de baixa disponibilidade.
+
+O \autoref{dicionario_casos_uso} apresenta o \textit{Dicionário de Casos de Uso}, apresentando cada cenário com detalhes e informações sobre os atores envolvidos, pré-condições, fluxos principais e pós-condições.
+
+
+\newpage
 
 \subsubsection{Modelo Entidade Relacionamento}
 
-A \autoref{model_entidade_relacionamento} apresenta o modelo entidade relacionamento do sistema, que é a representação gráfica dos modelos de cada entidade do sistema, como usuário, tratamento, dependente e consulta.
+O MER do MyMed foi projetado para representar as principais entidades do sistema, como Usuário, Dependente, Consulta, Tratamento e Medicação, além de suas relações. Ele garante que as informações sejam armazenadas de forma consistente e que as interações entre as entidades sejam bem definidas. A \autoref{model_entidade_relacionamento} apresenta o diagrama completo, detalhando as entidades e seus relacionamentos.
 
 \begin{figure}[!htbp]
     \centering
@@ -457,6 +447,86 @@ A \autoref{model_entidade_relacionamento} apresenta o modelo entidade relacionam
     \fonte{Autores.}
     \label{model_entidade_relacionamento}
 \end{figure}
+
+Por exemplo, a entidade Usuário está relacionada à entidade Dependente, permitindo que cuidadores gerenciem os dados de seus dependentes. A entidade Consulta está associada tanto ao Usuário quanto ao Dependente, possibilitando o registro de compromissos médicos para ambos. Já a entidade Tratamento está vinculada a Medicação, permitindo o acompanhamento detalhado de medicamentos prescritos e consumidos.
+
+O MER reflete a necessidade de um sistema robusto e escalável, garantindo que os dados sejam organizados de forma eficiente e que as operações, como consultas e atualizações, sejam realizadas de maneira confiável. Ele também assegura a integridade referencial, evitando inconsistências nos dados e permitindo que o sistema atenda aos requisitos funcionais e não funcionais definidos. 
+
+\newpage
+
+\subsection{Arquitetura de Software}
+
+Esta subseção apresenta a arquitetura geral do sistema, suas tecnologias, infraestrutura de hospedagem e os fluxos de interação entre os contêineres. O modelo utilizado é baseado no \textit{Diagrama de Contêineres do C4 Model}.
+
+\subsubsection{Visão Geral}
+
+A arquitetura do sistema é composta por quatro contêineres principais, cada um com responsabilidades específicas e hospedado em diferentes plataformas de nuvem. Essa estrutura foi definida visando escalabilidade, isolamento de responsabilidades e maior confiabilidade.
+
+A comunicação entre esses contêineres ocorre predominantemente por meio de requisições HTTP.
+
+\begin{figure}[h!]
+    \centering
+    \caption{Diagramas da Arquitetura de Software}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/diagrama_conteineres.jpg}
+        \caption{Diagrama de Contêineres}
+        \label{fig:diagrama-conteineres}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/fluxo_comunicacao.jpg}
+        \caption{Fluxo de Comunicação}
+        \label{fig:fluxo-comunicacao}
+    \end{subfigure}
+    \label{fig:arquitetura-software}
+    \fonte{Autores.}
+\end{figure}
+
+\subsubsection{Detalhamento dos Contêineres}
+
+\textbf{Usuário}\\
+\textit{Tipo:} Pessoa.\\
+\textit{Descrição:} Representa o usuário final que interage com o sistema por meio da aplicação web.
+
+\textbf{Aplicação Web (Front-end)}\\
+\textit{Tipo:} Contêiner.\\
+\textit{Tecnologia:} Angular.\\
+\textit{Descrição:} Interface responsável por apresentar informações e funcionalidades ao usuário de forma acessível.\\
+\textit{Infraestrutura:} Hospedada na plataforma Vercel.\\
+\textit{Interação:} Comunicação via HTTP com a REST API e o sistema de autenticação.
+
+\textbf{REST API (Back-end)}\\
+\textit{Tipo:} Contêiner.\\
+\textit{Tecnologia:} Java Spring Boot.\\
+\textit{Descrição:} Responsável por processar as regras de negócio da aplicação e interagir com o banco de dados.\\
+\textit{Infraestrutura:} Hospedada na plataforma Render.\\
+\textit{Interação:} Recebe requisições HTTP da aplicação web e acessa o banco de dados via SQL.
+
+\textbf{Banco de Dados}\\
+\textit{Tipo:} Contêiner.\\
+\textit{Tecnologia:} MySQL.\\
+\textit{Descrição:} Responsável pelo armazenamento persistente das informações da aplicação.\\
+\textit{Infraestrutura:} Hospedado na Google Cloud Platform (GCP).\\
+\textit{Interação:} Acesso exclusivo pela REST API.
+
+\textbf{Sistema de Autenticação}\\
+\textit{Tipo:} Contêiner.\\
+\textit{Tecnologia:} Auth0.\\
+\textit{Descrição:} Serviço responsável por autenticar os usuários e controlar o acesso ao sistema.\\
+\textit{Infraestrutura:} Serviço externo SaaS.\\
+\textit{Interação:} Comunicação via HTTP com a aplicação web.
+
+\subsubsection{Fluxo de Operação}
+
+\begin{enumerate}
+    \item O usuário acessa a aplicação web hospedada na Vercel.
+    \item A aplicação web realiza requisições HTTP ao sistema de autenticação (Auth0) para autenticar o usuário.
+    \item Após a autenticação, a aplicação envia requisições HTTP para a REST API hospedada na Render, solicitando operações de negócio.
+    \item A REST API processa as solicitações e interage com o banco de dados MySQL hospedado na GCP via SQL.
+    \item As respostas do banco de dados são processadas pela REST API e devolvidas à aplicação web, que as apresenta ao usuário final.
+\end{enumerate}
 
 \subsection{Prototipagem}
 
@@ -470,13 +540,9 @@ A prototipagem do sistema se deu pela criação inicial do conceito do sistema e
     \item \textbf{Perfil:} o usuário pode visualizar e editar seu perfil, além de poder adicionar dependentes e editar os já existentes;
 \end{enumerate}
 
-\section{POC}
-
-A Prova de Conceito (Proof Of Concept) traz as principais funcionalidades do sistema e a verificação da hospedagem dele.
-
 \subsection{Plano de Testes}
 
-O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
+O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. A \autoref{plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
 
 \begin{longtblr}[
   label = plano_testes,
@@ -494,6 +560,28 @@ O plano de testes visa verificar todas as funcionalidades e validar seu uso na a
     Enviar consulta ao banco & Criação de consulta no banco de dados & A conexão com o banco de dados pode falhar \\
 \end{longtblr}
 \fonte{Autores.}
+
+\subsection{Criptografia}
+
+Para garantir a segurança na comunicação entre os usuários e a aplicação, foi configurado o protocolo HTTPS com suporte a TLS, utilizando certificados digitais válidos e atualizados. A certificação foi realizada através da integração com o serviço Let's Encrypt através do Render para o back-end e Gerenciado pelo Google para o front-end através do Firebase Hosting, assegurando criptografia ponta a ponta durante as transações de dados. A configuração foi validada na ferramenta SSL Labs, onde o ambiente obteve a nota máxima A+.
+
+\begin{figure}[h!]
+    \caption{Resultados dos testes de criptografia.}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/certificacao_front.png}
+        \caption{Resultado dos testes do front-end}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figuras/certificacao_back.png}
+        \caption{Resultado dos testes do back-end}
+    \end{subfigure}
+    \label{fig:testes-criptografia}
+    \fonte{Autores.}
+\end{figure}
 
 \section{MVP}
 
@@ -516,7 +604,6 @@ Outro autor importante na área, \citeonline{blank2013startup}, define o MVP com
 % Conclusão
 % ---
 \section{Considerações finais}
-
 
 De acordo com \citeonline{severino2016metodologia}, na seção de considerações finais o autor tem a oportunidade de fazer uma síntese dos principais pontos abordados e apresentar suas considerações finais sobre o assunto. Embora não haja uma estrutura fixa, existem algumas diretrizes comuns para escrever essa seção.
 
@@ -559,31 +646,39 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 \begin{apendicesenv}
 
 % % % % ----------------------------------------------------------
-\chapter{Requisitos Funcionais}
+\chapter{Pesquisas\label{pesquisas}}
+
+\input{pesquisas}
+
+\newpage
+
+\chapter{Requisitos Funcionais\label{requisitos_f}}
 
 \input{requisitos_f}
 
-\chapter{Requisitos Não Funcionais}
+\newpage
+
+\chapter{Requisitos Não Funcionais\label{requisitos_nf}}
 
 \input{requisitos_nf}
 
-\chapter{Regras de Negócio}
+\newpage
+
+\chapter{Regras de Negócio\label{regras_negocio}}
 
 \input{regras_negocio}
+
+\newpage
 
 \chapter{Dicionário de Casos de Uso\label{dicionario_casos_uso}}
 
 \input{dicionario_casos_uso}
 
+\newpage
+
 \chapter{Prototipagem\label{prototipagem}}
 
 \input{prototipagem}
-
-\chapter{Pesquisas\label{pesquisas}}
-
-\newpage
-
-\input{pesquisas}
 
 \end{apendicesenv}
 

@@ -1,35 +1,23 @@
 Os requisitos funcionais são essenciais para definir as funcionalidades que o sistema deve oferecer, garantindo que atenda às necessidades dos usuários e aos objetivos do negócio. A seguir, apresentamos uma tabela com os principais requisitos funcionais definidos para o sistema de gestão de dependentes.
 
-\begin{longtblr}[
-  label = requisitos_f,
-  entry = none,
-  caption = {Requisitos Funcionais},
-  note = {Fonte: Autores.},
-]{
-  vline{1-4} = {-}{},
-  hline{-} = {1-3}{},
-}
-Código & Categoria    & Descrição                                                                                       &  \\
-RF01   & Cadastro     & {Cadastrar paciente: dados pessoais \\(nome, CPF, data de nascimento, endereço, contato, etc.)} &  \\
-RF02   & Paciente     & {Visualizar perfil do paciente: \\histórico de atendimentos e tratamentos}                      &  \\
-RF03   & Paciente     & Editar e atualizar dados do paciente                                                            &  \\
-RF04   & Cadastro     & {Excluir cadastro de paciente: \\mas mantendo o histórico arquivado}                            &  \\
-RF05   & Consulta     & {Agendar nova consulta: \\paciente, profissional, data, hora e local}                           &  \\
-RF06   & Consulta     & {Listar consultas agendadas:\\~com filtros por data, profissional ou paciente}                  &  \\
-RF07   & Consulta     & {Editar ou cancelar consulta: \\antes da data marcada}                                          &  \\
-RF08   & Atendimento  & {Registrar atendimento: \\diagnóstico, conduta, recomendações, etc}                             &  \\
-RF09   & Notificação  & {Emitir alertas ou notificações:\\~consultas futuras}                                           &  \\
-RF10   & Tratamento   & {Criar plano de tratamento: \\associado a um paciente e diagnóstico}                            &  \\
-RF11   & Tratamento   & {Listar tratamentos em andamento,\\concluídos ou cancelados (tipo kanban)}                      &  \\
-RF12   & Tratamento   & {Registrar evolução do tratamento: \\observações por etapa ou sessão}                           &  \\
-RF13   & Tratamento   & {Anexar prescrições médicas: \\laudos, imagens ou documentos ao tratamento}                     &  \\
-RF14   & Relatório    & {Gerar relatórios de acompanhamento:\\paciente, profissional ou período}                        &  \\
-RF15   & Histórico    & {Visualizar histórico de consultas: \\evolução clínica}                                         &  \\
-RF16   & Exportação   & {Exportar dados: \\PDF, Excel ou outro formato}                                                 &  \\
-RF17   & Autenticação & {Autenticar usuários: \\login e senha}                                                          &  \\
-RF18   & Permissão    & {Gerenciar permissões: \\admin, profissional de saúde, recepcionista, etc}                      &  \\
-RF19   & Log          & {Registrar logs de acesso:\\operações críticas (como edições e exclusões)}                      &  \\
-RF20   & Pesquisa     & {Pesquisar pacientes, consultas e tratamentos:\\múltiplos critérios}                            &  \\
-RF21   & Filtro       & Aplicar filtros e ordenações nas pesquisas                                                      &  
-\end{longtblr}
+\begin{quadro}
+\caption{Requisitos Funcionais do MyMed}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\textbf{Código} & \textbf{Categoria} & \textbf{Descrição} \\ \hline
+RF01 & Paciente & O sistema deve manter pacientes e seus dados pessoais através de operações de criação, visualização, edição e remoção. \\ \hline
+RF02 & Consulta & O sistema deve manter consultas e suas informações através de operações de criação, visualização, edição e remoção. \\ \hline
+RF03 & Consulta & O sistema deve permitir o registro de relatórios pós-consultas e eventos na agenda, como posologias, recomendações ou observações. \\ \hline
+RF04 & Notificações & O sistema deve emitir alertas ou notificações para eventos futuros, como o horário de uma dose de uma medicação ou consultas próximas. \\ \hline
+RF05 & Tratamentos & O sistema deve manter tratamentos e suas informações através de operações de criação, visualização, edição e remoção. \\ \hline
+RF06 & Tratamentos & O sistema deve permitir a adição de informações adicionais aos tratamentos como observações, sessões e documentos. \\ \hline
+RF07 & Relatórios & O sistema deve permitir gerar relatórios de acompanhamento, de acordo com as informações do paciente e filtros como períodos e tratamentos. \\ \hline
+RF08 & Histórico & O sistema deve permitir a visualização do histórico de consultas a fim de acompanhar a evolução clínica do paciente. \\ \hline
+RF09 & Exportação & O sistema deve permitir a exportação de relatórios e gráficos em formatos como Excel e PDF, disponibilizando opções adequadas definidas a partir do conteúdo que irá ser exportado. \\ \hline
+RF10 & Log & O sistema deve registrar logs de acesso e operações críticas (como edições ou exclusões). \\ \hline
+RF11 & Filtros & O sistema deve aplicar corretamente filtros e ordenações determinados pelo usuário em determinadas ações. \\ \hline
+RF12 & Validação & Campos obrigatórios devem ser validados antes de salvar qualquer registro. \\ \hline
+RF13 & Validação & Dados médicos (como glicemia e pressão arterial) devem ser validados para garantir que estão dentro de intervalos adequados. \\ \hline
+\end{tabularx}
 \fonte{Autores.}
+\end{quadro}
