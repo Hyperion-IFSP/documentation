@@ -1,36 +1,16 @@
-\begin{longtblr}[
-  label = regras_negocio,
-  entry = none,
-  caption = {Regras de Negócio},
-  note = {Fonte: Autores.},
-]{
-  vline{1-4} = {-}{},
-  hline{-} = {1-3}{},
-}
-Código & Categoria                      & Descrição                                                                                                                               &  \\
-RN01   & Cadastro                       & {Apenas usuários com permissão de cuidador ou \\administrador podem cadastrar dependentes.}                                             &  \\
-RN02   & Cadastro                       & {Cada dependente deve ter um \\CPF único e válido no sistema.}                                                                          &  \\
-RN03   & Cadastro                       & {O sistema deve impedir o cadastro de dependentes \\com dados incompletos obrigatórios \\(ex: nome, CPF, data de nascimento, contato).} &  \\
-RN04   & Cadastro                       & {A exclusão de um dependente não deve arquivar \\todo o histórico, porém não há \\remoção definitiva do banco de dados.}                &  \\
-RN05   & Cadastro                       & {A edição de dados sensíveis (como CPF) \\deve ser registrada em log de auditoria.}                                                     &  \\
-RN06   & Consultas                      & {Consultas só podem ser agendadas \\para dependentes cadastrados no sistema.}                                                           &  \\
-RN07   & Consultas                      & {O sistema deve impedir agendamento\\de duas consultas no mesmo \\horário para o mesmo dependente.}                                     &  \\
-RN08   & Consultas                      & {Consultas só podem ser editadas ou \\canceladas antes da data e hora marcadas.}                                                        &  \\
-RN09   & Logs                           & {A edição ou exclusão de uma consulta\\criada deve ser registrada em log}                                                               &  \\
-RN10   & Tratamentos                    & {Cada tratamento deve estar vinculado a um \\dependente específico e seu diagnóstico.}                                                  &  \\
-RN11   & Tratamentos                    & {A evolução de um tratamento deve ser registrada \\com data, cuidador responsável e observações.}                                       &  \\
-RN12   & Tratamentos                    & {Prescrições médicas devem ser anexadas com\\extensão válida (PDF, JPG, PNG, etc) \\e tamanho máximo pré-definido.}                     &  \\
-RN13   & Tratamentos                    & {Um tratamento só pode ser concluído \\ou cancelado por cuidadores\\com permissão e deve ser registrado em log.}                        &  \\
-RN14   & Autenticação                   & {Todos os usuários devem possuir credenciais\\únicas (login e senha criptografados).}                                                   &  \\
-RN15   & Autenticação                   & {O acesso ao sistema deve ser restrito por perfis: \\administrador/cuidador.}                                                           &  \\
-RN16   & Autenticação                   & {Registros sensíveis só podem\\ser manuseados por perfis autorizados.}                                                                  &  \\
-RN17   & Manuseio e exportação de dados & {Toda ação crítica (edição, exclusão, exportação)\\deve ser registrada com data, \\hora, usuário e tipo de operação.}                   &  \\
-RN18   & Manuseio e exportação de dados & {O sistema deve permitir pesquisas por \\múltiplos critérios combinados nas filtragens.}                                                &  \\
-RN19   & Manuseio e exportação de dados & {Os relatórios devem permitir filtros por \\dependente, período e/ou tratamento.}                                                       &  \\
-RN20   & Interface                      & {Toda ação do sistema deve retornar \\mensagem clara de sucesso ou erro.}                                                               &  \\
-RN21   & Interface                      & {Listagens com mais de 20 itens devem \\utilizar paginação ou lazy loading.}                                                            &  \\
-RN22   & Interface                      & {O sistema deve ser acessível e \\compatível com dispositivos móveis.}                                                                  &  \\
-RN23   & Desenvolvimento e Manutenção   & {O código deve ser modular e seguir \\boas práticas de engenharia de software.}                                                         &  \\
-RN24   & Desenvolvimento e Manutenção   & {Toda funcionalidade deve prever \\testes automatizados (testes unitários).}                                                            &  
-\end{longtblr}
+\begin{quadro}
+\caption{Regras de Negócio do MyMed}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\textbf{Código} & \textbf{Categoria} & \textbf{Descrição} \\ \hline
+RN01 & Cadastro & Apenas usuários com permissão de cuidador ou administrador podem cadastrar pacientes. \\ \hline
+RN02 & Segurança & A exclusão de qualquer registro relacionado a um usuário, como o perfil de um paciente ou seu próprio perfil, deve arquivar todo o histórico sem remoção definitiva do banco de dados durante 15 dias, conforme prazo de resposta da LGPD. \\ \hline
+RN03 & Tratamentos & Um plano de tratamento só pode ser criado se houver, no momento do registro, ao menos um diagnóstico relacionado. \\ \hline
+RN04 & Tratamentos & A conclusão ou o cancelamento de um tratamento só podem ser realizados por cuidadores com permissão e devem ser registrados em log. \\ \hline
+RN05 & Tratamentos & A evolução de um tratamento deve ser registrada obrigatoriamente com data, cuidador responsável e observações. \\ \hline
+RN06 & Tratamentos & Prescrições médicas devem ser anexadas em formato válido (PDF, JPG, PNG, etc.), respeitando o tamanho máximo definido para cada tipo de arquivo. \\ \hline
+RN07 & Segurança & O armazenamento de todos os dados relacionados a um usuário, incluindo backups, devem ser realizados em ambientes seguros, hospedados em servidores certificados e com criptografia válida. \\ \hline
+RN08 & Privacidade & O sistema deve solicitar consentimento explícito do usuário para a coleta e o armazenamento de dados sensíveis. \\ \hline
+\end{tabularx}
 \fonte{Autores.}
+\end{quadro}

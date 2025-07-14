@@ -1,27 +1,18 @@
-\begin{longtblr}[
-  label = requisitos_nf,
-  entry = none,
-  caption = {Requisitos Não Funcionais},
-  note = {Fonte: Autores.},
-]{
-  vline{1-4} = {-}{},
-  hline{-} = {1-3}{},
-}
-Código & Categoria       & Descrição                                                                                                               &  \\
-RNF01  & Segurança       & {Criptografia de dados sensíveis: \\como senhas e informações médicas}                                                  &  \\
-RNF02  & Acesso          & {Controle de acesso baseado em \\perfis de usuário: admin ou cuidador.}                                                 &  \\
-RNF03  & Sessão          & {Validação de sessão com expiração \\automática por inatividade}                                                        &  \\
-RNF04  & Backup          & {Backups regulares e automáticos: \\para recuperação de dados}                                                          &  \\
-RNF05  & Desempenho      & {O sistema deve responder às \\requisições em até 5 segundos \\nas operações}                                           &  \\
-RNF06  & Concorrência    & {Suportar múltiplos acessos simultâneos \\sem perda de desempenho}                                                      &  \\
-RNF07  & Interface       & {Interface intuitiva e acessível para \\usuários não técnicos}                                                          &  \\
-RNF08  & Design          & {Uso de padrões de design \\consistentes e amigáveis}                                                                   &  \\
-RNF09  & Manutenção      & {O código-fonte deve ser modular \\e documentado, facilitando a manutenção}                                              &  \\
-RNF10  & Arquitetura     & Uso de arquitetura escalável                                                                                            &  \\
-RNF11  & Disponibilidade & {O sistema deve estar disponível \\pelo menos 99,5\% do tempo}                                                          &  \\
-RNF12  & Integridade     & {Deve garantir integridade dos dados \\em operações simultâneas}                                                        &  \\
-RNF13  & Recuperação     & {Deve ser capaz de recuperar-se \\de falhas sem perda de dados}                                                         &  \\
-RNF15  & Ambientes       & {Ambientes separados para produção, \\testes e homologação}                                                             &  \\
-RNF16  & Segurança       & {O sistema deve exigir autenticação de usuário\\~para qualquer operação de inserção, \\alteração ou exclusão de dados.} &  
-\end{longtblr}
+\begin{quadro}
+\caption{Requisitos Não-Funcionais do MyMed}
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\textbf{Código} & \textbf{Categoria} & \textbf{Descrição} \\ \hline
+RNF01 & Segurança & O sistema deve assegurar a criptografia de dados sensíveis, como senhas e informações médicas. \\ \hline
+RNF02 & Acesso & O sistema deve implementar controle de acesso baseado em perfis de usuário, como administradores ou cuidadores. \\ \hline
+RNF03 & Sessão & O sistema deve realizar a validação de sessão com expiração automática após período de inatividade. \\ \hline
+RNF04 & Armazenamento & O sistema deve armazenar os dados de forma segura, em conformidade com a Lei Geral de Proteção de Dados (LGPD). \\ \hline
+RNF05 & Backup & O sistema deve executar backups regulares e automáticos para possibilitar a recuperação de dados em caso de falha. \\ \hline
+RNF06 & Desempenho & O sistema deve responder às requisições em até, no máximo 1,5 segundos durante as operações. \\ \hline
+RNF07 & Interface & O sistema deve realizar paginação e carregamento sob demanda (lazy loading) em listas extensas, como consultas e pacientes. \\ \hline
+RNF08 & Interface & O sistema deve possuir uma interface intuitiva e acessível para usuários sem conhecimento técnico. \\ \hline
+RNF09 & Compatibilidade & O sistema deve ser compatível com dispositivos móveis, mantendo todas as funcionalidades acessíveis. \\ \hline
+RNF10 & Disponibilidade & O sistema deve permanecer disponível pelo menos 99,5\% do tempo durante o horário de operação. \\ \hline
+\end{tabularx}
 \fonte{Autores.}
+\end{quadro}
