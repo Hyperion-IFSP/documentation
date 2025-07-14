@@ -418,7 +418,7 @@ A modelagem do sistema é uma etapa fundamental que visa traduzir os requisitos 
 
 \subsubsection{Casos de Uso}
 
-A \autoref{casos_de_uso} apresenta os atores do sistema, o usuário final com as funcionalidades de cuidador e o administrador, que é responsável por auxiliar o usuário com operações de criação e edição de dependentes e a utilização geral do aplicativo.
+Como apresentado na \autoref{casos_de_uso}, os casos de uso representam as principais interações entre os usuários e o sistema, descrevendo como as funcionalidades foram projetadas para atender às necessidades identificadas durante a análise de requisitos. Eles são fundamentais para garantir que o sistema seja desenvolvido de forma alinhada às expectativas do público-alvo e às regras de negócio definidas.
 
 \begin{figure}[!htbp]
     \centering
@@ -428,13 +428,17 @@ A \autoref{casos_de_uso} apresenta os atores do sistema, o usuário final com as
     \label{casos_de_uso}
 \end{figure}
 
-O \autoref{dicionario_casos_uso} apresenta os dicionários de casos de uso, dos quais apresentam com detalhes cada caso de uso, atores que participam e dão uma descrição deles.
+
+No \nomeprojeto, os casos de uso foram elaborados para cobrir as principais operações realizadas pelos cuidadores e administradores. Entre os casos de uso mais relevantes, destacam-se o caso de uso "Manter Dependentes" permite que o cuidador adicione, visualize, edite e exclua informações dos pacientes, garantindo que os dados estejam sempre atualizados. Já o caso de uso "Agendar Consulta" possibilita que o cuidador registre compromissos médicos em uma agenda para os pacientes, com integração opcional ao calendário do dispositivo. Além disso, o caso de uso "Gerenciar Medicações" permite o acompanhamento do estoque de medicamentos e o registro de consumo, emitindo alertas em caso de baixa disponibilidade.
+
+O \autoref{dicionario_casos_uso} apresenta o \textit{Dicionário de Casos de Uso}, apresentando cada cenário com detalhes e informações sobre os atores envolvidos, pré-condições, fluxos principais e pós-condições.
+
 
 \newpage
 
 \subsubsection{Modelo Entidade Relacionamento}
 
-A \autoref{model_entidade_relacionamento} apresenta o modelo entidade relacionamento do sistema, que é a representação gráfica dos modelos de cada entidade do sistema, como usuário, tratamento, dependente e consulta.
+O MER do MyMed foi projetado para representar as principais entidades do sistema, como Usuário, Dependente, Consulta, Tratamento e Medicação, além de suas relações. Ele garante que as informações sejam armazenadas de forma consistente e que as interações entre as entidades sejam bem definidas. A \autoref{model_entidade_relacionamento} apresenta o diagrama completo, detalhando as entidades e seus relacionamentos.
 
 \begin{figure}[!htbp]
     \centering
@@ -443,6 +447,10 @@ A \autoref{model_entidade_relacionamento} apresenta o modelo entidade relacionam
     \fonte{Autores.}
     \label{model_entidade_relacionamento}
 \end{figure}
+
+Por exemplo, a entidade Usuário está relacionada à entidade Dependente, permitindo que cuidadores gerenciem os dados de seus dependentes. A entidade Consulta está associada tanto ao Usuário quanto ao Dependente, possibilitando o registro de compromissos médicos para ambos. Já a entidade Tratamento está vinculada a Medicação, permitindo o acompanhamento detalhado de medicamentos prescritos e consumidos.
+
+O MER reflete a necessidade de um sistema robusto e escalável, garantindo que os dados sejam organizados de forma eficiente e que as operações, como consultas e atualizações, sejam realizadas de maneira confiável. Ele também assegura a integridade referencial, evitando inconsistências nos dados e permitindo que o sistema atenda aos requisitos funcionais e não funcionais definidos. 
 
 \newpage
 
@@ -510,8 +518,6 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 \textit{Infraestrutura:} Serviço externo SaaS.\\
 \textit{Interação:} Comunicação via HTTP com a aplicação web.
 
-\newpage
-
 \subsubsection{Fluxo de Operação}
 
 \begin{enumerate}
@@ -537,8 +543,6 @@ A prototipagem do sistema se deu pela criação inicial do conceito do sistema e
 \subsection{Plano de Testes}
 
 O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. A \autoref{plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
-
-\newpage
 
 \begin{longtblr}[
   label = plano_testes,
