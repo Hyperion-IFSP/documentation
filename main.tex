@@ -421,11 +421,11 @@ Esta seção percorre todas as etapas do desenvolvimento do projeto, desde sua p
 
 Em anexo, há três documentos que detalham os requisitos do sistema, sendo eles: requisitos funcionais, requisitos não funcionais e regras de negócio. Estes documentos foram criados a partir das entrevistas com clientes e orientadores da matéria. 
 
-A \autoref{requisitos_f} detalha os requisitos funcionais do projeto, ou seja, os principais recursos que são necessários para a interação direta com dados do usuário, como a de possuir a função de preencher informações do tratamento do usuário. 
+A \autoref{quadro_requisitos_f} detalha os requisitos funcionais do projeto, ou seja, os principais recursos que são necessários para a interação direta com dados do usuário, como a de possuir a função de preencher informações do tratamento do usuário. 
 
-A \autoref{requisitos_nf} detalha os requisitos não funcionais, recursos necessários para que o sistema atinja seu objetivo principal, mas não interagem diretamente com informações dadas pelo usuário, como a necessidade de que o sistema possua tempo de disponibilidade de pelo menos 99,5\% o tempo todo. 
+A \autoref{quadro_requisitos_nf} detalha os requisitos não funcionais, recursos necessários para que o sistema atinja seu objetivo principal, mas não interagem diretamente com informações dadas pelo usuário, como a necessidade de que o sistema possua tempo de disponibilidade de pelo menos 99,5\% o tempo todo. 
 
-A \autoref{regras_negocio} detalha sobre as regras de negócio definidas para direcionar o funcionamento geral do sistema, como o registro de ações sensíveis de criação e exclusão de dependentes em log.
+A \autoref{quadro_regras_negocio} detalha sobre as regras de negócio definidas para direcionar o funcionamento geral do sistema, como o registro de ações sensíveis de criação e exclusão de dependentes em log.
 
 \subsection{Modelagem}
 
@@ -477,24 +477,23 @@ A Prova de Conceito (Proof Of Concept) traz as principais funcionalidades do sis
 
 \subsection{Plano de Testes}
 
-O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
+O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{quadro_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
 
-\begin{longtblr}[
-  label = plano_testes,
-  entry = {Plano de Testes},
-  caption = {Plano de Testes do Sistema \nomeprojeto},
-  note = {Fonte: Autores.},
-]{
-  vline{1-4} = {-}{},
-  hline{-} = {1-3}{},
-  colspec = {X[2,l]X[3,l]X[3,l]},
-}
-    \textbf{Objeto de Teste} & \textbf{Resultado Esperado}                    & \textbf{Possíveis Divergências} \\
-    Enviar usuário ao banco & Criação de usuário no banco de dados & A conexão com o banco de dados pode falhar \\
-    Enviar dependente ao banco & Criação de dependente no banco de dados & A conexão com o banco de dados pode falhar \\
-    Enviar consulta ao banco & Criação de consulta no banco de dados & A conexão com o banco de dados pode falhar \\
-\end{longtblr}
-\fonte{Autores.}
+\begin{quadro}
+  \caption{\label{quadro_testes}Plano de Testes do Sistema \nomeprojeto}
+    \begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+      \hline
+      \textbf{Objeto de Teste} & \textbf{Resultado Esperado} & \textbf{Possíveis Divergências} \\
+      \hline
+      Enviar usuário ao banco & Criação de usuário no banco de dados & A conexão com o banco de dados pode falhar \\
+      \hline
+      Enviar dependente ao banco & Criação de dependente no banco de dados & A conexão com o banco de dados pode falhar \\
+      \hline
+      Enviar consulta ao banco & Criação de consulta no banco de dados & A conexão com o banco de dados pode falhar \\
+      \hline
+    \end{tabular}
+  \fonte{Autores.}
+\end{quadro}
 
 \section{MVP}
 
