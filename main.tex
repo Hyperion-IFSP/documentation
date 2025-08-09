@@ -237,20 +237,21 @@ Mateus Armando Carrara de Mendonça\inst{1}\thanks{mateusacdem@gmail.com }}
 
 A saúde dos dias de hoje é em sua maioria amparada, e muitas vezes serve de motivação para serviços tecnológicos como aplicações \textit{mobile}, \textit{sites} de compra de medicamento, informativos \textit{online} de programas do governo, entre outros. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos os grupos de médicos e de pacientes \cite{clarisse2016}.
 
-Um grupo muito beneficiado por essas tecnologias é o da terceira idade (idosos com mais de 60 anos). Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras prejudicadas, idosos necessitam de aplicativos com interfaces simples e funcionalidades diretas para realizar tarefas do dia a dia ou até dentro do seu celular.
+Um grupo muito beneficiado por essas tecnologias é o da terceira idade (idosos com mais de 60 anos). Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras reduzidas, idosos necessitam de aplicativos com interfaces simples e funcionalidades diretas para realizar tarefas do dia a dia ou até dentro do seu celular.
 
 Aplicativos de assistência ao idoso são exemplos de um mercado promissor e possuem uma gama de usuários que buscam estes serviços. Porém, muitas vezes não possuem autonomia própria e não conseguem usar tais sistemas.
 
-Um caso relevante é o de idosos que não possuem autonomia própria e são zelados por cuidadores contratados pela família. Para \citeonline{aline2012sobrecarga}, os profissionais - que são em grande parte mulheres adultas - sofrem de doenças como hipertensão e estresse devido a sua profissão, e ainda dizem que suas tarefas são desgastantes e consomem muito de seu dia:
+Um caso relevante é o de idosos que não possuem autonomia própria e são zelados por cuidadores contratados pela família. Para \citeonline{aline2012sobrecarga}, os profissionais - que são em grande parte mulheres adultas - sofrem de doenças como hipertensão e estresse devido o acúmulo de múltiplos papéis.
 
 \begin{citacao}
 "Pode-se verificar relação entre características dos cuidadores com a sobrecarga, em que os cuidadores, na maioria, familiares do sexo feminino, encontram-se na faixa etária adulta, fase em que a mulher tem vários papéis sociais: mãe, esposa, dona de casa, dentre outros. Muitas vezes, tem outras atribuições sociais, como o trabalho fora do lar, além de assumir o cuidado de seus pais, já idosos." \cite{aline2012sobrecarga} 
 \end{citacao}
 
-Em vista de todas as oportunidades de mercado para estas soluções, ainda não há uma plataforma que seja clara e sucinta em sua execução, segundo \citeonline{janaina2023}. Um aplicativo que serve de auxílio para o cuidador de idosos com demência, o Sistema Móvel de Assistência ao Idoso (SMAI), é descrito como "repetitivo" e necessita de uma ficha técnica extensa para ser utilizado \cite{andre2020}.
+Esses profissionais enfrentam uma rotina intensa, marcada por altos níveis de estresse e responsabilidades, gerando assim problemas de saúde como hipertensão
 
-O problema central que este projeto visa resolver é, então, a gestão de tratamentos de uma ou mais pessoas. Irá focar na centralização do monitoramento de recursos como estoque de remédios, locais de compra, pesquisa de preços, lembretes para consumo e criação de relatórios de consulta, por meio de uma plataforma simples e direta. Afinal, o trabalho de cuidado é uma das poucas áreas da saúde da qual não se possui uma aplicação assistiva ao profissional.
+Em vista de todas as oportunidades de mercado para estas soluções, ainda não há uma plataforma que seja clara e sucinta em sua execução, segundo \citeonline{janaina2023}. Um exemplo é o Sistema Móvel de Assistência ao Idoso (SMAI), que, embora disponibilize suporte para cuidadores de idosos com demência, apresenta limitações significativas, tal qual uma interface repetitiva e a necessidade de preencher fichas técnicas extensas, fato que compromete a usabilidade e a praticidade que esses profissionais necessitam no dia a dia \cite{andre2020}.
 
+Visando superar essas limitações, o projeto propõe o desenvolvimento de uma plataforma focada exclusivamente no cuidador de idosos, com funcionalidades que centralizam o monitoramento e a gestão de tratramentos. A ferramenta inclui lembretes para administração dos remédios, agendamentos de consultadas com calendário integrado, indicação de locais para compra, pesquisa de preços e criação de relatórios médicos - tudo focado na interface intuitiva e direta. Assim, busca-se reduzir a sobrecarga dos cuidadores, proporcionando mais autonamia e eficiência no desempenho de suas funções.
 \subsection{Objetivos}
 
 Para o desenvolvimento do sistema, será adotado como referência uma diretriz de desenvolvimento que se baseará na comunicação constante com o usuário e controle das informações.
@@ -490,7 +491,6 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 
 \begin{figure}[h!]
     \centering
-    \caption{Diagramas da Arquitetura de Software}
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Figuras/diagrama_conteineres.jpg}
@@ -505,6 +505,7 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
         \label{fig:fluxo-comunicacao}
     \end{subfigure}
     \label{fig:arquitetura-software}
+    \caption{Diagramas da Arquitetura de Software}
     \fonte{Autores.}
 \end{figure}
 
@@ -593,7 +594,6 @@ O plano de testes visa verificar todas as funcionalidades e validar seu uso na a
 Para garantir a segurança na comunicação entre os usuários e a aplicação, foi configurado o protocolo HTTPS com suporte a TLS, utilizando certificados digitais válidos e atualizados. A certificação foi realizada através da integração com o serviço Let's Encrypt através do Render para o back-end e Gerenciado pelo Google para o front-end através do Firebase Hosting, assegurando criptografia ponta a ponta durante as transações de dados. A configuração foi validada na ferramenta SSL Labs, onde o ambiente obteve a nota máxima A+.
 
 \begin{figure}[h!]
-    \caption{Resultados dos testes de criptografia.}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
@@ -607,6 +607,7 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
         \caption{Resultado dos testes do back-end}
     \end{subfigure}
     \label{fig:testes-criptografia}
+    \caption{Resultados dos testes de criptografia.}    
     \fonte{Autores.}
 \end{figure}
 
