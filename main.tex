@@ -105,7 +105,7 @@
 
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
-\title{\nomeprojeto + oie}
+\title{\nomeprojeto}
 
 \author{
 Arthur Augusto Lessa Ferreira\inst{1}\thanks{thurlessaf@gmail.com}, 
@@ -247,9 +247,9 @@ Um caso relevante é o de idosos que não possuem autonomia própria e são zela
 "Pode-se verificar relação entre características dos cuidadores com a sobrecarga, em que os cuidadores, na maioria, familiares do sexo feminino, encontram-se na faixa etária adulta, fase em que a mulher tem vários papéis sociais: mãe, esposa, dona de casa, dentre outros. Muitas vezes, tem outras atribuições sociais, como o trabalho fora do lar, além de assumir o cuidado de seus pais, já idosos." \cite{aline2012sobrecarga} 
 \end{citacao}
 
-Esses profissionais enfrentam uma rotina intensa, marcada por altos níveis de estresse e responsabilidades, gerando assim problemas de saúde como hipertensão
+Esses profissionais enfrentam uma rotina intensa, marcada por altos níveis de estresse e responsabilidades, gerando assim problemas de saúde como hipertensão e estresse persistente.
 
-Em vista de todas as oportunidades de mercado para estas soluções, ainda não há uma plataforma que seja clara e sucinta em sua execução, segundo \citeonline{janaina2023}. Um exemplo é o Sistema Móvel de Assistência ao Idoso (SMAI), que, embora disponibilize suporte para cuidadores de idosos com demência, apresenta limitações significativas, tal qual uma interface repetitiva e a necessidade de preencher fichas técnicas extensas, fato que compromete a usabilidade e a praticidade que esses profissionais necessitam no dia a dia \cite{andre2020}.
+Em vista de todas as oportunidades de mercado para estas soluções, ainda não há uma plataforma que seja clara e direta em sua execução, segundo \citeonline{janaina2023}. Um exemplo é o Sistema Móvel de Assistência ao Idoso (SMAI), que, embora disponibilize suporte para cuidadores de idosos com demência, apresenta limitações significativas, tal qual uma interface repetitiva e a necessidade de preencher fichas técnicas extensas, fato que compromete a usabilidade e a praticidade que esses profissionais necessitam no dia a dia \cite{andre2020}.
 
 Visando superar essas limitações, o projeto propõe o desenvolvimento de uma plataforma focada exclusivamente no cuidador de idosos, com funcionalidades que centralizam o monitoramento e a gestão de tratramentos. A ferramenta inclui lembretes para administração dos remédios, agendamentos de consultadas com calendário integrado, indicação de locais para compra, pesquisa de preços e criação de relatórios médicos - tudo focado na interface intuitiva e direta. Assim, busca-se reduzir a sobrecarga dos cuidadores, proporcionando mais autonamia e eficiência no desempenho de suas funções.
 \subsection{Objetivos}
@@ -278,9 +278,9 @@ A fim de alcançar o objetivo geral da proposta apresentada, foram delineados os
 
 \subsection{Justificativa}    
 
-Segundo \citeonline{mariacristina2008}, o consumo de um medicamento ou consultas de rotina podem se tornar algo supérfluo na rotina de um paciente que os realiza com frequência, podendo acarretar em um esquecimento de tais compromissos. 
+Segundo \citeonline{mariacristina2008}, o consumo de um medicamento ou o acompanhamento de consultas de rotina podem se tornar algo supérfluo na rotina de um paciente que os realiza com frequência, podendo acarretar em um esquecimento de tais compromissos. 
 
-A partir disso, foi realizada uma pesquisa com o público geral, no formato de um formulário online. Foi apontado que 70\% dos participantes utilizam pouco ou muito pouco de serviços tecnológicos de saúde; dos que utilizam, 63\% relatam não corresponder às suas expectativas. Cerca de 62\% dos participantes têm grandes dificuldades em lembrar de datas de consultas, e 81\% relatam problemas no horário de consumo de remédios.
+A partir disso, foi realizada uma pesquisa com o público geral no formato de um formulário online. Foi apontado que 70\% dos participantes utilizam pouco ou muito pouco de serviços tecnológicos de saúde; dos que utilizam, 63\% relatam não corresponder às suas expectativas. Cerca de 62\% dos participantes têm grandes dificuldades em lembrar de datas de consultas, e 81\% relatam problemas no horário de consumo de remédios.
 
 O \textit{feedback} constante de usuários de sistemas existentes será a base do desenvolvimento, e trará uma solução prática ao público-alvo que aperfeiçoe as aplicações já utilizadas.
 
@@ -335,7 +335,7 @@ Todas as perguntas que foram feitas na primeira e segunda etapa se encontram no 
 
 \subsubsection{Análise dos Dados}
 
-Na primeira pesquisa, denotou-se que aproximadamente 73.3\% das pessoas nunca utilizaram um aplicativo para gerenciamento de consultas e medicações, enquanto os outros 26.7 utilizaram um ou mais aplicativos, geralmente relacionados a diferentes tratamentos e teleconsultas. Muitas pessoas comentaram dificuldade em memorizar posologias
+Na primeira pesquisa, denotou-se que aproximadamente 73,3\% das pessoas nunca utilizaram um aplicativo para gerenciamento de consultas e medicações, enquanto os outros 26,7\% utilizaram um ou mais aplicativos, geralmente relacionados a diferentes tratamentos e teleconsultas. Muitas pessoas comentaram dificuldade em memorizar posologias
 \footnote[1]{Seção da terapêutica que se dedica ao estudo da dosagem certa dos medicamentos. Indicação da dosagem certa (adequada) de um medicamento tendo em conta os vários casos em que o mesmo pode ser prescrito.}, 
 organização pessoal de consultas agendadas, datas e disponibilidade de vacinas e agendamento de consultas. Dos desejos compartilhados entre os entrevistados, se destacaram pesquisas de medicações, uma agenda direcionada a estes compromissos e tarefas, uma integração para que haja apenas uma aplicação onde seja possível acessar todas as informações necessárias, lembretes do horário de medicações e organização pessoal.
 
@@ -407,13 +407,6 @@ Esta seção percorre todas as etapas do desenvolvimento do projeto, desde sua p
 
 Os requisitos do sistema, divididos em funcionais e não funcionais, detalham os recursos e as características planejadas para o projeto. A definição de cada requisito foi baseada na análise das pesquisas realizadas com o público-alvo e na avaliação da viabilidade de desenvolvimento.
 
-<<<<<<< HEAD
-A \autoref{quadro_requisitos_f} detalha os requisitos funcionais do projeto, ou seja, os principais recursos que são necessários para a interação direta com dados do usuário, como a de possuir a função de preencher informações do tratamento do usuário. 
-
-A \autoref{quadro_requisitos_nf} detalha os requisitos não funcionais, recursos necessários para que o sistema atinja seu objetivo principal, mas não interagem diretamente com informações dadas pelo usuário, como a necessidade de que o sistema possua tempo de disponibilidade de pelo menos 99,5\% o tempo todo. 
-
-A \autoref{quadro_regras_negocio} detalha sobre as regras de negócio definidas para direcionar o funcionamento geral do sistema, como o registro de ações sensíveis de criação e exclusão de dependentes em log.
-=======
 \subsubsection{Requisitos Funcionais}
 
 Requisitos funcionais são especificações que descrevem as funcionalidades e comportamentos que um sistema deve possuir para atender às necessidades dos usuários, definindo o que o sistema deve fazer e detalhando as interações entre o usuário e o software.
@@ -437,7 +430,6 @@ Regras de negócio são diretrizes que definem como o sistema deve operar em sit
 A regra de negócio RN02 (Segurança), que determina o arquivamento de registros excluídos por 15 dias antes da remoção definitiva, foi incluída para atender às exigências da LGPD, inclusive para permitir que os usuários tenham tempo para reverter os pedidos de exclusão ou recuperar alguma informação. A regra RN04 (Tratamentos), que exige que a conclusão ou o cancelamento de tratamentos seja realizado apenas por cuidadores autorizados e registrado em log, foi definida para garantir rastreabilidade e controle sobre ações sensíveis no sistema. Já a regra RN07 (Segurança) foi adicionada para garantir que todas informações pertencentes a um usuário devem ser armazenadas de forma segura e criptografada, a fim de respeitar normas de segurança.
 
 Essas regras foram elaboradas com base nas necessidades do público alvo e nas regulamentações aplicáveis, como a LGPD, para garantir que o sistema seja seguro e confiável. O \autoref{regras_negocio} apresenta todas as regras de negócio definidas para a aplicação.
->>>>>>> origin/main
 
 \subsection{Modelagem}
 
@@ -493,10 +485,7 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 
 \begin{figure}[h!]
     \centering
-<<<<<<< HEAD
-=======
     \caption{Diagramas da Arquitetura de Software}
->>>>>>> da6a9fd08a917747c610270b252c9f0d58c9366d
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Figuras/diagrama_conteineres.jpg}
@@ -511,10 +500,6 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
         \label{fig:fluxo-comunicacao}
     \end{subfigure}
     \label{fig:arquitetura-software}
-<<<<<<< HEAD
-    \caption{Diagramas da Arquitetura de Software}
-=======
->>>>>>> da6a9fd08a917747c610270b252c9f0d58c9366d
     \fonte{Autores.}
 \end{figure}
 
@@ -576,11 +561,7 @@ A prototipagem do sistema se deu pela criação inicial do conceito do sistema e
 
 \subsection{Plano de Testes}
 
-<<<<<<< HEAD
 O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{quadro_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
-=======
-O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. A \autoref{plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
->>>>>>> origin/main
 
 \begin{quadro}
   \caption{\label{quadro_testes}Plano de Testes do Sistema \nomeprojeto}
@@ -603,10 +584,7 @@ O plano de testes visa verificar todas as funcionalidades e validar seu uso na a
 Para garantir a segurança na comunicação entre os usuários e a aplicação, foi configurado o protocolo HTTPS com suporte a TLS, utilizando certificados digitais válidos e atualizados. A certificação foi realizada através da integração com o serviço Let's Encrypt através do Render para o back-end e Gerenciado pelo Google para o front-end através do Firebase Hosting, assegurando criptografia ponta a ponta durante as transações de dados. A configuração foi validada na ferramenta SSL Labs, onde o ambiente obteve a nota máxima A+.
 
 \begin{figure}[h!]
-<<<<<<< HEAD
-=======
     \caption{Resultados dos testes de criptografia.}
->>>>>>> da6a9fd08a917747c610270b252c9f0d58c9366d
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
@@ -620,10 +598,6 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
         \caption{Resultado dos testes do back-end}
     \end{subfigure}
     \label{fig:testes-criptografia}
-<<<<<<< HEAD
-    \caption{Resultados dos testes de criptografia.}    
-=======
->>>>>>> da6a9fd08a917747c610270b252c9f0d58c9366d
      \fonte{Autores.}
 \end{figure}
 
