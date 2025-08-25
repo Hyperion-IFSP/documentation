@@ -307,7 +307,7 @@ Com a pesquisa de \citeonline{clarisse2016}, é possível notar que aplicativos 
 
 \subsection{Más Condições de Trabalho de Cuidadores de Idosos}
 
-São definidas normas que categorizam idosos não-autônomos em três termos de dependência: grau I, totalmente independentes; grau II, que necessitam de auxílio em até três atividades básicas diárias; grau III, que necessitam auxílio em todas as tarefas de autocuidado. É também posto um limite para cuidadores de idosos: em uma jornada de trabalho de oito horas diárias e cinco dias por semana, o profissional de uma instituição de cuidado pode auxiliar até 20 idosos com grau de dependência I, ou 6 idosos com grau de dependência III \cite{ministeriosaude2021ilpi}.
+São definidas normas que categorizam idosos não-autônomos em três termos de dependência: grau I, totalmente independentes; grau II, que necessitam de auxílio em até três atividades básicas diárias; grau III, que necessitam auxílio em todas as tarefas de autocuidado. É também posto um limite para cuidadores de idosos: em uma jornada de trabalho de oito horas diárias e cinco dias por semana, o profissional de uma instituição de cuidado pode auxiliar até 20 idosos com grau de dependência I, até 10 idosos com grau de dependência II ou 6 idosos com grau de dependência  III \cite{ministeriosaude2021ilpi}.
 
 Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais. Segundo a pesquisa de \citeonline{nunes2018sabe}, que inclui um grupo de 359 cuidadores do município de São Paulo - SP, a maioria dos cuidadores era familiar, do sexo feminino, com média de idade de 53,9 anos. Em seguida, foram analisados fatores como a disfunção familiar (incapacidade de uma família cobrir as necessidades básicas de um indivíduo como apoio emocional e financeiro) e o excesso de trabalho durante longas horas contribuem para o estresse do profissional de cuidado, que somam mais de um terço do grupo de pesquisa. São utilizados de exemplos os cuidadores familiares, que mesmo tendo uma grande intimidade com o dependente, ainda sofrem com situações que exigem uma parcela próxima ao total de seu tempo. A autora finaliza com um apelo a instituições públicas, que não fornecem recursos suficientes para a manutenção pessoal de profissionais de cuidado, a fim de um exercício melhor de suas atividades.
 
@@ -323,7 +323,7 @@ Os métodos de pesquisa do projeto são divididas em duas partes: a pesquisa qua
 
 \subsubsection{Instrumento de Pesquisa e Escalas Utilizadas}
 
-O principal meio de pesquisa foi a realização de formulários online estruturados, desenvolvido com aaas objetivas e subjetivas, visando identificar as principais demandas, dificuldades e práticas no cuidado com idosos.
+O principal meio de pesquisa foi a realização de formulários online estruturados, desenvolvido com as perguntas objetivas e subjetivas, visando identificar as principais demandas, dificuldades e práticas no cuidado com idosos.
 
 \subsubsection{Coleta de Dados}
 
@@ -358,8 +358,9 @@ Essa pergunta foi escolhida porque é a base para nossa aplicação. Esse dado �
     \fonte{Autores.}
     \label{utilizaria_app}
 \end{figure}
-A 
+A pergunta 9 foi selecionada para avaliar se a aplicação seria vantajosa e útil para o nosso público-alvo. Os resultados obtidos são especialmente relevantes, pois indicam que há interesse dos profissionais em incorporar a tecnologia em suas atividades diárias.
 
+Como apresentado nas figuras 1 e 2, respectivamente, há uma lacuna quando se trata da rotina de controle de medicamentos de seus pacientes, mas ao mesmo tempo, há um interesse em fazer uma conversão para um sistema que atenda melhor essas necessidades. 
 \subsection{Ferramentas e Tecnologias}
 
 Para a organização e acompanhamento do desenvolvimento, foi adotada uma abordagem baseada no framework Scrum, adaptada à realidade e às necessidades da equipe. O processo foi estruturado em sprints com duração de quatro semanas, com reuniões semanais para alinhamento das tarefas e revisão do progresso. As tarefas foram gerenciadas no Jira, permitindo o acompanhamento visual do fluxo de trabalho e facilitando a priorização das entregas. Essa adaptação do Scrum proporcionou maior autonomia à equipe, mantendo a organização e o foco nos objetivos do projeto.
@@ -488,25 +489,14 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 
 \begin{figure}[h!]
     \centering
-    \caption{Diagramas da Arquitetura de Software}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figuras/diagrama_conteineres.jpg}
-        \caption{Diagrama de Contêineres}
-        \label{fig:diagrama-conteineres}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Figuras/fluxo_comunicacao.jpg}
-        \caption{Fluxo de Comunicação}
-        \label{fig:fluxo-comunicacao}
-    \end{subfigure}
-    \label{fig:arquitetura-software}
+    \includegraphics[width=1.5\textwidth]{Figuras/diagrama_de_software.jpeg}
+    \caption{Diagrama de Arquitetura de Software}
+    \label{fig:fluxo-comunicacao}
     \fonte{Autores.}
 \end{figure}
 
-\subsubsection{Detalhamento dos Contêineres}
+
+\subsubsection{Detalhamento do Contêiner}
 
 \textbf{Usuário}\\
 \textit{Tipo:} Pessoa.\\
@@ -516,7 +506,7 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 \textit{Tipo:} Contêiner.\\
 \textit{Tecnologia:} Angular.\\
 \textit{Descrição:} Interface responsável por apresentar informações e funcionalidades ao usuário de forma acessível.\\
-\textit{Infraestrutura:} Hospedada na plataforma Vercel.\\
+\textit{Infraestrutura:} Hospedada na plataforma Firebase.\\
 \textit{Interação:} Comunicação via HTTP com a REST API e o sistema de autenticação.
 
 \textbf{REST API (Back-end)}\\
@@ -543,7 +533,7 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 \subsubsection{Fluxo de Operação}
 
 \begin{enumerate}
-    \item O usuário acessa a aplicação web hospedada na Vercel.
+    \item O usuário acessa a aplicação web hospedada na Firebase.
     \item A aplicação web realiza requisições HTTP ao sistema de autenticação (Auth0) para autenticar o usuário.
     \item Após a autenticação, a aplicação envia requisições HTTP para a REST API hospedada na Render, solicitando operações de negócio.
     \item A REST API processa as solicitações e interage com o banco de dados MySQL hospedado na GCP via SQL.
@@ -561,6 +551,8 @@ A prototipagem do sistema se deu pela criação inicial do conceito do sistema e
     \item \textbf{Consulta:} o usuário pode visualizar as consultas agendadas, além de poder criar novas consultas e editar as já existentes;
     \item \textbf{Perfil:} o usuário pode visualizar e editar seu perfil, além de poder adicionar dependentes e editar os já existentes;
 \end{enumerate}
+
+\renewcommand{\arraystretch}{1.5} % 1.5 = 50% mais alto que o normal
 
 \subsection{Plano de Testes}
 
@@ -587,7 +579,6 @@ O plano de testes visa verificar todas as funcionalidades e validar seu uso na a
 Para garantir a segurança na comunicação entre os usuários e a aplicação, foi configurado o protocolo HTTPS com suporte a TLS, utilizando certificados digitais válidos e atualizados. A certificação foi realizada através da integração com o serviço Let's Encrypt através do Render para o back-end e Gerenciado pelo Google para o front-end através do Firebase Hosting, assegurando criptografia ponta a ponta durante as transações de dados. A configuração foi validada na ferramenta SSL Labs, onde o ambiente obteve a nota máxima A+.
 
 \begin{figure}[h!]
-    \caption{Resultados dos testes de criptografia.}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
@@ -601,7 +592,8 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
         \caption{Resultado dos testes do back-end}
     \end{subfigure}
     \label{fig:testes-criptografia}
-     \fonte{Autores.}
+    \caption{Resultados dos testes de criptografia.}
+    \fonte{Autores.}
 \end{figure}
 
 \section{MVP}
@@ -619,6 +611,9 @@ Outro autor importante na área, \citeonline{blank2013startup}, define o MVP com
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
 % ---
 \bookmarksetup{startatroot}% 
+\section{Seção empresa}
+Na disciplina de Gestão Industrial (GEI), como atividade avaliatica para composição de nota do segundo bimestre, desenvolvemos a estrutura empresarial da equipe Hyperion, cujo foco é o aplicativo \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros. A descrição completa da empresa pode ser consultada no \autoref{secao_empresa}
+
 % ---
 
 % ---
@@ -700,6 +695,10 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 \chapter{Prototipagem\label{prototipagem}}
 
 \input{prototipagem}
+\newpage
+
+\chapter{Seção Empresa \label{secao_empresa}}
+\input{secao_empresa.tex}
 
 \end{apendicesenv}
 

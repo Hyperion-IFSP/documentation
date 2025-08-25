@@ -1,187 +1,129 @@
 A seguir consta o dicionário de casos de uso do sistema, que descreve as principais funcionalidades e interações dos usuários com o sistema. Cada caso de uso é detalhado com informações sobre o ator, pré-condições, fluxo principal e pós-condição.
 
-\begin{longtblr}[
-  label = {Manter_Perfil},
-  entry = none,
-  caption = {Manter Perfil},
-  note = {Fonte: Autores.},
-]{
-  vline{1} = {-}{},
-  vline{2} = {-}{},
-  vline{3} = {-}{},
-  hline{-} = {1-3}{},
-  width = \textwidth,
-  colspec = {X[2,l] X[8,l]},
-}
-\textbf{Caso de Uso} & \textbf{Manter Perfil} \\
-\textbf{Descrição} & Permite ao cuidador(a) visualizar e editar suas informações pessoais. \\
-\textbf{Ator} & Cuidador(a) \\
-\textbf{Pré-condições} & Estar autenticado (logado) \\
-\textbf{Fluxo Principal} & 1. Cuidador acessa a seção de configuração do perfil \newline 2. Visualiza os dados cadastrados \newline 3. Edita os registros de cuidador \\
-\textbf{Extensões} & N/A \\
-\textbf{Pós-condição} & Dados do perfil atualizado com sucesso \\
-\end{longtblr}
-\fonte{Autores.}
 
-\begin{longtblr}[
-  label = {Manter_Dependentes},
-  entry = none,
-  caption = {Manter Dependentes},
-  note = {Fonte: Autores.},
-]{
-  vline{1} = {-}{},
-  vline{2} = {-}{},
-  vline{3} = {-}{},
-  hline{-} = {1-3}{},
-  width = \textwidth,
-  colspec = {X[2,l] X[8,l]},
-}
-\textbf{Caso de Uso} & \textbf{Manter Dependentes} \\
-\textbf{Descrição} & Permite ao cuidador(a) adicionar, visualizar, editar e excluir dados de dependentes. \\
-\textbf{Ator} & Cuidador(a) \\
-\textbf{Pré-condições} & Estar autenticado (logado) \\
-\textbf{Fluxo Principal} & 1. Cuidador acessa a seção de configuração do perfil \newline 2. Visualiza os dados dos dependentes \newline 3. Edita ou remove os dados dos dependentes \\
-\textbf{Extensões} & N/A \\
-\textbf{Pós-condição} & Dados do perfil atualizado com sucesso \\
-\end{longtblr}
-\fonte{Autores.}
 
-\begin{longtblr}[
-  label = {Agendar_Consulta},
-  entry = none,
-  caption = {Agendar Consulta},
-  note = {Fonte: Autores.},
-]{
-  vline{1} = {-}{},
-  vline{2} = {-}{},
-  vline{3} = {-}{},
-  hline{-} = {1-3}{},
-  width = \textwidth,
-  colspec = {X[2,l] X[8,l]},
-}
-\textbf{Caso de Uso} & \textbf{Agendar Consulta} \\
-\textbf{Descrição} & Cuidador(a) agendar consultas para os dependentes. \\
-\textbf{Ator} & Cuidador(a) \\
-\textbf{Pré-condições} & Estar autenticado (logado) \\
-\textbf{Fluxo Principal} & 1. Cuidador acessa a funcionalidade de agendamento \newline 2. Selecionar data e horário \newline 3. Adicionar apelido \newline 4. Confirma o agendamento \\
-\textbf{Extensões} & Adicionar ao Google Calendar ou integrar ao calendário do dispositivo utilizado via arquivo .ics\textless\textless extend\textgreater\textgreater \newline Gerar relatório \textless\textless extend\textgreater\textgreater \\
-\textbf{Pós-condição} & Consulta agendada e registrada no sistema \\
-\end{longtblr}
-\fonte{Autores.}
+\begin{quadro}
+    \caption{\label{quadro_manter_perfil}Manter Perfil}
+    \begin{tabular}{|l|p{12cm}|}
+        \hline
+        \textbf{Caso de Uso} & Manter Perfil \\ \hline
+        \textbf{Descrição} & Permite ao cuidador(a) visualizar e editar suas informações pessoais. \\ \hline
+        \textbf{Ator} & Cuidador(a) \\ \hline
+        \textbf{Pré-condições} & Estar autenticado (logado) \\ \hline
+        \textbf{Fluxo Principal} & 1. Cuidador acessa a seção de configuração do perfil \newline 2. Visualiza os dados cadastrados \newline 3. Edita os registros de cuidador \\ \hline
+        \textbf{Extensões} & N/A \\ \hline
+        \textbf{Pós-condição} & Dados do perfil atualizado com sucesso \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
 
-\begin{longtblr}[
-  label = {Gerenciar_Medicacoes},
-  entry = none,
-  caption = {Gerenciar Medicações do Dependente},
-  note = {Fonte: Autores.},
-]{
-  vline{1} = {-}{},
-  vline{2} = {-}{},
-  vline{3} = {-}{},
-  hline{-} = {1-3}{},
-  width = \textwidth,
-  colspec = {X[2,l] X[8,l]},
-}
-\textbf{Caso de Uso} & \textbf{Gerenciar medicações do dependente} \\
-\textbf{Descrição} & Permite ao cuidador visualizar, atualizar e acompanhar o uso dos medicamentos de um dependente, incluindo o estoque e registros de consumo. \\
-\textbf{Ator} & Cuidador(a) \\
-\textbf{Pré-condições} & Estar autenticado (logado) \\
-\textbf{Fluxo Principal} & 1. Acessar módulo de medicações \newline 2. Visualizar dados de cada medicamento \newline 3. Registrar consumo \newline 4. Atualizar estoque disponível \\
-\textbf{Extensões} & Calcular índice de adesão ao tratamento \textless\textless extend\textgreater\textgreater \newline Exibir alertas de baixo estoque \textless\textless extend\textgreater\textgreater \newline Redirecionar para busca de preços e disponibilidade \textless\textless extend\textgreater\textgreater \\
-\textbf{Pós-condição} & Dados dos medicamentos atualizados; adesão e estoque recalculados. \\
-\end{longtblr}
-\fonte{Autores.}
 
-\begin{longtblr}[
-  label = {Visualizar_Analises_Medicamentos},
-  entry = none,
-  caption = {Visualizar Análises de Uso de Medicamentos},
-  note = {Fonte: Autores.},
-]{
-  vline{1} = {-}{},
-  vline{2} = {-}{},
-  vline{3} = {-}{},
-  hline{-} = {1-3}{},
-  width = \textwidth,
-  colspec = {X[2,l] X[8,l]},
-}
-\textbf{Caso de Uso} & \textbf{Visualizar análises de uso de medicamentos} \\
-\textbf{Descrição} & Exibe gráficos e indicadores sobre o uso dos medicamentos, como frequência, horários, aderência e possíveis anomalias. \\
-\textbf{Ator} & Cuidador(a) \\
-\textbf{Pré-condições} & Estar autenticado (logado) \\
-\textbf{Fluxo Principal} & 1. Acessar seção de análises de medicação \newline 2. Visualizar gráficos com dados de uso \\
-\textbf{Extensões} & N/A \\
-\textbf{Pós-condição} & Gráficos e relatórios exibidos com base nos dados registrados. \\
-\end{longtblr}
-\fonte{Autores.}
+\begin{quadro}
+    \caption{\label{quadro_manter_dependentes}Manter Dependentes}
+    \begin{tabular}{|l|p{12cm}|}
+        \hline
+        \textbf{Caso de Uso} & Manter Dependentes \\ \hline
+        \textbf{Descrição} & Permite ao cuidador(a) adicionar, visualizar, editar e excluir dados de dependentes. \\ \hline
+        \textbf{Ator} & Cuidador(a) \\ \hline
+        \textbf{Pré-condições} & Estar autenticado (logado) \\ \hline
+        \textbf{Fluxo Principal} & 1. Cuidador acessa a seção de configuração do perfil \newline 2. Visualiza os dados dos dependentes \newline 3. Edita ou remove os dados dos dependentes \\ \hline
+        \textbf{Extensões} & N/A \\ \hline
+        \textbf{Pós-condição} & Dados do perfil atualizado com sucesso \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
 
-\begin{longtblr}[
-  label = {Observar_Analise_Medicacao},
-  entry = none,
-  caption = {Observar Análise de Medicação},
-  note = {Fonte: Autores.},
-]{
-  vline{1} = {-}{},
-  vline{2} = {-}{},
-  vline{3} = {-}{},
-  hline{-} = {1-3}{},
-  width = \textwidth,
-  colspec = {X[2,l] X[8,l]},
-}
-\textbf{Caso de Uso} & \textbf{Observar análise de medicação} \\
-\textbf{Descrição} & Permite ao cuidador(a) visualizar e gerenciar as informações associadas aos tratamentos dos dependentes, como informações gerais, categorização e análise por uso e disponibilidade através de gráficos. \\
-\textbf{Ator} & Cuidador(a) \\
-\textbf{Pré-condições} & Estar autenticado (logado) \\
-\textbf{Fluxo Principal} & 1. Cuidador acessa a seção de medicações \newline 2. Visualiza as análises e informações sobre os medicamentos. \\
-\textbf{Extensões} & Permite a geração de relatórios \textless\textless extends\textgreater\textgreater \newline Alterar as informações de gráficos através de filtros \textless\textless extends\textgreater\textgreater \\
-\textbf{Pós-condição} & Dados de um tratamento do dependente visualizados com sucesso \\
-\end{longtblr}
-\fonte{Autores.}
 
-\newpage
+\begin{quadro}
+    \caption{\label{quadro_agendar_consulta}Agendar Consulta}
+    \begin{tabular}{|l|p{12cm}|}
+        \hline
+        \textbf{Caso de Uso} & Agendar Consulta \\ \hline
+        \textbf{Descrição} & Cuidador(a) agendar consultas para os dependentes. \\ \hline
+        \textbf{Ator} & Cuidador(a) \\ \hline
+        \textbf{Pré-condições} & Estar autenticado (logado) \\ \hline
+        \textbf{Fluxo Principal} & 1. Cuidador acessa a funcionalidade de agendamento \newline 2. Seleciona data e horário \newline 3. Adiciona apelido \newline 4. Confirma o agendamento \\ \hline
+        \textbf{Extensões} & Adicionar ao Google Calendar ou integrar ao calendário do dispositivo utilizado via arquivo .ics \textless\textless extend\textgreater\textgreater \newline Gerar relatório \textless\textless extend\textgreater\textgreater \\ \hline
+        \textbf{Pós-condição} & Consulta agendada e registrada no sistema \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
 
-\begin{longtblr}[
-  label = {Controlar_Registros},
-  entry = none,
-  caption = {Controlar Registros},
-  note = {Fonte: Autores.},
-]{
-  vline{1} = {-}{},
-  vline{2} = {-}{},
-  vline{3} = {-}{},
-  hline{-} = {1-3}{},
-  width = \textwidth,
-  colspec = {X[2,l] X[8,l]},
-}
-\textbf{Caso de Uso} & \textbf{Controlar Registros} \\
-\textbf{Descrição} & Permite que o administrador realize o controle de usuários e atualizações ao sistema (excluir cuidadores caso haja mau uso, corrigir erros…) \\
-\textbf{Ator} & Administrador \\
-\textbf{Pré-condições} & Acessar com credenciais de administrador \\
-\textbf{Fluxo Principal} & 1. O sistema monitora ações do cuidador. \newline 2. Registra alterações ou eventos automaticamente. \newline 3. Atualiza banco de dados conforme necessário. \\
-\textbf{Extensões} & Editar dados do cuidador \textless\textless extend\textgreater\textgreater \newline Editar dados dos dependente \textless\textless extend\textgreater\textgreater \newline Excluir registros \textless\textless extend\textgreater\textgreater \\
-\textbf{Pós-condição} & Registros atualizados e armazenados corretamente pelo sistema. \\
-\end{longtblr}
-\fonte{Autores.}
 
-\begin{longtblr}[
-  label = {Visualizar_Relatorios},
-  entry = none,
-  caption = {Visualizar Relatórios},
-  note = {Fonte: Autores.},
-]{
-  vline{1} = {-}{},
-  vline{2} = {-}{},
-  vline{3} = {-}{},
-  hline{-} = {1-3}{},
-  width = \textwidth,
-  colspec = {X[2,l] X[8,l]},
-}
-\textbf{Caso de Uso} & \textbf{Visualizar Relatórios} \\
-\textbf{Descrição} & Permite ao cuidador(a) gerar relatórios de adesão ao tratamento e resultados de consultas. \\
-\textbf{Ator} & Cuidador(a) \\
-\textbf{Pré-condições} & Estar autenticado (logado) \\
-\textbf{Fluxo Principal} & 1. Acessar a seção de relatórios \newline 2. Selecionar o tipo de relatório \newline 3. Gerar e exportar relatório \\
-\textbf{Extensões} & Aplicar filtros por período \textless\textless extend\textgreater\textgreater \\
-\textbf{Pós-condição} & Relatório gerado e disponível para download \\
-\end{longtblr}
-\fonte{Autores.}
+\begin{quadro}
+    \caption{\label{quadro_gerenciar_medicacoes}Gerenciar Medicações do Dependente}
+    \begin{tabular}{|l|p{12cm}|}
+        \hline
+        \textbf{Caso de Uso} & Gerenciar medicações do dependente \\ \hline
+        \textbf{Descrição} & Permite ao cuidador visualizar, atualizar e acompanhar o uso dos medicamentos de um dependente, incluindo o estoque e registros de consumo. \\ \hline
+        \textbf{Ator} & Cuidador(a) \\ \hline
+        \textbf{Pré-condições} & Estar autenticado (logado) \\ \hline
+        \textbf{Fluxo Principal} & 1. Acessar módulo de medicações \newline 2. Visualizar dados de cada medicamento \newline 3. Registrar consumo \newline 4. Atualizar estoque disponível \\ \hline
+        \textbf{Extensões} & Calcular índice de adesão ao tratamento \textless\textless extend\textgreater\textgreater \newline Exibir alertas de baixo estoque \textless\textless extend\textgreater\textgreater \newline Redirecionar para busca de preços e disponibilidade \textless\textless extend\textgreater\textgreater \\ \hline
+        \textbf{Pós-condição} & Dados dos medicamentos atualizados; adesão e estoque recalculados. \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
+
+
+\begin{quadro}
+    \caption{\label{quadro_visualizar_analises_medicamentos}Visualizar Análises de Uso de Medicamentos}
+    \begin{tabular}{|l|p{12cm}|}
+        \hline
+        \textbf{Caso de Uso} & Visualizar análises de uso de medicamentos \\ \hline
+        \textbf{Descrição} & Exibe gráficos e indicadores sobre o uso dos medicamentos, como frequência, horários, aderência e possíveis anomalias. \\ \hline
+        \textbf{Ator} & Cuidador(a) \\ \hline
+        \textbf{Pré-condições} & Estar autenticado (logado) \\ \hline
+        \textbf{Fluxo Principal} & 1. Acessar seção de análises de medicação \newline 2. Visualizar gráficos com dados de uso \\ \hline
+        \textbf{Extensões} & N/A \\ \hline
+        \textbf{Pós-condição} & Gráficos e relatórios exibidos com base nos dados registrados. \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
+
+\begin{quadro}
+    \caption{\label{quadro_observar_analise_medicacao}Observar Análise de Medicação}
+    \begin{tabular}{|l|p{12cm}|}
+        \hline
+        \textbf{Caso de Uso} & Observar análise de medicação \\ \hline
+        \textbf{Descrição} & Permite ao cuidador(a) visualizar e gerenciar as informações associadas aos tratamentos dos dependentes, como informações gerais, categorização e análise por uso e disponibilidade através de gráficos. \\ \hline
+        \textbf{Ator} & Cuidador(a) \\ \hline
+        \textbf{Pré-condições} & Estar autenticado (logado) \\ \hline
+        \textbf{Fluxo Principal} & 1. Cuidador acessa a seção de medicações \newline 2. Visualiza as análises e informações sobre os medicamentos. \\ \hline
+        \textbf{Extensões} & Permite a geração de relatórios \textless\textless extends\textgreater\textgreater \newline Alterar as informações de gráficos através de filtros \textless\textless extends\textgreater\textgreater \\ \hline
+        \textbf{Pós-condição} & Dados de um tratamento do dependente visualizados com sucesso \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
+
+\begin{quadro}
+    \caption{\label{quadro_controlar_registros}Controlar Registros}
+    \begin{tabular}{|l|p{12cm}|}
+        \hline
+        \textbf{Caso de Uso} & Controlar Registros \\ \hline
+        \textbf{Descrição} & Permite que o administrador realize o controle de usuários e atualizações ao sistema (excluir cuidadores caso haja mau uso, corrigir erros…) \\ \hline
+        \textbf{Ator} & Administrador \\ \hline
+        \textbf{Pré-condições} & Acessar com credenciais de administrador \\ \hline
+        \textbf{Fluxo Principal} & 1. O sistema monitora ações do cuidador. \newline 2. Registra alterações ou eventos automaticamente. \newline 3. Atualiza banco de dados conforme necessário. \\ \hline
+        \textbf{Extensões} & Editar dados do cuidador \textless\textless extend\textgreater\textgreater \newline Editar dados dos dependentes \textless\textless extend\textgreater\textgreater \newline Excluir registros \textless\textless extend\textgreater\textgreater \\ \hline
+        \textbf{Pós-condição} & Registros atualizados e armazenados corretamente pelo sistema. \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
+
+
+\begin{quadro}
+    \caption{\label{quadro_visualizar_relatorios}Visualizar Relatórios}
+    \begin{tabular}{|1|p{12cm}|}
+        \hline
+        \textbf{Caso de Uso} & Visualizar Relatórios \\ \hline
+        \textbf{Descrição} & Permite ao cuidador(a) gerar relatórios de adesão ao tratamento e resultados de consultas. \\ \hline
+        \textbf{Ator} & Cuidador(a) \\ \hline
+        \textbf{Pré-condições} & Estar autenticado (logado) \\ \hline
+        \textbf{Fluxo Principal} & 1. Acessar a seção de relatórios \newline 2. Selecionar o tipo de relatório \newline 3. Gerar e exportar relatório \\ \hline
+        \textbf{Extensões} & Aplicar filtros por período \textless\textless extend\textgreater\textgreater \\ \hline
+        \textbf{Pós-condição} & Relatório gerado e disponível para download \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
+
