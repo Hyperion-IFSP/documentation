@@ -235,9 +235,9 @@ Mateus Armando Carrara de Mendonça\inst{1}\thanks{mateusacdem@gmail.com }}
 % ----------------------------------------------------------
 \section{Introdução}
 
-A saúde dos dias de hoje é em sua maioria amparada, e muitas vezes serve de motivação para serviços tecnológicos como aplicações \textit{mobile}, \textit{sites} de compra de medicamento, informativos \textit{online} de programas do governo, entre outros. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos os grupos de médicos e de pacientes \cite{clarisse2016}.
+Um direito fundamental de qualquer ser humano é a saúde. Nos dias atuais, a expansão e aplicação tecnológica em diversos setores muitas vezes serve de motivação para a criação de novos serviços, como aplicações \textit{mobile}, \textit{sites} de compra de medicamento, informativos \textit{online} de programas do governo, entre outros. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos os grupos de profissionais da saúde e de pacientes \cite{clarisse2016}.
 
-Um grupo muito beneficiado por essas tecnologias é o da terceira idade (idosos com mais de 60 anos). Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras reduzidas, idosos necessitam de aplicativos com interfaces simples e funcionalidades diretas para realizar tarefas do dia a dia ou até dentro do seu celular.
+Um grupo muito beneficiado por essas tecnologias é o da terceira idade (idosos com mais de 60 anos). Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras reduzidas, pessoas idosas necessitam de aplicativos com interfaces mais simples e funcionalidades diretas para realizar tarefas do dia a dia ou até dentro do seu celular.
 
 Aplicativos de assistência ao idoso são exemplos de um mercado promissor e possuem uma gama de usuários que buscam estes serviços. Porém, muitas vezes não possuem autonomia própria e não conseguem usar tais sistemas.
 
@@ -258,11 +258,11 @@ Para o desenvolvimento do sistema, será adotado como referência uma diretriz d
 
 \subsubsection{Objetivo Geral}
 
-Desenvolver uma plataforma que auxilie os cuidadores de idosos a manter de forma simples, organizada e eficaz o acompanhamento de pacientes. O sistema irá permitir registro de medicamentos utilizados, consultas agendadas e realizadas, com possibilidade de gerar relatórios e gráficos personalizados de acordo com os tratamentos em andamento (como controle de glicemia e hipertensão).
+Desenvolver uma plataforma que auxilie os cuidadores de idosos a manter de forma simples, organizada e eficaz o acompanhamento de seus pacientes. O sistema irá permitir registro de medicamentos utilizados, consultas agendadas e realizadas, com possibilidade de gerar relatórios e gráficos personalizados de acordo com os tratamentos em andamento (como controle de glicemia e hipertensão).
 
-Além disso, enviará alertas sobre o estoque de medicamentos de todos os pacientes vinculados a uma conta, indicando a estimativa de tempo de consumo restante e realizando pesquisas de preços para reposição. 
+Além disso, o sistema poderá enviar alertas sobre o estoque de medicamentos de todos os pacientes vinculados a uma conta, indicando a estimativa de tempo de consumo restante e realizando pesquisas de preços para reposição. 
 
- Também contará com um módulo de registros de dados médicos, onde o cuidador poderá inserir informações essenciais, como índices de glicemia e pressão arterial, datas de retorno, novas prescrições e informações relevantes para aquele tratamento. 
+Também contará com um módulo de registros de dados médicos, onde o cuidador poderá inserir informações essenciais, como índices de glicemia e pressão arterial, datas de retorno, novas prescrições e informações relevantes de um paciente.
 
 \subsubsection{Objetivos Específicos}
 
@@ -271,7 +271,7 @@ A fim de alcançar o objetivo geral da proposta apresentada, foram delineados os
 \begin{enumerate}
     \item Conduzir entrevistas com cuidadores registrados e funcionários de casas de repouso. Analisar resultados para direcionar a um desenvolvimento próximo ao usuário final da aplicação.
     \item Realizar uma pesquisa de mercado de aplicações similares, a fim de criar uma solução única ao usuário voltada ao melhoramento de recursos já existentes e implantação de recomendações destes usuários. 
-    \item Desenvolver um sistema que, com uma interface simples e intuitiva, além de lembretes que auxilie o usuário a manter seu tratamento, automatize uma tarefa banal.
+    \item Desenvolver um sistema que, com uma interface simples e intuitiva, além de lembretes que auxilie o usuário a manter esses tratamentos, automatize tarefas banais e auxilie o controle por parte do cuidador.
     \item Aplicar as funcionalidades do sistema de forma empírica em um público-alvo a fim de aprimorar o sistema e torná-lo útil ao usuário final.
 \end{enumerate}
 
@@ -282,9 +282,7 @@ Segundo \citeonline{mariacristina2008}, o consumo de um medicamento ou o acompan
 
 A partir disso, foi realizada uma pesquisa com o público geral no formato de um formulário online. Foi apontado que 70\% dos participantes utilizam pouco ou muito pouco de serviços tecnológicos de saúde; dos que utilizam, 63\% relatam não corresponder às suas expectativas. Cerca de 62\% dos participantes têm grandes dificuldades em lembrar de datas de consultas, e 81\% relatam problemas no horário de consumo de remédios.
 
-O \textit{feedback} constante de usuários de sistemas existentes será a base do desenvolvimento, e trará uma solução prática ao público-alvo que aperfeiçoe as aplicações já utilizadas.
-
-Este documento, portanto, demonstra a necessidade de tal sistema. Destinado a usuários que necessitam de um melhor gerenciamento de seus tratamentos, sejam eles medicamentos ou consultas; a fim de manter sua saúde bem condicionada e supervisionada.
+O \textit{feedback} constante de usuários de sistemas existentes é uma das bases do desenvolvimento, e trará uma solução prática ao público-alvo que aperfeiçoe as aplicações já utilizadas. Desta forma, esse documento, demonstra a necessidade de tal sistema, destinada a usuários que necessitam ou desejam um melhor gerenciamento dos tratamentos de seus pacientes, sejam eles medicamentos ou consultas; a fim de manter a saúde destes bem condicionadas e supervisionadas.
 
 \section{Referencial Teórico}
 
@@ -307,7 +305,7 @@ Com a pesquisa de \citeonline{clarisse2016}, é possível notar que aplicativos 
 
 \subsection{Más Condições de Trabalho de Cuidadores de Idosos}
 
-São definidas normas que categorizam idosos não-autônomos em três termos de dependência: grau I, totalmente independentes; grau II, que necessitam de auxílio em até três atividades básicas diárias; grau III, que necessitam auxílio em todas as tarefas de autocuidado. É também posto um limite para cuidadores de idosos: em uma jornada de trabalho de oito horas diárias e cinco dias por semana, o profissional de uma instituição de cuidado pode auxiliar até 20 idosos com grau de dependência I, até 10 idosos com grau de dependência II ou 6 idosos com grau de dependência  III \cite{ministeriosaude2021ilpi}.
+São definidas normas que categorizam idosos não-autônomos em três termos de dependência: grau I, totalmente independentes; grau II, que necessitam de auxílio em até três atividades básicas diárias; grau III, que necessitam auxílio em todas as tarefas de autocuidado. É também posto um limite para cuidadores de idosos: em uma jornada de trabalho de oito horas diárias e cinco dias por semana, o profissional de uma instituição de cuidado pode auxiliar até 20 idosos com grau de dependência I, até 10 idosos com grau de dependência II ou 6 idosos com grau de dependência III \cite{ministeriosaude2021ilpi}.
 
 Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais. Segundo a pesquisa de \citeonline{nunes2018sabe}, que inclui um grupo de 359 cuidadores do município de São Paulo - SP, a maioria dos cuidadores era familiar, do sexo feminino, com média de idade de 53,9 anos. Em seguida, foram analisados fatores como a disfunção familiar (incapacidade de uma família cobrir as necessidades básicas de um indivíduo como apoio emocional e financeiro) e o excesso de trabalho durante longas horas contribuem para o estresse do profissional de cuidado, que somam mais de um terço do grupo de pesquisa. São utilizados de exemplos os cuidadores familiares, que mesmo tendo uma grande intimidade com o dependente, ainda sofrem com situações que exigem uma parcela próxima ao total de seu tempo. A autora finaliza com um apelo a instituições públicas, que não fornecem recursos suficientes para a manutenção pessoal de profissionais de cuidado, a fim de um exercício melhor de suas atividades.
 
@@ -344,23 +342,23 @@ A partir dos dados de ambas as pesquisas constatou que dos profissionais entrevi
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Figuras/utiliza-app.png}
-    \caption{Pergunta 6/10}
+    \caption{Pergunta 6/10 do 2º Questionário}
     \fonte{Autores.}
     \label{utiliza_app}
 \end{figure}
-Essa pergunta foi escolhida porque é a base para nossa aplicação. Esse dado é bastante relevante, pois demonstra que há uma lacuna tecnológica quando se trata da rotina de controle de medicamentos entre os profissionais. 
-
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Figuras/utilizaria-app.png}
-    \caption{Pergunta 9/10}
+    \caption{Pergunta 9/10 do 2º Questionário}
     \fonte{Autores.}
     \label{utilizaria_app}
 \end{figure}
-A pergunta 9 foi selecionada para avaliar se a aplicação seria vantajosa e útil para o nosso público-alvo. Os resultados obtidos são especialmente relevantes, pois indicam que há interesse dos profissionais em incorporar a tecnologia em suas atividades diárias.
 
-Como apresentado nas figuras 1 e 2, respectivamente, há uma lacuna quando se trata da rotina de controle de medicamentos de seus pacientes, mas ao mesmo tempo, há um interesse em fazer uma conversão para um sistema que atenda melhor essas necessidades. 
+\break
+
+Como apresentado nas Figuras 1 e 2, respectivamente, há uma lacuna quando se trata da rotina de controle de medicamentos de seus pacientes, mas ao mesmo tempo, há um interesse em fazer uma conversão para um sistema que atenda melhor essas necessidades. Os resultados obtidos indicam essa vontade dos profissionais em incorporar a tecnologia em suas atividades diárias.
+
 \subsection{Ferramentas e Tecnologias}
 
 Para a organização e acompanhamento do desenvolvimento, foi adotada uma abordagem baseada no framework Scrum, adaptada à realidade e às necessidades da equipe. O processo foi estruturado em sprints com duração de quatro semanas, com reuniões semanais para alinhamento das tarefas e revisão do progresso. As tarefas foram gerenciadas no Jira, permitindo o acompanhamento visual do fluxo de trabalho e facilitando a priorização das entregas. Essa adaptação do Scrum proporcionou maior autonomia à equipe, mantendo a organização e o foco nos objetivos do projeto.
@@ -457,8 +455,6 @@ No \nomeprojeto, os casos de uso foram elaborados para cobrir as principais oper
 O \autoref{dicionario_casos_uso} apresenta o \textit{Dicionário de Casos de Uso}, apresentando cada cenário com detalhes e informações sobre os atores envolvidos, pré-condições, fluxos principais e pós-condições.
 
 
-\newpage
-
 \subsubsection{Modelo Entidade Relacionamento}
 
 O MER do MyMed foi projetado para representar as principais entidades do sistema, como Usuário, Dependente, Consulta, Tratamento e Medicação, além de suas relações. Ele garante que as informações sejam armazenadas de forma consistente e que as interações entre as entidades sejam bem definidas. A \autoref{model_entidade_relacionamento} apresenta o diagrama completo, detalhando as entidades e seus relacionamentos.
@@ -473,9 +469,7 @@ O MER do MyMed foi projetado para representar as principais entidades do sistema
 
 Por exemplo, a entidade Usuário está relacionada à entidade Dependente, permitindo que cuidadores gerenciem os dados de seus dependentes. A entidade Consulta está associada tanto ao Usuário quanto ao Dependente, possibilitando o registro de compromissos médicos para ambos. Já a entidade Tratamento está vinculada a Medicação, permitindo o acompanhamento detalhado de medicamentos prescritos e consumidos.
 
-O MER reflete a necessidade de um sistema robusto e escalável, garantindo que os dados sejam organizados de forma eficiente e que as operações, como consultas e atualizações, sejam realizadas de maneira confiável. Ele também assegura a integridade referencial, evitando inconsistências nos dados e permitindo que o sistema atenda aos requisitos funcionais e não funcionais definidos. 
-
-\newpage
+O MER reflete a necessidade de um sistema robusto e escalável, garantindo que os dados sejam organizados de forma eficiente e que as operações, como consultas e atualizações, sejam realizadas de maneira confiável. Ele também assegura a integridade referencial, evitando inconsistências nos dados e permitindo que o sistema atenda aos requisitos funcionais e não funcionais definidos.
 
 \subsection{Arquitetura de Software}
 
@@ -489,56 +483,13 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1.5\textwidth]{Figuras/diagrama_de_software.jpeg}
+    \includegraphics[width=1\textwidth]{Figuras/diagrama_de_software.jpeg}
     \caption{Diagrama de Arquitetura de Software}
     \label{fig:diagrama_software}
     \fonte{Autores.}
 \end{figure}
 
-
-\subsubsection{Detalhamento do Contêiner}
-
-\textbf{Usuário}\\
-\textit{Tipo:} Pessoa.\\
-\textit{Descrição:} Representa o usuário final que interage com o sistema por meio da aplicação web.
-
-\textbf{Aplicação Web (Front-end)}\\
-\textit{Tipo:} Contêiner.\\
-\textit{Tecnologia:} Angular.\\
-\textit{Descrição:} Interface responsável por apresentar informações e funcionalidades ao usuário de forma acessível.\\
-\textit{Infraestrutura:} Hospedada na plataforma Firebase.\\
-\textit{Interação:} Comunicação via HTTP com a REST API e o sistema de autenticação.
-
-\textbf{REST API (Back-end)}\\
-\textit{Tipo:} Contêiner.\\
-\textit{Tecnologia:} Java Spring Boot.\\
-\textit{Descrição:} Responsável por processar as regras de negócio da aplicação e interagir com o banco de dados.\\
-\textit{Infraestrutura:} Hospedada na plataforma Render.\\
-\textit{Interação:} Recebe requisições HTTP da aplicação web e acessa o banco de dados via SQL.
-
-\textbf{Banco de Dados}\\
-\textit{Tipo:} Contêiner.\\
-\textit{Tecnologia:} MySQL.\\
-\textit{Descrição:} Responsável pelo armazenamento persistente das informações da aplicação.\\
-\textit{Infraestrutura:} Hospedado na Google Cloud Platform (GCP).\\
-\textit{Interação:} Acesso exclusivo pela REST API.
-
-\textbf{Sistema de Autenticação}\\
-\textit{Tipo:} Contêiner.\\
-\textit{Tecnologia:} Auth0.\\
-\textit{Descrição:} Serviço responsável por autenticar os usuários e controlar o acesso ao sistema.\\
-\textit{Infraestrutura:} Serviço externo SaaS.\\
-\textit{Interação:} Comunicação via HTTP com a aplicação web.
-
-\subsubsection{Fluxo de Operação}
-
-\begin{enumerate}
-    \item O usuário acessa a aplicação web hospedada na Firebase.
-    \item A aplicação web realiza requisições HTTP ao sistema de autenticação (Auth0) para autenticar o usuário.
-    \item Após a autenticação, a aplicação envia requisições HTTP para a REST API hospedada na Render, solicitando operações de negócio.
-    \item A REST API processa as solicitações e interage com o banco de dados MySQL hospedado na GCP via SQL.
-    \item As respostas do banco de dados são processadas pela REST API e devolvidas à aplicação web, que as apresenta ao usuário final.
-\end{enumerate}
+\newpage
 
 \subsection{Prototipagem}
 
@@ -598,11 +549,7 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
 
 \section{MVP}
 
-O termo MVP foi popularizado por  \citeonline{ries2011lean}, onde ele descreve o conceito como segue:
-
 "O MVP é o menor conjunto de recursos que permite que o empreendedor comece o processo de aprendizado com o mínimo de esforço e o máximo de aprendizado validado sobre os clientes."
-
-Outro autor importante na área, \citeonline{blank2013startup}, define o MVP como:
 
 "Uma ferramenta para testar hipóteses de negócios e iniciar o aprendizado, coletando o máximo de informações validadas sobre os clientes com o menor esforço possível."
 
@@ -611,8 +558,6 @@ Outro autor importante na área, \citeonline{blank2013startup}, define o MVP com
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
 % ---
 \bookmarksetup{startatroot}% 
-\section{Seção empresa}
-Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo bimestre, desenvolveu-se a estrutura empresarial da equipe Hyperion, cujo produto principal é o aplicativo \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros. A descrição completa da empresa pode ser consultada no \autoref{secao_empresa}
 
 % ---
 
@@ -632,6 +577,9 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 3. Faça uma reflexão crítica: Use a seção de considerações finais para fazer uma reflexão crítica sobre as limitações do estudo e possíveis viéses. Discuta as dificuldades encontradas, bem como eventuais lacunas de conhecimento que podem ser exploradas por estudos futuros.
 
 4. Encerre de forma concisa e impactante: Finalize a seção de considerações finais com uma frase ou parágrafo que resuma as principais conclusões e destaque a importância do estudo. É uma oportunidade para deixar uma impressão duradoura nos leitores.
+
+\subsection{Empresa}
+Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo bimestre, desenvolveu-se a estrutura empresarial fictícia da equipe Hyperion, cujo produto principal é o \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros. Todos os detalhes sobre a empresa pode ser consultada no \autoref{secao_empresa}.
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -653,6 +601,8 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 % ----------------------------------------------------------
 % Apêndices
 % ----------------------------------------------------------
+
+\newpage
 
 \bibliography{referencias}
 % ---
