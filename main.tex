@@ -481,7 +481,7 @@ A arquitetura do sistema é composta por quatro contêineres principais, cada um
 
 A comunicação entre esses contêineres ocorre predominantemente por meio de requisições HTTP.
 
-\begin{figure}[h!]
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\textwidth]{Figuras/diagrama_de_software.jpeg}
     \caption{Diagrama de Arquitetura de Software}
@@ -507,23 +507,7 @@ A prototipagem do sistema se deu pela criação inicial do conceito do sistema e
 
 \subsection{Plano de Testes}
 
-O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{quadro_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
-
-\begin{quadro}
-  \caption{\label{quadro_testes}Plano de Testes do Sistema \nomeprojeto}
-    \begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
-      \hline
-      \textbf{Objeto de Teste} & \textbf{Resultado Esperado} & \textbf{Possíveis Divergências} \\
-      \hline
-      Enviar usuário ao banco & Criação de usuário no banco de dados & A conexão com o banco de dados pode falhar \\
-      \hline
-      Enviar dependente ao banco & Criação de dependente no banco de dados & A conexão com o banco de dados pode falhar \\
-      \hline
-      Enviar consulta ao banco & Criação de consulta no banco de dados & A conexão com o banco de dados pode falhar \\
-      \hline
-    \end{tabular}
-  \fonte{Autores.}
-\end{quadro}
+O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{quadro_plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
 
 \subsection{Criptografia}
 
