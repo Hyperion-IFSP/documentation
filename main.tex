@@ -45,107 +45,15 @@
 % ---
 % PACOTES
 % ---
+\input{config/packages}
 
 % ---
-% Pacotes fundamentais 
+% Configurações do pacote backref e formatação
 % ---
-\usepackage{sbc-template}
-\usepackage{times}			% Usa a fonte Times new Roman
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{nomencl} 			% Lista de simbolos
-\usepackage{color}				% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{microtype} 			% para melhorias de justificação
-\usepackage{tikz}               % para ticks
-\usepackage{longtable}          % para quebra de tabela por página
-\usepackage{tabularray}         % formatação da coluna e linha da tabela
-\usepackage{graphicx}           % utilizado para formatação de tabelas
-\usepackage{subcaption}         % para subFiguras
-% ---
-		
-% ---
-% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
-% ---
-\usepackage{lipsum}				% para geração de dummy text
-% ---
-		
-% ---
-% Pacotes de citações
-% ---
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
-% ---
-
-% Pacotes instalados por nós alunos
-\usepackage{xurl}
-
-% ---
-% Configurações do pacote backref
-% Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
-% Texto padrão antes do número das páginas
-\renewcommand{\backref}{}
-% Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		%Citado #1 vezes nas páginas #2.%
-        Citado nas páginas #2.%
-	\fi}%
-% ---
+\input{config/formatting}
 
 % --- Informações de dados para CAPA e FOLHA DE ROSTO ---
-
-\newcommand\nomeprojeto{MyMed}
-
-\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
-
-\title{\nomeprojeto}
-
-\author{
-Arthur Augusto Lessa Ferreira\inst{1}\thanks{thurlessaf@gmail.com}, 
-Fernando Freitas de Lira\inst{1}\thanks{freitaslira18@gmail.com},
-\\ Henriquy Dias Terto Alves\inst{1}\thanks{henriquydta@gmail.com},
-Isabella Pantolfo Melo\inst{1}\thanks{isabellapantolfo1101@gmail.com}, 
-\\ Lucas da Conceição Silva Moura\inst{1}\thanks{pf.lucasmoura@gmail.com},
-Mateus Armando Carrara de Mendonça\inst{1}\thanks{mateusacdem@gmail.com }}
-
-
-\address{
-    Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Campus\\ São Paulo (IFSP) - Rua Pedro Vicente, 625 - Bloco C
-}
-
-
-% ---
-
-% ---
-% Configurações de aparência do PDF final
-
-% alterando o aspecto da cor azul
-\definecolor{blue}{RGB}{41,5,195}
-
-% informações do PDF
-\makeatletter
-\hypersetup{
-     	%pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
-    	pdfsubject={Modelo de artigo científico com abnTeX2},
-	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
-    	linkcolor=blue,          	% color of internal links
-    	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
-		urlcolor=blue,
-		bookmarksdepth=4
-}
-\makeatother
+\input{config/document-info}
 % --- 
 
 % ---
@@ -341,7 +249,7 @@ A partir dos dados de ambas as pesquisas constatou que dos profissionais entrevi
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.75\linewidth]{Figuras/utiliza-app.png}
+    \includegraphics[width=0.75\linewidth]{assets/figuras/utiliza-app.png}
     \caption{Pergunta 6/10 do 2º Questionário}
     \fonte{Autores.}
     \label{utiliza_app}
@@ -349,7 +257,7 @@ A partir dos dados de ambas as pesquisas constatou que dos profissionais entrevi
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.75\linewidth]{Figuras/utilizaria-app.png}
+    \includegraphics[width=0.75\linewidth]{assets/figuras/utilizaria-app.png}
     \caption{Pergunta 9/10 do 2º Questionário}
     \fonte{Autores.}
     \label{utilizaria_app}
@@ -373,7 +281,7 @@ A gestão de tarefas e acompanhamento do progresso do projeto foi feita com o Ji
 	
 \subsection{Processo de Desenvolvimento}
 
-Em primeira instância, foi desenvolvido o back-end a partir da modelagem proposta, criando o banco de dados em SQL, e hospedando-o na Google Cloud Platform. O desenvolvimento do back-end e integração com banco de dados foi desenvolvida com Java e Spring Boot, e hospedada na plataforma Render.
+O desenvolvimento foi iniciado a partir do lado do servidor, criando o banco de dados utilizando PostgreSQL, e hospedando-o na Google Cloud Platform. O desenvolvimento do back-end e integração com banco de dados foi desenvolvida com Java e Spring Boot, e hospedada na plataforma Render.
 
 Para o desenvolvimento do front-end, utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Firebase.
 
@@ -389,14 +297,14 @@ O \autoref{quadro_integrantes} discorre a respeito da distribuição de tarefas 
     \caption{\label{quadro_integrantes}Integrantes da equipe}
         \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-            Papéis         & Arthur                    & Fernando                  & Henriquy                  & Isabella                  & Lucas                     & Mateus                    \\ \hline
-            Back-end       &                           &                           &                 &                           & \checkmark                & \checkmark                \\ \hline
-            Front-end      & \checkmark                & \checkmark                &                           & \checkmark                &                           &                           \\ \hline
-            Banco de Dados &                           &                           & \checkmark                &                           & \checkmark                &                           \\ \hline
-	        Testes 	   &			       & 			   & \checkmark		       & 			   & 			       &			   \\ \hline
-            Documentação   & \checkmark                & \checkmark                & \checkmark                & \checkmark                & \checkmark                & \checkmark                \\ \hline
-            Design         &                           &                           & \checkmark                & \checkmark                &                           &                           \\ \hline
-            Gestão         &                           &                           & \checkmark                &                           & \checkmark                &                           \\ \hline
+            Papéis & Arthur & Fernando & Henriquy & Isabella & Lucas & Mateus \\ \hline
+            Back-end & & & & & \checkmark & \checkmark \\ \hline
+            Front-end & \checkmark & \checkmark & & \checkmark & & \\ \hline
+            Banco de Dados & & & \checkmark & & \checkmark & \\ \hline
+	        Testes & & & \checkmark & \checkmark & & \\ \hline
+            Documentação & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\ \hline
+            Design & & & \checkmark & \checkmark & & \\ \hline
+            Gestão & & & \checkmark & & \checkmark & \\ \hline
         \end{tabular}
     \fonte{Autores.}
 \end{quadro}
@@ -443,7 +351,7 @@ Como apresentado na \autoref{casos_de_uso}, os casos de uso representam as princ
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1.0\linewidth]{Figuras/diagrama-casos-uso.jpg}
+    \includegraphics[width=1.0\linewidth]{assets/figuras/diagrama-casos-uso.jpg}
     \caption{Diagrama de Casos de Uso}
     \fonte{Autores.}
     \label{casos_de_uso}
@@ -461,7 +369,7 @@ O MER do MyMed foi projetado para representar as principais entidades do sistema
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1.0\linewidth]{Figuras/bancoDados.jpg}
+    \includegraphics[width=1.0\linewidth]{assets/figuras/bancoDados.jpg}
     \caption{Imagem do Modelo Entidade Relacionamento}
     \fonte{Autores.}
     \label{model_entidade_relacionamento}
@@ -483,7 +391,7 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\textwidth]{Figuras/diagrama_de_software.jpeg}
+    \includegraphics[width=1\textwidth]{assets/figuras/diagrama_de_software.png}
     \caption{Diagrama de Arquitetura de Software}
     \label{fig:diagrama_software}
     \fonte{Autores.}
@@ -517,13 +425,13 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Figuras/certificacao_front.png}
+        \includegraphics[width=\textwidth]{assets/figuras/certificacao_front.png}
         \caption{Resultado dos testes do front-end}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Figuras/certificacao_back.png}
+        \includegraphics[width=\textwidth]{assets/figuras/certificacao_back.png}
         \caption{Resultado dos testes do back-end}
     \end{subfigure}
     \label{fig:testes-criptografia}
@@ -563,7 +471,7 @@ A seguir, algumas orientações gerais, para complementar a explicação:
 4. Encerre de forma concisa e impactante: Finalize a seção de considerações finais com uma frase ou parágrafo que resuma as principais conclusões e destaque a importância do estudo. É uma oportunidade para deixar uma impressão duradoura nos leitores.
 
 \subsection{Empresa}
-Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo bimestre, desenvolveu-se a estrutura empresarial fictícia da equipe Hyperion, cujo produto principal é o \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros. Todos os detalhes sobre a empresa pode ser consultada no \autoref{secao_empresa}.
+Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo bimestre, desenvolveu-se a estrutura empresarial fictícia da equipe Hyperion, cujo produto principal é o \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros, e foi importante para que desenvolvessemos uma visão mais ampliada e descritiva do que o \nomeprojeto e a Equipe Hyperion significa para pessoas de fora das matérias técnicas, possibilitando para que elas pudessem entender também. Todos os detalhes sobre a empresa pode ser consultada no \autoref{secao_empresa}.
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -598,44 +506,44 @@ Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo 
 % % % % ----------------------------------------------------------
 \chapter{Pesquisas\label{pesquisas}}
 
-\input{pesquisas}
+\input{sections/pesquisas}
 
 \newpage
 
 \chapter{Requisitos Funcionais\label{requisitos_f}}
 
-\input{requisitos_f}
+\input{sections/requisitos_f}
 
 \newpage
 
 \chapter{Requisitos Não Funcionais\label{requisitos_nf}}
 
-\input{requisitos_nf}
+\input{sections/requisitos_nf}
 
 \newpage
 
 \chapter{Regras de Negócio\label{regras_negocio}}
 
-\input{regras_negocio}
+\input{sections/regras_negocio}
 
 \newpage
 
 \chapter{Dicionário de Casos de Uso\label{dicionario_casos_uso}}
 
-\input{dicionario_casos_uso}
+\input{sections/dicionario_casos_uso}
 
 \newpage
 
 \chapter{Prototipagem\label{prototipagem}}
 
-\input{prototipagem}
+\input{sections/prototipagem}
 \newpage
 
 \chapter{Seção Empresa \label{secao_empresa}}
-\input{secao_empresa.tex}
+\input{sections/secao_empresa}
 
 \chapter{Plano de Testes}
-\input{plano_testes}
+\input{sections/plano_testes}
 
 \end{apendicesenv}
 
