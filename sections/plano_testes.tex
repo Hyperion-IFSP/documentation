@@ -3,17 +3,32 @@
 
 O quadro apresenta o plano de testes do sistema, detalhando os principais objetos de teste e os critérios de sucesso para cada caso. Entre os itens testados estão a manutenção de usuários e admins, gestão de informações adicionais ao perfil, registro e consulta de pacientes, notificações de tratamento, pesquisa de farmácias e medicamentos, além do controle de registros de saúde como pressão arterial, glicose e adesão a medicamentos. Cada teste busca garantir a correta criação, edição, exclusão e visualização dos dados no sistema, assegurando o funcionamento esperado das funcionalidades essenciais para o gerenciamento de pacientes e seus tratamentos.
 
-\begin{quadro}
+\begin{quadro}[!htbp]
     \caption{\label{quadro_plano_testes}Plano de Testes do Sistema}
     \small % Diminui a fonte para caber na página
     \begin{tabular}{|l|p{4cm}|p{5cm}|p{5cm}|}
         \hline
         \textbf{Código} & \textbf{Objeto de Teste} & \textbf{Sucesso} & \textbf{Erro} \\ \hline
-        T01 & Manter usuário/admin & Criação, edição ou exclusão de usuário ou admin no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
-        T02 & Manter informações adicionais ao perfil de usuário & Adição, edição ou exclusão de número de telefone, foto de perfil e endereço & A conexão com o banco de dados pode falhar; a foto de perfil pode apresentar erros de compressão \\ \hline
-        T03 & Manter paciente & Criação, edição ou exclusão de paciente no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
+        T01.1 & Criar usuário/admin & Criação de usuário ou admin no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
+        T01.2 & Editar usuário/admin & Edição de usuário ou admin no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
+        T01.3 & Excluir usuário/admin & Exclusão de usuário ou admin no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
+        T02.1 & Criar informações adicionais ao perfil de usuário & Adição de número de telefone, foto de perfil e endereço & A conexão com o banco de dados pode falhar; a foto de perfil pode apresentar erros de compressão \\ \hline
+        T02.2 & Editar informações adicionais ao perfil de usuário & Edição de número de telefone, foto de perfil e endereço & A conexão com o banco de dados pode falhar; a foto de perfil pode apresentar erros de compressão \\ \hline
+        T02.3 & Excluir informações adicionais ao perfil de usuário & Exclusão de número de telefone, foto de perfil e endereço & A conexão com o banco de dados pode falhar; a foto de perfil pode apresentar erros de compressão \\ \hline
+        T03.1 & Criar paciente & Criação de paciente no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
+        T03.2 & Editar paciente & Edição de paciente no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
+        T03.3 & Excluir paciente & Exclusão de paciente no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
         T04 & Enviar ao banco consulta de paciente & Criação de consulta no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
         T05 & Visualizar consultas por dia/mês de paciente & Consultas organizadas pelo filtro de dia ou mês & A conexão com o banco de dados pode falhar; o conteúdo pode aparecer de forma errada \\ \hline
+    \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
+
+\begin{quadro}[!htbp]
+    \small
+    \begin{tabular}{|l|p{4cm}|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Código} & \textbf{Objeto de Teste} & \textbf{Sucesso} & \textbf{Erro} \\ \hline
         T06 & Adicionar medicamento a um tratamento de paciente & Paciente consta que possui tratamento com aquele medicamento & A conexão com o banco de dados pode falhar \\ \hline
         T07 & Receber notificação de tratamento de paciente & Visualizar notificação de tratamento no horário que foi inserido & A notificação pode não aparecer; a notificação pode aparecer no horário errado; a notificação pode aparecer pertinente a outro paciente \\ \hline
         T08 & Manter atendimento de consulta de paciente & Criação, edição ou exclusão de atendimento de consulta & A conexão com o banco de dados pode falhar \\ \hline
