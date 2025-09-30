@@ -459,64 +459,46 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
 % Conclusão
 % ---
 \section{Resultado e discussões}
+Esta seção apresenta os principais resultados obtidos ao longo do desenvolvimento do projeto, bem como a análise crítica desses achados. São expostos os avanços alcançados, as limitações identificadas e os impactos observados no desempenho e na usabilidade do sistema. Além disso, busca-se discutir de que forma os resultados se relacionam com os objetivos propostos inicialmente, destacando pontos fortes, fragilidades e oportunidades de melhoria para trabalhos futuros.
 
 \subsection {Problemas no desenvolvimento}
-
 Durante o desenvolvimento do trabalho, foram identificados diversos problemas que impactaram tanto o andamento do cronograma quanto a implementação de determinadas funcionalidades. 
-No âmbito técnico, surgiram dificuldades relacionadas à compatibilidade de versões e bibliotecas, erros de integração entre módulos e limitações impostas por algumas ferramentas utilizadas. Em certos momentos, a falta de pesquisas e dcumentações dificultaram o embasamento do projeto, em outros momentos, a necessidade constante de bugs demandaram um tempo que não estava previsto no cronograma, atrasando outras etapas do desenvolvimento. 
-Referente aos aspectos organizacionais, destacaram-se obstáculos no gerenciamento de tempo e na adaptação do cronograma, pricipalmente quando houve necessidade de retrabalho
 
+No âmbito técnico, surgiram dificuldades relacionadas à compatibilidade de versões e bibliotecas, erros de integração entre módulos e limitações impostas por algumas ferramentas utilizadas. Além disso, o banco de dados precisou ser migrado para uma instância diferente, o que trouxe ajustes adicionais e exigiu atenção especial, visto que a instância precisa ser renovada a cada 30 dias e todas as migratons devem ser executadas novamente. 
 
-ocasionados por mudanças de escopo. Além disso, em determinados momentos, a comunicação entre orientador e equipe precisou ser aprimorada para alinhar expectativas e direcionamentos.
+Outro desafio esteve na camada de segurança, O front-end não conseguiu criptografar as requisições como esperado, resultando em um envio de dados não totalmente seguro. Também não foi possível implementar token de sessão do backend para requisições, apenas o credenciamento;
 
-Por fim, em relação a fatores externos, houve limitações no acesso a dados reais para testes, especialmente devido a questões de privacidade e confidencialidade. Também ocorreram dificuldades em depender de serviços de terceiros, como APIs externas, que em alguns casos apresentaram instabilidade ou alterações inesperadas.
+Por fim, apesar dos esforços de otimização, não foi possível atingir a latência média de 200ms - valor considerado ideal -, embora os resultados obtidos tenham se mostrado satisfatórios para a maioria das operações.
+
+Em certos momentos, a falta de pesquisas e documentações dificultaram o embasamento do projeto; em outros, a necessidade constante de correções de bugs demandou um tempo que não estava previsto no cronograma, atrasando outras etapas do desenvolvimento.
 
 Apesar dessas dificuldades, os problemas enfrentados contribuíram para o amadurecimento do processo de pesquisa e desenvolvimento. Cada obstáculo superado proporcionou aprendizado e tornou possível a adaptação do trabalho, assegurando a continuidade do projeto e a consolidação dos resultados apresentados.
 
+\subsection {Resultados dos testes internos}
+\subsubsection{Aspectos positivos}
+\subsubsection{Aspectos negativos}
 
-\subsection {Problemas nos testes internos}
 
-\subsection {Problemas nos testes externos}
+\subsection {Resultados dos testes externos}
+\subsubsection{Aspectos positivos}
+Apesar das dificuldades, foram observados avanços significativos no sistema. A API retorna erros de forma clara e estruturada, permitindo que sejam exibidos adequadamente no front-end em situações de exceção. O tempo médio de resposta da API mostrou-se inferior ao previsto no início do desenvolvimento, garantindo maior eficiência na comunicação entre módulos. Além disso, a API foi documentada de maneira explícita, dispensando auxílio constante da equipe de desenvolvimento e facilitando a compreensão por terceiros. Por fim, o front-end apresenta uma estrutura robusta e limpa, oferecendo navegação intuitiva entre as páginas e proporcionando melhor usabilidade para os usuários.
 
-\subsection {Conclusão}
-
-De acordo com \citeonline{severino2016metodologia}, na seção de considerações finais o autor tem a oportunidade de fazer uma síntese dos principais pontos abordados e apresentar suas considerações finais sobre o assunto. Embora não haja uma estrutura fixa, existem algumas diretrizes comuns para escrever essa seção.
-
-A seguir, algumas orientações gerais, para complementar a explicação:
-
-1. Recapitule os principais pontos: Na seção de considerações finais, você pode revisitar os principais pontos discutidos ao longo do trabalho e resumir os resultados obtidos. É uma oportunidade para destacar a relevância do estudo e como ele contribui para o conhecimento existente.
-
-2. Discuta as implicações dos resultados: Nessa seção, você pode discutir as implicações práticas e teóricas dos resultados do seu trabalho. 
-
-3. Faça uma reflexão crítica: Use a seção de considerações finais para fazer uma reflexão crítica sobre as limitações do estudo e possíveis viéses. Discuta as dificuldades encontradas, bem como eventuais lacunas de conhecimento que podem ser exploradas por estudos futuros.
-
-4. Encerre de forma concisa e impactante: Finalize a seção de considerações finais com uma frase ou parágrafo que resuma as principais conclusões e destaque a importância do estudo. É uma oportunidade para deixar uma impressão duradoura nos leitores.
+\subsubsection{Aspectos negativos}
+Durante os testes externos, alguns problemas foram identificados e merecem destaque. O login não é validado corretamente no backend, comprometendo a segurança do sistema. Além disso, não foi possível abrir a foto do paciente no backend, o que limita a visualização de informações relevantes. Outro fator crítico está relacionado ao tempo de inicialização da API, que pode levar alguns segundos até ficar ativa, impedindo o acesso imediato à aplicação. Soma-se a isso a ausência de implementação das claims/roles, permitindo que qualquer usuário realize requisições sem restrições, o que representa um risco de uso indevido. Por fim, a hospedagem do front-end não se mostrou estável, impossibilitando que as versões mais recentes da aplicação cheguem de forma consistente ao usuário final.
 
 \subsection{Empresa}
 Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo bimestre, desenvolveu-se a estrutura empresarial fictícia da equipe Hyperion, cujo produto principal é o \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros, e foi importante para que desenvolvessemos uma visão mais ampliada e descritiva do que o \nomeprojeto e a Equipe Hyperion significa para pessoas de fora das matérias técnicas, possibilitando para que elas pudessem entender também. Todos os detalhes sobre a empresa pode ser consultada no \autoref{secao_empresa}.
 
-% ----------------------------------------------------------
-% ELEMENTOS PÓS-TEXTUAIS
-% ----------------------------------------------------------
+\section{Conclusão}
+O desenvolvimento do \nomeprojeto demonstrou a importância da tecnologia como ferramenta de apoio à saúde e ao cuidado de idosos, especialmente em um contexto onde a demanda por serviços de cuidado está em crescimento. Através da análise das necessidades dos cuidadores e da implementação de funcionalidades especialmente aqueles que dependem de cuidadores para suas atividades diárias. Ao longo do trabalho, foi possível identificar tanto avanços significativos quanto desafios complexos. 
+
+Entre os aspectos positivos, destaca-se a criação de uma API eficiente e bem documentada, que facilita a integração e o uso por terceiros. A estrutura do front-end também se mostrou robusta, proporcionando uma navegação intuitiva e uma boa experiência para os usuários. No entanto, desafios técnicos relacionados à segurança, desempenho e estabilidade da aplicação foram identificados, indicando áreas que necessitam de melhorias contínuas. Mesmo diante de limitações técnicas, esses resultados evidenciam que o projeto alcançou, em grade parte, seus objetivos de promover acessibilidade e usabilidade para o público-alvo.
+
+De forma geral, este trabalho demonstra que o investimento em tecnologia aplicada à saúde e ao cuidado de idosos não apenas facilita a rotina de usuários e cuidadores, mas também contribui para a promoção de autonomia, segurança e qualidade de vida. Os resultados obtidos evidenciam que, mesmo diante de limitações técnicas, é possível desenvolver sistemas relevantes e funcionais, que podem servir de referência para projetos futuros. Assim, o \nomeprojeto não apenas cumpre sua função prática, mas também reforça a importância de soluções inovadoras e adaptáveis na interface entre tecnologia e cuidado humano.
+
 \postextual
 
-% ----------------------------------------------------------
-% Referências bibliográficas
-% ----------------------------------------------------------
 
-% ----------------------------------------------------------
-% Glossário
-% ----------------------------------------------------------
-%
-% Há diversas soluções prontas para glossário em LaTeX. 
-% Consulte o manual do abnTeX2 para obter sugestões.
-%
-% \glossary
-% ----------------------------------------------------------
-% Apêndices
-% ----------------------------------------------------------
-
-\section{Conclusão}
 
 \newpage
 
