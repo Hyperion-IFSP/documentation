@@ -403,21 +403,13 @@ A comunicação entre esses contêineres ocorre predominantemente por meio de re
 
 \subsection{Prototipagem}
 
-A prototipagem do sistema se deu pela criação inicial do conceito do sistema e fluxos de dados, depois foi feito o design das telas de usuário na plataforma \textit{Figma}. Em anexo, há as telas feitas na plataforma, o \autoref{prototipagem} traz as telas do sistema, que são compostas pelas seguintes seções:
-
-\begin{enumerate}
-    \item \textbf{Tela inicial:} o usuário pode visualizar as informações gerais do sistema, como o estoque de medicamentos e os níveis de glicemia e pressão arterial;
-    \item \textbf{Calendário:} o usuário pode visualizar as consultas agendadas e os medicamentos que devem ser consumidos naquele dia;
-    \item \textbf{Gráfico:} o usuário pode visualizar os gráficos de níveis de glicemia e pressão arterial;
-    \item \textbf{Consulta:} o usuário pode visualizar as consultas agendadas, além de poder criar novas consultas e editar as já existentes;
-    \item \textbf{Perfil:} o usuário pode visualizar e editar seu perfil, além de poder adicionar dependentes e editar os já existentes;
-\end{enumerate}
+A prototipagem do sistema se deu pela criação inicial do conceito do sistema e fluxos de dados com baixo nível de detalhamento. Depois que aprovado, houve a criação de protótipos de alta fidelidade na plataforma \textit{Figma}. O apêndice \autoref{prototipagem} nos traz mais detalhes sobre as telas do sistema, como a tela inicial, calendário, gráficos, perfil de usuário, entre as outras criadas para montar um fluxo completo e adequado.
 
 \renewcommand{\arraystretch}{1.5} % 1.5 = 50% mais alto que o normal
 
 \subsection{Plano de Testes}
 
-O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{quadro_plano_testes} retrata todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
+O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{plano_testes} retrata com detalhes e maior descrição todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
 
 \subsection{Criptografia}
 
@@ -441,11 +433,11 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
     \fonte{Autores.}
 \end{figure}
 
-\section{MVP}
+% \section{MVP}
 
-"O MVP é o menor conjunto de recursos que permite que o empreendedor comece o processo de aprendizado com o mínimo de esforço e o máximo de aprendizado validado sobre os clientes."
+% "O MVP é o menor conjunto de recursos que permite que o empreendedor comece o processo de aprendizado com o mínimo de esforço e o máximo de aprendizado validado sobre os clientes."
 
-"Uma ferramenta para testar hipóteses de negócios e iniciar o aprendizado, coletando o máximo de informações validadas sobre os clientes com o menor esforço possível."
+% "Uma ferramenta para testar hipóteses de negócios e iniciar o aprendizado, coletando o máximo de informações validadas sobre os clientes com o menor esforço possível."
 
 
 % ---
@@ -462,39 +454,51 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
 Esta seção apresenta os principais resultados obtidos ao longo do desenvolvimento do projeto, bem como a análise crítica desses achados. São expostos os avanços alcançados, as limitações identificadas e os impactos observados no desempenho e na usabilidade do sistema. Além disso, busca-se discutir de que forma os resultados se relacionam com os objetivos propostos inicialmente, destacando pontos fortes, fragilidades e oportunidades de melhoria para trabalhos futuros.
 
 \subsection {Problemas no desenvolvimento}
-Durante o desenvolvimento do trabalho, foram identificados diversos problemas que impactaram tanto o andamento do cronograma quanto a implementação de determinadas funcionalidades. 
+Durante o desenvolvimento do projeto, surgiram problemas que afetaram tanto o cronograma quanto a implementação de algumas funcionalidades. No início, a escassez de pesquisas e documentações dificultou o embasamento do projeto. Além disso, a necessidade frequente de corrigir bugs consumiu mais tempo do que o previsto, atrasando etapas importantes do desenvolvimento.
 
-No âmbito técnico, surgiram dificuldades relacionadas à compatibilidade de versões e bibliotecas, erros de integração entre módulos e limitações impostas por algumas ferramentas utilizadas. Além disso, o banco de dados precisou ser migrado para uma instância diferente, o que trouxe ajustes adicionais e exigiu atenção especial, visto que a instância precisa ser renovada a cada 30 dias e todas as migratons devem ser executadas novamente. 
+No âmbito técnico, enfrentamos desafios relacionados à compatibilidade de versões e bibliotecas, integração entre módulos e limitações de ferramentas, como o banco de dados. Este último precisou ser migrado para uma instância diferente devido às restrições da plataforma GCP, exigindo ajustes adicionais, como a renovação da instância a cada 30 dias e a reexecução das migrations.
 
-Outro desafio esteve na camada de segurança, O front-end não conseguiu criptografar as requisições como esperado, resultando em um envio de dados não totalmente seguro. Também não foi possível implementar token de sessão do backend para requisições, apenas o credenciamento;
+Na camada de segurança, inicialmente o front-end não garantia a criptografia de todas as requisições HTTP, resultando em transmissão de dados em texto claro, o que poderia expor o sistema a ataques como SQL injection ou vazamento de informações sensíveis. Além disso, o mecanismo de autenticação era básico, sem suporte robusto para autorização. A solução envolveu configurar adequadamente o HTTPS/TLS para todas as comunicações e implementar um sistema de autenticação baseado em JWT (JSON Web Token), protegendo as requisições contra acessos não autorizados.
 
-Por fim, apesar dos esforços de otimização, não foi possível atingir a latência média de 200ms - valor considerado ideal -, embora os resultados obtidos tenham se mostrado satisfatórios para a maioria das operações.
+Por fim, embora os esforços de otimização tenham melhorado o desempenho, não foi possível atingir a latência média de 1,5 segundos definida como requisito não-funcional. Ainda assim, os resultados foram satisfatórios para a maioria das operações e atenderam aos limites do projeto.
 
-Em certos momentos, a falta de pesquisas e documentações dificultaram o embasamento do projeto; em outros, a necessidade constante de correções de bugs demandou um tempo que não estava previsto no cronograma, atrasando outras etapas do desenvolvimento.
-
-Apesar dessas dificuldades, os problemas enfrentados contribuíram para o amadurecimento do processo de pesquisa e desenvolvimento. Cada obstáculo superado proporcionou aprendizado e tornou possível a adaptação do trabalho, assegurando a continuidade do projeto e a consolidação dos resultados apresentados.
+Esses desafios, embora complexos, proporcionaram aprendizado significativo e contribuíram para o aprimoramento do processo de desenvolvimento, garantindo a continuidade e a consolidação dos resultados.
 
 \subsection {Resultados dos testes internos}
+
+Os testes internos, presentes no plano de testes, cobriram as funcionalidades essenciais do sistema, desde a gestão administrativa de usuários até o acompanhamento clínico detalhado dos pacientes e a integração com serviços externos.
+
 \subsubsection{Aspectos positivos}
+Os resultados positivos demonstram a correta execução das funcionalidades primárias do sistema. Em um cenário de sucesso, todas as operações de CRUD (Criação, Edição e Exclusão) para usuários, administradores, pacientes, consultas e informações adicionais de perfil são persistidas com sucesso no banco de dados, confirmando a eficácia da lógica de negócios e da query SQL. Além disso, a adição de medicamentos a um tratamento e a manutenção dos registros cardiovasculares e glicêmicos foram concluídas, indicando que os dados brutos de saúde são armazenados corretamente.
+
+A integração com serviços externos também apresentou sucesso: o sistema foi capaz de pesquisar e visualizar farmácias e medicamentos a venda ao se conectar com sucesso às APIs externas, confirmando a funcionalidade adequada dos mecanismos de comunicação e autenticação. Por fim, a visualização correta de consultas por filtro de data e a exibição dos gráficos de adesão e intercorrências indicam que a recuperação e apresentação de dados funcionam conforme o esperado.
+
 \subsubsection{Aspectos negativos}
 
+Um erro que aconteceu em alguns cenários foi que, mesmo sem todos os campos obrigatórios preenchidos, ainda ocorria qualquer tipo de persistência de dados. Este é um risco de infraestrutura que pode invalidar algumas operações do back-end, e além disso, quebrava a renderização de algumas informações em diversas telas da aplicação.
+
+O teste de notificação demonstrava alguns erros mais graves em termos de integridade de dados e experiência do usuário: a notificação não aparecia ou poderia aparecer no horário errado.
+
+Por fim, a integração externa depende da disponibilidade da API e da ativação de funcionalidades no dispositivo do usuário, como o GPS estar desligado, que impede a pesquisa por proximidade mesmo que a API funcione perfeitamente.
 
 \subsection {Resultados dos testes externos}
+
 \subsubsection{Aspectos positivos}
-Apesar das dificuldades, foram observados avanços significativos no sistema. A API retorna erros de forma clara e estruturada, permitindo que sejam exibidos adequadamente no front-end em situações de exceção. O tempo médio de resposta da API mostrou-se inferior ao previsto no início do desenvolvimento, garantindo maior eficiência na comunicação entre módulos. Além disso, a API foi documentada de maneira explícita, dispensando auxílio constante da equipe de desenvolvimento e facilitando a compreensão por terceiros. Por fim, o front-end apresenta uma estrutura robusta e limpa, oferecendo navegação intuitiva entre as páginas e proporcionando melhor usabilidade para os usuários.
+
+Os resultados positivos confirmam a solidez do back-end do sistema em suas operações fundamentais. Em condições ideais de rede e conectividade, as operações de CRUD relacionadas aos usuários, pacientes e consultas foram concluídas com sucesso. Isso valida a lógica de negócios e a integridade das transações sob uma variedade de dispositivos e outros ambientes. A capacidade de adicionar medicamentos a um tratamento e registro de dados contínuos de saúde, como pressão arterial e nível de glicose, também deram certo. A integração com as APIs externas demonstrou ser robusta, conseguindo permitir a pesquisa de farmáciase a visualização de medicamentos de forma rápida e precisa para a maioria dos testadores.
 
 \subsubsection{Aspectos negativos}
-Durante os testes externos, alguns problemas foram identificados e merecem destaque. O login não é validado corretamente no backend, comprometendo a segurança do sistema. Além disso, não foi possível abrir a foto do paciente no backend, o que limita a visualização de informações relevantes. Outro fator crítico está relacionado ao tempo de inicialização da API, que pode levar alguns segundos até ficar ativa, impedindo o acesso imediato à aplicação. Soma-se a isso a ausência de implementação das claims/roles, permitindo que qualquer usuário realize requisições sem restrições, o que representa um risco de uso indevido. Por fim, a hospedagem do front-end não se mostrou estável, impossibilitando que as versões mais recentes da aplicação cheguem de forma consistente ao usuário final.
+Alguns problemas foram identificados no processo de testes externos foram que o login não é validado corretamente no backend, comprometendo a segurança do sistema. Além disso, não foi possível abrir a foto do paciente no backend, o que limita a visualização de informações relevantes. Outro fator crítico está relacionado ao tempo de inicialização da API, que pode levar alguns segundos até ficar ativa, impedindo o acesso imediato à aplicação. Soma-se a isso a ausência de implementação das claims/roles, permitindo que em alguns cenários, usuários realizem requisições sem restrições, o que representa um risco de uso indevido.
 
 \subsection{Empresa}
 Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo bimestre, desenvolveu-se a estrutura empresarial fictícia da equipe Hyperion, cujo produto principal é o \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros, e foi importante para que desenvolvessemos uma visão mais ampliada e descritiva do que o \nomeprojeto e a Equipe Hyperion significa para pessoas de fora das matérias técnicas, possibilitando para que elas pudessem entender também. Todos os detalhes sobre a empresa pode ser consultada no \autoref{secao_empresa}.
 
 \section{Conclusão}
-O desenvolvimento do \nomeprojeto demonstrou a importância da tecnologia como ferramenta de apoio à saúde e ao cuidado de idosos, especialmente em um contexto onde a demanda por serviços de cuidado está em crescimento. Através da análise das necessidades dos cuidadores e da implementação de funcionalidades especialmente aqueles que dependem de cuidadores para suas atividades diárias. Ao longo do trabalho, foi possível identificar tanto avanços significativos quanto desafios complexos. 
+O desenvolvimento do MyMed demonstrou a importância da tecnologia como ferramenta de apoio à saúde e ao cuidado de idosos, especialmente em um contexto onde a demanda por serviços de cuidado segue em crescimento constante, fator identificado durante meses de pesquisas e estudos, incluindo análises das necessidades dos cuidadores e implementações de funcionalidades que pudessem beneficiar inclusive os dependentes, mesmo que de forma indireta.
 
-Entre os aspectos positivos, destaca-se a criação de uma API eficiente e bem documentada, que facilita a integração e o uso por terceiros. A estrutura do front-end também se mostrou robusta, proporcionando uma navegação intuitiva e uma boa experiência para os usuários. No entanto, desafios técnicos relacionados à segurança, desempenho e estabilidade da aplicação foram identificados, indicando áreas que necessitam de melhorias contínuas. Mesmo diante de limitações técnicas, esses resultados evidenciam que o projeto alcançou, em grade parte, seus objetivos de promover acessibilidade e usabilidade para o público-alvo.
+De forma técnica, um dos objetivos do projeto foi a criação de uma API eficiente e bem documentada, que possa facilitar e possibilitar a integração e o uso por terceiros. Para suportar essa arquitetura de maior escala, houve a criação de uma estrutura robusta para o front-end também, com enfoque em conseguir proporcionar uma navegação intuitiva e uma boa experiência para os usuários. No entanto, desafios relacionados à segurança, desempenho e estabilidade da aplicação foram identificados nesse processo, indicando áreas que necessitam de correções e melhorias contínuas para alcance de um público maior. Mesmo diante de limitações técnicas, esses resultados evidenciam que o projeto alcançou, em grande parte, os objetivos de promover acessibilidade e usabilidade para o público-alvo.
 
-De forma geral, este trabalho demonstra que o investimento em tecnologia aplicada à saúde e ao cuidado de idosos não apenas facilita a rotina de usuários e cuidadores, mas também contribui para a promoção de autonomia, segurança e qualidade de vida. Os resultados obtidos evidenciam que, mesmo diante de limitações técnicas, é possível desenvolver sistemas relevantes e funcionais, que podem servir de referência para projetos futuros. Assim, o \nomeprojeto não apenas cumpre sua função prática, mas também reforça a importância de soluções inovadoras e adaptáveis na interface entre tecnologia e cuidado humano.
+Por fim, este trabalho demonstra que o investimento em tecnologia aplicada à saúde e ao cuidado de idosos contribui com a melhoria de rotina de cuidados e com a promoção de autonomia, segurança e qualidade de vida. Os resultados obtidos evidenciam que, mesmo diante de limitações técnicas, é possível desenvolver sistemas relevantes e funcionais, que podem servir de referência para projetos futuros. Desta forma, o MyMed não apenas cumpre sua função prática, mas também reforça a importância de soluções inovadoras e adaptáveis entre tecnologia e cuidado / saúde humana.
 
 \postextual
 
@@ -548,7 +552,7 @@ De forma geral, este trabalho demonstra que o investimento em tecnologia aplicad
 \chapter{Seção Empresa \label{secao_empresa}}
 \input{sections/secao_empresa}
 
-\chapter{Plano de Testes}
+\chapter{Plano de Testes \label{plano_testes}}
 \input{sections/plano_testes}
 
 \end{apendicesenv}
