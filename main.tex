@@ -82,6 +82,7 @@
 % Espaçamento simples
 % \SingleSpacing
 
+\thanksmarkseries{arabic}
 
 % ----
 % Início do             
@@ -116,10 +117,10 @@
 \begin{abstract}
     This document describes the current architecture of the software designated as ``\nomeprojeto``, which aims to help people maintain their medication supply; and for caregivers maintain medication supplies for all their dependents. In addition, it will offer a scheduling service so that the user can track appointments and blood glucose and blood pressure levels. The content of this document discusses its concept and application, in addition to the data modeling and tools used.
 \end{abstract}
-     
-\begin{resumo1} 
+
+\begin{resumo} 
   Este documento descreve a arquitetura presente do software designado como ``\nomeprojeto``, ele visa auxiliar pessoas a manter seu estoque de medicamentos, e para cuidadores manter estoque de medicamentos de todos seus dependentes. Além disso, oferecerá um serviço de agenda para que o usuário acompanhe consultas e taxas de glicemia e pressão. O conteúdo deste documento discorre sobre seu conceito e aplicação, além da modelagem de dados e ferramentas utilizadas.
-\end{resumo1}
+\end{resumo}
 
 
 
@@ -158,27 +159,26 @@ Esses profissionais enfrentam uma rotina intensa, marcada por altos níveis de e
 
 Em vista de todas as oportunidades de mercado para estas soluções, ainda não há uma plataforma que seja clara e direta em sua execução, segundo \citeonline{janaina2023}. Um exemplo é o Sistema Móvel de Assistência ao Idoso (SMAI), que, embora disponibilize suporte para cuidadores de idosos com demência, apresenta limitações significativas, tal qual uma interface repetitiva e a necessidade de preencher fichas técnicas extensas, fato que compromete a usabilidade e a praticidade que esses profissionais necessitam no dia a dia \cite{andre2020}.
 
-Visando superar essas limitações, o projeto propõe o desenvolvimento de uma plataforma focada exclusivamente no cuidador de idosos, com funcionalidades que centralizam o monitoramento e a gestão de tratramentos. A ferramenta inclui lembretes para administração dos remédios, agendamentos de consultadas com calendário integrado, indicação de locais para compra, pesquisa de preços e criação de relatórios médicos - tudo focado na interface intuitiva e direta. Assim, busca-se reduzir a sobrecarga dos cuidadores, proporcionando mais autonamia e eficiência no desempenho de suas funções.
+Visando superar essas limitações, o projeto propõe o desenvolvimento de uma plataforma focada exclusivamente no cuidador de idosos, com funcionalidades que centralizam o monitoramento e a gestão de tratamnentos. A ferramenta inclui lembretes para administração dos remédios, agendamentos de consultadas com calendário integrado, indicação de locais para compra, pesquisa de preços e criação de relatórios médicos - tudo focado na interface intuitiva e direta. Assim, busca-se reduzir a sobrecarga dos cuidadores, proporcionando mais autonamia e eficiência no desempenho de suas funções.
+
 \subsection{Objetivos}
 
-Para o desenvolvimento do sistema, será adotado como referência uma diretriz de desenvolvimento que se baseará na comunicação constante com o usuário e controle das informações.
+O MyMed tem por objetivo oferecer uma plataforma que facilite o gerenciamento de tratamento de idosos, reunindo todas informações necessárias e funções úteis para o acompanhamento de pacientes.
 
 \subsubsection{Objetivo Geral}
 
-Desenvolver uma plataforma que auxilie os cuidadores de idosos a manter de forma simples, organizada e eficaz o acompanhamento de seus pacientes. O sistema irá permitir registro de medicamentos utilizados, consultas agendadas e realizadas, com possibilidade de gerar relatórios e gráficos personalizados de acordo com os tratamentos em andamento (como controle de glicemia e hipertensão).
-
-Além disso, o sistema poderá enviar alertas sobre o estoque de medicamentos de todos os pacientes vinculados a uma conta, indicando a estimativa de tempo de consumo restante e realizando pesquisas de preços para reposição. 
-
-Também contará com um módulo de registros de dados médicos, onde o cuidador poderá inserir informações essenciais, como índices de glicemia e pressão arterial, datas de retorno, novas prescrições e informações relevantes de um paciente.
+O MyMed visa auxiliar os cuidadores de idosos a manter de forma simples, organizada e eficaz o acompanhamento de seus pacientes. O sistema irá permitir o registro de medicamentos utilizados, consultas agendadas e realizadas e a possibilidade de gerar relatórios e gráficos personalizados de acordo com os tratamentos em andamento e informações necessárias.
 
 \subsubsection{Objetivos Específicos}
 
-A fim de alcançar o objetivo geral da proposta apresentada, foram delineados os seguintes objetivos específicos:
+Para alcançar o objetivo geral da proposta apresentada, foram delineados objetivos específicos para esta meta:
 
 \begin{enumerate}
-    \item Conduzir entrevistas com cuidadores registrados e funcionários de casas de repouso. Analisar resultados para direcionar a um desenvolvimento próximo ao usuário final da aplicação.
-    \item Realizar uma pesquisa de mercado de aplicações similares, a fim de criar uma solução única ao usuário voltada ao melhoramento de recursos já existentes e implantação de recomendações destes usuários. 
-    \item Desenvolver um sistema que, com uma interface simples e intuitiva, além de lembretes que auxilie o usuário a manter esses tratamentos, automatize tarefas banais e auxilie o controle por parte do cuidador.
+    \item Conduzir entrevistas com cuidadores registrados e funcionários de casas de repouso e analisar os resultados para um desenvolvimento próximo ao usuário final da aplicação;
+    \item Realizar uma pesquisa de mercado de aplicações similares, para que haja a criação de uma solução única que possua o melhoramento de recursos já existentes, a implantação de recomendações e novas funcionalidades úteis aos usuários;
+    \item Desenvolver um sistema que, com uma interface simples e intuitiva, além de lembretes que auxilie o usuário a manter esses tratamentos, automatize tarefas banais e auxilie o controle por parte do cuidador;
+    \item Garantir o envio de alertas sobre o estoque de medicamentos de todos os pacientes vinculados a uma conta, a estimativa de tempo de consumo restante e possibilitar a pesquisa de preços para reposição;
+    \item Possuir um módulo de registros de dados médicos, onde o cuidador poderá inserir informações essenciais, como índices de glicemia e pressão arterial, datas de retorno, novas prescrições e informações relevantes de um paciente;
     \item Aplicar as funcionalidades do sistema de forma empírica em um público-alvo a fim de aprimorar o sistema e torná-lo útil ao usuário final.
 \end{enumerate}
 

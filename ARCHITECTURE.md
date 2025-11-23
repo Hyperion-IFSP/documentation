@@ -1,3 +1,5 @@
+# Estrutura
+
 documentation/
 ├── main.tex                   # Main document (cleaned up)
 ├── referencias.bib            # Bibliography
@@ -24,17 +26,22 @@ documentation/
 └── build/                     # ⭐ NEW: Compilation output
     └── main.pdf               # Successfully compiled!
 
-# Build complete PDF
+## Build complete PDF
+
 make pdf
 
-# Quick build (no bibliography)
+## Quick build (no bibliography)
+
 make quick
 
-# Clean build artifacts
+## Clean build artifacts
+
 make clean
 
-# View PDF
+## View PDF
+
 make view
 
-# See all options
+## See all options
+
 make help
