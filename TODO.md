@@ -23,19 +23,19 @@
 
 ## justificativa
 
-- [ ] número de integrantes da pesquisa
-- [ ] adicionar referência
-- [ ] refinar último parágrafo e tirar palavras redundantes
+- [x] número de integrantes da pesquisa {cm:2025-11-23}
+- [x] adicionar referência {cm:2025-11-23}
+- [x] refinar último parágrafo e tirar palavras redundantes {cm:2025-11-23}
 
 ## referencial teórico
 
-- [ ] retificar isso do número de pessoas desse grupo se referindo ao público geral
-- [ ] ajustar conteúdo para os pronomes corretos
+- [x] retificar isso do número de pessoas desse grupo se referindo ao público geral {cm:2025-11-23}
+- [x] ajustar conteúdo para os pronomes corretos {cm:2025-11-23}
 
 ### 2.3
 
-- [ ] seja bem específico
-- [ ] trecho do “em seguida” separar em outro parágrafo
+- [x] seja bem específico {cm:2025-11-23}
+- [x] trecho do “em seguida” separar em outro parágrafo {cm:2025-11-23}
 
 ## coleta de dados
 
