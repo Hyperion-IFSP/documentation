@@ -39,28 +39,28 @@
 
 ## coleta de dados
 
-- [ ] separar em dois tópicos para cada pesquisa
-- [ ] análise de dados
-- [ ] remover “dos desejos” para outra palavra mais adequada
+- [x] separar em dois tópicos para cada pesquisa
+- [x] análise de dados
+- [x] remover “dos desejos” para outra palavra mais adequada
 
 ## modelagem
 
-- [ ] diagramas s
-- [ ] casos de uso
+- [X] diagramas s
+- [X] casos de uso
 - [ ] relatorios
 - [ ] dados pessoais
-- [ ] referência a figura 5
-- [ ] referencia a figura 6
+- [X] referência a figura 5
+- [X] referencia a figura 6
 
 ## resultadoS e discussões
 
-- [ ] colocar em 3a pessoa
-- [ ] colocar estrangeirismos em itálico
+- [X] colocar em 3a pessoa
+- [X] colocar estrangeirismos em itálico
 
 ## testes
 
-- [ ] internos e externos
-- [ ] sinônimos de sucesso
+- [X] internos e externos
+- [X] sinônimos de sucesso
 
 ## apêndices
 
@@ -68,3 +68,49 @@
 - [ ] remover termos em desuso
 - [ ] adicionar referencial nas imagens
 - [ ] descrição para cada quadro
+
+## Pág. 1
+- [ ] corrigir referências de e-mail “estranhas”
+- [ ] reescrever resumo e abstract (objetivos, metodologia e resultados)
+
+## Objetivos
+- [ ] reescrever para resumir as seções (Metodologia, Arquitetura e Resultados)
+
+## Justificativa
+- [ ] detalhar formulário e pesquisa, destacando que somos os autores dos documentos
+- [ ] reescrever trecho sobre “manter a saúde dos pacientes bem condicionadas e supervisionadas”
+
+## Referencial teórico
+- [ ] reescrever parágrafo de introdução da seção
+- [ ] 2.1 — reescrever 1º parágrafo
+- [ ] 2.2 — trocar “a autora” por “os autores”
+- [ ] 2.3 — transformar “grau I, grau II...” em tópicos
+- [ ] 2.3 — repetir “cuidadores de idosos” ao invés de usar coesivos
+
+## 3.1.2
+- [X] reescrever 1º e 2º parágrafos
+
+Apêndice A
+- [X] separar perguntas de cada formulário em apêndices diferentes
+
+## 3.1.3
+- [X] trocar “desejos” por “anseios”
+
+## 4.3
+- [X] corrigir “Diagramas s” para “Diagramas”
+
+## 4.4
+- [X] referenciar a Figura 5 no texto
+
+## 4.7
+- [X] referenciar a Figura 6 no texto
+
+## 5.1
+- [X] alterar “enfrentamos desafios” para “foram enfrentados desafios”
+
+## 5.2
+- [X] trocar “apresentou sucesso” por “bons resultados”
+
+## 5.3.1
+- [X] trocar “sucesso” por “conquistas”
+- [X] corrigir “farmáciase” para “farmácias e”

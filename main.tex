@@ -228,24 +228,28 @@ Esta seção descreve a metodologia adotada para o desenvolvimento do \nomeproje
 
 \subsection{Métodos de Pesquisa}
 
-Os métodos de pesquisa do projeto são divididas em duas partes: a pesquisa qualitativa, que visa entender o público no geral e suas necessidades na aplicação; e a pesquisa quantitativa, planejada com o foco do sistema em cuidadores de idosos em casas de repouso, visando coletar informações de profissionais da área. 
+Os métodos de pesquisa utilizados no projeto são divididas em duas partes: a pesquisa qualitativa, destinada a compreender o público geral e suas necessidades em relação ao uso de tecnologias para organização de cuidados com a saúde e, uma pesquisa quantitativa, direcionada especificamente ao nosso público-alvo, os cuidadores de idosos. 
 
 \subsubsection{Instrumento de Pesquisa e Escalas Utilizadas}
 
-O principal meio de pesquisa foi a realização de formulários online estruturados, desenvolvido com as perguntas objetivas e subjetivas, visando identificar as principais demandas, dificuldades e práticas no cuidado com idosos.
+O principal meio de pesquisa foi a realização de formulários online estruturados desenvolvido com perguntas objetivas e subjetivas, visando identificar as principais demandas, dificuldades e práticas no cuidado com idosos.
 
 \subsubsection{Coleta de Dados}
 
 A coleta ocorreu em duas etapas. As escalas utilizadas incluíram perguntas de múltipla escolha, caixas de seleção para opiniões quantitativas e campos abertos para coleta de opiniões qualitativas. 
 
-Na primeira etapa, o formulário foi direcionado ao público geral com intuito de mapear as necessidades e desejos mais amplos. O questionário foi montado com 11 perguntas relacionadas ao gerenciamento de medicações e consultas pessoais e foram obtidas 45 respostas. Posteriormente na segunda etapa, após um aprofundamento de escopo do projeto, um questionário com 10 perguntas relacionadas ao cuidado com idosos foi compartilhado com cuidadores profissionais, instituições de longa permanência para idosos (casas de repouso), a fim de avaliarmos as necessidades do público alvo do \nomeprojeto. 
+\subsubsubsection{Pesquisa com o Público Geral}
+Na primeira etapa, o formulário foi direcionado ao público geral com intuito de mapear as necessidades e desejos mais amplos. O questionário foi montado com 11 perguntas relacionadas ao gerenciamento de medicações e consultas pessoais e foram obtidas 45 respostas. 
 
-Todas as perguntas que foram feitas na primeira e segunda etapa se encontram no \autoref{pesquisas}.
+\subsubsubsection{Pesquisa com o Público-alvo}
+Na segunda etapa, após um aprofundamento de escopo do projeto, um questionário com 10 perguntas relacionadas ao cuidado com idosos foi compartilhado com cuidadores de idosos e instituições de longa permanência para idosos (casas de repouso), a fim de avaliarmos as necessidades do público alvo do \nomeprojeto. 
+
+As perguntas feitas em ambas pesquisas se encontram no \autoref{pesquisas}.
 
 \subsubsection{Análise dos Dados}
 
 Na primeira pesquisa, denotou-se que aproximadamente 73,3\% das pessoas nunca utilizaram um aplicativo para gerenciamento de consultas e medicações, enquanto os outros 26,7\% utilizaram um ou mais aplicativos, geralmente relacionados a diferentes tratamentos e teleconsultas. Muitas pessoas comentaram dificuldade em memorizar posologias
-\footnote{Seção da terapêutica que se dedica ao estudo da dosagem certa dos medicamentos. Indicação da dosagem certa (adequada) de um medicamento tendo em conta os vários casos em que o mesmo pode ser prescrito.}, 
+\footnote[1]{Seção da terapêutica que se dedica ao estudo da dosagem certa dos medicamentos. Indicação da dosagem certa (adequada) de um medicamento tendo em conta os vários casos em que o mesmo pode ser prescrito.}, 
 organização pessoal de consultas agendadas, datas e disponibilidade de vacinas e agendamento de consultas. Dos desejos compartilhados entre os entrevistados, se destacaram pesquisas de medicações, uma agenda direcionada a estes compromissos e tarefas, uma integração para que haja apenas uma aplicação onde seja possível acessar todas as informações necessárias, lembretes do horário de medicações e organização pessoal.
 
 A partir dos dados de ambas as pesquisas constatou que dos profissionais entrevistados, 50\% atuam como cuidadores formais, enquanto os outros 50\% dividem-se entre cuidadores informais, fisioterapeutas e profissionais de enfermagem. Cerca de 70\% desses profissionais trabalham em domicílios particulares e 30\% em casas de repouso. As atividades mais comuns em sua rotina incluem a administração de medicamentos, o monitoramento de sinais vitais e o acompanhamento em consultas. No entanto, nenhum dos entrevistados utiliza aplicativos ou sistemas para esse controle, recorrendo a registros em papel, planilhas ou lousas (\autoref{utiliza_app}). A \autoref{utilizaria_app} traz que aproximadamente 90\% demonstraram interesse em utilizar um aplicativo, sugerindo que funcionalidades para registro de dados e organização da rotina seriam pertinentes para a aplicação.
@@ -276,7 +280,7 @@ Para a organização e acompanhamento do desenvolvimento, foi adotada uma aborda
 
 Durante o desenvolvimento do \nomeprojeto, foram selecionadas tecnologias e ferramentas que garantem escalabilidade e facilidade de manutenção. No back-end, utilizou-se o MySQL como Sistema Gerenciador de Banco de Dados (SGBD) devido à sua confiabilidade, aliado ao framework Spring Boot em Java, que facilita a criação de APIs RESTful e a integração com outros serviços.
 
-No front-end, optou-se pelo Angular 19, que permite o desenvolvimento de interfaces dinâmicas e reativas através de componentes. A biblioteca de componentes PrimeNG e a linguagem de design Material Design 3 foram incorporados para padronizar o design da aplicação. Para autenticação e autorização, foi utilizado o Auth0, que oferece uma solução segura e prática de Single Sign On (SSO).
+No \textit{front-end}, optou-se pelo Angular 19, que permite o desenvolvimento de interfaces dinâmicas e reativas através de componentes. A biblioteca de componentes PrimeNG e a linguagem de design Material Design 3 foram incorporados para padronizar o design da aplicação. Para autenticação e autorização, foi utilizado o Auth0, que oferece uma solução segura e prática de Single Sign On (SSO).
 
 Durante o desenvolvimento, o Visual Studio Code (VSCode) foi escolhido como editor de código por sua leveza, extensibilidade e integração com diversas ferramentas. O controle de versão foi realizado com o Git, utilizando o GitHub para hospedagem dos repositórios e o GitKraken para facilitar a gestão de branches e colaboração entre os membros da equipe.
 
@@ -286,7 +290,7 @@ A gestão de tarefas e acompanhamento do progresso do projeto foi feita com o Ji
 
 O desenvolvimento foi iniciado a partir do lado do servidor, criando o banco de dados utilizando PostgreSQL, e hospedando-o na Google Cloud Platform. O desenvolvimento do back-end e integração com banco de dados foi desenvolvida com Java e Spring Boot, e hospedada na plataforma Render.
 
-Para o desenvolvimento do front-end, utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Firebase.
+Para o desenvolvimento do \textit{front-end}, utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Firebase.
 
 Recursos externos foram utilizados para coleta de dados, a API "api-medicamentos-anvisa" hospedada publicamente, oferece nomes e informações úteis de todos os medicamentos registrados no Brasil até 2020. Além dela, a API de busca do Google foi utilizada por meio da ferramenta "SerperDev", da qual oferece uma interface simples à pesquisa de locais e produtos farmacêuticos.
 
@@ -296,15 +300,13 @@ O desenvolvimento do \nomeprojeto\ se deu pela estruturação do projeto em equi
 
 O \autoref{quadro_integrantes} discorre a respeito da distribuição de tarefas da equipe. Para cada segmento do projeto foram designados ao mínimo duas pessoas, a fim de obter uma visão mais ampla de desenvolvimento; com exceção da execução de testes, que por sua natureza exige menos atenção. 
 
-\pagebreak
-
 \begin{quadro}[!htbp]
     \caption{\label{quadro_integrantes}Integrantes da equipe}
         \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
             Papéis & Arthur & Fernando & Henriquy & Isabella & Lucas & Mateus \\ \hline
-            Back-end & & & & & \checkmark & \checkmark \\ \hline
-            Front-end & \checkmark & \checkmark & & \checkmark & & \\ \hline
+            Back-end & & & & & \checkmark & \\ \hline
+            Front-end & \checkmark & \checkmark & & & & \\ \hline
             Banco de Dados & & & \checkmark & & \checkmark & \\ \hline
 	        Testes & & & \checkmark & \checkmark & & \\ \hline
             Documentação & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\ \hline
@@ -348,7 +350,7 @@ Essas regras foram elaboradas com base nas necessidades do público alvo e nas r
 
 \subsection{Modelagem}
 
-A modelagem do sistema é uma etapa fundamental que visa traduzir os requisitos e regras de negócio em uma representação estruturada do software. Este processo envolve os casos de uso, a definição da arquitetura, e a estrutura de dados da aplicação. Para o \nomeprojeto, a modelagem foi detalhada por meio de diagramas s de uso, que descrevem as interações entre os usuários e o sistema, o diagrama de arquitetura de sistema, que descreve como o sistema está estuturado tecnicamente e pelo modelo de entidade e relacionamento, que detalha a estrutura do banco de dados.
+A modelagem do sistema é uma etapa fundamental que visa traduzir os requisitos e regras de negócio em uma representação estruturada do software. Este processo envolve os casos de uso, a definição da arquitetura e a estrutura de dados da aplicação. Para o \nomeprojeto, a modelagem foi detalhada por meio de diagramas de casos de uso, que descrevem as interações entre os usuários e o sistema, o diagrama de arquitetura de sistema, que descreve como o sistema está estruturado tecnicamente e pelo modelo de entidade e relacionamento, que detalha a estrutura do banco de dados.
 
 \subsubsection{Casos de Uso}
 
@@ -363,7 +365,7 @@ Como apresentado na \autoref{casos_de_uso}, os casos de uso representam as princ
 \end{figure}
 
 
-No \nomeprojeto, os casos de uso foram elaborados para cobrir as principais operações realizadas pelos cuidadores e administradores. Entre os casos de uso mais relevantes, destacam-se o caso de uso "Manter Dependentes" permite que o cuidador adicione, visualize, edite e exclua informações dos pacientes, garantindo que os dados estejam sempre atualizados. Já o caso de uso "Agendar Consulta" possibilita que o cuidador registre compromissos médicos em uma agenda para os pacientes, com integração opcional ao calendário do dispositivo. Além disso, o caso de uso "Gerenciar Medicações" permite o acompanhamento do estoque de medicamentos e o registro de consumo, emitindo alertas em caso de baixa disponibilidade.
+No \nomeprojeto, os casos de uso foram elaborados para cobrir as principais operações realizadas pelos cuidadores e administradores. Entre os casos de uso mais relevantes, destacam-se o caso de uso "Manter Dependentes" que permite que o cuidador adicione, visualize, edite e exclua informações dos pacientes, garantindo que os dados estejam sempre atualizados. Já o caso de uso "Agendar Consulta" possibilita que o cuidador registre compromissos médicos em uma agenda para os pacientes, com integração opcional ao calendário do dispositivo. Além disso, o caso de uso "Gerenciar Medicações" permite o acompanhamento do estoque de medicamentos e o registro de consumo, emitindo alertas em caso de baixa disponibilidade.
 
 O \autoref{dicionario_casos_uso} apresenta o \textit{Dicionário de Casos de Uso}, apresentando cada cenário com detalhes e informações sobre os atores envolvidos, pré-condições, fluxos principais e pós-condições.
 
@@ -392,13 +394,12 @@ Esta subseção apresenta a arquitetura geral do sistema, suas tecnologias, infr
 
 A arquitetura do sistema é composta por quatro contêineres principais, cada um com responsabilidades específicas e hospedado em diferentes plataformas de nuvem. Essa estrutura foi definida visando escalabilidade, isolamento de responsabilidades e maior confiabilidade.
 
-A comunicação entre esses contêineres ocorre predominantemente por meio de requisições HTTP.
-
+A comunicação entre esses contêineres ocorre predominantemente por meio de requisições HTTP. A \autoref{diagrama_software} apresenta o diagrama de Arquitetura de Software completo, detalhando os contêineres, suas tecnologias e interações.
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\textwidth]{assets/figuras/diagrama_de_software.png}
     \caption{Diagrama de Arquitetura de Software}
-    \label{fig:diagrama_software}
+    \label{diagrama_software}
     \fonte{Autores.}
 \end{figure}
 
@@ -416,7 +417,8 @@ O plano de testes visa verificar todas as funcionalidades e validar seu uso na a
 
 \subsection{Criptografia}
 
-Para garantir a segurança na comunicação entre os usuários e a aplicação, foi configurado o protocolo HTTPS com suporte a TLS, utilizando certificados digitais válidos e atualizados. A certificação foi realizada através da integração com o serviço Let's Encrypt através do Render para o back-end e Gerenciado pelo Google para o front-end através do Firebase Hosting, assegurando criptografia ponta a ponta durante as transações de dados. A configuração foi validada na ferramenta SSL Labs, onde o ambiente obteve a nota máxima A+.
+Para garantir a segurança na comunicação entre os usuários e a aplicação, foi configurado o protocolo HTTPS com suporte a TLS, utilizando certificados digitais válidos e atualizados. A certificação foi realizada através da integração com o serviço Let's Encrypt através do Render para o back-end e Gerenciado pelo Google para o \textit{front-end} através do Firebase Hosting, assegurando criptografia ponta a ponta durante as transações de dados. A configuração foi validada na ferramenta SSL Labs, onde o ambiente obteve a nota máxima A+.
+A \autoref{testes-criptografia} apresenta, respectivamente o resultado dos testes de criptografia realizados no \textit{front-end} e no \textit{back-end} da aplicação, confirmando a eficácia das medidas de segurança implementadas.
 
 \begin{figure}[h!]
     \centering
@@ -431,10 +433,11 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
         \includegraphics[width=\textwidth]{assets/figuras/certificacao_back.png}
         \caption{Resultado dos testes do back-end}
     \end{subfigure}
-    \label{fig:testes-criptografia}
     \caption{Resultados dos testes de criptografia.}
+    \label{testes-criptografia}
     \fonte{Autores.}
 \end{figure}
+
 
 % \section{MVP}
 
@@ -454,14 +457,14 @@ Para garantir a segurança na comunicação entre os usuários e a aplicação, 
 % Conclusão
 % ---
 \section{Resultado e discussões}
-Esta seção apresenta os principais resultados obtidos ao longo do desenvolvimento do projeto, bem como a análise crítica desses achados. São expostos os avanços alcançados, as limitações identificadas e os impactos observados no desempenho e na usabilidade do sistema. Além disso, busca-se discutir de que forma os resultados se relacionam com os objetivos propostos inicialmente, destacando pontos fortes, fragilidades e oportunidades de melhoria para trabalhos futuros.
+Esta seção apresenta os principais resultados obtidos ao longo do desenvolvimento do projeto, bem como a análise crítica desses achados. São expostos os avanços alcançados, as limitações identificadas e os impactos observados no desempenho e na usabilidade do sistema. Além disso, discute-se de que forma os resultados se relacionam com os objetivos propostos inicialmente, destacando pontos fortes, fragilidades e oportunidades de melhoria para trabalhos futuros. Também são examinados aspectos do funcionamento da plataforma, considerando tanto o \textit{frontend} quanto o \textit{backend}, a partir de testes e validações realizadas durante o processo de desenvolvimento.
 
 \subsection {Problemas no desenvolvimento}
 Durante o desenvolvimento do projeto, surgiram problemas que afetaram tanto o cronograma quanto a implementação de algumas funcionalidades. No início, a escassez de pesquisas e documentações dificultou o embasamento do projeto. Além disso, a necessidade frequente de corrigir bugs consumiu mais tempo do que o previsto, atrasando etapas importantes do desenvolvimento.
 
-No âmbito técnico, enfrentamos desafios relacionados à compatibilidade de versões e bibliotecas, integração entre módulos e limitações de ferramentas, como o banco de dados. Este último precisou ser migrado para uma instância diferente devido às restrições da plataforma GCP, exigindo ajustes adicionais, como a renovação da instância a cada 30 dias e a reexecução das migrations.
+No âmbito técnico, foram enfrentados desafios relacionados à compatibilidade de versões e bibliotecas, integração entre módulos e limitações de ferramentas, como o banco de dados. Este último precisou ser migrado para uma instância diferente devido às restrições da plataforma GCP, exigindo ajustes adicionais, como a renovação da instância a cada 30 dias e a reexecução das migrations.
 
-Na camada de segurança, inicialmente o front-end não garantia a criptografia de todas as requisições HTTP, resultando em transmissão de dados em texto claro, o que poderia expor o sistema a ataques como SQL injection ou vazamento de informações sensíveis. Além disso, o mecanismo de autenticação era básico, sem suporte robusto para autorização. A solução envolveu configurar adequadamente o HTTPS/TLS para todas as comunicações e implementar um sistema de autenticação baseado em JWT (JSON Web Token), protegendo as requisições contra acessos não autorizados.
+Na camada de segurança, inicialmente o \textit{front-end} não garantia a criptografia de todas as requisições HTTP, resultando em transmissão de dados em texto claro, o que poderia expor o sistema a ataques como SQL injection ou vazamento de informações sensíveis. Além disso, o mecanismo de autenticação era básico, sem suporte robusto para autorização. A solução envolveu configurar adequadamente o HTTPS/TLS para todas as comunicações e implementar um sistema de autenticação baseado em JWT (JSON Web Token), protegendo as requisições contra acessos não autorizados.
 
 Por fim, embora os esforços de otimização tenham melhorado o desempenho, não foi possível atingir a latência média de 1,5 segundos definida como requisito não-funcional. Ainda assim, os resultados foram satisfatórios para a maioria das operações e atenderam aos limites do projeto.
 
@@ -472,10 +475,9 @@ Esses desafios, embora complexos, proporcionaram aprendizado significativo e con
 Os testes internos, presentes no plano de testes, cobriram as funcionalidades essenciais do sistema, desde a gestão administrativa de usuários até o acompanhamento clínico detalhado dos pacientes e a integração com serviços externos.
 
 \subsubsection{Aspectos positivos}
-Os resultados positivos demonstram a correta execução das funcionalidades primárias do sistema. Em um cenário de sucesso, todas as operações de CRUD (Criação, Edição e Exclusão) para usuários, administradores, pacientes, consultas e informações adicionais de perfil são persistidas com sucesso no banco de dados, confirmando a eficácia da lógica de negócios e da query SQL. Além disso, a adição de medicamentos a um tratamento e a manutenção dos registros cardiovasculares e glicêmicos foram concluídas, indicando que os dados brutos de saúde são armazenados corretamente.
+Os resultados obtidos nos testes internos demonstram a execução correta das funcionalidades primárias do sistema. Todas as operações de CRUD (Criação, Edição e Exclusão) para usuários, administradores, pacientes, consultas e informações adicionais de perfil foram persistidas adequadamente no banco de dados, comprovando a eficácia da lógica de negócios e das consultas SQL. Além disso, a adição de medicamentos a um tratamento e a manutenção dos registros cardiovasculares e glicêmicos foram concluídas com êxito, indicando que os dados brutos de saúde estão sendo armazenados corretamente.
 
-A integração com serviços externos também apresentou sucesso: o sistema foi capaz de pesquisar e visualizar farmácias e medicamentos a venda ao se conectar com sucesso às APIs externas, confirmando a funcionalidade adequada dos mecanismos de comunicação e autenticação. Por fim, a visualização correta de consultas por filtro de data e a exibição dos gráficos de adesão e intercorrências indicam que a recuperação e apresentação de dados funcionam conforme o esperado.
-
+A integração com serviços externos também apresentou funcionamento adequado: o sistema foi capaz de pesquisar e visualizar farmácias e medicamentos à venda ao se conectar às APIs externas, confirmando o bom desempenho dos mecanismos de comunicação e autenticação. Por fim, a visualização correta de consultas por filtro de data e a exibição dos gráficos de adesão e intercorrências demonstram que o processo de recuperação e apresentação de dados está ocorrendo conforme o previsto.
 \subsubsection{Aspectos negativos}
 
 Um erro que aconteceu em alguns cenários foi que, mesmo sem todos os campos obrigatórios preenchidos, ainda ocorria qualquer tipo de persistência de dados. Este é um risco de infraestrutura que pode invalidar algumas operações do back-end, e além disso, quebrava a renderização de algumas informações em diversas telas da aplicação.
@@ -488,10 +490,10 @@ Por fim, a integração externa depende da disponibilidade da API e da ativaçã
 
 \subsubsection{Aspectos positivos}
 
-Os resultados positivos confirmam a solidez do back-end do sistema em suas operações fundamentais. Em condições ideais de rede e conectividade, as operações de CRUD relacionadas aos usuários, pacientes e consultas foram concluídas com sucesso. Isso valida a lógica de negócios e a integridade das transações sob uma variedade de dispositivos e outros ambientes. A capacidade de adicionar medicamentos a um tratamento e registro de dados contínuos de saúde, como pressão arterial e nível de glicose, também deram certo. A integração com as APIs externas demonstrou ser robusta, conseguindo permitir a pesquisa de farmáciase a visualização de medicamentos de forma rápida e precisa para a maioria dos testadores.
+Os resultados positivos confirmam a solidez do \textit{back-end} do sistema em suas operações fundamentais. Em condições ideais de rede e conectividade, as operações de CRUD relacionadas aos usuários, pacientes e consultas foram concluídas com êxito. Isso valida a lógica de negócios e a integridade das transações sob uma variedade de dispositivos e outros ambientes. A capacidade de adicionar medicamentos a um tratamento e registro de dados contínuos de saúde, como pressão arterial e nível de glicose, também deram certo. A integração com as APIs externas demonstrou ser robusta, permitindo a pesquisa de farmácias e a visualização de medicamentos de forma rápida e precisa para a maioria dos testadores.
 
 \subsubsection{Aspectos negativos}
-Alguns problemas foram identificados no processo de testes externos foram que o login não é validado corretamente no backend, comprometendo a segurança do sistema. Além disso, não foi possível abrir a foto do paciente no backend, o que limita a visualização de informações relevantes. Outro fator crítico está relacionado ao tempo de inicialização da API, que pode levar alguns segundos até ficar ativa, impedindo o acesso imediato à aplicação. Soma-se a isso a ausência de implementação das claims/roles, permitindo que em alguns cenários, usuários realizem requisições sem restrições, o que representa um risco de uso indevido.
+Alguns problemas foram identificados no processo de testes externos foram que o login não é validado corretamente no \textit{backend}, comprometendo a segurança do sistema. Além disso, não foi possível abrir a foto do paciente no \textit{backend}, o que limita a visualização de informações relevantes. Outro fator crítico está relacionado ao tempo de inicialização da API, que pode levar alguns segundos até ficar ativa, impedindo o acesso imediato à aplicação. Soma-se a isso a ausência de implementação das claims/roles, permitindo que em alguns cenários, usuários realizem requisições sem restrições, o que representa um risco de uso indevido.
 
 \subsection{Empresa}
 Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo bimestre, desenvolveu-se a estrutura empresarial fictícia da equipe Hyperion, cujo produto principal é o \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros, e foi importante para que desenvolvessemos uma visão mais ampliada e descritiva do que o \nomeprojeto e a Equipe Hyperion significa para pessoas de fora das matérias técnicas, possibilitando para que elas pudessem entender também. Todos os detalhes sobre a empresa pode ser consultada no \autoref{secao_empresa}.
@@ -499,7 +501,7 @@ Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo 
 \section{Conclusão}
 O desenvolvimento do MyMed demonstrou a importância da tecnologia como ferramenta de apoio à saúde e ao cuidado de idosos, especialmente em um contexto onde a demanda por serviços de cuidado segue em crescimento constante, fator identificado durante meses de pesquisas e estudos, incluindo análises das necessidades dos cuidadores e implementações de funcionalidades que pudessem beneficiar inclusive os dependentes, mesmo que de forma indireta.
 
-De forma técnica, um dos objetivos do projeto foi a criação de uma API eficiente e bem documentada, que possa facilitar e possibilitar a integração e o uso por terceiros. Para suportar essa arquitetura de maior escala, houve a criação de uma estrutura robusta para o front-end também, com enfoque em conseguir proporcionar uma navegação intuitiva e uma boa experiência para os usuários. No entanto, desafios relacionados à segurança, desempenho e estabilidade da aplicação foram identificados nesse processo, indicando áreas que necessitam de correções e melhorias contínuas para alcance de um público maior. Mesmo diante de limitações técnicas, esses resultados evidenciam que o projeto alcançou, em grande parte, os objetivos de promover acessibilidade e usabilidade para o público-alvo.
+De forma técnica, um dos objetivos do projeto foi a criação de uma API eficiente e bem documentada, que possa facilitar e possibilitar a integração e o uso por terceiros. Para suportar essa arquitetura de maior escala, houve a criação de uma estrutura robusta para o \textit{front-end} também, com enfoque em conseguir proporcionar uma navegação intuitiva e uma boa experiência para os usuários. No entanto, desafios relacionados à segurança, desempenho e estabilidade da aplicação foram identificados nesse processo, indicando áreas que necessitam de correções e melhorias contínuas para alcance de um público maior. Mesmo diante de limitações técnicas, esses resultados evidenciam que o projeto alcançou, em grande parte, os objetivos de promover acessibilidade e usabilidade para o público-alvo.
 
 Por fim, este trabalho demonstra que o investimento em tecnologia aplicada à saúde e ao cuidado de idosos contribui com a melhoria de rotina de cuidados e com a promoção de autonomia, segurança e qualidade de vida. Os resultados obtidos evidenciam que, mesmo diante de limitações técnicas, é possível desenvolver sistemas relevantes e funcionais, que podem servir de referência para projetos futuros. Desta forma, o MyMed não apenas cumpre sua função prática, mas também reforça a importância de soluções inovadoras e adaptáveis entre tecnologia e cuidado / saúde humana.
 
