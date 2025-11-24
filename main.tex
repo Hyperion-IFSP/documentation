@@ -115,11 +115,11 @@
 % titulo em outro idioma (opcional)
 
 \begin{abstract}
-    This document describes the current architecture of the software designated as ``\nomeprojeto``, which aims to help people maintain their medication supply; and for caregivers maintain medication supplies for all their dependents. In addition, it will offer a scheduling service so that the user can track appointments and blood glucose and blood pressure levels. The content of this document discusses its concept and application, in addition to the data modeling and tools used.
+    This document presents "MyMed", an application designed to assist caregivers in managing the health routines of elderly dependents, aiming to centralize medication control, appointment scheduling, and vital sign monitoring. The methodology included qualitative and quantitative research with caregivers to define requirements, followed by development using the Scrum framework, Java Spring Boot for the back-end, and Angular for the front-end. Results from internal and external tests validated the core functionalities, including CRUD operations, external API integrations for medication search, and health tracking graphs, demonstrating the system's usability despite some identified enhancement opportunities and performance limitations.
 \end{abstract}
 
 \begin{resumo} 
-  Este documento descreve a arquitetura presente do software designado como ``\nomeprojeto``, ele visa auxiliar pessoas a manter seu estoque de medicamentos, e para cuidadores manter estoque de medicamentos de todos seus dependentes. Além disso, oferecerá um serviço de agenda para que o usuário acompanhe consultas e taxas de glicemia e pressão. O conteúdo deste documento discorre sobre seu conceito e aplicação, além da modelagem de dados e ferramentas utilizadas.
+    Este documento apresenta o "MyMed", uma aplicação projetada para auxiliar cuidadores na gestão das rotinas de saúde de idosos dependentes, visando centralizar o controle de medicamentos, agendamento de consultas e monitoramento de sinais vitais. A metodologia utilizada incluiu pesquisas qualitativas e quantitativas com cuidadores para definição de requisitos, seguidas pelo desenvolvimento utilizando o framework Scrum, Java Spring Boot no back-end e Angular no front-end. Os resultados dos testes internos e externos validaram as funcionalidades principais, incluindo operações de CRUD, integrações com APIs externas para busca de medicamentos e gráficos de acompanhamento de saúde, demonstrando a usabilidade do sistema apesar de algumas limitações de desempenho e oportunidades para melhorias identificadas.
 \end{resumo}
 
 
@@ -249,7 +249,7 @@ As perguntas feitas em ambas pesquisas se encontram no \autoref{pesquisas}.
 \subsubsection{Análise dos Dados}
 
 Na primeira pesquisa, denotou-se que aproximadamente 73,3\% das pessoas nunca utilizaram um aplicativo para gerenciamento de consultas e medicações, enquanto os outros 26,7\% utilizaram um ou mais aplicativos, geralmente relacionados a diferentes tratamentos e teleconsultas. Muitas pessoas comentaram dificuldade em memorizar posologias
-\footnote[1]{Seção da terapêutica que se dedica ao estudo da dosagem certa dos medicamentos. Indicação da dosagem certa (adequada) de um medicamento tendo em conta os vários casos em que o mesmo pode ser prescrito.}, 
+\footnote{Seção da terapêutica que se dedica ao estudo da dosagem certa dos medicamentos. Indicação da dosagem certa (adequada) de um medicamento tendo em conta os vários casos em que o mesmo pode ser prescrito.}, 
 organização pessoal de consultas agendadas, datas e disponibilidade de vacinas e agendamento de consultas. Dos desejos compartilhados entre os entrevistados, se destacaram pesquisas de medicações, uma agenda direcionada a estes compromissos e tarefas, uma integração para que haja apenas uma aplicação onde seja possível acessar todas as informações necessárias, lembretes do horário de medicações e organização pessoal.
 
 A partir dos dados de ambas as pesquisas constatou que dos profissionais entrevistados, 50\% atuam como cuidadores formais, enquanto os outros 50\% dividem-se entre cuidadores informais, fisioterapeutas e profissionais de enfermagem. Cerca de 70\% desses profissionais trabalham em domicílios particulares e 30\% em casas de repouso. As atividades mais comuns em sua rotina incluem a administração de medicamentos, o monitoramento de sinais vitais e o acompanhamento em consultas. No entanto, nenhum dos entrevistados utiliza aplicativos ou sistemas para esse controle, recorrendo a registros em papel, planilhas ou lousas (\autoref{utiliza_app}). A \autoref{utilizaria_app} traz que aproximadamente 90\% demonstraram interesse em utilizar um aplicativo, sugerindo que funcionalidades para registro de dados e organização da rotina seriam pertinentes para a aplicação.
@@ -358,7 +358,7 @@ Como apresentado na \autoref{casos_de_uso}, os casos de uso representam as princ
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1.0\linewidth]{assets/figuras/diagrama-casos-uso.jpg}
+    \includegraphics[width=1.0\linewidth]{assets/figuras/diagrama-casos-uso.jpeg}
     \caption{Diagrama de Casos de Uso}
     \fonte{Autores.}
     \label{casos_de_uso}
@@ -529,7 +529,7 @@ Por fim, este trabalho demonstra que o investimento em tecnologia aplicada à sa
 
 \input{sections/requisitos_f}
 
-\newpage
+\pagebreak
 
 \chapter{Requisitos Não Funcionais\label{requisitos_nf}}
 

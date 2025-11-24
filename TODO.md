@@ -4,8 +4,8 @@
 
 ## resumo (primeira página)
 
-- [ ] objetivo + metodologias + resultados
-- [ ] tudo isso de forma concisa
+- [x] objetivo + metodologias + resultados
+- [x] tudo isso de forma concisa
 
 ## introdução
 
@@ -70,7 +70,7 @@
 - [ ] descrição para cada quadro
 
 ## Pág. 1
-- [ ] corrigir referências de e-mail “estranhas”
+- [X] corrigir referências de e-mail “estranhas”
 - [ ] reescrever resumo e abstract (objetivos, metodologia e resultados)
 
 ## Objetivos
