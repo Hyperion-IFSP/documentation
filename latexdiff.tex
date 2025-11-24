@@ -1,0 +1,694 @@
+%% abtex2-modelo-artigo.tex, v-1.9.7 laurocesar
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL antigo.tex   Mon Nov 24 17:31:56 2025
+%DIF ADD atual.tex    Mon Nov 24 17:12:11 2025
+%% Copyright 2012-2018 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://www.abntex.net.br/
+%%
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Artigo Acadêmico em conformidade com
+% ABNT NBR 6022:2018: Informação e documentação - Artigo em publicação 
+% periódica científica - Apresentação
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	article,			% indica que é um artigo acadêmico
+	12pt,				% tamanho da fonte
+	oneside,			% para impressão apenas no recto. Oposto a twoside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	% chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	% section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	% subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	% subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+    BIBLATEX,           % indica para utilizar BIBLATEX em vez do abntex2cite
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	sumario=tradicional
+	]{abntex2}
+
+%DIF 44d44
+%DIF < 
+%DIF -------
+% ---
+% PACOTES
+% ---
+\input{config/packages}
+
+% ---
+% Configurações do pacote backref e formatação
+% ---
+\input{config/formatting}
+
+% --- Informações de dados para CAPA e FOLHA DE ROSTO ---
+\input{config/document-info}
+% --- 
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ---
+% Altera as margens padrões
+% ---
+\setlrmarginsandblock{3cm}{3cm}{*} %{ESQUERDA}{DIREITA}
+\setulmarginsandblock{3.5cm}{2.5cm}{*} %{SUPERIOR}{INFERIOR}
+\checkandfixthelayout
+% ---
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por (está definido dentro do sbc-template.sty):
+%\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro (está definido dentro do sbc-template.sty):
+%\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Espaçamento simples
+% \SingleSpacing
+
+%DIF 86a85
+\thanksmarkseries{arabic} %DIF > 
+%DIF -------
+
+% ----
+% Início do             
+% ----
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF COLORLISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+
+%---
+%
+% Se desejar escrever o artigo em duas colunas, descomente a linha abaixo
+% e a linha com o texto ``FIM DE ARTIGO EM DUAS COLUNAS''.
+% \twocolumn[    		% INICIO DE ARTIGO EM DUAS COLUNAS
+%
+%---
+
+% página de titulo principal (obrigatório)
+\maketitle
+
+% titulo em outro idioma (opcional)
+
+\begin{abstract}
+    This document \DIFdelbegin \DIFdel{describes the current architecture of the software designated as ``}%DIFDELCMD < \nomeprojeto%%%
+\DIFdel{``, which aims to help people maintain their medication supply; and for caregivers maintain medication supplies for all their dependents. In addition, it will offer a scheduling service so that the user can track appointments and blood glucose and blood pressure levels. The content of this document discusses its concept and application, in addition to the data modeling and tools used}\DIFdelend \DIFaddbegin \DIFadd{presents "MyMed", an application designed to assist caregivers in managing the health routines of elderly dependents, aiming to centralize medication control, appointment scheduling, and vital sign monitoring. The methodology included qualitative and quantitative research with caregivers to define requirements, followed by development using the Scrum framework, Java Spring Boot for the back-end, and Angular for the front-end. Results from internal and external tests validated the core functionalities, including CRUD operations, external API integrations for medication search, and health tracking graphs, demonstrating the system's usability despite some identified enhancement opportunities and performance limitations}\DIFaddend .
+\end{abstract}
+
+\DIFdelbegin %DIFDELCMD < \begin{resumo1} 
+%DIFDELCMD <   %%%
+\DIFdel{Este documento descreve a arquitetura presente do software designado como ``}%DIFDELCMD < \nomeprojeto%%%
+\DIFdel{``, ele visa auxiliar pessoas a manter seu estoque de medicamentos, e para cuidadores manter estoque de medicamentos de todos seus dependentes. Além disso, oferecerá um serviço de agenda para que o usuário acompanhe consultas e taxas de glicemia e pressão. O conteúdo deste documento discorre sobre seu conceito e aplicação, além da modelagem de dados e ferramentas utilizadas.
+}%DIFDELCMD < \end{resumo1}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \begin{resumo} 
+    \DIFadd{Este documento apresenta o "MyMed", uma aplicação projetada para auxiliar cuidadores na gestão das rotinas de saúde de idosos dependentes, visando centralizar o controle de medicamentos, agendamento de consultas e monitoramento de sinais vitais. A metodologia utilizada incluiu pesquisas qualitativas e quantitativas com cuidadores para definição de requisitos, seguidas pelo desenvolvimento utilizando o framework Scrum, Java Spring Boot no back-end e Angular no front-end. Os resultados dos testes internos e externos validaram as funcionalidades principais, incluindo operações de CRUD, integrações com APIs externas para busca de medicamentos e gráficos de acompanhamento de saúde, demonstrando a usabilidade do sistema apesar de algumas limitações de desempenho e oportunidades para melhorias identificadas.
+}\end{resumo}
+\DIFaddend 
+
+
+
+% ]  				% FIM DE ARTIGO EM DUAS COLUNAS
+% ---
+
+%\begin{center}\smaller
+%\textbf{Data de submissão e aprovação}: elemento obrigatório. Indicar dia, mês e ano
+
+%\textbf{Identificação e disponibilidade}: elemento opcional. Pode ser indicado o endereço eletrônico, DOI, suportes e outras informações relativas ao acesso.
+%\end{center}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\section{Introdução}
+
+Um direito fundamental de qualquer ser humano é a saúde. Nos dias atuais, a expansão e aplicação tecnológica em diversos setores muitas vezes serve de motivação para a criação de novos serviços, como aplicações \textit{mobile}, \textit{sites} de compra de medicamento, informativos \textit{online} de programas do governo, entre outros. Estudos mostram que esses serviços estão em constante evolução e a cada ano sendo mais acessíveis e utilizados por ambos os grupos de profissionais da saúde e de pacientes \cite{clarisse2016}.
+
+Um grupo muito beneficiado por essas tecnologias é o da terceira idade (idosos com mais de 60 anos). Segundo \citeonline{clarisse2016}, com a idade avançada e capacidades motoras reduzidas, pessoas idosas necessitam de aplicativos com interfaces mais simples e funcionalidades diretas para realizar tarefas do dia a dia ou até dentro do seu celular.
+
+Aplicativos de assistência ao idoso são exemplos de um mercado promissor e possuem uma gama de usuários que buscam estes serviços. Porém, muitas vezes não possuem autonomia própria e não conseguem usar tais sistemas.
+
+Um caso relevante é o de idosos que não possuem autonomia própria e são zelados por cuidadores contratados pela família. Para \citeonline{aline2012sobrecarga}, os profissionais - que são em grande parte mulheres adultas - sofrem de doenças como hipertensão e estresse devido o acúmulo de múltiplos papéis.
+
+\begin{citacao}
+"Pode-se verificar relação entre características dos cuidadores com a sobrecarga, em que os cuidadores, na maioria, familiares do sexo feminino, encontram-se na faixa etária adulta, fase em que a mulher tem vários papéis sociais: mãe, esposa, dona de casa, dentre outros. Muitas vezes, tem outras atribuições sociais, como o trabalho fora do lar, além de assumir o cuidado de seus pais, já idosos." \cite{aline2012sobrecarga} 
+\end{citacao}
+
+Esses profissionais enfrentam uma rotina intensa, marcada por altos níveis de estresse e responsabilidades, gerando assim problemas de saúde como hipertensão e estresse persistente.
+
+Em vista de todas as oportunidades de mercado para estas soluções, ainda não há uma plataforma que seja clara e direta em sua execução, segundo \citeonline{janaina2023}. Um exemplo é o Sistema Móvel de Assistência ao Idoso (SMAI), que, embora disponibilize suporte para cuidadores de idosos com demência, apresenta limitações significativas, tal qual uma interface repetitiva e a necessidade de preencher fichas técnicas extensas, fato que compromete a usabilidade e a praticidade que esses profissionais necessitam no dia a dia \cite{andre2020}.
+
+Visando superar essas limitações, o projeto propõe o desenvolvimento de uma plataforma focada exclusivamente no cuidador de idosos, com funcionalidades que centralizam o monitoramento e a gestão de \DIFdelbegin \DIFdel{tratramentos}\DIFdelend \DIFaddbegin \DIFadd{tratamnentos}\DIFaddend . A ferramenta inclui lembretes para administração dos remédios, agendamentos de consultadas com calendário integrado, indicação de locais para compra, pesquisa de preços e criação de relatórios médicos - tudo focado na interface intuitiva e direta. Assim, busca-se reduzir a sobrecarga dos cuidadores, proporcionando mais autonamia e eficiência no desempenho de suas funções.
+\DIFaddbegin 
+
+\DIFaddend \subsection{Objetivos}
+
+\DIFdelbegin \DIFdel{Para o desenvolvimento do sistema, será adotado como referência uma diretriz de desenvolvimento que se baseará na comunicação constante com o usuário e controle das }\DIFdelend \DIFaddbegin \DIFadd{O MyMed tem por objetivo oferecer uma plataforma que facilite o gerenciamento de tratamento de idosos, reunindo todas }\DIFaddend informações \DIFaddbegin \DIFadd{necessárias e funções úteis para o acompanhamento de pacientes}\DIFaddend .
+
+\subsubsection{Objetivo Geral}
+
+\DIFdelbegin \DIFdel{Desenvolver uma plataforma que auxilie }\DIFdelend \DIFaddbegin \DIFadd{O MyMed visa auxiliar }\DIFaddend os cuidadores de idosos a manter de forma simples, organizada e eficaz o acompanhamento de seus pacientes. O sistema irá permitir \DIFaddbegin \DIFadd{o }\DIFaddend registro de medicamentos utilizados, consultas agendadas e realizadas \DIFdelbegin \DIFdel{, com }\DIFdelend \DIFaddbegin \DIFadd{e a }\DIFaddend possibilidade de gerar relatórios e gráficos personalizados de acordo com os tratamentos em andamento \DIFdelbegin \DIFdel{(como controle de glicemia e hipertensão).
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Além disso, o sistema poderá enviar alertas sobre o estoque de medicamentos de todos os pacientes vinculados a uma conta, indicando a estimativa de tempo de consumo restante e realizando pesquisas de preços para reposição. 
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Também contará com um módulo de registros de dados médicos, onde o cuidador poderá inserir informações essenciais, como índices de glicemia e pressão arterial, datas de retorno, novas prescrições }\DIFdelend e informações \DIFdelbegin \DIFdel{relevantes de um paciente}\DIFdelend \DIFaddbegin \DIFadd{necessárias}\DIFaddend .
+
+\subsubsection{Objetivos Específicos}
+
+\DIFdelbegin \DIFdel{A fim de }\DIFdelend \DIFaddbegin \DIFadd{Para }\DIFaddend alcançar o objetivo geral da proposta apresentada, foram delineados \DIFdelbegin \DIFdel{os seguintes }\DIFdelend objetivos específicos \DIFaddbegin \DIFadd{para esta meta}\DIFaddend :
+
+\begin{enumerate}
+    \item Conduzir entrevistas com cuidadores registrados e funcionários de casas de repouso \DIFdelbegin \DIFdel{. Analisar resultados para direcionar a }\DIFdelend \DIFaddbegin \DIFadd{e analisar os resultados para }\DIFaddend um desenvolvimento próximo ao usuário final da aplicação\DIFdelbegin \DIFdel{.
+    }\DIFdelend \DIFaddbegin \DIFadd{;
+    }\DIFaddend \item Realizar uma pesquisa de mercado de aplicações similares, \DIFdelbegin \DIFdel{a fim de criar }\DIFdelend \DIFaddbegin \DIFadd{para que haja a criação de }\DIFaddend uma solução única \DIFdelbegin \DIFdel{ao usuário voltada ao }\DIFdelend \DIFaddbegin \DIFadd{que possua o }\DIFaddend melhoramento de recursos já existentes\DIFdelbegin \DIFdel{e }\DIFdelend \DIFaddbegin \DIFadd{, a }\DIFaddend implantação de recomendações \DIFdelbegin \DIFdel{destes }\DIFdelend \DIFaddbegin \DIFadd{e novas funcionalidades úteis aos }\DIFaddend usuários\DIFdelbegin \DIFdel{. 
+    }\DIFdelend \DIFaddbegin \DIFadd{;
+    }\DIFaddend \item Desenvolver um sistema que, com uma interface simples e intuitiva, além de lembretes que auxilie o usuário a manter esses tratamentos, automatize tarefas banais e auxilie o controle por parte do cuidador\DIFdelbegin \DIFdel{.
+    }\DIFdelend \DIFaddbegin \DIFadd{;
+    }\item \DIFadd{Garantir o envio de alertas sobre o estoque de medicamentos de todos os pacientes vinculados a uma conta, a estimativa de tempo de consumo restante e possibilitar a pesquisa de preços para reposição;
+    }\item \DIFadd{Possuir um módulo de registros de dados médicos, onde o cuidador poderá inserir informações essenciais, como índices de glicemia e pressão arterial, datas de retorno, novas prescrições e informações relevantes de um paciente;
+    }\DIFaddend \item Aplicar as funcionalidades do sistema de forma empírica em um público-alvo a fim de aprimorar o sistema e torná-lo útil ao usuário final.
+\end{enumerate}
+
+
+\subsection{Justificativa}    
+
+Segundo \DIFaddbegin \DIFadd{as autoras }\DIFaddend \citeonline{mariacristina2008}, o consumo de um medicamento ou o acompanhamento de consultas de rotina podem se tornar algo supérfluo na rotina de um paciente que os realiza com frequência, podendo acarretar em um esquecimento de tais compromissos. 
+
+\DIFdelbegin \DIFdel{A partir disso}\DIFdelend \DIFaddbegin \DIFadd{Em paralelo}\DIFaddend , foi realizada uma pesquisa com o \DIFdelbegin \DIFdel{público geral no }\DIFdelend \DIFaddbegin \DIFadd{público-geral para definição de um escopo. No }\DIFaddend formato de um formulário online \DIFdelbegin \DIFdel{. Foi apontado que 70}\DIFdelend \DIFaddbegin \DIFadd{e com 45 respostas, aproximadamente 71}\DIFaddend \% dos participantes utilizam pouco ou muito pouco de serviços tecnológicos de saúde; dos que utilizam, 63\% relatam não corresponder às suas expectativas. Cerca de 62\% dos participantes \DIFdelbegin \DIFdel{têm }\DIFdelend \DIFaddbegin \DIFadd{relatam possuir }\DIFaddend grandes dificuldades em lembrar de datas de consultas, e 81\% relatam problemas no horário de consumo de remédios. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{O }\textit{\DIFdel{feedback}} %DIFAUXCMD
+\DIFdel{constante de usuários de sistemas existentes é uma das bases do desenvolvimento, e trará uma solução prática ao público-alvo que aperfeiçoe as aplicações já utilizadas.
+}\DIFdelend \DIFaddbegin \DIFadd{O questionário aplicado nesta etapa se encontra no }\autoref{pesquisas}\DIFadd{.
+}
+
+\DIFaddend Desta forma, \DIFdelbegin \DIFdel{esse documento, demonstra }\DIFdelend \DIFaddbegin \DIFadd{após }\DIFaddend a \DIFdelbegin \DIFdel{necessidade de tal sistema, destinada a }\DIFdelend \DIFaddbegin \DIFadd{síntese destes dados, pode-se estabelecer uma lacuna que demonstra a utilidade deste sistema, priorizando acessibilidade a um sistema de qualidade e visando mitigar as necessidades dos }\DIFaddend usuários \DIFdelbegin \DIFdel{que necessitam ou desejam }\DIFdelend \DIFaddbegin \DIFadd{de }\DIFaddend um melhor gerenciamento dos tratamentos de seus pacientes \DIFdelbegin \DIFdel{, sejam eles medicamentosou consultas ; }\DIFdelend \DIFaddbegin \DIFadd{— sejam relacionados aos medicamentos, as consultas ou quaisquer outras informações pertinentes a estes prontuários — }\DIFaddend a fim de manter a saúde destes bem condicionadas e supervisionadas.
+
+\section{Referencial Teórico}
+
+A revisão bibliográfica será dividida em análise do mercado de telemedicina e sua recepção, plataformas de telemonitoramento, e por fim a lacuna no mercado de ferramentas para cuidadores de idosos.
+
+\subsection{Mercado de Telemedicina}
+
+Para \citeonline{janaina2023}, há um crescente número de profissionais da saúde utilizando tecnologias novas para o gerenciamento de seus tratamentos. Estas tecnologias são categorizadas como de `telessaúde`. Dentre as áreas mais comuns tem-se a teleducação (vídeos de manuais a respeito de ferramentas/recursos do serviço de saúde pública) e a tele-consulta (consultas online que tiveram mais popularidade com a população idosa). O autor ressalta que essas tecnologias ainda não são amplamente utilizadas pelo público geral por fatores como dificuldade de acesso e falta de infraestrutura; mas demonstra que o número de pessoas desse grupo diminui a cada ano.
+
+A telemedicina não é destinada à substituição do médico, mas sim como uma ferramenta assistiva que \DIFdelbegin \DIFdel{suavizará processos para ambos os grupos de }\DIFdelend \DIFaddbegin \DIFadd{otimiza processos para }\DIFaddend pacientes e profissionais. \DIFdelbegin \DIFdel{É, ainda, 
+uma forma}\DIFdelend \DIFaddbegin \DIFadd{Desta forma, se apresenta também como um instrumento }\DIFaddend de democratização \DIFdelbegin \DIFdel{de serviços de }\DIFdelend \DIFaddbegin \DIFadd{da }\DIFaddend saúde\DIFdelbegin \DIFdel{, pois }\DIFdelend \DIFaddbegin \DIFadd{: enquanto }\DIFaddend muitas regiões \DIFdelbegin \DIFdel{não dispõem de tais serviços de forma prática \mbox{%DIFAUXCMD
+\cite{Schaefer2023telemedicina}}\hskip0pt%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{carecem de infraestrutura médica física, a tecnologia possui maior alcançabilidade para áreas remotas ou isoladas, conforme apontam \mbox{%DIFAUXCMD
+\citeonline{Schaefer2023telemedicina}}\hskip0pt%DIFAUXCMD
+}\DIFaddend .
+
+Para idosos, o mercado da tele-consulta é uma alternativa acessível a consultas presenciais, mas não dispensam a ida aos consultórios, segundo \citeonline{quirino2023percepcao}. A pesquisa ainda diz que pequenas ligações entre pacientes e profissionais facilitaram a resolução de dúvidas a respeito do tratamento, possíveis diagnósticos ou queixas de pacientes.
+
+\subsection{Plataformas de Telemonitoramento}
+
+Telemonitoramento, segundo \citeonline{petraroli2018biotelemetria}, é uma subárea da medicina, que permite o monitoramento e gerenciamento de dispositivos e sensores médicos via software para aumentar a eficiência dos processos. Em seu artigo, foi analisado a plataforma de monitoramento geriátrico de doenças crônicas \DIFdelbegin \DIFdel{`Virtual Monitor` }\DIFdelend \DIFaddbegin \textit{\DIFadd{Virtual Monitor}} \DIFaddend e seu potencial de investimento no mercado atual da telemedicina. A autora defende que sistemas como o de pesquisa possuem um atrativo comercial elevado no cenário atual somente se têm como foco a inovação de recursos de sustentabilidade e na competitividade. Diz, ainda, que para simplificar e escalar o acompanhamento de idosos, é de extrema necessidade uma solução que envolva cuidado centrado nas pessoas, viabilizando o mercado de cuidado suplementar.
+
+Com a pesquisa de \citeonline{clarisse2016}, é possível notar que aplicativos \textit{mobile} de gerenciamento de medicamentos facilitam à adesão ao tratamento, além da possibilidade de um cuidador programar os horários de forma correta. Para \citeonline{Santos2024Idosos}, plataformas como estas disponibilizam aos profissionais ferramentas de orientação e resolução de problemas. Permitem também que tomem um conhecimento maior das condições do paciente.
+
+\subsection{Más Condições de Trabalho de Cuidadores de Idosos}
+
+\DIFdelbegin \DIFdel{São definidas }\DIFdelend \DIFaddbegin \DIFadd{O Ministério da Saúde e a Agência Nacional de Vigilância Sanitária já definiram }\DIFaddend normas que categorizam idosos não-autônomos em três termos de dependência: grau I, totalmente independentes; grau II, que necessitam de auxílio em até três atividades básicas diárias; grau III, que necessitam auxílio em todas as tarefas de autocuidado. É também posto um limite para cuidadores de idosos: em uma jornada de trabalho de oito horas diárias e cinco dias por semana, o profissional de uma instituição de cuidado pode auxiliar até 20 idosos com grau de dependência I, até 10 idosos com grau de dependência II ou 6 idosos com grau de dependência III \cite{ministeriosaude2021ilpi}.
+
+\DIFdelbegin \DIFdel{Mesmo com a tentativa de limites, ainda há sobrecarga para estes profissionais. Segundo a }\DIFdelend \DIFaddbegin \DIFadd{Na }\DIFaddend pesquisa de \citeonline{nunes2018sabe}, que inclui um grupo de 359 cuidadores do município de São Paulo - SP, a maioria dos cuidadores era familiar, do sexo feminino, com média de idade de 53,9 anos\DIFdelbegin \DIFdel{. Em seguida, foram analisados fatores }\DIFdelend \DIFaddbegin \DIFadd{, percebe-se que mesmo com a imposição de limites, ainda existe uma sobrecarga para estes profissionais.
+}
+
+\DIFadd{Fatores }\DIFaddend como a disfunção familiar (incapacidade de uma família cobrir as necessidades básicas de um indivíduo como apoio emocional e financeiro) e o excesso de trabalho durante longas horas \DIFdelbegin \DIFdel{contribuem para }\DIFdelend \DIFaddbegin \DIFadd{se destacaram por contribuir com }\DIFaddend o estresse do profissional de cuidado, que somam mais de um terço do grupo de pesquisa. \DIFdelbegin \DIFdel{São utilizados de exemplos os }\DIFdelend \DIFaddbegin \DIFadd{Os }\DIFaddend cuidadores familiares, \DIFdelbegin \DIFdel{que }\DIFdelend mesmo tendo uma grande intimidade com o dependente, ainda sofrem com situações que exigem uma parcela próxima ao total de seu tempo. 
+\DIFdelbegin \DIFdel{A autora finaliza com um apelo a instituições públicas, que não fornecem recursos suficientes para a manutenção pessoal de profissionais de cuidado, a fim de um exercício melhor de suas atividades.
+}\DIFdelend 
+
+Tarefas repetitivas, que são necessárias para a manutenção da vida e espaço do paciente, como a limpeza, organização, cuidados corporais, alimentação, eliminações, entre outras, contribuem para o aumento da carga horária de trabalho, que em média ultrapassa 12 horas diárias. Cuidadores relatam, também, a falta de ferramentas como uma das causas da sobrecarga proveniente do seu trabalho, e se beneficiariam desses serviços para a diminuição dela \cite{aline2012sobrecarga}.
+
+\DIFaddbegin \DIFadd{Desta forma, surge um apelo principalmente às instituições públicas, pelo fornecimento de recursos suficientes para a manutenção pessoal de profissionais de cuidado e seus serviços, a fim de possibilitar o exercício adequado e apropriado de suas atividades.
+}
+
+
+\DIFaddend \section{Metodologia}
+
+Esta seção descreve a metodologia adotada para o desenvolvimento do \nomeprojeto, com objetivo de detalhar cada etapa e decisão tomada para garantir que a solução final atenda às necessidades identificadas. A abordagem abrange as pesquisas para levantamento de requisitos com o público-alvo, a seleção das ferramentas e tecnologias para o projeto, a organização da equipe e o processo de desenvolvimento do software.
+
+\subsection{Métodos de Pesquisa}
+
+Os métodos de pesquisa \DIFdelbegin \DIFdel{do }\DIFdelend \DIFaddbegin \DIFadd{utilizados no }\DIFaddend projeto são divididas em duas partes: a pesquisa qualitativa, \DIFdelbegin \DIFdel{que visa entender }\DIFdelend \DIFaddbegin \DIFadd{destinada a compreender }\DIFaddend o público \DIFdelbegin \DIFdel{no }\DIFdelend geral e suas necessidades \DIFdelbegin \DIFdel{na aplicação; e a }\DIFdelend \DIFaddbegin \DIFadd{em relação ao uso de tecnologias para organização de cuidados com a saúde e, uma }\DIFaddend pesquisa quantitativa, \DIFdelbegin \DIFdel{planejada com o foco do sistema em }\DIFdelend \DIFaddbegin \DIFadd{direcionada especificamente ao nosso público-alvo, os }\DIFaddend cuidadores de idosos\DIFdelbegin \DIFdel{em casas de repouso, visando coletar informações de profissionais da área}\DIFdelend . 
+
+\subsubsection{Instrumento de Pesquisa e Escalas Utilizadas}
+
+O principal meio de pesquisa foi a realização de formulários online estruturados \DIFdelbegin \DIFdel{, desenvolvido com as }\DIFdelend \DIFaddbegin \DIFadd{desenvolvido com }\DIFaddend perguntas objetivas e subjetivas, visando identificar as principais demandas, dificuldades e práticas no cuidado com idosos.
+
+\subsubsection{Coleta de Dados}
+
+A coleta ocorreu em duas etapas. As escalas utilizadas incluíram perguntas de múltipla escolha, caixas de seleção para opiniões quantitativas e campos abertos para coleta de opiniões qualitativas. 
+
+\DIFaddbegin \subsubsubsection{Pesquisa com o Público Geral}
+\DIFaddend Na primeira etapa, o formulário foi direcionado ao público geral com intuito de mapear as necessidades e desejos mais amplos. O questionário foi montado com 11 perguntas relacionadas ao gerenciamento de medicações e consultas pessoais e foram obtidas 45 respostas. 
+\DIFdelbegin \DIFdel{Posteriormente na }\DIFdelend \DIFaddbegin 
+
+\subsubsubsection{Pesquisa com o Público-alvo}
+\DIFadd{Na }\DIFaddend segunda etapa, após um aprofundamento de escopo do projeto, um questionário com 10 perguntas relacionadas ao cuidado com idosos foi compartilhado com cuidadores \DIFdelbegin \DIFdel{profissionais, }\DIFdelend \DIFaddbegin \DIFadd{de idosos e }\DIFaddend instituições de longa permanência para idosos (casas de repouso), a fim de avaliarmos as necessidades do público alvo do \nomeprojeto. 
+
+\DIFdelbegin \DIFdel{Todas as perguntas que foram feitas na primeira e segunda etapa }\DIFdelend \DIFaddbegin \DIFadd{As perguntas feitas em ambas pesquisas }\DIFaddend se encontram no \autoref{pesquisas}.
+
+\subsubsection{Análise dos Dados}
+
+Na primeira pesquisa, denotou-se que aproximadamente 73,3\% das pessoas nunca utilizaram um aplicativo para gerenciamento de consultas e medicações, enquanto os outros 26,7\% utilizaram um ou mais aplicativos, geralmente relacionados a diferentes tratamentos e teleconsultas. Muitas pessoas comentaram dificuldade em memorizar posologias
+\DIFdelbegin %DIFDELCMD < \footnote[1]{%%%
+\DIFdelend \DIFaddbegin \footnote{\DIFaddend Seção da terapêutica que se dedica ao estudo da dosagem certa dos medicamentos. Indicação da dosagem certa (adequada) de um medicamento tendo em conta os vários casos em que o mesmo pode ser prescrito.}, 
+organização pessoal de consultas agendadas, datas e disponibilidade de vacinas e agendamento de consultas. Dos desejos compartilhados entre os entrevistados, se destacaram pesquisas de medicações, uma agenda direcionada a estes compromissos e tarefas, uma integração para que haja apenas uma aplicação onde seja possível acessar todas as informações necessárias, lembretes do horário de medicações e organização pessoal.
+
+A partir dos dados de ambas as pesquisas constatou que dos profissionais entrevistados, 50\% atuam como cuidadores formais, enquanto os outros 50\% dividem-se entre cuidadores informais, fisioterapeutas e profissionais de enfermagem. Cerca de 70\% desses profissionais trabalham em domicílios particulares e 30\% em casas de repouso. As atividades mais comuns em sua rotina incluem a administração de medicamentos, o monitoramento de sinais vitais e o acompanhamento em consultas. No entanto, nenhum dos entrevistados utiliza aplicativos ou sistemas para esse controle, recorrendo a registros em papel, planilhas ou lousas (\autoref{utiliza_app}). A \autoref{utilizaria_app} traz que aproximadamente 90\% demonstraram interesse em utilizar um aplicativo, sugerindo que funcionalidades para registro de dados e organização da rotina seriam pertinentes para a aplicação.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\linewidth]{assets/figuras/utiliza-app.png}
+    \caption{Pergunta 6/10 do 2º Questionário}
+    \fonte{Autores.}
+    \label{utiliza_app}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\linewidth]{assets/figuras/utilizaria-app.png}
+    \caption{Pergunta 9/10 do 2º Questionário}
+    \fonte{Autores.}
+    \label{utilizaria_app}
+\end{figure}
+
+\break
+
+Como apresentado nas Figuras 1 e 2, respectivamente, há uma lacuna quando se trata da rotina de controle de medicamentos de seus pacientes, mas ao mesmo tempo, há um interesse em fazer uma conversão para um sistema que atenda melhor essas necessidades. Os resultados obtidos indicam essa vontade dos profissionais em incorporar a tecnologia em suas atividades diárias.
+
+\subsection{Ferramentas e Tecnologias}
+
+Para a organização e acompanhamento do desenvolvimento, foi adotada uma abordagem baseada no framework Scrum, adaptada à realidade e às necessidades da equipe. O processo foi estruturado em sprints com duração de quatro semanas, com reuniões semanais para alinhamento das tarefas e revisão do progresso. As tarefas foram gerenciadas no Jira, permitindo o acompanhamento visual do fluxo de trabalho e facilitando a priorização das entregas. Essa adaptação do Scrum proporcionou maior autonomia à equipe, mantendo a organização e o foco nos objetivos do projeto.
+
+Durante o desenvolvimento do \nomeprojeto, foram selecionadas tecnologias e ferramentas que garantem escalabilidade e facilidade de manutenção. No back-end, utilizou-se o MySQL como Sistema Gerenciador de Banco de Dados (SGBD) devido à sua confiabilidade, aliado ao framework Spring Boot em Java, que facilita a criação de APIs RESTful e a integração com outros serviços.
+
+No \DIFdelbegin \DIFdel{front-end}\DIFdelend \DIFaddbegin \textit{\DIFadd{front-end}}\DIFaddend , optou-se pelo Angular 19, que permite o desenvolvimento de interfaces dinâmicas e reativas através de componentes. A biblioteca de componentes PrimeNG e a linguagem de design Material Design 3 foram incorporados para padronizar o design da aplicação. Para autenticação e autorização, foi utilizado o Auth0, que oferece uma solução segura e prática de Single Sign On (SSO).
+
+Durante o desenvolvimento, o Visual Studio Code (VSCode) foi escolhido como editor de código por sua leveza, extensibilidade e integração com diversas ferramentas. O controle de versão foi realizado com o Git, utilizando o GitHub para hospedagem dos repositórios e o GitKraken para facilitar a gestão de branches e colaboração entre os membros da equipe.
+
+A gestão de tarefas e acompanhamento do progresso do projeto foi feita com o Jira, permitindo organização eficiente das entregas e reuniões. Por fim, o Google Workspace foi utilizado para armazenamento e compartilhamento de documentos, além de servir como plataforma para aplicação dos formulários de pesquisa, através das aplicações Google Drive, Google Docs, Google Forms e Google Sheets.
+
+\subsection{Processo de Desenvolvimento}
+
+O desenvolvimento foi iniciado a partir do lado do servidor, criando o banco de dados utilizando PostgreSQL, e hospedando-o na Google Cloud Platform. O desenvolvimento do back-end e integração com banco de dados foi desenvolvida com Java e Spring Boot, e hospedada na plataforma Render.
+
+Para o desenvolvimento do \DIFdelbegin \DIFdel{front-end}\DIFdelend \DIFaddbegin \textit{\DIFadd{front-end}}\DIFaddend , utilizou-se Angular 19 para a criação de páginas reativas, que mudam de estado. A biblioteca PrimeNG é usada para facilitar a criação de estilos dos elementos e simplificar a componentização e redução do código. Para a hospedagem, foi escolhida a plataforma Firebase.
+
+Recursos externos foram utilizados para coleta de dados, a API "api-medicamentos-anvisa" hospedada publicamente, oferece nomes e informações úteis de todos os medicamentos registrados no Brasil até 2020. Além dela, a API de busca do Google foi utilizada por meio da ferramenta "SerperDev", da qual oferece uma interface simples à pesquisa de locais e produtos farmacêuticos.
+
+\subsection{Equipe}
+
+O desenvolvimento do \nomeprojeto\ se deu pela estruturação do projeto em equipe, após isso houve a designação de responsabilidades para cada colaborador. Esta seção diz sobre a organização de forma ampla e a alocação de tarefas.
+
+O \autoref{quadro_integrantes} discorre a respeito da distribuição de tarefas da equipe. Para cada segmento do projeto foram designados ao mínimo duas pessoas, a fim de obter uma visão mais ampla de desenvolvimento; com exceção da execução de testes, que por sua natureza exige menos atenção. 
+
+\DIFdelbegin %DIFDELCMD < \pagebreak
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \begin{quadro}[!htbp]
+    \caption{\label{quadro_integrantes}Integrantes da equipe}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+            Papéis & Arthur & Fernando & Henriquy & Isabella & Lucas & Mateus \\ \hline
+            Back-end & & & & & \checkmark & \DIFdelbegin %DIFDELCMD < \checkmark %%%
+\DIFdelend \\ \hline
+            Front-end & \checkmark & \checkmark & & \DIFdelbegin %DIFDELCMD < \checkmark %%%
+\DIFdelend & & \\ \hline
+            Banco de Dados & & & \checkmark & & \checkmark & \\ \hline
+	        Testes & & & \checkmark & \checkmark & & \\ \hline
+            Documentação & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\ \hline
+            Design & & & \checkmark & \checkmark & & \\ \hline
+            Gestão & & & \checkmark & & \checkmark & \\ \hline
+        \end{tabular}
+    \fonte{Autores.}
+\end{quadro}
+
+\section{Desenvolvimento}
+
+Esta seção percorre todas as etapas do desenvolvimento do projeto, desde sua projeção de requisitos de funcionamento e regras de negócio, modelagem e prototipagem e testes.
+
+\subsection{Requisitos}
+
+Os requisitos do sistema, divididos em funcionais e não funcionais, detalham os recursos e as características planejadas para o projeto. A definição de cada requisito foi baseada na análise das pesquisas realizadas com o público-alvo e na avaliação da viabilidade de desenvolvimento.
+
+\subsubsection{Requisitos Funcionais}
+
+Requisitos funcionais são especificações que descrevem as funcionalidades e comportamentos que um sistema deve possuir para atender às necessidades dos usuários, definindo o que o sistema deve fazer e detalhando as interações entre o usuário e o software.
+
+O requisito funcional RF04 (Notificações), criado para garantir que os usuários sejam alertados sobre eventos importantes, como horários de medicação ou consultas agendadas, o requisito funcional RF07 (Relatórios), criado para garantir que os usuários possam acompanhar a evolução clínica de pacientes por meio de relatórios detalhados e o requisito funcional RF10 (Log), incluído para registrar logs de acesso e operações críticas, como edições ou exclusões, são requisitos essenciais para garantir que o sistema atenda aos objetivos propostos e forneça valor ao público-alvo. 
+
+Esses três itens surgiram a partir da síntese das pesquisas tanto com o público geral quanto com o público alvo da aplicação, identificando dores dos usuários e como o sistema pode ajudá-los a solucionar esses problemas. O \autoref{requisitos_f} mostra todos os requisitos funcionais criados para o \nomeprojeto.
+
+\subsubsection{Requisitos Não-Funcionais}
+
+Requisitos não-funcionais são especificações que descrevem as características e restrições de qualidade que o sistema deve atender para garantir sua eficiência, segurança e usabilidade. Esses requisitos não estão diretamente relacionados às funcionalidades do sistema, mas são essenciais para que ele opere de forma confiável e atenda às expectativas dos usuários.
+
+O requisito não-funcional RNF01 (Segurança), criado para assegurar a criptografia de dados sensíveis, como senhas e informações médicas, é essencial para proteger a privacidade dos usuários e garantir conformidade com regulamentações como a LGPD. O requisito RNF06 (Desempenho), que define que o sistema deve responder às requisições em até, no máximo, 1,5 segundos, foi incluído para garantir uma experiência fluida e eficiente, especialmente em operações críticas. Já o requisito RNF10 (Disponibilidade), que exige que o sistema permaneça disponível pelo menos 99,5\% do tempo durante o horário de operação, é fundamental para assegurar que os usuários possam acessar o sistema sempre que necessário, minimizando interrupções.
+
+Esses três requisitos foram definidos com base nas melhores práticas de desenvolvimento de software, como padrões para APIs RESTful, e nas necessidades identificadas durante a análise do público-alvo junto a reflexão sobre os requisitos funcionais. O \autoref{requisitos_nf} apresenta todos os requisitos não-funcionais criados para o sistema.
+
+\subsection{Regras de Negócio}
+
+Regras de negócio são diretrizes que definem como o sistema deve operar em situações específicas, garantindo que os processos sigam padrões estabelecidos. Elas são fundamentais para assegurar que o sistema funcione de maneira consistente e em conformidade com as regulamentações aplicáveis.
+
+A regra de negócio RN02 (Segurança), que determina o arquivamento de registros excluídos por 15 dias antes da remoção definitiva, foi incluída para atender às exigências da LGPD, inclusive para permitir que os usuários tenham tempo para reverter os pedidos de exclusão ou recuperar alguma informação. A regra RN04 (Tratamentos), que exige que a conclusão ou o cancelamento de tratamentos seja realizado apenas por cuidadores autorizados e registrado em log, foi definida para garantir rastreabilidade e controle sobre ações sensíveis no sistema. Já a regra RN07 (Segurança) foi adicionada para garantir que todas informações pertencentes a um usuário devem ser armazenadas de forma segura e criptografada, a fim de respeitar normas de segurança.
+
+Essas regras foram elaboradas com base nas necessidades do público alvo e nas regulamentações aplicáveis, como a LGPD, para garantir que o sistema seja seguro e confiável. O \autoref{regras_negocio} apresenta todas as regras de negócio definidas para a aplicação.
+
+\subsection{Modelagem}
+
+A modelagem do sistema é uma etapa fundamental que visa traduzir os requisitos e regras de negócio em uma representação estruturada do software. Este processo envolve os casos de uso, a definição da arquitetura \DIFdelbegin \DIFdel{, }\DIFdelend e a estrutura de dados da aplicação. Para o \nomeprojeto, a modelagem foi detalhada por meio de diagramas \DIFdelbegin \DIFdel{s }\DIFdelend \DIFaddbegin \DIFadd{de casos }\DIFaddend de uso, que descrevem as interações entre os usuários e o sistema, o diagrama de arquitetura de sistema, que descreve como o sistema está \DIFdelbegin \DIFdel{estuturado }\DIFdelend \DIFaddbegin \DIFadd{estruturado }\DIFaddend tecnicamente e pelo modelo de entidade e relacionamento, que detalha a estrutura do banco de dados.
+
+\subsubsection{Casos de Uso}
+
+Como apresentado na \autoref{casos_de_uso}, os casos de uso representam as principais interações entre os usuários e o sistema, descrevendo como as funcionalidades foram projetadas para atender às necessidades identificadas durante a análise de requisitos. Eles são fundamentais para garantir que o sistema seja desenvolvido de forma alinhada às expectativas do público-alvo e às regras de negócio definidas.
+
+\begin{figure}[!htbp]
+    \centering
+    \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=1.0\linewidth]{assets/figuras/diagrama-casos-uso.jpg}
+%DIFDELCMD <     %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=1.0\linewidth]{assets/figuras/diagrama-casos-uso.jpeg}
+    \DIFaddendFL \caption{Diagrama de Casos de Uso}
+    \fonte{Autores.}
+    \label{casos_de_uso}
+\end{figure}
+
+
+No \nomeprojeto, os casos de uso foram elaborados para cobrir as principais operações realizadas pelos cuidadores e administradores. Entre os casos de uso mais relevantes, destacam-se o caso de uso "Manter Dependentes" \DIFaddbegin \DIFadd{que }\DIFaddend permite que o cuidador adicione, visualize, edite e exclua informações dos pacientes, garantindo que os dados estejam sempre atualizados. Já o caso de uso "Agendar Consulta" possibilita que o cuidador registre compromissos médicos em uma agenda para os pacientes, com integração opcional ao calendário do dispositivo. Além disso, o caso de uso "Gerenciar Medicações" permite o acompanhamento do estoque de medicamentos e o registro de consumo, emitindo alertas em caso de baixa disponibilidade.
+
+O \autoref{dicionario_casos_uso} apresenta o \textit{Dicionário de Casos de Uso}, apresentando cada cenário com detalhes e informações sobre os atores envolvidos, pré-condições, fluxos principais e pós-condições.
+
+
+\subsubsection{Modelo Entidade Relacionamento}
+
+O MER do MyMed foi projetado para representar as principais entidades do sistema, como Usuário, Dependente, Consulta, Tratamento e Medicação, além de suas relações. Ele garante que as informações sejam armazenadas de forma consistente e que as interações entre as entidades sejam bem definidas. A \autoref{model_entidade_relacionamento} apresenta o diagrama completo, detalhando as entidades e seus relacionamentos.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{assets/figuras/bancoDados.jpg}
+    \caption{Imagem do Modelo Entidade Relacionamento}
+    \fonte{Autores.}
+    \label{model_entidade_relacionamento}
+\end{figure}
+
+Por exemplo, a entidade Usuário está relacionada à entidade Dependente, permitindo que cuidadores gerenciem os dados de seus dependentes. A entidade Consulta está associada tanto ao Usuário quanto ao Dependente, possibilitando o registro de compromissos médicos para ambos. Já a entidade Tratamento está vinculada a Medicação, permitindo o acompanhamento detalhado de medicamentos prescritos e consumidos.
+
+O MER reflete a necessidade de um sistema robusto e escalável, garantindo que os dados sejam organizados de forma eficiente e que as operações, como consultas e atualizações, sejam realizadas de maneira confiável. Ele também assegura a integridade referencial, evitando inconsistências nos dados e permitindo que o sistema atenda aos requisitos funcionais e não funcionais definidos.
+
+\subsection{Arquitetura de Software}
+
+Esta subseção apresenta a arquitetura geral do sistema, suas tecnologias, infraestrutura de hospedagem e os fluxos de interação entre os contêineres. O modelo utilizado é baseado no \textit{Diagrama de Contêineres do C4 Model}.
+
+\subsubsection{Visão Geral}
+
+A arquitetura do sistema é composta por quatro contêineres principais, cada um com responsabilidades específicas e hospedado em diferentes plataformas de nuvem. Essa estrutura foi definida visando escalabilidade, isolamento de responsabilidades e maior confiabilidade.
+
+A comunicação entre esses contêineres ocorre predominantemente por meio de requisições HTTP. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{A }\autoref{diagrama_software} \DIFadd{apresenta o diagrama de Arquitetura de Software completo, detalhando os contêineres, suas tecnologias e interações.
+}\DIFaddend \begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/figuras/diagrama_de_software.png}
+    \caption{Diagrama de Arquitetura de Software}
+    \DIFdelbeginFL %DIFDELCMD < \label{fig:diagrama_software}
+%DIFDELCMD <     %%%
+\DIFdelendFL \DIFaddbeginFL \label{diagrama_software}
+    \DIFaddendFL \fonte{Autores.}
+\end{figure}
+
+\newpage
+
+\subsection{Prototipagem}
+
+A prototipagem do sistema se deu pela criação inicial do conceito do sistema e fluxos de dados com baixo nível de detalhamento. Depois que aprovado, houve a criação de protótipos de alta fidelidade na plataforma \textit{Figma}. O apêndice \autoref{prototipagem} nos traz mais detalhes sobre as telas do sistema, como a tela inicial, calendário, gráficos, perfil de usuário, entre as outras criadas para montar um fluxo completo e adequado.
+
+\renewcommand{\arraystretch}{1.5} % 1.5 = 50% mais alto que o normal
+
+\subsection{Plano de Testes}
+
+O plano de testes visa verificar todas as funcionalidades e validar seu uso na aplicação. O \autoref{plano_testes} retrata com detalhes e maior descrição todos os testes que devem ser implementados nos diversos segmentos do sitema, como a verificação da conexão com o banco de dados, validação de informações de usuário e exibição correta de consultas conforme a data do dispositivo.
+
+\subsection{Criptografia}
+
+Para garantir a segurança na comunicação entre os usuários e a aplicação, foi configurado o protocolo HTTPS com suporte a TLS, utilizando certificados digitais válidos e atualizados. A certificação foi realizada através da integração com o serviço Let's Encrypt através do Render para o back-end e Gerenciado pelo Google para o \DIFdelbegin \DIFdel{front-end }\DIFdelend \DIFaddbegin \textit{\DIFadd{front-end}} \DIFaddend através do Firebase Hosting, assegurando criptografia ponta a ponta durante as transações de dados. A configuração foi validada na ferramenta SSL Labs, onde o ambiente obteve a nota máxima A+.
+\DIFaddbegin \DIFadd{A }\autoref{testes-criptografia} \DIFadd{apresenta, respectivamente o resultado dos testes de criptografia realizados no }\textit{\DIFadd{front-end}} \DIFadd{e no }\textit{\DIFadd{back-end}} \DIFadd{da aplicação, confirmando a eficácia das medidas de segurança implementadas.
+}\DIFaddend 
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{assets/figuras/certificacao_front.png}
+        \caption{Resultado dos testes do front-end}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{assets/figuras/certificacao_back.png}
+        \caption{Resultado dos testes do back-end}
+    \end{subfigure}
+    \DIFdelbeginFL %DIFDELCMD < \label{fig:testes-criptografia}
+%DIFDELCMD <     %%%
+\DIFdelendFL \caption{Resultados dos testes de criptografia.}
+    \DIFaddbeginFL \label{testes-criptografia}
+    \DIFaddendFL \fonte{Autores.}
+\end{figure}
+
+
+% \section{MVP}
+
+% "O MVP é o menor conjunto de recursos que permite que o empreendedor comece o processo de aprendizado com o mínimo de esforço e o máximo de aprendizado validado sobre os clientes."
+
+% "Uma ferramenta para testar hipóteses de negócios e iniciar o aprendizado, coletando o máximo de informações validadas sobre os clientes com o menor esforço possível."
+
+
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+\bookmarksetup{startatroot}% 
+
+% ---
+
+% ---
+% Conclusão
+% ---
+\section{Resultado e discussões}
+Esta seção apresenta os principais resultados obtidos ao longo do desenvolvimento do projeto, bem como a análise crítica desses achados. São expostos os avanços alcançados, as limitações identificadas e os impactos observados no desempenho e na usabilidade do sistema. Além disso, \DIFdelbegin \DIFdel{busca-se discutir }\DIFdelend \DIFaddbegin \DIFadd{discute-se }\DIFaddend de que forma os resultados se relacionam com os objetivos propostos inicialmente, destacando pontos fortes, fragilidades e oportunidades de melhoria para trabalhos futuros. \DIFaddbegin \DIFadd{Também são examinados aspectos do funcionamento da plataforma, considerando tanto o }\textit{\DIFadd{frontend}} \DIFadd{quanto o }\textit{\DIFadd{backend}}\DIFadd{, a partir de testes e validações realizadas durante o processo de desenvolvimento.
+}\DIFaddend 
+
+\subsection {Problemas no desenvolvimento}
+Durante o desenvolvimento do projeto, surgiram problemas que afetaram tanto o cronograma quanto a implementação de algumas funcionalidades. No início, a escassez de pesquisas e documentações dificultou o embasamento do projeto. Além disso, a necessidade frequente de corrigir bugs consumiu mais tempo do que o previsto, atrasando etapas importantes do desenvolvimento.
+
+No âmbito técnico, \DIFdelbegin \DIFdel{enfrentamos }\DIFdelend \DIFaddbegin \DIFadd{foram enfrentados }\DIFaddend desafios relacionados à compatibilidade de versões e bibliotecas, integração entre módulos e limitações de ferramentas, como o banco de dados. Este último precisou ser migrado para uma instância diferente devido às restrições da plataforma GCP, exigindo ajustes adicionais, como a renovação da instância a cada 30 dias e a reexecução das migrations.
+
+Na camada de segurança, inicialmente o \DIFdelbegin \DIFdel{front-end }\DIFdelend \DIFaddbegin \textit{\DIFadd{front-end}} \DIFaddend não garantia a criptografia de todas as requisições HTTP, resultando em transmissão de dados em texto claro, o que poderia expor o sistema a ataques como SQL injection ou vazamento de informações sensíveis. Além disso, o mecanismo de autenticação era básico, sem suporte robusto para autorização. A solução envolveu configurar adequadamente o HTTPS/TLS para todas as comunicações e implementar um sistema de autenticação baseado em JWT (JSON Web Token), protegendo as requisições contra acessos não autorizados.
+
+Por fim, embora os esforços de otimização tenham melhorado o desempenho, não foi possível atingir a latência média de 1,5 segundos definida como requisito não-funcional. Ainda assim, os resultados foram satisfatórios para a maioria das operações e atenderam aos limites do projeto.
+
+Esses desafios, embora complexos, proporcionaram aprendizado significativo e contribuíram para o aprimoramento do processo de desenvolvimento, garantindo a continuidade e a consolidação dos resultados.
+
+\subsection {Resultados dos testes internos}
+
+Os testes internos, presentes no plano de testes, cobriram as funcionalidades essenciais do sistema, desde a gestão administrativa de usuários até o acompanhamento clínico detalhado dos pacientes e a integração com serviços externos.
+
+\subsubsection{Aspectos positivos}
+Os resultados \DIFdelbegin \DIFdel{positivos demonstram a correta }\DIFdelend \DIFaddbegin \DIFadd{obtidos nos testes internos demonstram a }\DIFaddend execução \DIFaddbegin \DIFadd{correta }\DIFaddend das funcionalidades primárias do sistema. \DIFdelbegin \DIFdel{Em um cenário de sucesso, todas }\DIFdelend \DIFaddbegin \DIFadd{Todas }\DIFaddend as operações de CRUD (Criação, Edição e Exclusão) para usuários, administradores, pacientes, consultas e informações adicionais de perfil \DIFdelbegin \DIFdel{são persistidas com sucesso }\DIFdelend \DIFaddbegin \DIFadd{foram persistidas adequadamente }\DIFaddend no banco de dados, \DIFdelbegin \DIFdel{confirmando }\DIFdelend \DIFaddbegin \DIFadd{comprovando }\DIFaddend a eficácia da lógica de negócios e \DIFdelbegin \DIFdel{da query }\DIFdelend \DIFaddbegin \DIFadd{das consultas }\DIFaddend SQL. Além disso, a adição de medicamentos a um tratamento e a manutenção dos registros cardiovasculares e glicêmicos foram concluídas \DIFaddbegin \DIFadd{com êxito}\DIFaddend , indicando que os dados brutos de saúde \DIFdelbegin \DIFdel{são }\DIFdelend \DIFaddbegin \DIFadd{estão sendo }\DIFaddend armazenados corretamente.
+
+A integração com serviços externos também apresentou \DIFdelbegin \DIFdel{sucesso}\DIFdelend \DIFaddbegin \DIFadd{funcionamento adequado}\DIFaddend : o sistema foi capaz de pesquisar e visualizar farmácias e medicamentos \DIFdelbegin \DIFdel{a }\DIFdelend \DIFaddbegin \DIFadd{à }\DIFaddend venda ao se conectar \DIFdelbegin \DIFdel{com sucesso }\DIFdelend às APIs externas, confirmando \DIFdelbegin \DIFdel{a funcionalidade adequada }\DIFdelend \DIFaddbegin \DIFadd{o bom desempenho }\DIFaddend dos mecanismos de comunicação e autenticação. Por fim, a visualização correta de consultas por filtro de data e a exibição dos gráficos de adesão e intercorrências \DIFdelbegin \DIFdel{indicam que a }\DIFdelend \DIFaddbegin \DIFadd{demonstram que o processo de }\DIFaddend recuperação e apresentação de dados \DIFdelbegin \DIFdel{funcionam conforme o esperado.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{está ocorrendo conforme o previsto.
+}\DIFaddend \subsubsection{Aspectos negativos}
+
+Um erro que aconteceu em alguns cenários foi que, mesmo sem todos os campos obrigatórios preenchidos, ainda ocorria qualquer tipo de persistência de dados. Este é um risco de infraestrutura que pode invalidar algumas operações do back-end, e além disso, quebrava a renderização de algumas informações em diversas telas da aplicação.
+
+O teste de notificação demonstrava alguns erros mais graves em termos de integridade de dados e experiência do usuário: a notificação não aparecia ou poderia aparecer no horário errado.
+
+Por fim, a integração externa depende da disponibilidade da API e da ativação de funcionalidades no dispositivo do usuário, como o GPS estar desligado, que impede a pesquisa por proximidade mesmo que a API funcione perfeitamente.
+
+\subsection {Resultados dos testes externos}
+
+\subsubsection{Aspectos positivos}
+
+Os resultados positivos confirmam a solidez do \DIFdelbegin \DIFdel{back-end }\DIFdelend \DIFaddbegin \textit{\DIFadd{back-end}} \DIFaddend do sistema em suas operações fundamentais. Em condições ideais de rede e conectividade, as operações de CRUD relacionadas aos usuários, pacientes e consultas foram concluídas com \DIFdelbegin \DIFdel{sucesso}\DIFdelend \DIFaddbegin \DIFadd{êxito}\DIFaddend . Isso valida a lógica de negócios e a integridade das transações sob uma variedade de dispositivos e outros ambientes. A capacidade de adicionar medicamentos a um tratamento e registro de dados contínuos de saúde, como pressão arterial e nível de glicose, também deram certo. A integração com as APIs externas demonstrou ser robusta, \DIFdelbegin \DIFdel{conseguindo permitir }\DIFdelend \DIFaddbegin \DIFadd{permitindo }\DIFaddend a pesquisa de \DIFdelbegin \DIFdel{farmáciase }\DIFdelend \DIFaddbegin \DIFadd{farmácias e }\DIFaddend a visualização de medicamentos de forma rápida e precisa para a maioria dos testadores.
+
+\subsubsection{Aspectos negativos}
+Alguns problemas foram identificados no processo de testes externos foram que o login não é validado corretamente no \DIFdelbegin \DIFdel{backend}\DIFdelend \DIFaddbegin \textit{\DIFadd{backend}}\DIFaddend , comprometendo a segurança do sistema. Além disso, não foi possível abrir a foto do paciente no \DIFdelbegin \DIFdel{backend}\DIFdelend \DIFaddbegin \textit{\DIFadd{backend}}\DIFaddend , o que limita a visualização de informações relevantes. Outro fator crítico está relacionado ao tempo de inicialização da API, que pode levar alguns segundos até ficar ativa, impedindo o acesso imediato à aplicação. Soma-se a isso a ausência de implementação das claims/roles, permitindo que em alguns cenários, usuários realizem requisições sem restrições, o que representa um risco de uso indevido.
+
+\subsection{Empresa}
+Na disciplina de Gestão Industrial (GEI), como atividade avaliativa do segundo bimestre, desenvolveu-se a estrutura empresarial fictícia da equipe Hyperion, cujo produto principal é o \nomeprojeto. O projeto apresenta a identidade da empresa, análise de mercado, modelo de negócio, estratégias de marketing e outros, e foi importante para que desenvolvessemos uma visão mais ampliada e descritiva do que o \nomeprojeto e a Equipe Hyperion significa para pessoas de fora das matérias técnicas, possibilitando para que elas pudessem entender também. Todos os detalhes sobre a empresa pode ser consultada no \autoref{secao_empresa}.
+
+\section{Conclusão}
+O desenvolvimento do MyMed demonstrou a importância da tecnologia como ferramenta de apoio à saúde e ao cuidado de idosos, especialmente em um contexto onde a demanda por serviços de cuidado segue em crescimento constante, fator identificado durante meses de pesquisas e estudos, incluindo análises das necessidades dos cuidadores e implementações de funcionalidades que pudessem beneficiar inclusive os dependentes, mesmo que de forma indireta.
+
+De forma técnica, um dos objetivos do projeto foi a criação de uma API eficiente e bem documentada, que possa facilitar e possibilitar a integração e o uso por terceiros. Para suportar essa arquitetura de maior escala, houve a criação de uma estrutura robusta para o \DIFdelbegin \DIFdel{front-end }\DIFdelend \DIFaddbegin \textit{\DIFadd{front-end}} \DIFaddend também, com enfoque em conseguir proporcionar uma navegação intuitiva e uma boa experiência para os usuários. No entanto, desafios relacionados à segurança, desempenho e estabilidade da aplicação foram identificados nesse processo, indicando áreas que necessitam de correções e melhorias contínuas para alcance de um público maior. Mesmo diante de limitações técnicas, esses resultados evidenciam que o projeto alcançou, em grande parte, os objetivos de promover acessibilidade e usabilidade para o público-alvo.
+
+Por fim, este trabalho demonstra que o investimento em tecnologia aplicada à saúde e ao cuidado de idosos contribui com a melhoria de rotina de cuidados e com a promoção de autonomia, segurança e qualidade de vida. Os resultados obtidos evidenciam que, mesmo diante de limitações técnicas, é possível desenvolver sistemas relevantes e funcionais, que podem servir de referência para projetos futuros. Desta forma, o MyMed não apenas cumpre sua função prática, mas também reforça a importância de soluções inovadoras e adaptáveis entre tecnologia e cuidado / saúde humana.
+
+\postextual
+
+
+
+\newpage
+
+\bibliography{referencias}
+% ---
+% Inicia os apêndices
+% ---
+\newpage
+\begin{apendicesenv}
+
+% % % % ----------------------------------------------------------
+\chapter{Pesquisas\label{pesquisas}}
+
+\input{sections/pesquisas}
+
+\newpage
+
+\chapter{Requisitos Funcionais\label{requisitos_f}}
+
+\input{sections/requisitos_f}
+
+\DIFdelbegin %DIFDELCMD < \newpage
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \pagebreak
+\DIFaddend 
+
+\chapter{Requisitos Não Funcionais\label{requisitos_nf}}
+
+\input{sections/requisitos_nf}
+
+\newpage
+
+\chapter{Regras de Negócio\label{regras_negocio}}
+
+\input{sections/regras_negocio}
+
+\newpage
+
+\chapter{Dicionário de Casos de Uso\label{dicionario_casos_uso}}
+
+\input{sections/dicionario_casos_uso}
+
+\newpage
+
+\chapter{Prototipagem\label{prototipagem}}
+
+\input{sections/prototipagem}
+\newpage
+
+\chapter{Seção Empresa \label{secao_empresa}}
+\input{sections/secao_empresa}
+
+\chapter{Plano de Testes \label{plano_testes}}
+\input{sections/plano_testes}
+
+\end{apendicesenv}
+
+% % ----------------------------------------------------------
+% % Anexos
+% % ----------------------------------------------------------
+% \cftinserthook{toc}{AAA}
+% % ---
+% % Inicia os anexos
+% % ---
+% %\anexos
+% \newpage
+% \begin{anexosenv}
+
+% % ---
+% \chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+% parturient montes nascetur ridiculus mus}
+% % ---
+
+% Anexos são os documentos não elaborados pelo autor, que servem de fundamentação, comprovação ou ilustração, como mapas, leis, estatutos etc.
+
+% Os apêndices devem aparecer após as referências, e os anexos, após os apêndices.
+
+% \end{anexosenv}
+
+\end{document}
