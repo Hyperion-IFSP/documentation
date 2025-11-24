@@ -47,8 +47,8 @@
 
 - [X] diagramas s
 - [X] casos de uso
-- [ ] relatorios
-- [ ] dados pessoais
+- [X] relatorios
+- [X] dados pessoais
 - [X] referência a figura 5
 - [X] referencia a figura 6
 
@@ -64,28 +64,28 @@
 
 ## apêndices
 
-- [ ] mover para terceira pessoa
-- [ ] remover termos em desuso
-- [ ] adicionar referencial nas imagens
-- [ ] descrição para cada quadro
+- [X] mover para terceira pessoa
+- [X] remover termos em desuso
+- [X] adicionar referencial nas imagens
+- [X] descrição para cada quadro
 
 ## Pág. 1
 - [X] corrigir referências de e-mail “estranhas”
-- [ ] reescrever resumo e abstract (objetivos, metodologia e resultados)
+- [X] reescrever resumo e abstract (objetivos, metodologia e resultados)
 
 ## Objetivos
-- [ ] reescrever para resumir as seções (Metodologia, Arquitetura e Resultados)
+- [X] reescrever para resumir as seções (Metodologia, Arquitetura e Resultados)
 
 ## Justificativa
-- [ ] detalhar formulário e pesquisa, destacando que somos os autores dos documentos
-- [ ] reescrever trecho sobre “manter a saúde dos pacientes bem condicionadas e supervisionadas”
+- [X] detalhar formulário e pesquisa, destacando que somos os autores dos documentos
+- [X] reescrever trecho sobre “manter a saúde dos pacientes bem condicionadas e supervisionadas”
 
 ## Referencial teórico
-- [ ] reescrever parágrafo de introdução da seção
-- [ ] 2.1 — reescrever 1º parágrafo
-- [ ] 2.2 — trocar “a autora” por “os autores”
-- [ ] 2.3 — transformar “grau I, grau II...” em tópicos
-- [ ] 2.3 — repetir “cuidadores de idosos” ao invés de usar coesivos
+- [X] reescrever parágrafo de introdução da seção
+- [X] 2.1 — reescrever 1º parágrafo
+- [X] 2.2 — trocar “a autora” por “os autores”
+- [X] 2.3 — transformar “grau I, grau II...” em tópicos
+- [X] 2.3 — repetir “cuidadores de idosos” ao invés de usar coesivos
 
 ## 3.1.2
 - [X] reescrever 1º e 2º parágrafos
