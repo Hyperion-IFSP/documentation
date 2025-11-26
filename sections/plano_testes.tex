@@ -1,12 +1,12 @@
 \setcounter{section}{0}
 \section{Plano de Testes}
 
-O quadro apresenta o plano de testes do sistema, detalhando os principais objetos de teste e os critérios de sucesso para cada caso. Entre os itens testados estão a manutenção de usuários e admins, gestão de informações adicionais ao perfil, registro e consulta de pacientes, notificações de tratamento, pesquisa de farmácias e medicamentos, além do controle de registros de saúde como pressão arterial, glicose e adesão a medicamentos. Cada teste busca garantir a correta criação, edição, exclusão e visualização dos dados no sistema, assegurando o funcionamento esperado das funcionalidades essenciais para o gerenciamento de pacientes e seus tratamentos.
+O \autoref{quadro_plano_testes} apresenta o plano de testes do sistema, detalhando os principais objetos de teste e os critérios de sucesso para cada caso. Entre os itens testados estão a manutenção de usuários e admins, gestão de informações adicionais ao perfil, registro e consulta de pacientes, notificações de tratamento, pesquisa de farmácias e medicamentos, além do controle de registros de saúde como pressão arterial, glicose e adesão a medicamentos. Cada teste busca garantir a correta criação, edição, exclusão e visualização dos dados no sistema, assegurando o funcionamento esperado das funcionalidades essenciais para o gerenciamento de pacientes e seus tratamentos.
 
 \begin{quadro}[!htbp]
     \caption{\label{quadro_plano_testes}Plano de Testes do Sistema}
     \small % Diminui a fonte para caber na página
-    \begin{tabular}{|l|p{4cm}|p{5cm}|p{5cm}|}
+    \begin{tabular}{|l|p{4cm}|p{4cm}|p{4cm}|}
         \hline
         \textbf{Código} & \textbf{Objeto de Teste} & \textbf{Sucesso} & \textbf{Erro} \\ \hline
         T01.1 & Criar usuário/admin & Criação de usuário ou admin no banco de dados & A conexão com o banco de dados pode falhar \\ \hline
@@ -26,7 +26,7 @@ O quadro apresenta o plano de testes do sistema, detalhando os principais objeto
 
 \begin{quadro}[!htbp]
     \small
-    \begin{tabular}{|l|p{4cm}|p{5cm}|p{5cm}|}
+    \begin{tabular}{|l|p{4cm}|p{4cm}|p{4cm}|}
         \hline
         \textbf{Código} & \textbf{Objeto de Teste} & \textbf{Sucesso} & \textbf{Erro} \\ \hline
         T06 & Adicionar medicamento a um tratamento de paciente & Paciente consta que possui tratamento com aquele medicamento & A conexão com o banco de dados pode falhar \\ \hline
