@@ -1,94 +1,198 @@
-\pagebreak
+% \pagebreak
 
 A prototipagem foi realizada com o objetivo de criar uma interface amigável e funcional para os usuários do sistema. Foram desenvolvidas telas para diferentes funcionalidades, permitindo uma interação intuitiva e eficiente.
 
 \subsection{Consultas}
 
-As telas de consulta foram desenvolvidas para permitir que o usuário visualize e gerencie suas consultas médicas:
+As telas de consulta foram desenvolvidas para permitir que o usuário visualize e gerencie suas consultas médicas.
+
+A tela de avaliação de consulta, apresentada na \autoref{avaliacao_consulta}, permite ao usuário registrar o que aconteceu no encontro, anexar documentos importantes como receitas e atestados, e adicionar observações relevantes. O layout é limpo, com campos bem definidos para especialidade, data, local e um espaço para anotações, facilitando o registro detalhado. A tela complementar, vista na \autoref{avaliacao_pos_consulta_2}, oferece uma interface para anexar arquivos, como fotos de receitas ou resultados de exames.
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=1.0\linewidth]{assets/prototipo/Avaliação Consulta.png}
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Avaliação Pos-consulta.png}
 	\caption{Avaliação de Consulta}
 	\fonte{Autores.}
 	\label{avaliacao_consulta}
 \end{figure}
+A tela de nova consulta, conforme a \autoref{nova_consulta}, foi desenhada para ser direta, com campos para especialidade, data, hora e local. O design inclui um seletor de data e hora integrado e botões claros para salvar ou cancelar, tornando o agendamento de um novo compromisso uma tarefa rápida e sem complicações.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Avaliação Pos-consulta (2).png}
+	\caption{Avaliação de Consulta - Anexos}
+	\fonte{Autores.}
+	\label{avaliacao_pos_consulta_2}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Nome.png}
+	\caption{Nova Consulta}
+	\fonte{Autores.}
+	\label{nova_consulta}
+\end{figure}
 
 \subsection{Calendário}
 
-As telas de calendário foram projetadas para ajudar o usuário a visualizar e gerenciar suas consultas médicas de forma eficiente:
+As telas de calendário foram projetadas para ajudar o usuário a visualizar e gerenciar suas consultas médicas de forma eficiente.
+
+A \autoref{calendario} apresenta uma visão em formato de lista, exibindo todos os compromissos futuros de forma cronológica.
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Calendário - Consulta Finalizada-1.png}
-	\caption{Calendário - Consulta Finalizada 1}
-	\fonte{Autores.}
-	\label{calendario_consulta_finalizada_1}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Calendário - Consulta Finalizada.png}
-	\caption{Calendário - Consulta Finalizada}
-	\fonte{Autores.}
-	\label{calendario_consulta_finalizada}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Calendário.png}
+	\includegraphics[width=0.8\linewidth]{assets/prototipo/Agenda.png}
 	\caption{Calendário}
 	\fonte{Autores.}
 	\label{calendario}
 \end{figure}
 
+A primeira tela de consulta finalizada no calendário mostra um pop-up sobreposto ao dia, oferecendo opções para avaliar a consulta ou reagendá-la. Este design interativo facilita a gestão de compromissos passados diretamente na visualização do calendário. A segunda tela de consulta finalizada (\autoref{calendario_consulta_finalizada}) exibe os detalhes da consulta, como especialidade e horário, com um status visual de "Finalizada". O layout permite que o usuário acesse rapidamente as informações do compromisso que já ocorreu.
+
+
+% \begin{figure}[!htbp]
+% 	\centering
+% 	\includegraphics[width=0.6\linewidth]{assets/prototipo/calendario-consulta-finalizada-1.png}
+% 	\caption{Calendário - Consulta Finalizada 1}
+% 	\fonte{Autores.}
+% 	\label{calendario_consulta_finalizada_1}
+% \end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Adicionar na agenda.png}
+	\caption{Calendário - Consulta Finalizada}
+	\fonte{Autores.}
+	\label{calendario_consulta_finalizada}
+\end{figure}
+
+\subsection{Agendamento}
+
+O fluxo de agendamento de consultas foi desenhado para ser sequencial e intuitivo. O processo começa com a seleção do nome do paciente, como visto nas telas \autoref{agendamento_nome_1}, \autoref{agendamento_nome_2}, \autoref{agendamento_nome_3} e \autoref{agendamento_nome_4}, que demonstram a busca e seleção do dependente. Em seguida, o usuário define o horário da consulta, com interfaces claras para a escolha da hora e minutos, conforme ilustrado em \autoref{agendamento_horario} e \autoref{agendamento_horario_1}. Por fim, a tela \autoref{agendamento_add_agenda} oferece a opção de adicionar o compromisso à agenda do dispositivo, integrando o aplicativo à rotina do usuário.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Nome (1).png}
+	\caption{Agendamento de Consulta - Seleção de Nome 1}
+	\fonte{Autores.}
+	\label{agendamento_nome_1}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Nome (2).png}
+	\caption{Agendamento de Consulta - Seleção de Nome 2}
+	\fonte{Autores.}
+	\label{agendamento_nome_2}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Nome (3).png}
+	\caption{Agendamento de Consulta - Seleção de Nome 3}
+	\fonte{Autores.}
+	\label{agendamento_nome_3}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Nome (4).png}
+	\caption{Agendamento de Consulta - Seleção de Nome 4}
+	\fonte{Autores.}
+	\label{agendamento_nome_4}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Horario.png}
+	\caption{Agendamento de Consulta - Seleção de Horário}
+	\fonte{Autores.}
+	\label{agendamento_horario}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Horario (1).png}
+	\caption{Agendamento de Consulta - Seleção de Horário 2}
+	\fonte{Autores.}
+	\label{agendamento_horario_1}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Agendamento - Consulta - Adicionar na agenda.png}
+	\caption{Agendamento de Consulta - Adicionar na Agenda}
+	\fonte{Autores.}
+	\label{agendamento_add_agenda}
+\end{figure}
+
 \subsection{Gráficos}
 
-As telas de gráficos foram desenvolvidas para fornecer uma visualização clara e intuitiva dos dados de saúde do usuário:
+As telas de gráficos foram desenvolvidas para fornecer uma visualização clara e intuitiva dos dados de saúde do usuário.
+
+A tela principal de gráficos, ilustrada na \autoref{graficos}, serve como um painel central, oferecendo acesso a diferentes visualizações de dados de saúde, como adesão a medicações, intercorrências, glicemia e pressão. O layout utiliza cartões distintos para cada tipo de gráfico, facilitando a navegação. A tela de relatórios (\autoref{relatorios}) complementa essa visão, permitindo a geração de documentos consolidados para compartilhamento com profissionais de saúde.
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Gráfico - Adesão a Medicações.png}
-	\caption{Gráfico - Adesão a Medicações}
-	\fonte{Autores.}
-	\label{grafico_adesao_medicacoes}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Gráfico - Glicemia.png}
-	\caption{Gráfico - Glicemia}
-	\fonte{Autores.}
-	\label{grafico_glicemia}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Gráfico - Intercorrências.png}
-	\caption{Gráfico - Intercorrências}
-	\fonte{Autores.}
-	\label{grafico_intercorrencias}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Gráfico - Pressão.png}
-	\caption{Gráfico - Pressão}
-	\fonte{Autores.}
-	\label{grafico_pressao}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Gráficos.png}
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Graficos.png}
 	\caption{Gráficos}
 	\fonte{Autores.}
 	\label{graficos}
 \end{figure}
 
-\subsection{Login e Perfil}
+O gráfico de adesão a medicações (\autoref{grafico_adesao_medicacoes}) utiliza um gráfico de pizza para mostrar a porcentagem de doses administradas corretamente, em atraso ou não administradas. O design visual e colorido permite uma compreensão rápida do quão bem o tratamento está sendo seguido.
 
-As telas de login e perfil foram projetadas para garantir uma experiência de usuário segura e personalizada:
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Relatorios.png}
+	\caption{Relatórios}
+	\fonte{Autores.}
+	\label{relatorios}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Grafico - Adesão a Medicacoes.png}
+	\caption{Gráfico - Adesão a Medicações}
+	\fonte{Autores.}
+	\label{grafico_adesao_medicacoes}
+\end{figure}
+
+O gráfico de glicemia, detalhado na \autoref{grafico_glicemia}, apresenta as medições de açúcar no sangue ao longo do tempo em um gráfico de linhas. O layout inclui um seletor de período e destaca os valores com cores, facilitando a identificação de tendências.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Grafico - Glicemia.png}
+	\caption{Gráfico - Glicemia}
+	\fonte{Autores.}
+	\label{grafico_glicemia}
+\end{figure}
+
+O gráfico de intercorrências (\autoref{grafico_intercorrencias}) exibe a frequência de eventos adversos em um gráfico de barras, permitindo ao cuidador visualizar os tipos de ocorrências e suas quantidades. O design é claro e ajuda a monitorar a saúde do paciente.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Grafico - Intercorrencias.png}
+	\caption{Gráfico - Intercorrências}
+	\fonte{Autores.}
+	\label{grafico_intercorrencias}
+\end{figure}
+
+O gráfico de pressão arterial, como pode ser visto na \autoref{grafico_pressao}, mostra a evolução das medições sistólica e diastólica em um gráfico de linhas duplas. O layout permite filtrar por período e usa cores distintas para cada medição, tornando a análise cardiovascular simples e visual.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Grafico - Pressao.png}
+	\caption{Gráfico - Pressão}
+	\fonte{Autores.}
+	\label{grafico_pressao}
+\end{figure}
+
+\subsection{Configurações e Perfil}
+
+As telas de login e perfil foram projetadas para garantir uma experiência de usuário segura e personalizada.
+
+A tela de login, apresentada na \autoref{login}, possui um design minimalista, com campos para e-mail e senha, além de opções para login social (Google e Facebook) e um link para recuperação de senha. O layout é focado na simplicidade para garantir um acesso rápido e sem atritos ao sistema.
 
 \begin{figure}[!htbp]
 	\centering
@@ -98,17 +202,21 @@ As telas de login e perfil foram projetadas para garantir uma experiência de us
 	\label{login}
 \end{figure}
 
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=1.0\linewidth]{assets/prototipo/Nova Consulta.png}
-	\caption{Nova Consulta}
-	\fonte{Autores.}
-	\label{nova_consulta}
-\end{figure}
+A tela de perfil, ilustrada na \autoref{perfil}, exibe as informações do usuário, como nome e e-mail, e oferece acesso a outras seções, como "Meus Dependentes" e "Configurações". O layout é organizado com um ícone de lápis que indica a possibilidade de edição, promovendo uma navegação intuitiva.
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.35\linewidth]{assets/prototipo/Perfil - Edição.png}
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Perfil de Usuário.png}
+	\caption{Perfil}
+	\fonte{Autores.}
+	\label{perfil}
+\end{figure}
+
+A tela de edição de perfil (\autoref{perfil_edicao}) permite ao usuário atualizar suas informações pessoais, como nome, e-mail e senha. O layout utiliza campos de formulário claros e botões de ação bem visíveis para salvar as alterações ou cancelar a operação. A tela de configurações (\autoref{configuracoes}) centraliza opções importantes, como a gestão de contatos de emergência (\autoref{contato_emergencia}), permitindo um acesso rápido e organizado.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Nome.png}
 	\caption{Perfil - Edição}
 	\fonte{Autores.}
 	\label{perfil_edicao}
@@ -116,36 +224,118 @@ As telas de login e perfil foram projetadas para garantir uma experiência de us
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.35\linewidth]{assets/prototipo/Perfil.png}
-	\caption{Perfil}
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Configuracoes.png}
+	\caption{Configurações}
 	\fonte{Autores.}
-	\label{perfil}
+	\label{configuracoes}
 \end{figure}
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Tela Inicial - Dropdown Nomes.png}
-	\caption{Tela Inicial - Dropdown Nomes}
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Contato de Emergencia.png}
+	\caption{Contato de Emergência}
 	\fonte{Autores.}
-	\label{tela_inicial_dropdown_nomes}
+	\label{contato_emergencia}
+\end{figure}
+
+\subsection{Gerenciamento de Pacientes e Tratamentos}
+
+O sistema oferece um conjunto de telas para o gerenciamento completo de pacientes e seus tratamentos. A tela de pacientes (\autoref{pacientes}) lista todos os dependentes associados ao cuidador. A partir dela, é possível acessar o perfil detalhado de cada paciente (\autoref{perfil_paciente}), que inclui informações como a definição de dependência (\autoref{dependencia}), dados pessoais como sexo e idade (\autoref{sexo_idade}) e a foto de perfil (\autoref{foto}).
+
+A gestão de tratamentos é centralizada na tela \autoref{tratamentos}, onde o cuidador pode visualizar e gerenciar as terapias em andamento. A tela de informações do tratamento (\autoref{info_tratamento}) exibe detalhes específicos de uma terapia, como medicamentos e dosagens. O fluxo de conclusão do cadastro é guiado pelas telas \autoref{finalizando} e \autoref{finalizando_1}, que confirmam o salvamento das informações.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Pacientes.png}
+	\caption{Pacientes}
+	\fonte{Autores.}
+	\label{pacientes}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Perfil de Paciente.png}
+	\caption{Perfil de Paciente}
+	\fonte{Autores.}
+	\label{perfil_paciente}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Dependencia.png}
+	\caption{Dependência}
+	\fonte{Autores.}
+	\label{dependencia}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Sexo e Idade.png}
+	\caption{Sexo e Idade}
+	\fonte{Autores.}
+	\label{sexo_idade}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Foto.png}
+	\caption{Foto}
+	\fonte{Autores.}
+	\label{foto}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Tratamentos.png}
+	\caption{Tratamentos}
+	\fonte{Autores.}
+	\label{tratamentos}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Informacoes do Tratamento.png}
+	\caption{Informações do Tratamento}
+	\fonte{Autores.}
+	\label{info_tratamento}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Finalizando.png}
+	\caption{Finalizando Cadastro}
+	\fonte{Autores.}
+	\label{finalizando}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Finalizando (1).png}
+	\caption{Finalizando Cadastro 2}
+	\fonte{Autores.}
+	\label{finalizando_1}
 \end{figure}
 
 \subsection{Tela Inicial}
 
-A tela inicial do aplicativo \nomeprojeto foi projetada para ser intuitiva e fácil de navegar, permitindo que os usuários acessem rapidamente as funcionalidades principais:
+A tela inicial do aplicativo \nomeprojeto foi projetada para ser intuitiva e fácil de navegar, permitindo que os usuários acessem rapidamente as funcionalidades principais.
+
+A tela inicial principal, como visto na \autoref{tela_inicial}, funciona como um painel de controle, exibindo as próximas consultas e medicamentos do dia. O layout é limpo, com um menu de navegação inferior para acesso rápido ao calendário, gráficos e perfil.
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Tela Inicial (Botão +).png}
-	\caption{Tela Inicial (Botão +)}
-	\fonte{Autores.}
-	\label{tela_inicial_botao_mais}
-\end{figure}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=0.6\linewidth]{assets/prototipo/Tela Inicial.png}
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Home.png}
 	\caption{Tela Inicial}
 	\fonte{Autores.}
 	\label{tela_inicial}
+\end{figure}
+
+A tela com o menu dropdown de nomes expandido, conforme a \autoref{tela_inicial_dropdown_nomes}, mostra como o cuidador pode alternar rapidamente entre os perfis de diferentes dependentes. O design destaca o nome do paciente ativo e lista os outros de forma clara, otimizando a gestão de múltiplos pacientes.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{assets/prototipo/Pacientes.png}
+	\caption{Tela Inicial - Dropdown Nomes}
+	\fonte{Autores.}
+	\label{tela_inicial_dropdown_nomes}
 \end{figure}
